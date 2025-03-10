@@ -1,29 +1,5 @@
 [
   {
-    "objectID": "recents.html",
-    "href": "recents.html",
-    "title": "Recent Pages",
-    "section": "",
-    "text": "NIRSpec\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCEERS\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items\n\n Back to top",
-    "crumbs": [
-      "Contributing",
-      "Recent Pages"
-    ]
-  },
-  {
-    "objectID": "pages/telescopes/JWST-exgal-surveys.html",
-    "href": "pages/telescopes/JWST-exgal-surveys.html",
-    "title": "CEERS",
-    "section": "",
-    "text": "Test\n\n\n\n Back to top",
-    "crumbs": [
-      "Contributing",
-      "Pages",
-      "Telescopes & Instruments",
-      "CEERS"
-    ]
-  },
-  {
     "objectID": "references.html",
     "href": "references.html",
     "title": "Bibliography",
@@ -38,14 +14,28 @@
     "text": "References\n\n\nCommunity, The Turing Way. 2022. The Turing Way: A Handbook for Reproducible, Ethical and Collaborative Research. Zenodo. https://doi.org/10.5281/ZENODO.7625728."
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Home",
+    "objectID": "pages.html",
+    "href": "pages.html",
+    "title": "Recent Pages",
     "section": "",
-    "text": "This the wiki’s homepage.\nWord of the day!\n\n\n\n Back to top",
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\nNIRSpec\n\n\n \n\n\n\n\nCEERS\n\n\n \n\n\n\n\n\nNo matching items\n\n Back to top",
     "crumbs": [
       "Contributing",
-      "Home"
+      "Pages",
+      "All Pages"
+    ]
+  },
+  {
+    "objectID": "pages/telescopes/JWST-exgal-surveys.html",
+    "href": "pages/telescopes/JWST-exgal-surveys.html",
+    "title": "CEERS",
+    "section": "",
+    "text": "Test\n\n\n\n Back to top",
+    "crumbs": [
+      "Contributing",
+      "Pages",
+      "Telescopes & Instruments",
+      "CEERS"
     ]
   },
   {
@@ -63,15 +53,14 @@
     "text": "term\n\na sentence or two defining some term, acronym or concept you want to remember"
   },
   {
-    "objectID": "pages.html",
-    "href": "pages.html",
-    "title": "Recent Pages",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Home",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\nNIRSpec\n\n\n \n\n\n\n\nCEERS\n\n\n \n\n\n\n\n\nNo matching items\n\n Back to top",
+    "text": "This the wiki’s homepage.\nWord of the day!\n\n\n\n Back to top",
     "crumbs": [
       "Contributing",
-      "Pages",
-      "All Pages"
+      "Home"
     ]
   },
   {
@@ -124,6 +113,17 @@
       "Pages",
       "Telescopes & Instruments",
       "NIRSpec"
+    ]
+  },
+  {
+    "objectID": "recents.html",
+    "href": "recents.html",
+    "title": "Recent Pages",
+    "section": "",
+    "text": "NIRSpec\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCEERS\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items\n\n Back to top",
+    "crumbs": [
+      "Contributing",
+      "Recent Pages"
     ]
   },
   {

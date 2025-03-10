@@ -1,13 +1,13 @@
 [
   {
-    "listing": "/recents.html",
+    "listing": "/pages.html",
     "items": [
       "/pages/telescopes/NIRSpec.html",
       "/pages/telescopes/JWST-exgal-surveys.html"
     ]
   },
   {
-    "listing": "/pages.html",
+    "listing": "/recents.html",
     "items": [
       "/pages/telescopes/NIRSpec.html",
       "/pages/telescopes/JWST-exgal-surveys.html"
