@@ -1,0 +1,179 @@
+[
+  {
+    "objectID": "recents.html",
+    "href": "recents.html",
+    "title": "Recent Pages",
+    "section": "",
+    "text": "NIRSpec\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCEERS\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items\n\n Back to top",
+    "crumbs": [
+      "Contributing",
+      "Recent Pages"
+    ]
+  },
+  {
+    "objectID": "pages/telescopes/JWST-exgal-surveys.html",
+    "href": "pages/telescopes/JWST-exgal-surveys.html",
+    "title": "CEERS",
+    "section": "",
+    "text": "Test\n\n\n\n Back to top",
+    "crumbs": [
+      "Contributing",
+      "Pages",
+      "Telescopes & Instruments",
+      "CEERS"
+    ]
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "Bibliography",
+    "section": "",
+    "text": "To collect all the references that appear on any page in this website, this document has the following YAML options:"
+  },
+  {
+    "objectID": "references.html#references",
+    "href": "references.html#references",
+    "title": "Bibliography",
+    "section": "References",
+    "text": "References\n\n\nCommunity, The Turing Way. 2022. The Turing Way: A Handbook for Reproducible, Ethical and Collaborative Research. Zenodo. https://doi.org/10.5281/ZENODO.7625728."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Home",
+    "section": "",
+    "text": "This the wiki’s homepage.\nWord of the day!\n\n\n\n Back to top",
+    "crumbs": [
+      "Contributing",
+      "Home"
+    ]
+  },
+  {
+    "objectID": "misc/gloassary.html",
+    "href": "misc/gloassary.html",
+    "title": "Glossary",
+    "section": "",
+    "text": "The markdown\nterm\n\n: defintion\nrenders as:\n\n\n\nterm\n\na sentence or two defining some term, acronym or concept you want to remember"
+  },
+  {
+    "objectID": "misc/gloassary.html#definitions",
+    "href": "misc/gloassary.html#definitions",
+    "title": "Glossary",
+    "section": "",
+    "text": "term\n\na sentence or two defining some term, acronym or concept you want to remember"
+  },
+  {
+    "objectID": "pages.html",
+    "href": "pages.html",
+    "title": "Recent Pages",
+    "section": "",
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\nNIRSpec\n\n\n \n\n\n\n\nCEERS\n\n\n \n\n\n\n\n\nNo matching items\n\n Back to top",
+    "crumbs": [
+      "Contributing",
+      "Pages",
+      "All Pages"
+    ]
+  },
+  {
+    "objectID": "pages/telescopes/NIRSpec.html",
+    "href": "pages/telescopes/NIRSpec.html",
+    "title": "NIRSpec",
+    "section": "",
+    "text": "The Near Infrared Spectrograph (NIRSpec) is one of the four main scientific instruments onboard the James Webb Space Telescope (JWST). It is designed to obtain high-sensitivity, low- to medium-resolution spectroscopy over a wide range of wavelengths in the near-infrared spectrum, from 0.6 to 5.3 microns. NIRSpec is capable of observing over 100 objects simultaneously, making it a powerful tool for studying the formation and evolution of galaxies.\n\n\n\nThe detector layout of NIRSpec",
+    "crumbs": [
+      "Contributing",
+      "Pages",
+      "Telescopes & Instruments",
+      "NIRSpec"
+    ]
+  },
+  {
+    "objectID": "pages/telescopes/NIRSpec.html#overview",
+    "href": "pages/telescopes/NIRSpec.html#overview",
+    "title": "NIRSpec",
+    "section": "",
+    "text": "The Near Infrared Spectrograph (NIRSpec) is one of the four main scientific instruments onboard the James Webb Space Telescope (JWST). It is designed to obtain high-sensitivity, low- to medium-resolution spectroscopy over a wide range of wavelengths in the near-infrared spectrum, from 0.6 to 5.3 microns. NIRSpec is capable of observing over 100 objects simultaneously, making it a powerful tool for studying the formation and evolution of galaxies.\n\n\n\nThe detector layout of NIRSpec",
+    "crumbs": [
+      "Contributing",
+      "Pages",
+      "Telescopes & Instruments",
+      "NIRSpec"
+    ]
+  },
+  {
+    "objectID": "pages/telescopes/NIRSpec.html#observing-modes",
+    "href": "pages/telescopes/NIRSpec.html#observing-modes",
+    "title": "NIRSpec",
+    "section": "Observing Modes",
+    "text": "Observing Modes\nNIRSpec offers several observing modes:\n\nFixed Slit (FS) Spectroscopy\nThis mode uses a set of fixed slits to isolate light from individual astronomical objects. It is ideal for high-resolution spectroscopy of point sources or small extended objects.\n\n\nIntegral Field Unit (IFU) Spectroscopy\nThe IFU mode provides spatially resolved spectroscopy, allowing astronomers to obtain a spectrum at each point within a 3D field of view. This is particularly useful for studying the detailed structure and kinematics of extended objects like galaxies and nebulae.\n\n\nMicro-Shutter Array (MSA) Spectroscopy\nThe MSA consists of an array of tiny shutters that can be individually opened or closed to select multiple targets within the field of view. This mode is highly efficient for observing large numbers of objects simultaneously, such as stars in a cluster or galaxies in a deep field survey.",
+    "crumbs": [
+      "Contributing",
+      "Pages",
+      "Telescopes & Instruments",
+      "NIRSpec"
+    ]
+  },
+  {
+    "objectID": "pages/telescopes/NIRSpec.html#gratingsdispersers",
+    "href": "pages/telescopes/NIRSpec.html#gratingsdispersers",
+    "title": "NIRSpec",
+    "section": "Gratings/dispersers",
+    "text": "Gratings/dispersers\nNIRSpec employs several gratings and a prism to disperse light into its component wavelengths:\n\nPRISM: Provides low-resolution spectroscopy over the entire wavelength range, useful for broad spectral surveys and redshift measurements.\nGratings: Three medium-resolution gratings (G140M, G235M, G395M) and three high-resolution gratings (G140H, G235H, G395H) cover different portions of the near-infrared spectrum, allowing for detailed studies of spectral lines and chemical compositions.\n\n   import numpy as np\n   print('hello world')\n\n   import numpy as np\n   print('hello world')\n\nhello world",
+    "crumbs": [
+      "Contributing",
+      "Pages",
+      "Telescopes & Instruments",
+      "NIRSpec"
+    ]
+  },
+  {
+    "objectID": "quickstart.html",
+    "href": "quickstart.html",
+    "title": "Getting Started",
+    "section": "",
+    "text": "So you want to add things to the wiki?\nEverything is managed through github.\nFork the repo, clone it to your machine, make your changes, commit them, and push it back to your fork. Then make a PR. You can delete your fork after it’s merged, or you can keep it and use it for more pull requests later.",
+    "crumbs": [
+      "Contributing"
+    ]
+  },
+  {
+    "objectID": "quickstart.html#fork-the-github-repo",
+    "href": "quickstart.html#fork-the-github-repo",
+    "title": "Getting Started",
+    "section": "2.1 Fork the GitHub Repo",
+    "text": "2.1 Fork the GitHub Repo\nNavigate to the cfc github repository. Click the “Fork” button at the top right to create a copy of the repository under your GitHub account. You should now have a repo yourname/cfc.\nClone the Forked Repository:\nClone the forked repository to your local machine using the command:\ngit clone https://github.com/yourname/cfc.git\nreplacing yourname with your GitHub username.\nThen, navigate to the cloned repository directory:\ncd cfc\nCreate a new branch for your changes:\ngit checkout -b your-branch-name\nWhere your-branch-name is just something descriptive to keep track of what this fork is for, i.e., yourname-edits",
+    "crumbs": [
+      "Contributing"
+    ]
+  },
+  {
+    "objectID": "quickstart.html#add-yourself-as-an-author",
+    "href": "quickstart.html#add-yourself-as-an-author",
+    "title": "Getting Started",
+    "section": "2.2 Add yourself as an author",
+    "text": "2.2 Add yourself as an author\nYour first edit should be to add yourself as an author of the wiki. Create a file authors/&lt;yourname&gt;.yml, containing the following\nauthor:\n- id: yourname\n  name: Your Full Name\n  email: your.name@gmail.com\n  orcid: 0000-0000-0000-0000\nThere are many more fields you can enter, but its not necessary.",
+    "crumbs": [
+      "Contributing"
+    ]
+  },
+  {
+    "objectID": "quickstart.html#make-your-edits",
+    "href": "quickstart.html#make-your-edits",
+    "title": "Getting Started",
+    "section": "2.3 Make your edits!",
+    "text": "2.3 Make your edits!\nBe sure to follow the guidelines for contribution listed above.\nYou will then want to push your edits to your forked repo. To do so, you first need to commit your changes.\ngit add .\ngit commit -m \"Brief description of the changes made\"\ngit push origin your-branch-name",
+    "crumbs": [
+      "Contributing"
+    ]
+  },
+  {
+    "objectID": "quickstart.html#submit-a-pull-request",
+    "href": "quickstart.html#submit-a-pull-request",
+    "title": "Getting Started",
+    "section": "2.4 Submit a pull request",
+    "text": "2.4 Submit a pull request\nOkay, this is where github gets more complicated. Now we need to merge your version of the cfc repo into the live version.\nNavigate to the original repository on GitHub. Click the “Compare & pull request” button that appears after pushing your changes. Fill out the pull request form with a title and description of your changes. You can be brief here. Click “Create pull request” to submit your pull request.",
+    "crumbs": [
+      "Contributing"
+    ]
+  }
+]

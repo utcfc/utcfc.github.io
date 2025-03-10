@@ -1,0 +1,11 @@
+---
+title: "Home"
+callout-icon: false
+callout-appearance: "simple"
+---
+
+This the wiki's homepage.
+
+
+
+Word of the day!

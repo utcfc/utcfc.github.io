@@ -1,0 +1,54 @@
+---
+title: "NIRSpec"
+metadata-files: 
+   - ../../authors/hollisakins.yml
+date-modified: last-modified
+---
+
+## Overview
+
+The Near Infrared Spectrograph (NIRSpec) is one of the four main scientific instruments onboard the James Webb Space Telescope (JWST). 
+It is designed to obtain high-sensitivity, low- to medium-resolution spectroscopy over a wide range of wavelengths in the near-infrared spectrum, from 0.6 to 5.3 microns. 
+NIRSpec is capable of observing over 100 objects simultaneously, making it a powerful tool for studying the formation and evolution of galaxies.
+
+![The detector layout of NIRSpec](https://jwst-docs.stsci.edu/files/97979364/197297786/1/1682459457500/msa_ds_new.png)
+
+
+
+## Observing Modes
+
+NIRSpec offers several observing modes:
+
+
+### Fixed Slit (FS) Spectroscopy
+
+This mode uses a set of fixed slits to isolate light from individual astronomical objects. It is ideal for high-resolution spectroscopy of point sources or small extended objects.
+
+### Integral Field Unit (IFU) Spectroscopy
+
+The IFU mode provides spatially resolved spectroscopy, allowing astronomers to obtain a spectrum at each point within a 3D field of view. 
+This is particularly useful for studying the detailed structure and kinematics of extended objects like galaxies and nebulae.
+
+### Micro-Shutter Array (MSA) Spectroscopy
+
+The MSA consists of an array of tiny shutters that can be individually opened or closed to select multiple targets within the field of view. This mode is highly efficient for observing large numbers of objects simultaneously, such as stars in a cluster or galaxies in a deep field survey.
+
+## Gratings/dispersers
+
+NIRSpec employs several gratings and a prism to disperse light into its component wavelengths:
+
+- **PRISM**: Provides low-resolution spectroscopy over the entire wavelength range, useful for broad spectral surveys and redshift measurements.
+- **Gratings**: Three medium-resolution gratings (G140M, G235M, G395M) and three high-resolution gratings (G140H, G235H, G395H) cover different portions of the near-infrared spectrum, allowing for detailed studies of spectral lines and chemical compositions.
+
+
+
+```python
+   import numpy as np
+   print('hello world')
+```
+
+
+```{python}
+   import numpy as np
+   print('hello world')
+```

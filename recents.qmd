@@ -1,0 +1,11 @@
+---
+title: "Recent Pages"
+listing:  
+    contents: pages
+    sort: "date"
+    type: grid
+    max-items: 25
+    date-format: medium
+---
+
+<!-- {{< term Test >}} -->

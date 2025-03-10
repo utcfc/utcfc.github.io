@@ -1,0 +1,10 @@
+---
+title: "CEERS"
+metadata-files: 
+   - ../../authors/hollisakins.yml
+date-modified: last-modified
+categories: ["JWST surveys"]
+image: https://raw.githubusercontent.com/ceers/ceers.github.io/refs/heads/master/images/CEERS_white.png
+---
+
+Test
