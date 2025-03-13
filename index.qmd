@@ -4,8 +4,9 @@ callout-icon: false
 callout-appearance: "simple"
 ---
 
+<!-- ::: {.with-background .column-screen-right} -->
+
+
 This the wiki's homepage.
-
-
 
 Word of the day!

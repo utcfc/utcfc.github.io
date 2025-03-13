@@ -7,18 +7,18 @@ execute:
 bibliography: references.bib
 
 website:
-  title: "CFC Wiki"
-  repo-url: https://github.com/hollisakins/cfc/
+  # title: "CFC Wiki"
+  repo-url: https://github.com/utcfc/utcfc.github.io
   repo-actions: [edit]
   navbar:
-    logo: images/CFC-LOGO-2color-only.png
+    logo: images/CFC-LOGO-2color.png
     background: primary
     search: true
     right:
       - text: "Contributing"
-        href: quickstart.qmd
+        href: contributing.qmd
       - icon: github
-        href: https://github.com/hollisakins/cfc/
+        href: https://github.com/utcfc/utcfc.github.io/
         target: _blank
 
   sidebar: 
@@ -29,8 +29,8 @@ website:
         - text: "Recent Pages"
           href: recents.qmd
         - text: "Contributing"
-          href: quickstart.qmd
-        - text: "---"
+          href: contributing.qmd
+        - text: " "
         - section: Pages
           contents: 
             - text: "All Pages"

@@ -2,6 +2,7 @@
 title: "NIRSpec"
 metadata-files: 
    - ../../authors/hollisakins.yml
+   - ../../authors/example.yml
 date-modified: last-modified
 ---
 

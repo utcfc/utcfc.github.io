@@ -50,13 +50,13 @@ $theme: "litera" !default;
 //   src: local('MonoLisa-RegularItalic'), url('fonts/MonoLisa-RegularItalic.woff2') format('woff2'), url('fonts/MonoLisa-RegularItalic.woff') format('woff');
 // }
 
-// @import url('https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700&display=swap');
-// @import url('https://fonts.googleapis.com/css2?family=Fira+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Mono&display=swap');
 
 // fonts
-$font-family-sans-serif: "LEMONMILKPro-Light", Figtree, Helvetica, sans-serif !default;
-$font-family-monospace: "MonoLisa-Regular", "Fira Mono", monospace;
-$headings-font-family: "LEMONMILKPro-Regular", Figtree, Helvetica, sans-serif !default;
+$font-family-sans-serif: Figtree, Helvetica, sans-serif !default;
+$font-family-monospace: "Fira Mono", monospace;
+$headings-font-family: Figtree, Helvetica, sans-serif !default;
 
 // litera bootswatch theme colors
 /*
@@ -118,7 +118,7 @@ $success:       $green !default;
 $info:          $cyan !default;
 $warning:       $orange !default;
 $danger:        $red !default;
-$light:         $gray-100 !default;
+$light:         $white !default;
 $dark:          $gray-900 !default;
 
 $second-color:  $purple;
@@ -267,17 +267,8 @@ div.tippy-content a:hover {
   font-size: $font-size-base * 1.75;
 }
 
-// the line in the navbar logo
-// animation defined in ek-styles.css
-.icon-line {
-  display: block;
-  background: $primary;
-  width: 100%;
-  height: 6px;
-  margin: auto;
-  display: table;
-  margin-top: -6px;
-  margin-bottom: -6px;
+.navbar-logo {
+  max-height: 100px;
 }
 
 /* keep text the body colour when active
@@ -289,78 +280,6 @@ the color that matches the card
     color: $body-color;
 }
 */
-
-// hover on navbar
-.navbar-expand-lg .navbar-nav .nav-link:hover {
-  color: $primary;
-}
-.navbar-expand-lg .navbar-nav .nav-link.active {
-  color: $primary;
-}
-
-// then override colors so they match cards
-#navbarCollapse > ul > li:nth-child(2) > a:hover,
-#navbarCollapse > ul > li:nth-child(4) > a:hover {
-  color: $second-color;
-}
-
-#navbarCollapse > ul > li:nth-child(2) > a.nav-link.active,
-#navbarCollapse > ul > li:nth-child(4) > a.nav-link.active {
-  color: $second-color;
-}
-
-#navbarCollapse > ul > li:nth-child(3) > a:hover,
-#navbarCollapse > ul > li:nth-child(5) > a:hover {
-  color: $third-color;
-}
-
-#navbarCollapse > ul > li:nth-child(3) > a.nav-link.active,
-#navbarCollapse > ul > li:nth-child(5) > a.nav-link.active {
-  color: $third-color;
-}
-
-// stop the name in my icon from changing colour on hover
-.navbar-title:hover {
-  color: $body-color;
-}
-
-// animated underline on hover, when navbar shows as row
-@media screen and (min-width: 992px) {
-  a.nav-link {
-    position: relative;
-  }
-  
-  .navbar .navbar-nav .nav-item {
-    position: relative;
-  }
-  
-  .navbar .navbar-nav .nav-item::after {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    background-color: $primary;
-    width: 0%;
-    content: "";
-    height: 4px;
-    transition: all 0.3s;
-  }
-  
-  .navbar .navbar-nav .nav-item:nth-child(2)::after, 
-  .navbar .navbar-nav .nav-item:nth-child(4)::after {
-    background-color: $second-color;
-  }
-  
-  .navbar .navbar-nav .nav-item:nth-child(3)::after, 
-  .navbar .navbar-nav .nav-item:nth-child(5)::after {
-    background-color: $third-color;
-  }
-  
-  .navbar .navbar-nav .nav-item:hover::after {
-    width: 90%;
-  }
-}
 
 // header styles (more in ek-styles.css)
 #quarto-header {

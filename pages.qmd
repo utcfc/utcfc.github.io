@@ -1,10 +1,8 @@
 ---
-title: "Recent Pages"
+title: "All Pages"
 listing:  
     contents: pages
     sort: "date"
     type: table
     date-format: medium
 ---
-
-<!-- {{< term Test >}} -->

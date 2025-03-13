@@ -65,11 +65,10 @@
   {
     "objectID": "pages.html",
     "href": "pages.html",
-    "title": "Recent Pages",
+    "title": "All Pages",
     "section": "",
     "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\nNIRSpec\n\n\n \n\n\n\n\nCEERS\n\n\n \n\n\n\n\n\nNo matching items\n\n Back to top",
     "crumbs": [
-      "Contributing",
       "Pages",
       "All Pages"
     ]
@@ -169,6 +168,63 @@
   {
     "objectID": "quickstart.html#submit-a-pull-request",
     "href": "quickstart.html#submit-a-pull-request",
+    "title": "Getting Started",
+    "section": "2.4 Submit a pull request",
+    "text": "2.4 Submit a pull request\nOkay, this is where github gets more complicated. Now we need to merge your version of the cfc repo into the live version.\nNavigate to the original repository on GitHub. Click the “Compare & pull request” button that appears after pushing your changes. Fill out the pull request form with a title and description of your changes. You can be brief here. Click “Create pull request” to submit your pull request.",
+    "crumbs": [
+      "Contributing"
+    ]
+  },
+  {
+    "objectID": "misc/glossary.html",
+    "href": "misc/glossary.html",
+    "title": "Glossary",
+    "section": "",
+    "text": "Glossary\n\nLRD\n\nLittle Red Dot\n\nBLR\n\nBroad Line Region\n\nUVLF\n\nUltraviolet Luminosity Function\n\n\n\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "contributing.html",
+    "href": "contributing.html",
+    "title": "Getting Started",
+    "section": "",
+    "text": "So you want to add things to the wiki?\nEverything is managed through github.\nFork the repo, clone it to your machine, make your changes, commit them, and push it back to your fork. Then make a PR. You can delete your fork after it’s merged, or you can keep it and use it for more pull requests later.",
+    "crumbs": [
+      "Contributing"
+    ]
+  },
+  {
+    "objectID": "contributing.html#fork-the-github-repo",
+    "href": "contributing.html#fork-the-github-repo",
+    "title": "Getting Started",
+    "section": "2.1 Fork the GitHub Repo",
+    "text": "2.1 Fork the GitHub Repo\nNavigate to the utcfc.github.io github repository. Click the “Fork” button at the top right to create a copy of the repository under your GitHub account. You should now have a repo yourname/utcfc.github.io.\nClone the Forked Repository:\nClone the forked repository to your local machine using the command:\ngit clone https://github.com/yourname/utcfc.github.io.git\nreplacing yourname with your GitHub username.\nThen, navigate to the cloned repository directory:\ncd utcfc.github.io\nCreate a new branch for your changes:\ngit checkout -b your-branch-name\nWhere your-branch-name is just something descriptive to keep track of what this fork is for, i.e., yourname-edits",
+    "crumbs": [
+      "Contributing"
+    ]
+  },
+  {
+    "objectID": "contributing.html#add-yourself-as-an-author",
+    "href": "contributing.html#add-yourself-as-an-author",
+    "title": "Getting Started",
+    "section": "2.2 Add yourself as an author",
+    "text": "2.2 Add yourself as an author\nYour first edit should be to add yourself as an author of the wiki. Create a file authors/&lt;yourname&gt;.yml, containing the following\nauthor:\n- id: yourname\n  name: Your Full Name\n  email: your.name@gmail.com\n  orcid: 0000-0000-0000-0000\nThere are many more fields you can enter, but its not necessary.",
+    "crumbs": [
+      "Contributing"
+    ]
+  },
+  {
+    "objectID": "contributing.html#make-your-edits",
+    "href": "contributing.html#make-your-edits",
+    "title": "Getting Started",
+    "section": "2.3 Make your edits!",
+    "text": "2.3 Make your edits!\nBe sure to follow the guidelines for contribution listed above.\nYou will then want to push your edits to your forked repo. To do so, you first need to commit your changes.\ngit add .\ngit commit -m \"Brief description of the changes made\"\ngit push origin your-branch-name",
+    "crumbs": [
+      "Contributing"
+    ]
+  },
+  {
+    "objectID": "contributing.html#submit-a-pull-request",
+    "href": "contributing.html#submit-a-pull-request",
     "title": "Getting Started",
     "section": "2.4 Submit a pull request",
     "text": "2.4 Submit a pull request\nOkay, this is where github gets more complicated. Now we need to merge your version of the cfc repo into the live version.\nNavigate to the original repository on GitHub. Click the “Compare & pull request” button that appears after pushing your changes. Fill out the pull request form with a title and description of your changes. You can be brief here. Click “Create pull request” to submit your pull request.",
