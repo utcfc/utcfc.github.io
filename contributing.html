@@ -235,7 +235,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#fork-the-github-repo" id="toc-fork-the-github-repo" class="nav-link" data-scroll-target="#fork-the-github-repo"><span class="header-section-number">2.1</span> Fork the GitHub Repo</a></li>
   <li><a href="#add-yourself-as-an-author" id="toc-add-yourself-as-an-author" class="nav-link" data-scroll-target="#add-yourself-as-an-author"><span class="header-section-number">2.2</span> Add yourself as an author</a></li>
   <li><a href="#make-your-edits" id="toc-make-your-edits" class="nav-link" data-scroll-target="#make-your-edits"><span class="header-section-number">2.3</span> Make your edits!</a></li>
-  <li><a href="#submit-a-pull-request" id="toc-submit-a-pull-request" class="nav-link" data-scroll-target="#submit-a-pull-request"><span class="header-section-number">2.4</span> Submit a pull request</a></li>
+  <li><a href="#push-your-edits" id="toc-push-your-edits" class="nav-link" data-scroll-target="#push-your-edits"><span class="header-section-number">2.4</span> Push your edits</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/utcfc/utcfc.github.io/edit/main/contributing.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
@@ -275,36 +275,30 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>So you want to add things to the wiki?</p>
-<p>Everything is managed through github.</p>
-<p>Fork the repo, clone it to your machine, make your changes, commit them, and push it back to your fork. Then make a PR. You can delete your fork after it’s merged, or you can keep it and use it for more pull requests later.</p>
+<p>So you want to add things to the wiki? Great! It’s relatively straightforward to contribute. The site is rendered using <a href="https://quarto.org/">quarto</a>, an open-source package for rendering scientific/technical writing. Everything is written in <a href="https://en.wikipedia.org/wiki/Markdown">markdown</a>, which you may be familiar with already through Jupyter notebooks. Contributions are all managed through GitHub, a platform for version control and collaboration. If you’re new to git, you might want to check out this helpful <a href="https://www.youtube.com/watch?v=mJ-qvsxPHpY">video</a> to get started. To make edits, you will need fork the <a href="https://github.com/utcfc/utcfc.github.io">utcfc.github.io</a> repository and clone it to your machine. Afterwards, you can commit and push your changes back to the main repository; more details <a href="#how-to-contribute">below</a>.</p>
 <section id="guidelines-for-contribution" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> Guidelines for Contribution</h1>
 <ol type="1">
-<li><p><strong>Be Respectful and Kind</strong>: Treat all contributors with respect. Be considerate of others’ viewpoints and contributions. Avoid using offensive or inappropriate language.</p></li>
-<li><p><strong>Preserve Existing Content</strong>: Make an effort not to remove or overwrite content that others have written. If you believe changes are necessary, discuss them with the original author or in the discussion section.</p></li>
+<li><p><strong>Be Respectful</strong>: Treat all contributors with respect.</p></li>
+<li><p><strong>Preserve Existing Content</strong>: Make an effort not to remove or overwrite content that others have written. If you believe clarification is necessary, e.g., if someone is incomplete in their description of a topic, prioritize adding information over removing what was already written. If changes are necessary, discuss them with the original author. If its not obvious, you can usually find out who contributed what by looking through the <a href="https://github.com/utcfc/utcfc.github.io/commits/main/">commit history</a>.</p></li>
 <li><p><strong>Strive for Clarity and Accuracy</strong>: Ensure that your contributions are clear, concise, and accurate. Provide references or sources for any factual information you add.</p></li>
-<li><p><strong>Collaborate and Communicate</strong>: Engage with other contributors through comments and discussions. Collaboration leads to better content and a more vibrant community.</p></li>
 <li><p><strong>Follow Formatting Guidelines</strong>: Adhere to the formatting and style guidelines of the wiki. Consistent formatting helps maintain a professional and readable appearance.</p></li>
-<li><p><strong>Cite Your Sources</strong>: When adding new information, always cite your sources. This helps maintain the credibility and reliability of the wiki.</p></li>
-<li><p><strong>Review and Revise</strong>: Regularly review and revise your contributions to ensure they remain up-to-date and accurate. Be open to feedback and willing to make improvements.</p></li>
+<li><p><strong>Cite &amp; Link Out the Wazoo</strong>: When adding new information, always cite your sources.</p></li>
 </ol>
-<p>By following these guidelines, we can create a valuable and reliable resource for astrophysics research.</p>
 </section>
 <section id="how-to-contribute" class="level1" data-number="2">
 <h1 data-number="2"><span class="header-section-number">2</span> How to Contribute</h1>
 <section id="fork-the-github-repo" class="level2" data-number="2.1">
 <h2 data-number="2.1" class="anchored" data-anchor-id="fork-the-github-repo"><span class="header-section-number">2.1</span> Fork the GitHub Repo</h2>
-<p>Navigate to the <code>utcfc.github.io</code> <a href="https://github.com/utcfc/utcfc.github.io" class="external" target="_blank">github repository</a>. Click the “Fork” button at the top right to create a copy of the repository under your GitHub account. You should now have a repo <code>yourname/utcfc.github.io</code>.</p>
-<p>Clone the Forked Repository:</p>
-<p>Clone the forked repository to your local machine using the command:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/yourname/utcfc.github.io.git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>“Forking” a repository refers to copying the repository to your personal Github account, so that you can make direct edits. You can then request that these edits be merged into the main repository. To fork the repo, bavigate to the <code>utcfc.github.io</code> <a href="https://github.com/utcfc/utcfc.github.io">Github repository</a>. Click the “Fork” button at the top right to create a copy of the repository under your GitHub account. You should now have a repo <code>yourname/utcfc.github.io</code>.</p>
+<p>You’ll then want to clone your forked repository to your local machine using the command:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/yourname/utcfc.github.io.git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>replacing <code>yourname</code> with your GitHub username.</p>
 <p>Then, navigate to the cloned repository directory:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> utcfc.github.io</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Create a new branch for your changes:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> utcfc.github.io</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>and create a new branch for your changes:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout <span class="at">-b</span> your-branch-name</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Where <code>your-branch-name</code> is just something descriptive to keep track of what this fork is for, i.e., <code>yourname-edits</code></p>
+<p>where <code>your-branch-name</code> is just something descriptive to keep track of what this fork is for, i.e., <code>yourname-edits</code>.</p>
 </section>
 <section id="add-yourself-as-an-author" class="level2" data-number="2.2">
 <h2 data-number="2.2" class="anchored" data-anchor-id="add-yourself-as-an-author"><span class="header-section-number">2.2</span> Add yourself as an author</h2>
@@ -314,20 +308,42 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">name</span><span class="kw">:</span><span class="at"> Your Full Name</span></span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">email</span><span class="kw">:</span><span class="at"> your.name@gmail.com</span></span>
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">orcid</span><span class="kw">:</span><span class="at"> 0000-0000-0000-0000</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>There are <a href="https://quarto.org/docs/journals/authors.html#author-schema" class="external" target="_blank">many</a> more fields you can enter, but its not necessary.</p>
+<p>There are <a href="https://quarto.org/docs/journals/authors.html#author-schema">many</a> more fields you can enter, but its not necessary. Having each author listed in a separate file makes it easy to keep track of all contributors to the wiki, and list multiple authors for a given page.</p>
 </section>
 <section id="make-your-edits" class="level2" data-number="2.3">
 <h2 data-number="2.3" class="anchored" data-anchor-id="make-your-edits"><span class="header-section-number">2.3</span> Make your edits!</h2>
-<p>Be sure to follow the <a href="#guidelines-for-contribution">guidelines for contribution</a> listed above.</p>
-<p>You will then want to push your edits to your forked repo. To do so, you first need to commit your changes.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Brief description of the changes made"</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push origin your-branch-name</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Now you can make edits to existing pages, or create new pages. All wiki entries are stored in the <code>pages/</code> directory, and can be organized into subdirectories as needed. Be sure to follow the <a href="#guidelines-for-contribution">guidelines for contribution</a> listed above.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Quarto provides a number of features to facilitate scientific/technical writing. Full LaTeX support. Code blocks include syntax highlighting for various languages, and can even be run inline to display the output directly in the document.</p>
+</div>
+</div>
+<p>It can be helpful to see a live preview of the page as you’re writing. We recommend installing the <a href="https://quarto.org/docs/get-started/">quarto CLI</a> (command-line interface) for this purpose. From within the <code>utcfc.github.io</code> directory, the command</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> preview</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>will render a live preview on your local machine. Note that you don’t need to run a full render locally, as this is done automatically when new updates are pushed to the remote repository.</p>
+<p>If you’re editing in VS Code, the quarto <a href="https://marketplace.visualstudio.com/items?itemName=quarto.quarto">extension</a> can do the same thing, but integrated into your editor. It also provides syntax highlighting, shortcuts for running code inline, and more.</p>
 </section>
-<section id="submit-a-pull-request" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="submit-a-pull-request"><span class="header-section-number">2.4</span> Submit a pull request</h2>
-<p>Okay, this is where github gets more complicated. Now we need to merge your version of the <code>cfc</code> repo into the live version.</p>
-<p>Navigate to the original repository on GitHub. Click the “Compare &amp; pull request” button that appears after pushing your changes. Fill out the pull request form with a title and description of your changes. You can be brief here. Click “Create pull request” to submit your pull request.</p>
+<section id="push-your-edits" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="push-your-edits"><span class="header-section-number">2.4</span> Push your edits</h2>
+<p>Once you’ve made your edits, you’ll want to push them to the remote repository. To do so, you first need to commit and push your changes to your forked version of the repository:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Brief description of the changes made"</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push origin your-branch-name</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Then, we need to merge your version of the <code>utcfc.github.io</code> repo into the main (live) version. This is done through a “pull request”.</p>
+<ol type="1">
+<li>Navigate to the main <a href="https://github.com/utcfc/utcfc.github.io/">utcfc.github.io</a> repository.</li>
+<li>Click the “Compare &amp; pull request” button that appears after pushing your changes.</li>
+<li>Fill out the pull request form with a title and brief description of your changes.</li>
+<li>Click “Create pull request” to submit your pull request.</li>
+</ol>
 
 
 </section>
