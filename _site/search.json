@@ -187,7 +187,7 @@
     "href": "contributing.html",
     "title": "Getting Started",
     "section": "",
-    "text": "So you want to add things to the wiki?\nEverything is managed through github.\nFork the repo, clone it to your machine, make your changes, commit them, and push it back to your fork. Then make a PR. You can delete your fork after it’s merged, or you can keep it and use it for more pull requests later.",
+    "text": "So you want to add things to the wiki? Great! It’s relatively straightforward to contribute. The site is rendered using quarto, an open-source package for rendering scientific/technical writing. Everything is written in markdown, which you may be familiar with already through Jupyter notebooks. Contributions are all managed through GitHub, a platform for version control and collaboration. If you’re new to git, you might want to check out this helpful video to get started. To make edits, you will need fork the utcfc.github.io repository and clone it to your machine. Afterwards, you can commit and push your changes back to the main repository; more details below.",
     "crumbs": [
       "Contributing"
     ]
@@ -197,7 +197,7 @@
     "href": "contributing.html#fork-the-github-repo",
     "title": "Getting Started",
     "section": "2.1 Fork the GitHub Repo",
-    "text": "2.1 Fork the GitHub Repo\nNavigate to the utcfc.github.io github repository. Click the “Fork” button at the top right to create a copy of the repository under your GitHub account. You should now have a repo yourname/utcfc.github.io.\nClone the Forked Repository:\nClone the forked repository to your local machine using the command:\ngit clone https://github.com/yourname/utcfc.github.io.git\nreplacing yourname with your GitHub username.\nThen, navigate to the cloned repository directory:\ncd utcfc.github.io\nCreate a new branch for your changes:\ngit checkout -b your-branch-name\nWhere your-branch-name is just something descriptive to keep track of what this fork is for, i.e., yourname-edits",
+    "text": "2.1 Fork the GitHub Repo\n“Forking” a repository refers to copying the repository to your personal Github account, so that you can make direct edits. You can then request that these edits be merged into the main repository. To fork the repo, bavigate to the utcfc.github.io Github repository. Click the “Fork” button at the top right to create a copy of the repository under your GitHub account. You should now have a repo yourname/utcfc.github.io.\nYou’ll then want to clone your forked repository to your local machine using the command:\ngit clone https://github.com/yourname/utcfc.github.io.git\nreplacing yourname with your GitHub username.\nThen, navigate to the cloned repository directory:\ncd utcfc.github.io\nand create a new branch for your changes:\ngit checkout -b your-branch-name\nwhere your-branch-name is just something descriptive to keep track of what this fork is for, i.e., yourname-edits.",
     "crumbs": [
       "Contributing"
     ]
@@ -207,7 +207,7 @@
     "href": "contributing.html#add-yourself-as-an-author",
     "title": "Getting Started",
     "section": "2.2 Add yourself as an author",
-    "text": "2.2 Add yourself as an author\nYour first edit should be to add yourself as an author of the wiki. Create a file authors/&lt;yourname&gt;.yml, containing the following\nauthor:\n- id: yourname\n  name: Your Full Name\n  email: your.name@gmail.com\n  orcid: 0000-0000-0000-0000\nThere are many more fields you can enter, but its not necessary.",
+    "text": "2.2 Add yourself as an author\nYour first edit should be to add yourself as an author of the wiki. Create a file authors/&lt;yourname&gt;.yml, containing the following\nauthor:\n- id: yourname\n  name: Your Full Name\n  email: your.name@gmail.com\n  orcid: 0000-0000-0000-0000\nThere are many more fields you can enter, but its not necessary. Having each author listed in a separate file makes it easy to keep track of all contributors to the wiki, and list multiple authors for a given page.",
     "crumbs": [
       "Contributing"
     ]
@@ -217,7 +217,7 @@
     "href": "contributing.html#make-your-edits",
     "title": "Getting Started",
     "section": "2.3 Make your edits!",
-    "text": "2.3 Make your edits!\nBe sure to follow the guidelines for contribution listed above.\nYou will then want to push your edits to your forked repo. To do so, you first need to commit your changes.\ngit add .\ngit commit -m \"Brief description of the changes made\"\ngit push origin your-branch-name",
+    "text": "2.3 Make your edits!\nNow you can make edits to existing pages, or create new pages. All wiki entries are stored in the pages/ directory, and can be organized into subdirectories as needed. Be sure to follow the guidelines for contribution listed above.\n\n\n\n\n\n\nTip\n\n\n\nQuarto provides a number of features to facilitate scientific/technical writing. Full LaTeX support. Code blocks include syntax highlighting for various languages, and can even be run inline to display the output directly in the document.\n\n\nIt can be helpful to see a live preview of the page as you’re writing. We recommend installing the quarto CLI (command-line interface) for this purpose. From within the utcfc.github.io directory, the command\nquarto preview\nwill render a live preview on your local machine. Note that you don’t need to run a full render locally, as this is done automatically when new updates are pushed to the remote repository.\nIf you’re editing in VS Code, the quarto extension can do the same thing, but integrated into your editor. It also provides syntax highlighting, shortcuts for running code inline, and more.",
     "crumbs": [
       "Contributing"
     ]
@@ -226,8 +226,18 @@
     "objectID": "contributing.html#submit-a-pull-request",
     "href": "contributing.html#submit-a-pull-request",
     "title": "Getting Started",
-    "section": "2.4 Submit a pull request",
-    "text": "2.4 Submit a pull request\nOkay, this is where github gets more complicated. Now we need to merge your version of the cfc repo into the live version.\nNavigate to the original repository on GitHub. Click the “Compare & pull request” button that appears after pushing your changes. Fill out the pull request form with a title and description of your changes. You can be brief here. Click “Create pull request” to submit your pull request.",
+    "section": "2.5 Submit a pull request",
+    "text": "2.5 Submit a pull request\nOkay, this is where github gets more complicated. Now we need to merge your version of the cfc repo into the live version.\nNavigate to the original repository on GitHub. Click the “Compare & pull request” button that appears after pushing your changes. Fill out the pull request form with a title and description of your changes. You can be brief here. Click “Create pull request” to submit your pull request.",
+    "crumbs": [
+      "Contributing"
+    ]
+  },
+  {
+    "objectID": "contributing.html#push-your-edits",
+    "href": "contributing.html#push-your-edits",
+    "title": "Getting Started",
+    "section": "2.4 Push your edits",
+    "text": "2.4 Push your edits\nYou will then want to push your edits to your forked repo. To do so, you first need to commit your changes.\ngit add .\ngit commit -m \"Brief description of the changes made\"\ngit push origin your-branch-name",
     "crumbs": [
       "Contributing"
     ]
