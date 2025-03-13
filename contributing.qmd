@@ -1,0 +1,108 @@
+---
+title: "Getting Started"
+subtitle: "Getting Started"
+metadata-files: 
+   - authors/hollisakins.yml
+date-modified: last-modified
+number-sections: true
+---
+
+So you want to add things to the wiki?
+
+Everything is managed through github. 
+
+Fork the repo, clone it to your machine, make your changes, commit them, and push it back to your fork. 
+Then make a PR. You can delete your fork after it's merged, or you can keep it and use it for more pull requests later. 
+
+# Guidelines for Contribution
+
+1. **Be Respectful and Kind**: Treat all contributors with respect. Be considerate of others' viewpoints and contributions. Avoid using offensive or inappropriate language.
+
+2. **Preserve Existing Content**: Make an effort not to remove or overwrite content that others have written. If you believe changes are necessary, discuss them with the original author or in the discussion section.
+
+3. **Strive for Clarity and Accuracy**: Ensure that your contributions are clear, concise, and accurate. Provide references or sources for any factual information you add.
+
+4. **Collaborate and Communicate**: Engage with other contributors through comments and discussions. Collaboration leads to better content and a more vibrant community.
+
+5. **Follow Formatting Guidelines**: Adhere to the formatting and style guidelines of the wiki. Consistent formatting helps maintain a professional and readable appearance.
+
+6. **Cite Your Sources**: When adding new information, always cite your sources. This helps maintain the credibility and reliability of the wiki.
+
+7. **Review and Revise**: Regularly review and revise your contributions to ensure they remain up-to-date and accurate. Be open to feedback and willing to make improvements.
+
+By following these guidelines, we can create a valuable and reliable resource for astrophysics research.
+
+# How to Contribute
+
+## Fork the GitHub Repo
+
+Navigate to the `utcfc.github.io` [github repository](https://github.com/utcfc/utcfc.github.io){.external target="_blank"}. 
+Click the "Fork" button at the top right to create a copy of the repository under your GitHub account. 
+You should now have a repo `yourname/utcfc.github.io`. 
+
+Clone the Forked Repository:
+
+Clone the forked repository to your local machine using the command:
+```bash
+git clone https://github.com/yourname/utcfc.github.io.git
+```
+
+replacing `yourname` with your GitHub username. 
+
+Then, navigate to the cloned repository directory:
+```bash
+cd utcfc.github.io
+```
+
+Create a new branch for your changes:
+```bash
+git checkout -b your-branch-name
+```
+
+Where `your-branch-name` is just something descriptive to keep track of what this fork is for, i.e., `yourname-edits`
+
+
+## Add yourself as an author
+
+Your first edit should be to add yourself as an author of the wiki. 
+Create a file `authors/<yourname>.yml`, containing the following 
+
+```yaml
+author:
+- id: yourname
+  name: Your Full Name
+  email: your.name@gmail.com
+  orcid: 0000-0000-0000-0000
+
+```
+
+There are [many](https://quarto.org/docs/journals/authors.html#author-schema){.external target="_blank"} more fields you can enter, but its not necessary. 
+
+## Make your edits! 
+
+Be sure to follow the [guidelines for contribution](#guidelines-for-contribution) listed above.
+
+You will then want to push your edits to your forked repo. 
+To do so, you first need to commit your changes. 
+```bash
+git add .
+git commit -m "Brief description of the changes made"
+git push origin your-branch-name
+```
+
+
+## Submit a pull request
+
+Okay, this is where github gets more complicated. 
+Now we need to merge your version of the `cfc` repo into the live version. 
+
+Navigate to the original repository on GitHub.
+Click the "Compare & pull request" button that appears after pushing your changes.
+Fill out the pull request form with a title and description of your changes.
+You can be brief here. 
+Click "Create pull request" to submit your pull request.
+
+
+
+
+

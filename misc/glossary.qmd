@@ -1,0 +1,13 @@
+# Glossary {.unnumbered}
+
+[LRD]{#LRD}
+
+:   Little Red Dot
+
+[BLR]{#BLR}
+
+:   Broad Line Region
+
+[UVLF]{#UVLF}
+
+:   Ultraviolet Luminosity Function
