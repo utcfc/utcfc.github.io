@@ -11,7 +11,7 @@ website:
   repo-url: https://github.com/utcfc/utcfc.github.io
   repo-actions: [edit]
   navbar:
-    logo: images/CFC-LOGO-2color.png
+    logo: images/CFC-LOGO-2color-bigtext.png
     background: primary
     search: true
     right:

@@ -116,7 +116,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./images/CFC-LOGO-2color.png" alt="" class="navbar-logo">
+    <img src="./images/CFC-LOGO-2color-bigtext.png" alt="" class="navbar-logo">
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -236,7 +236,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#add-yourself-as-an-author" id="toc-add-yourself-as-an-author" class="nav-link" data-scroll-target="#add-yourself-as-an-author"><span class="header-section-number">2.2</span> Add yourself as an author</a></li>
   <li><a href="#make-your-edits" id="toc-make-your-edits" class="nav-link" data-scroll-target="#make-your-edits"><span class="header-section-number">2.3</span> Make your edits!</a></li>
   <li><a href="#push-your-edits" id="toc-push-your-edits" class="nav-link" data-scroll-target="#push-your-edits"><span class="header-section-number">2.4</span> Push your edits</a></li>
-  <li><a href="#submit-a-pull-request" id="toc-submit-a-pull-request" class="nav-link" data-scroll-target="#submit-a-pull-request"><span class="header-section-number">2.5</span> Submit a pull request</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/utcfc/utcfc.github.io/edit/main/contributing.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
@@ -291,7 +290,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1 data-number="2"><span class="header-section-number">2</span> How to Contribute</h1>
 <section id="fork-the-github-repo" class="level2" data-number="2.1">
 <h2 data-number="2.1" class="anchored" data-anchor-id="fork-the-github-repo"><span class="header-section-number">2.1</span> Fork the GitHub Repo</h2>
-<p>“Forking” a repository refers to copying the repository to your personal Github account, so that you can make direct edits. You can then request that these edits be merged into the main repository. To fork the repo, bavigate to the <code>utcfc.github.io</code> <a href="https://github.com/utcfc/utcfc.github.io">Github repository</a>. Click the “Fork” button at the top right to create a copy of the repository under your GitHub account. You should now have a repo <code>yourname/utcfc.github.io</code>.</p>
+<p>“Forking” a repository refers to copying the repository to your personal Github account, so that you can make direct edits. You can then request that these edits be merged into the main repository. To fork the repo, navigate to the <code>utcfc.github.io</code> <a href="https://github.com/utcfc/utcfc.github.io">Github repository</a>. Click the “Fork” button at the top right to create a copy of the repository under your GitHub account. You should now have a repo <code>yourname/utcfc.github.io</code>.</p>
 <p>You’ll then want to clone your forked repository to your local machine using the command:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/yourname/utcfc.github.io.git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>replacing <code>yourname</code> with your GitHub username.</p>
@@ -334,15 +333,17 @@ Tip
 </section>
 <section id="push-your-edits" class="level2" data-number="2.4">
 <h2 data-number="2.4" class="anchored" data-anchor-id="push-your-edits"><span class="header-section-number">2.4</span> Push your edits</h2>
-<p>You will then want to push your edits to your forked repo. To do so, you first need to commit your changes.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .</span>
+<p>Once you’ve made your edits, you’ll want to push them to the remote repository. To do so, you first need to commit and push your changes to your forked version of the repository:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Brief description of the changes made"</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push origin your-branch-name</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="submit-a-pull-request" class="level2" data-number="2.5">
-<h2 data-number="2.5" class="anchored" data-anchor-id="submit-a-pull-request"><span class="header-section-number">2.5</span> Submit a pull request</h2>
-<p>Okay, this is where github gets more complicated. Now we need to merge your version of the <code>cfc</code> repo into the live version.</p>
-<p>Navigate to the original repository on GitHub. Click the “Compare &amp; pull request” button that appears after pushing your changes. Fill out the pull request form with a title and description of your changes. You can be brief here. Click “Create pull request” to submit your pull request.</p>
+<p>Then, we need to merge your version of the <code>utcfc.github.io</code> repo into the main (live) version. This is done through a “pull request”.</p>
+<ol type="1">
+<li>Navigate to the main <a href="https://github.com/utcfc/utcfc.github.io/">utcfc.github.io</a> repository.</li>
+<li>Click the “Compare &amp; pull request” button that appears after pushing your changes.</li>
+<li>Fill out the pull request form with a title and brief description of your changes.</li>
+<li>Click “Create pull request” to submit your pull request.</li>
+</ol>
 
 
 </section>
