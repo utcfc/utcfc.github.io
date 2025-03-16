@@ -22,8 +22,7 @@ website:
         target: _blank
 
   sidebar: 
-    - title: "Home"
-      collapse-level: 1
+    - collapse-level: 1
       contents:
         - index.qmd
         - text: "Recent Pages"
@@ -37,6 +36,10 @@ website:
               href: pages.qmd
             - section: Telescopes & Instruments 
               contents: pages/telescopes/*
+            - section: Surveys
+              contents: pages/surveys/*
+            - section: Data Compilations
+              contents: pages/data/*
     
   back-to-top-navigation: true
   # margin-header: |

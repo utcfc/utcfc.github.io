@@ -1,0 +1,15 @@
+---
+title: "UV slopes"
+metadata-files: 
+   - ../authors/example.yml
+date-modified: last-modified
+categories: ["Galaxy SEDs"]
+image: ../images/uvslopes.png
+---
+
+Summary of UV slopes in high-z galaxies. 
+The slope of the UV continuum is sensitive to dust attenuation and stellar population properties. 
+
+
+Recent studies using JWST have provided new insights into the rest-frame UV beta slopes of high-redshift galaxies. 
+@morales2024 report the UV slopes in [NGDEEP](surveys/ngdeep.qmd). 

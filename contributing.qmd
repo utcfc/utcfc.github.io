@@ -1,6 +1,6 @@
 ---
-title: "Getting Started"
-subtitle: "Getting Started"
+title: "Contributing"
+subtitle: "Getting started contributing to the Wiki"
 metadata-files: 
    - authors/hollisakins.yml
 date-modified: last-modified
@@ -17,22 +17,23 @@ Afterwards, you can commit and push your changes back to the main repository; mo
 
 # Guidelines for Contribution
 
-
+[draft]
 
 1. **Be Respectful**: Treat all contributors with respect. 
 
 2. **Preserve Existing Content**: Make an effort not to remove or overwrite content that others have written. If you believe clarification is necessary, e.g., if someone is incomplete in their description of a topic, prioritize adding information over removing what was already written. If changes are necessary, discuss them with the original author. If its not obvious, you can usually find out who contributed what by looking through the [commit history](https://github.com/utcfc/utcfc.github.io/commits/main/). 
 
-3. **Strive for Clarity and Accuracy**: Ensure that your contributions are clear, concise, and accurate. Provide references or sources for any factual information you add.
+3. **Strive for Clarity and Accuracy**: Ensure that your contributions are clear, concise, and accurate.
 
-5. **Follow Formatting Guidelines**: Adhere to the formatting and style guidelines of the wiki. Consistent formatting helps maintain a professional and readable appearance.
+5. **Follow Formatting Guidelines**: Adhere to the formatting and style guidelines of the wiki. 
 
-6. **Cite & Link Out the Wazoo**: When adding new information, always cite your sources. 
-
+6. **Cite & Link Out the Wazoo**: When adding new information, make sure to link other pages and cite papers. Adding hyperlinks to other wiki pages will help others navigate the site. Try to be comprehensive in citing relevant papers, even if you don't know the ins and outs of every one; the wiki can serve as a sort of "reference repository," a place to start for future literature reviews.
 
 
 
 # How to Contribute
+
+The wiki is managed through GitHub. The below sections outline the process for contributing, which is similar to the process for contributing to any open-source software package hosted on GitHub. 
 
 ## Fork the GitHub Repo
 
@@ -80,10 +81,11 @@ All wiki entries are stored in the `pages/` directory, and can be organized into
 Be sure to follow the [guidelines for contribution](#guidelines-for-contribution) listed above. 
 
 ::: {.callout-tip}
-Quarto provides a number of features to facilitate scientific/technical writing. 
-Full LaTeX support. 
-Code blocks include syntax highlighting for various languages, and can even be run inline to display the output directly in the document. 
+Quarto provides a number of features to facilitate scientific/technical writing, including
+full LaTeX support, inclusion of tables/figures, and inline code blocks. 
+Code blocks include automatic syntax highlighting for various languages, and can even be run inline to display the output directly in the document. 
 
+See Quaro's [markdown basics](https://quarto.org/docs/authoring/markdown-basics.html#videos) page for more info. 
 :::
 
 It can be helpful to see a live preview of the page as you're writing. 
@@ -95,14 +97,14 @@ quarto preview
 will render a live preview on your local machine. 
 Note that you don't need to run a full render locally, as this is done automatically when new updates are pushed to the remote repository. 
 
-If you're editing in VS Code, the quarto [extension](https://marketplace.visualstudio.com/items?itemName=quarto.quarto) can do the same thing, but integrated into your editor. It also provides syntax highlighting, shortcuts for running code inline, and more.
+If you're editing in VS Code, the quarto [extension](https://marketplace.visualstudio.com/items?itemName=quarto.quarto) can do the same thing, but integrated into your editor. It also provides markdown syntax highlighting/linting, shortcuts for running code inline, and more.
 
 
 
 ## Push your edits 
 
-Once you've made your edits, you'll want to push them to the remote repository. 
-To do so, you first need to commit and push your changes to your forked version of the repository:
+Once you've made your edits, you'll want to push them to the `utcfc.github.io` repository. 
+To do so, you first need to commit and push your changes to your *forked* version of the repository:
 ```sh
 git add .
 git commit -m "Brief description of the changes made"

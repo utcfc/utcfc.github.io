@@ -7,6 +7,4 @@ callout-appearance: "simple"
 <!-- ::: {.with-background .column-screen-right} -->
 
 
-This the wiki's homepage.
-
-Word of the day!
+This the wiki's homepage. What goes here? Not sure yet. Maybe some links.

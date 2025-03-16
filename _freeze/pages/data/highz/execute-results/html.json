@@ -1,0 +1,12 @@
+{
+  "hash": "f50987172b507b2d179ae11a998d976f",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "---\ntitle: \"High-redshift galaxy compilation\"\nmetadata-files: \n   - ../../authors/hollisakins.yml\ndate-modified: last-modified\ncategories: [\"Data\"]\n# image: https://pbs.twimg.com/media/FpCk47IWYAAhwmm.jpg\n---\n\n\n\n\nThis page maintains an up-to-date (as of {{<meta date-modified>}}) compilation of high-redshift galaxies spectroscopically-confirmed with [JWST](jwst.qmd). \nThe table below includes key properties of these galaxies, as reported in their respective discovery papers, including their redshifts, UV magnitudes, stellar masses, [UV slopes](../uvslopes.qmd), and more.\nReferences are given numerically. \nThe table is dynamically generated in the code block below, and automatically exported to various formats for further use in analysis or publications.\n\n::: {#6c70969a .cell execution_count=1}\n``` {.python .cell-code code-fold=\"true\" code-summary=\"Show the code\"}\nfrom IPython.display import Markdown\nfrom tabulate import tabulate\nfrom astropy.table import Table\ntable = Table(names=('ID',  'redshift', 'Muv',   'reference'),\n              dtype=('str', 'float',    'float', 'str'      ),\n              units=(None,  None,       'mag',   None       ))\ntable.add_row(dict(ID=\"Maise's\", redshift=11.44, Muv=-20.2, reference='1,2'))\ntable.add_row(dict(ID='GHZ2', redshift=12.34, Muv=-20.5, reference='3,4'))\n\n\nMarkdown(tabulate(table, headers='keys'))\n```\n\n::: {.cell-output .cell-output-display .cell-output-markdown execution_count=7}\nID         redshift    Muv  reference\n-------  ----------  -----  -----------\nMaise's       11.44  -20.2  1,2\nGHZ2          12.34  -20.5  3,4\n:::\n:::\n\n\nYou can copy the above python code directly into your scripts/notebooks for easy analysis.\nYou can also find table in the following formats: [TeX](../../data/highz.tex), FITS, CSV. \nTo update the compilation, please see the [instructions for contribution](/contributing.qmd).\n\n\n\n",
+    "supporting": [
+      "highz_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}

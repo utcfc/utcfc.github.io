@@ -1,0 +1,43 @@
+---
+title: "High-redshift galaxy compilation"
+metadata-files: 
+   - ../../authors/hollisakins.yml
+date-modified: last-modified
+categories: ["Data"]
+# image: https://pbs.twimg.com/media/FpCk47IWYAAhwmm.jpg
+---
+
+This page maintains an up-to-date (as of {{<meta date-modified>}}) compilation of high-redshift galaxies spectroscopically-confirmed with [JWST](jwst.qmd). 
+The table below includes key properties of these galaxies, as reported in their respective discovery papers, including their redshifts, UV magnitudes, stellar masses, [UV slopes](../uvslopes.qmd), and more.
+References are given numerically. 
+The table is dynamically generated in the code block below, and automatically exported to various formats for further use in analysis or publications.
+
+
+```{python}
+#| code-fold: true
+#| code-summary: "Show the code"
+
+from IPython.display import Markdown
+from tabulate import tabulate
+from astropy.table import Table
+table = Table(names=('ID',  'redshift', 'Muv',   'reference'),
+              dtype=('str', 'float',    'float', 'str'      ),
+              units=(None,  None,       'mag',   None       ))
+table.add_row(dict(ID="Maise's", redshift=11.44, Muv=-20.2, reference='1,2'))
+table.add_row(dict(ID='GHZ2', redshift=12.34, Muv=-20.5, reference='3,4'))
+
+
+Markdown(tabulate(table, headers='keys'))
+
+```
+
+You can copy the above python code directly into your scripts/notebooks for easy analysis.
+You can also find table in the following formats: [TeX](../../data/highz.tex), FITS, CSV. 
+To update the compilation, please see the [instructions for contribution](/contributing.qmd).
+
+```{python}
+#| echo: false
+table.write('../../data/highz.tex', format='latex', overwrite=True)
+```
+
+
