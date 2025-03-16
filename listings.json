@@ -2,15 +2,21 @@
   {
     "listing": "/pages.html",
     "items": [
+      "/pages/uvslopes.html",
+      "/pages/surveys/ngdeep.html",
+      "/pages/surveys/ceers.html",
       "/pages/telescopes/NIRSpec.html",
-      "/pages/telescopes/JWST-exgal-surveys.html"
+      "/pages/data/highz.html"
     ]
   },
   {
     "listing": "/recents.html",
     "items": [
+      "/pages/uvslopes.html",
+      "/pages/surveys/ngdeep.html",
+      "/pages/surveys/ceers.html",
       "/pages/telescopes/NIRSpec.html",
-      "/pages/telescopes/JWST-exgal-surveys.html"
+      "/pages/data/highz.html"
     ]
   }
 ]

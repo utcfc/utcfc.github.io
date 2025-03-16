@@ -2,23 +2,16 @@
   {
     "objectID": "references.html",
     "href": "references.html",
-    "title": "Bibliography",
+    "title": "References",
     "section": "",
-    "text": "To collect all the references that appear on any page in this website, this document has the following YAML options:"
-  },
-  {
-    "objectID": "references.html#references",
-    "href": "references.html#references",
-    "title": "Bibliography",
-    "section": "References",
-    "text": "References\n\n\nCommunity, The Turing Way. 2022. The Turing Way: A Handbook for Reproducible, Ethical and Collaborative Research. Zenodo. https://doi.org/10.5281/ZENODO.7625728."
+    "text": "Morales, Alexa M., Steven L. Finkelstein, Gene C. K. Leung, Micaela B. Bagley, Nikko J. Cleri, Romeel Dave, Mark Dickinson, et al. 2024. “Rest-frame UV Colors for Faint Galaxies at z \\(\\sim\\) 9–16 with the JWST NGDEEP Survey.” ApJL 964 (2): L24. https://doi.org/10.3847/2041-8213/ad2de4.\n\n\n\n\n\n Back to top"
   },
   {
     "objectID": "pages.html",
     "href": "pages.html",
     "title": "All Pages",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\nNIRSpec\n\n\n \n\n\n\n\nCEERS\n\n\n \n\n\n\n\n\nNo matching items\n\n Back to top",
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\nUV slopes\n\n\n \n\n\n\n\nNGDEEP\n\n\n \n\n\n\n\nCEERS\n\n\n \n\n\n\n\nNIRSpec\n\n\n \n\n\n\n\nHigh-redshift galaxy compilation\n\n\n \n\n\n\n\n\nNo matching items\n\n Back to top",
     "crumbs": [
       "Contributing",
       "Pages",
@@ -26,16 +19,47 @@
     ]
   },
   {
-    "objectID": "pages/telescopes/JWST-exgal-surveys.html",
-    "href": "pages/telescopes/JWST-exgal-surveys.html",
+    "objectID": "pages/data/highz.html",
+    "href": "pages/data/highz.html",
+    "title": "High-redshift galaxy compilation",
+    "section": "",
+    "text": "This page maintains an up-to-date (as of March 16, 2025) compilation of high-redshift galaxies spectroscopically-confirmed with JWST. The table below includes key properties of these galaxies, as reported in their respective discovery papers, including their redshifts, UV magnitudes, stellar masses, UV slopes, and more. References are given numerically. The table is dynamically generated in the code block below, and automatically exported to various formats for further use in analysis or publications.\n\n\nShow the code\nfrom IPython.display import Markdown\nfrom tabulate import tabulate\nfrom astropy.table import Table\ntable = Table(names=('ID',  'redshift', 'Muv',   'reference'),\n              dtype=('str', 'float',    'float', 'str'      ),\n              units=(None,  None,       'mag',   None       ))\ntable.add_row(dict(ID=\"Maise's\", redshift=11.44, Muv=-20.2, reference='1,2'))\ntable.add_row(dict(ID='GHZ2', redshift=12.34, Muv=-20.5, reference='3,4'))\n\n\nMarkdown(tabulate(table, headers='keys'))\n\n\n\n\n\nID\nredshift\nMuv\nreference\n\n\n\n\nMaise’s\n11.44\n-20.2\n1,2\n\n\nGHZ2\n12.34\n-20.5\n3,4\n\n\n\n\n\nYou can copy the above python code directly into your scripts/notebooks for easy analysis. You can also find table in the following formats: TeX, FITS, CSV. To update the compilation, please see the instructions for contribution.\n\n\n\n Back to top",
+    "crumbs": [
+      "Contributing",
+      "Pages",
+      "Data Compilations",
+      "High-redshift galaxy compilation"
+    ]
+  },
+  {
+    "objectID": "pages/surveys/ceers.html",
+    "href": "pages/surveys/ceers.html",
     "title": "CEERS",
     "section": "",
     "text": "Test\n\n\n\n Back to top",
     "crumbs": [
       "Contributing",
       "Pages",
-      "Telescopes & Instruments",
+      "Surveys",
       "CEERS"
+    ]
+  },
+  {
+    "objectID": "pages/uvslopes.html",
+    "href": "pages/uvslopes.html",
+    "title": "UV slopes",
+    "section": "",
+    "text": "Summary of UV slopes in high-z galaxies. The slope of the UV continuum is sensitive to dust attenuation and stellar population properties.\nRecent studies using JWST have provided new insights into the rest-frame UV beta slopes of high-redshift galaxies. Morales et al. (2024) report the UV slopes in NGDEEP.\n\n\n\n\n Back to topReferences\n\nMorales, Alexa M., Steven L. Finkelstein, Gene C. K. Leung, Micaela B. Bagley, Nikko J. Cleri, Romeel Dave, Mark Dickinson, et al. 2024. “Rest-frame UV Colors for Faint Galaxies at z \\(\\sim\\) 9–16 with the JWST NGDEEP Survey.” ApJL 964 (2): L24. https://doi.org/10.3847/2041-8213/ad2de4."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Home",
+    "section": "",
+    "text": "This the wiki’s homepage. What goes here? Not sure yet. Maybe some links.\n\n\n\n Back to top",
+    "crumbs": [
+      "Contributing",
+      "Home"
     ]
   },
   {
@@ -46,14 +70,16 @@
     "text": "Glossary\n\nLRD\n\nLittle Red Dot\n\nBLR\n\nBroad Line Region\n\nUVLF\n\nUltraviolet Luminosity Function\n\n\n\n\n\n\n Back to top"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Home",
+    "objectID": "pages/surveys/ngdeep.html",
+    "href": "pages/surveys/ngdeep.html",
+    "title": "NGDEEP",
     "section": "",
-    "text": "This the wiki’s homepage.\nWord of the day!\n\n\n\n Back to top",
+    "text": "Test\n\n\n\n Back to top",
     "crumbs": [
       "Contributing",
-      "Home"
+      "Pages",
+      "Surveys",
+      "NGDEEP"
     ]
   },
   {
@@ -113,7 +139,7 @@
     "href": "recents.html",
     "title": "Recent Pages",
     "section": "",
-    "text": "NIRSpec\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCEERS\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items\n\n Back to top",
+    "text": "UV slopes\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNGDEEP\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCEERS\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNIRSpec\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHigh-redshift galaxy compilation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items\n\n Back to top",
     "crumbs": [
       "Contributing",
       "Recent Pages"
@@ -122,7 +148,7 @@
   {
     "objectID": "contributing.html",
     "href": "contributing.html",
-    "title": "Getting Started",
+    "title": "Contributing",
     "section": "",
     "text": "So you want to add things to the wiki? Great! It’s relatively straightforward to contribute. The site is rendered using quarto, an open-source package for rendering scientific/technical writing. Everything is written in markdown, which you may be familiar with already through Jupyter notebooks. Contributions are all managed through GitHub, a platform for version control and collaboration. If you’re new to git, you might want to check out this helpful video to get started. To make edits, you will need fork the utcfc.github.io repository and clone it to your machine. Afterwards, you can commit and push your changes back to the main repository; more details below.",
     "crumbs": [
@@ -132,7 +158,7 @@
   {
     "objectID": "contributing.html#fork-the-github-repo",
     "href": "contributing.html#fork-the-github-repo",
-    "title": "Getting Started",
+    "title": "Contributing",
     "section": "2.1 Fork the GitHub Repo",
     "text": "2.1 Fork the GitHub Repo\n“Forking” a repository refers to copying the repository to your personal Github account, so that you can make direct edits. You can then request that these edits be merged into the main repository. To fork the repo, navigate to the utcfc.github.io Github repository. Click the “Fork” button at the top right to create a copy of the repository under your GitHub account. You should now have a repo yourname/utcfc.github.io.\nYou’ll then want to clone your forked repository to your local machine using the command:\ngit clone https://github.com/yourname/utcfc.github.io.git\nreplacing yourname with your GitHub username.\nThen, navigate to the cloned repository directory:\ncd utcfc.github.io\nand create a new branch for your changes:\ngit checkout -b your-branch-name\nwhere your-branch-name is just something descriptive to keep track of what this fork is for, i.e., yourname-edits.",
     "crumbs": [
@@ -142,7 +168,7 @@
   {
     "objectID": "contributing.html#add-yourself-as-an-author",
     "href": "contributing.html#add-yourself-as-an-author",
-    "title": "Getting Started",
+    "title": "Contributing",
     "section": "2.2 Add yourself as an author",
     "text": "2.2 Add yourself as an author\nYour first edit should be to add yourself as an author of the wiki. Create a file authors/&lt;yourname&gt;.yml, containing the following\nauthor:\n- id: yourname\n  name: Your Full Name\n  email: your.name@gmail.com\n  orcid: 0000-0000-0000-0000\nThere are many more fields you can enter, but its not necessary. Having each author listed in a separate file makes it easy to keep track of all contributors to the wiki, and list multiple authors for a given page.",
     "crumbs": [
@@ -152,9 +178,9 @@
   {
     "objectID": "contributing.html#make-your-edits",
     "href": "contributing.html#make-your-edits",
-    "title": "Getting Started",
+    "title": "Contributing",
     "section": "2.3 Make your edits!",
-    "text": "2.3 Make your edits!\nNow you can make edits to existing pages, or create new pages. All wiki entries are stored in the pages/ directory, and can be organized into subdirectories as needed. Be sure to follow the guidelines for contribution listed above.\n\n\n\n\n\n\nTip\n\n\n\nQuarto provides a number of features to facilitate scientific/technical writing. Full LaTeX support. Code blocks include syntax highlighting for various languages, and can even be run inline to display the output directly in the document.\n\n\nIt can be helpful to see a live preview of the page as you’re writing. We recommend installing the quarto CLI (command-line interface) for this purpose. From within the utcfc.github.io directory, the command\nquarto preview\nwill render a live preview on your local machine. Note that you don’t need to run a full render locally, as this is done automatically when new updates are pushed to the remote repository.\nIf you’re editing in VS Code, the quarto extension can do the same thing, but integrated into your editor. It also provides syntax highlighting, shortcuts for running code inline, and more.",
+    "text": "2.3 Make your edits!\nNow you can make edits to existing pages, or create new pages. All wiki entries are stored in the pages/ directory, and can be organized into subdirectories as needed. Be sure to follow the guidelines for contribution listed above.\n\n\n\n\n\n\nTip\n\n\n\nQuarto provides a number of features to facilitate scientific/technical writing, including full LaTeX support, inclusion of tables/figures, and inline code blocks. Code blocks include automatic syntax highlighting for various languages, and can even be run inline to display the output directly in the document.\nSee Quaro’s markdown basics page for more info.\n\n\nIt can be helpful to see a live preview of the page as you’re writing. We recommend installing the quarto CLI (command-line interface) for this purpose. From within the utcfc.github.io directory, the command\nquarto preview\nwill render a live preview on your local machine. Note that you don’t need to run a full render locally, as this is done automatically when new updates are pushed to the remote repository.\nIf you’re editing in VS Code, the quarto extension can do the same thing, but integrated into your editor. It also provides markdown syntax highlighting/linting, shortcuts for running code inline, and more.",
     "crumbs": [
       "Contributing"
     ]
@@ -162,9 +188,9 @@
   {
     "objectID": "contributing.html#push-your-edits",
     "href": "contributing.html#push-your-edits",
-    "title": "Getting Started",
+    "title": "Contributing",
     "section": "2.4 Push your edits",
-    "text": "2.4 Push your edits\nOnce you’ve made your edits, you’ll want to push them to the remote repository. To do so, you first need to commit and push your changes to your forked version of the repository:\ngit add .\ngit commit -m \"Brief description of the changes made\"\ngit push origin your-branch-name\nThen, we need to merge your version of the utcfc.github.io repo into the main (live) version. This is done through a “pull request”.\n\nNavigate to the main utcfc.github.io repository.\nClick the “Compare & pull request” button that appears after pushing your changes.\nFill out the pull request form with a title and brief description of your changes.\nClick “Create pull request” to submit your pull request.",
+    "text": "2.4 Push your edits\nOnce you’ve made your edits, you’ll want to push them to the utcfc.github.io repository. To do so, you first need to commit and push your changes to your forked version of the repository:\ngit add .\ngit commit -m \"Brief description of the changes made\"\ngit push origin your-branch-name\nThen, we need to merge your version of the utcfc.github.io repo into the main (live) version. This is done through a “pull request”.\n\nNavigate to the main utcfc.github.io repository.\nClick the “Compare & pull request” button that appears after pushing your changes.\nFill out the pull request form with a title and brief description of your changes.\nClick “Create pull request” to submit your pull request.",
     "crumbs": [
       "Contributing"
     ]
