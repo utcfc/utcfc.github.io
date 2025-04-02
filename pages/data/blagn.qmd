@@ -1,0 +1,61 @@
+---
+title: "Broad-line AGN compilation"
+metadata-files: 
+   - ../../authors/hollisakins.yml
+date: 04/02/2025
+date-modified: last-modified
+categories: ["Data"]
+image: https://astrobites.org/wp-content/uploads/2024/04/lrds.png
+csl: ../../assets/nature_no_superscript.csl
+---
+
+This page maintains an up-to-date (as of {{<meta date-modified>}}) compilation of high-redshift ($z>3$) [broad-line AGN](blagn.qmd) discovered and spectroscopically-confirmed with [JWST](jwst.qmd). 
+The table below includes key properties of these objects, as reported in their respective discovery papers, including their redshifts, UV magnitudes, black hole mass, and bolometric luminosity, if available.
+We also report whether the source would be considered a "[little red dot](lrds.qmd)," following standard color/slope criteria.
+References are provided numerically. 
+The table is dynamically generated in the code block below, and automatically exported to various formats for further use in analysis or publications.
+
+
+```{python}
+#| code-fold: true
+#| code-summary: "Show the code"
+
+from IPython.display import Markdown
+from tabulate import tabulate
+from astropy.table import Table
+
+table = Table(names=('ID', 'redshift', 'FWHM', 'logMBH', 'logLbol', 'LRD', 'reference'),
+              dtype=(str, float, int, float, float, str, str),
+              units=(None,  None, 'km/s', None, 'Msun', 'erg/s', None))
+
+table.add_row(dict(
+   ID="Test", 
+   redshift=8.502, 
+   FWHM=3440,
+   logMBH=8.17, 
+   logLbol=45.82,
+   LRD='Y',
+   reference='@kokorev2023c'
+))
+
+
+Markdown(tabulate(table, 
+   headers=('Name', 'Redshift', 'FWHM (broad)', r'$\log_{10} M_{\rm BH}$', r'$\log_{10} L_{\rm bol}$', 'LRD?', 'Reference'), 
+   colalign=("left", "decimal", "decimal", "decimal", "decimal", "center", "center"),
+   floatfmt=".2f"
+))
+
+```
+
+You can copy the above python code directly into your scripts/notebooks for easy analysis.
+You can also find table in the following formats: [TeX](../../data/blagn.tex), [FITS](../../data/blagn.fits), [ASCII](../../data/blagn.txt). 
+To update the compilation, please see the [instructions for contribution](/contributing.qmd).
+
+```{python}
+#| echo: false
+table.write('../../data/blagn.tex', format='latex', overwrite=True)
+table.write('../../data/blagn.fits', format='fits', overwrite=True)
+table.write('../../data/blagn.txt', format='ascii', overwrite=True)
+```
+
+

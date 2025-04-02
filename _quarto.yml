@@ -25,21 +25,14 @@ website:
     - collapse-level: 1
       contents:
         - index.qmd
-        - text: "Recent Pages"
-          href: recents.qmd
         - text: "Contributing"
           href: contributing.qmd
-        - text: " "
-        - section: Pages
-          contents: 
-            - text: "All Pages"
-              href: pages.qmd
-            - section: Telescopes & Instruments 
-              contents: pages/telescopes/*
-            - section: Surveys
-              contents: pages/surveys/*
-            - section: Data Compilations
-              contents: pages/data/*
+        - text: "Recent Pages"
+          href: recents.qmd
+        - text: "All Pages"
+          href: pages.qmd
+        - section: Data Compilations
+          contents: pages/data/*
     
   back-to-top-navigation: true
   # margin-header: |

@@ -7,6 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Hollis Akins">
+<meta name="dcterms.date" content="2025-03-14">
 
 <title>High-redshift galaxy compilation</title>
 <style>
@@ -55,7 +56,27 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -104,6 +125,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../assets/styles.css">
 </head>
@@ -146,7 +196,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../pages.html">Pages</a></li><li class="breadcrumb-item"><a href="../../pages/data/highz.html">Data Compilations</a></li><li class="breadcrumb-item"><a href="../../pages/data/highz.html">High-redshift galaxy compilation</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../pages/data/blagn.html">Data Compilations</a></li><li class="breadcrumb-item"><a href="../../pages/data/highz.html">High-redshift galaxy compilation</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -166,23 +216,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../../contributing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Contributing</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../../recents.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Recent Pages</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../contributing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Contributing</span></a>
+  <a href="../../pages.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">All Pages</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
- <span class="menu-text"> </span>
-  </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Pages</span></a>
+ <span class="menu-text">Data Compilations</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -190,67 +243,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../pages.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">All Pages</span></a>
+  <a href="../../pages/data/blagn.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Broad-line AGN compilation</span></a>
   </div>
 </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
- <span class="menu-text">Telescopes &amp; Instruments</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../pages/telescopes/NIRSpec.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">NIRSpec</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
- <span class="menu-text">Surveys</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../pages/surveys/ceers.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">CEERS</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../pages/surveys/ngdeep.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">NGDEEP</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
- <span class="menu-text">Data Compilations</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../pages/data/highz.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">High-redshift galaxy compilation</span></a>
   </div>
 </li>
-      </ul>
-  </li>
       </ul>
   </li>
     </ul>
@@ -264,7 +266,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../pages.html">Pages</a></li><li class="breadcrumb-item"><a href="../../pages/data/highz.html">Data Compilations</a></li><li class="breadcrumb-item"><a href="../../pages/data/highz.html">High-redshift galaxy compilation</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../pages/data/blagn.html">Data Compilations</a></li><li class="breadcrumb-item"><a href="../../pages/data/highz.html">High-redshift galaxy compilation</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">High-redshift galaxy compilation</h1>
   <div class="quarto-categories">
@@ -283,11 +285,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           </div>
   </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">March 14, 2025</p>
+    </div>
+  </div>
   
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">March 16, 2025</p>
+      <p class="date-modified">April 2, 2025</p>
     </div>
   </div>
     
@@ -298,54 +306,224 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>This page maintains an up-to-date (as of March 16, 2025) compilation of high-redshift galaxies spectroscopically-confirmed with <a href="jwst.qmd">JWST</a>. The table below includes key properties of these galaxies, as reported in their respective discovery papers, including their redshifts, UV magnitudes, stellar masses, <a href="../../pages/uvslopes.html">UV slopes</a>, and more. References are given numerically. The table is dynamically generated in the code block below, and automatically exported to various formats for further use in analysis or publications.</p>
-<div id="6c70969a" class="cell" data-execution_count="1">
+<p>This page maintains an up-to-date (as of April 2, 2025) compilation of very high-redshift (<span class="math inline">\(z&gt;10\)</span>) galaxies spectroscopically-confirmed with <a href="jwst.qmd">JWST</a>. The table below includes key properties of these galaxies, as reported in their respective discovery papers, including their redshifts, UV magnitudes, stellar masses, <a href="../../pages/uvslopes.html">UV slopes</a>, and more. References are provided numerically. The table is dynamically generated in the code block below, and automatically exported to various formats for further use in analysis or publications.</p>
+<div id="3f186432" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> IPython.display <span class="im">import</span> Markdown</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tabulate <span class="im">import</span> tabulate</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> astropy.table <span class="im">import</span> Table</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>table <span class="op">=</span> Table(names<span class="op">=</span>(<span class="st">'ID'</span>,  <span class="st">'redshift'</span>, <span class="st">'Muv'</span>,   <span class="st">'reference'</span>),</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>              dtype<span class="op">=</span>(<span class="st">'str'</span>, <span class="st">'float'</span>,    <span class="st">'float'</span>, <span class="st">'str'</span>      ),</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>              units<span class="op">=</span>(<span class="va">None</span>,  <span class="va">None</span>,       <span class="st">'mag'</span>,   <span class="va">None</span>       ))</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>table.add_row(<span class="bu">dict</span>(ID<span class="op">=</span><span class="st">"Maise's"</span>, redshift<span class="op">=</span><span class="fl">11.44</span>, Muv<span class="op">=-</span><span class="fl">20.2</span>, reference<span class="op">=</span><span class="st">'1,2'</span>))</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>table.add_row(<span class="bu">dict</span>(ID<span class="op">=</span><span class="st">'GHZ2'</span>, redshift<span class="op">=</span><span class="fl">12.34</span>, Muv<span class="op">=-</span><span class="fl">20.5</span>, reference<span class="op">=</span><span class="st">'3,4'</span>))</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>Markdown(tabulate(table, headers<span class="op">=</span><span class="st">'keys'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>table <span class="op">=</span> Table(names<span class="op">=</span>(<span class="st">'ID'</span>, <span class="st">'redshift'</span>, <span class="st">'Muv'</span>, <span class="st">'beta'</span>, <span class="st">'logMstar'</span>, <span class="st">'reference'</span>),</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>              dtype<span class="op">=</span>(<span class="bu">str</span>, <span class="bu">float</span>, <span class="bu">float</span>, <span class="bu">float</span>, <span class="bu">float</span>, <span class="bu">str</span>),</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>              units<span class="op">=</span>(<span class="va">None</span>,  <span class="va">None</span>, <span class="st">'mag'</span>, <span class="va">None</span>, <span class="st">'Msun'</span>, <span class="va">None</span>))</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>table.add_row(<span class="bu">dict</span>(</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>   ID<span class="op">=</span><span class="st">"Maise's"</span>, </span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>   redshift<span class="op">=</span><span class="fl">11.44</span>, </span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>   Muv<span class="op">=-</span><span class="fl">20.2</span>, </span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>   beta<span class="op">=-</span><span class="fl">2.47</span>,</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>   logMstar<span class="op">=</span><span class="fl">8.4</span>,</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>   reference<span class="op">=</span><span class="st">'@finkelstein2022c, @arrabalharo2023b'</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>))</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>table.add_row(<span class="bu">dict</span>(</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>   ID<span class="op">=</span><span class="st">'GHZ2'</span>, </span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>   redshift<span class="op">=</span><span class="fl">12.34</span>, </span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>   Muv<span class="op">=-</span><span class="fl">20.5</span>, </span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>   beta<span class="op">=-</span><span class="fl">2.39</span>,</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>   logMstar<span class="op">=</span><span class="fl">9.05</span>,</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>   reference<span class="op">=</span><span class="st">'@castellano2024, @zavala2025'</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>))</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>table.add_row(<span class="bu">dict</span>(</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>   ID<span class="op">=</span><span class="st">'GN-z11'</span>, </span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>   redshift<span class="op">=</span><span class="fl">10.60</span>, </span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>   Muv<span class="op">=-</span><span class="fl">12.5</span>, </span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>   beta<span class="op">=-</span><span class="fl">2.41</span>,</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>   logMstar<span class="op">=</span><span class="fl">9.1</span>,</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>   reference<span class="op">=</span><span class="st">'@oesch2016, @bunker2023, @tacchella2023b'</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>))</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>table.add_row(<span class="bu">dict</span>(</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>   ID<span class="op">=</span><span class="st">'GS-z14-0'</span>, </span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>   redshift<span class="op">=</span><span class="fl">14.32</span>, </span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>   Muv<span class="op">=-</span><span class="fl">20.8</span>, </span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>   beta<span class="op">=-</span><span class="fl">2.2</span>,</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>   logMstar<span class="op">=</span><span class="fl">8.7</span>,</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>   reference<span class="op">=</span><span class="st">'@carniani2024'</span></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>))</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>table.add_row(<span class="bu">dict</span>(</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>   ID<span class="op">=</span><span class="st">'GS-z14-1'</span>, </span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>   redshift<span class="op">=</span><span class="fl">13.90</span>, </span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>   Muv<span class="op">=-</span><span class="fl">19.0</span>, </span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>   beta<span class="op">=-</span><span class="fl">2.71</span>,</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>   logMstar<span class="op">=</span><span class="fl">8.0</span>,</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>   reference<span class="op">=</span><span class="st">'@carniani2024'</span></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>))</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>table.add_row(<span class="bu">dict</span>(</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>   ID<span class="op">=</span><span class="st">'GS-z10-0'</span>, </span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>   redshift<span class="op">=</span><span class="fl">10.37</span>, </span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>   Muv<span class="op">=-</span><span class="fl">18.6</span>, </span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>   beta<span class="op">=-</span><span class="fl">2.49</span>,</span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>   logMstar<span class="op">=</span><span class="fl">7.58</span>,</span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>   reference<span class="op">=</span><span class="st">'@curtislake2023'</span></span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>))</span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>table.add_row(<span class="bu">dict</span>(</span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>   ID<span class="op">=</span><span class="st">'GS-z11-0'</span>, </span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>   redshift<span class="op">=</span><span class="fl">11.48</span>, </span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>   Muv<span class="op">=-</span><span class="fl">19.3</span>, </span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>   beta<span class="op">=-</span><span class="fl">2.18</span>,</span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>   logMstar<span class="op">=</span><span class="fl">8.67</span>,</span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>   reference<span class="op">=</span><span class="st">'@curtislake2023'</span></span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>))</span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>table.add_row(<span class="bu">dict</span>(</span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>   ID<span class="op">=</span><span class="st">'GS-z12-0'</span>, </span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>   redshift<span class="op">=</span><span class="fl">12.48</span>, </span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>   Muv<span class="op">=-</span><span class="fl">18.2</span>, </span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>   beta<span class="op">=-</span><span class="fl">1.84</span>,</span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>   logMstar<span class="op">=</span><span class="fl">7.64</span>,</span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>   reference<span class="op">=</span><span class="st">'@curtislake2023, @deugenio2024b'</span></span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>))</span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>table.add_row(<span class="bu">dict</span>(</span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a>   ID<span class="op">=</span><span class="st">'GS-z13-0'</span>, </span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>   redshift<span class="op">=</span><span class="fl">13.17</span>, </span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>   Muv<span class="op">=-</span><span class="fl">18.7</span>, </span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a>   beta<span class="op">=-</span><span class="fl">2.37</span>,</span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a>   logMstar<span class="op">=</span><span class="fl">7.95</span>,</span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a>   reference<span class="op">=</span><span class="st">'@curtislake2023'</span></span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a>))</span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a>Markdown(tabulate(table, </span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a>   headers<span class="op">=</span>(<span class="st">'Name'</span>, <span class="st">'Redshift'</span>, <span class="vs">r'$M_{\rm UV}$'</span>, <span class="vs">r'$\beta$'</span>, <span class="vs">r'$\log_</span><span class="sc">{10}</span><span class="vs"> M_*$'</span>, <span class="st">'Reference'</span>), </span>
+<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a>   colalign<span class="op">=</span>(<span class="st">"left"</span>, <span class="st">"decimal"</span>, <span class="st">"decimal"</span>, <span class="st">"decimal"</span>, <span class="st">"decimal"</span>, <span class="st">"center"</span>),</span>
+<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a>   floatfmt<span class="op">=</span><span class="st">".2f"</span></span>
+<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="7">
+<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="1">
 <table class="caption-top table table-sm table-striped small">
 <thead>
 <tr class="header">
-<th style="text-align: left;">ID</th>
-<th style="text-align: right;">redshift</th>
-<th style="text-align: right;">Muv</th>
-<th style="text-align: left;">reference</th>
+<th style="text-align: left;">Name</th>
+<th style="text-align: right;">Redshift</th>
+<th style="text-align: right;"><span class="math inline">\(M_{\rm UV}\)</span></th>
+<th style="text-align: right;"><span class="math inline">\(\beta\)</span></th>
+<th style="text-align: right;"><span class="math inline">\(\log_{10} M_*\)</span></th>
+<th style="text-align: center;">Reference</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Maise’s</td>
 <td style="text-align: right;">11.44</td>
-<td style="text-align: right;">-20.2</td>
-<td style="text-align: left;">1,2</td>
+<td style="text-align: right;">-20.20</td>
+<td style="text-align: right;">-2.47</td>
+<td style="text-align: right;">8.40</td>
+<td style="text-align: center;"><span class="citation" data-cites="finkelstein2022c">(<a href="#ref-finkelstein2022c" role="doc-biblioref">1</a>)</span>, <span class="citation" data-cites="arrabalharo2023b">(<a href="#ref-arrabalharo2023b" role="doc-biblioref">2</a>)</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">GHZ2</td>
 <td style="text-align: right;">12.34</td>
-<td style="text-align: right;">-20.5</td>
-<td style="text-align: left;">3,4</td>
+<td style="text-align: right;">-20.50</td>
+<td style="text-align: right;">-2.39</td>
+<td style="text-align: right;">9.05</td>
+<td style="text-align: center;"><span class="citation" data-cites="castellano2024">(<a href="#ref-castellano2024" role="doc-biblioref">3</a>)</span>, <span class="citation" data-cites="zavala2025">(<a href="#ref-zavala2025" role="doc-biblioref">4</a>)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">GN-z11</td>
+<td style="text-align: right;">10.60</td>
+<td style="text-align: right;">-12.50</td>
+<td style="text-align: right;">-2.41</td>
+<td style="text-align: right;">9.10</td>
+<td style="text-align: center;"><span class="citation" data-cites="oesch2016">(<a href="#ref-oesch2016" role="doc-biblioref">5</a>)</span>, <span class="citation" data-cites="bunker2023">(<a href="#ref-bunker2023" role="doc-biblioref">6</a>)</span>, <span class="citation" data-cites="tacchella2023b">(<a href="#ref-tacchella2023b" role="doc-biblioref">7</a>)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">GS-z14-0</td>
+<td style="text-align: right;">14.32</td>
+<td style="text-align: right;">-20.80</td>
+<td style="text-align: right;">-2.20</td>
+<td style="text-align: right;">8.70</td>
+<td style="text-align: center;"><span class="citation" data-cites="carniani2024">(<a href="#ref-carniani2024" role="doc-biblioref">8</a>)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">GS-z14-1</td>
+<td style="text-align: right;">13.90</td>
+<td style="text-align: right;">-19.00</td>
+<td style="text-align: right;">-2.71</td>
+<td style="text-align: right;">8.00</td>
+<td style="text-align: center;"><span class="citation" data-cites="carniani2024">(<a href="#ref-carniani2024" role="doc-biblioref">8</a>)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">GS-z10-0</td>
+<td style="text-align: right;">10.37</td>
+<td style="text-align: right;">-18.60</td>
+<td style="text-align: right;">-2.49</td>
+<td style="text-align: right;">7.58</td>
+<td style="text-align: center;"><span class="citation" data-cites="curtislake2023">(<a href="#ref-curtislake2023" role="doc-biblioref">9</a>)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">GS-z11-0</td>
+<td style="text-align: right;">11.48</td>
+<td style="text-align: right;">-19.30</td>
+<td style="text-align: right;">-2.18</td>
+<td style="text-align: right;">8.67</td>
+<td style="text-align: center;"><span class="citation" data-cites="curtislake2023">(<a href="#ref-curtislake2023" role="doc-biblioref">9</a>)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">GS-z12-0</td>
+<td style="text-align: right;">12.48</td>
+<td style="text-align: right;">-18.20</td>
+<td style="text-align: right;">-1.84</td>
+<td style="text-align: right;">7.64</td>
+<td style="text-align: center;"><span class="citation" data-cites="curtislake2023">(<a href="#ref-curtislake2023" role="doc-biblioref">9</a>)</span>, <span class="citation" data-cites="deugenio2024b">(<a href="#ref-deugenio2024b" role="doc-biblioref">10</a>)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">GS-z13-0</td>
+<td style="text-align: right;">13.17</td>
+<td style="text-align: right;">-18.70</td>
+<td style="text-align: right;">-2.37</td>
+<td style="text-align: right;">7.95</td>
+<td style="text-align: center;"><span class="citation" data-cites="curtislake2023">(<a href="#ref-curtislake2023" role="doc-biblioref">9</a>)</span></td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
-<p>You can copy the above python code directly into your scripts/notebooks for easy analysis. You can also find table in the following formats: <a href="../../data/highz.tex">TeX</a>, FITS, CSV. To update the compilation, please see the <a href="../../contributing.html">instructions for contribution</a>.</p>
+<p>You can copy the above python code directly into your scripts/notebooks for easy analysis. You can also find table in the following formats: <a href="../../data/highz.tex">TeX</a>, <a href="../../data/highz.fits">FITS</a>, <a href="../../data/highz.txt">ASCII</a>. To update the compilation, please see the <a href="../../contributing.html">instructions for contribution</a>.</p>
 
 
 
-<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-finkelstein2022c" class="csl-entry" role="listitem">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">Finkelstein, S. L. <em>et al.</em> <a href="https://doi.org/10.3847/2041-8213/ac966e"><span class="nocase">A Long Time Ago in a Galaxy Far, Far Away: A Candidate z <span><span class="math inline">\(\sim\)</span></span> 12 Galaxy in Early JWST CEERS Imaging</span></a>. <strong>940,</strong> L55 (2022).</div>
+</div>
+<div id="ref-arrabalharo2023b" class="csl-entry" role="listitem">
+<div class="csl-left-margin">2. </div><div class="csl-right-inline">Arrabal Haro, P. <em>et al.</em> <a href="https://doi.org/10.1038/s41586-023-06521-7"><span class="nocase">Confirmation and refutation of very luminous galaxies in the early Universe</span></a>. <strong>622,</strong> 707–711 (2023).</div>
+</div>
+<div id="ref-castellano2024" class="csl-entry" role="listitem">
+<div class="csl-left-margin">3. </div><div class="csl-right-inline">Castellano, M. <em>et al.</em> <a href="https://doi.org/10.3847/1538-4357/ad5f88"><span class="nocase">JWST NIRSpec Spectroscopy of the Remarkable Bright Galaxy GHZ2/GLASS-z12 at Redshift 12.34</span></a>. <strong>972,</strong> 143 (2024).</div>
+</div>
+<div id="ref-zavala2025" class="csl-entry" role="listitem">
+<div class="csl-left-margin">4. </div><div class="csl-right-inline">Zavala, J. A. <em>et al.</em> <a href="https://doi.org/10.1038/s41550-024-02397-3"><span class="nocase">A luminous and young galaxy at z = 12.33 revealed by a JWST/MIRI detection of H<span><span class="math inline">\(\alpha\)</span></span> and [O III]</span></a>. <em>Nature Astronomy</em> <strong>9,</strong> 155–164 (2025).</div>
+</div>
+<div id="ref-oesch2016" class="csl-entry" role="listitem">
+<div class="csl-left-margin">5. </div><div class="csl-right-inline">Oesch, P. A. <em>et al.</em> <a href="https://doi.org/10.3847/0004-637X/819/2/129"><span class="nocase">A Remarkably Luminous Galaxy at z=11.1 Measured with Hubble Space Telescope Grism Spectroscopy</span></a>. <strong>819,</strong> 129 (2016).</div>
+</div>
+<div id="ref-bunker2023" class="csl-entry" role="listitem">
+<div class="csl-left-margin">6. </div><div class="csl-right-inline">Bunker, A. J. <em>et al.</em> <a href="https://doi.org/10.1051/0004-6361/202346159"><span class="nocase">JADES NIRSpec Spectroscopy of GN-z11: Lyman-<span><span class="math inline">\(\alpha\)</span></span> emission and possible enhanced nitrogen abundance in a z = 10.60 luminous galaxy</span></a>. <strong>677,</strong> A88 (2023).</div>
+</div>
+<div id="ref-tacchella2023b" class="csl-entry" role="listitem">
+<div class="csl-left-margin">7. </div><div class="csl-right-inline">Tacchella, S. <em>et al.</em> <a href="https://doi.org/10.3847/1538-4357/acdbc6"><span class="nocase">JADES Imaging of GN-z11: Revealing the Morphology and Environment of a Luminous Galaxy 430 Myr after the Big Bang</span></a>. <strong>952,</strong> 74 (2023).</div>
+</div>
+<div id="ref-carniani2024" class="csl-entry" role="listitem">
+<div class="csl-left-margin">8. </div><div class="csl-right-inline">Carniani, S. <em>et al.</em> <a href="https://doi.org/10.1038/s41586-024-07860-9"><span class="nocase">Spectroscopic confirmation of two luminous galaxies at a redshift of 14</span></a>. <strong>633,</strong> 318–322 (2024).</div>
+</div>
+<div id="ref-curtislake2023" class="csl-entry" role="listitem">
+<div class="csl-left-margin">9. </div><div class="csl-right-inline">Curtis-Lake, E. <em>et al.</em> <a href="https://doi.org/10.1038/s41550-023-01918-w"><span class="nocase">Spectroscopic confirmation of four metal-poor galaxies at z = 10.3-13.2</span></a>. <em>Nature Astronomy</em> <strong>7,</strong> 622–632 (2023).</div>
+</div>
+<div id="ref-deugenio2024b" class="csl-entry" role="listitem">
+<div class="csl-left-margin">10. </div><div class="csl-right-inline">D’Eugenio, F. <em>et al.</em> <a href="https://doi.org/10.1051/0004-6361/202348636"><span class="nocase">JADES: Carbon enrichment 350 Myr after the Big Bang</span></a>. <strong>689,</strong> A152 (2024).</div>
+</div>
+</div></section></div></main> <!-- /main -->
 
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {

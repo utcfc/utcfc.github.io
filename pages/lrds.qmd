@@ -1,0 +1,83 @@
+---
+title: "Little red dots"
+metadata-files: 
+   - ../authors/hollisakins.yml
+date: 04/02/2025
+date-modified: last-modified
+categories: ["Galaxies","AGN"]
+# image: ../images/uvslopes.png
+---
+
+"Little Red Dots" (LRDs) are a recently discovered population of faint, red, compact sources with broad emission lines identified in deep JWST imaging and spectroscopy. 
+First identified in NIRCam grism data, these objects appear to be low-mass active galactic nuclei ([AGN](agn.qmd)) at high redshifts ($z \sim 4$-$9$), providing new insights into black hole growth and evolution in the early universe. Their abundance may challenge previous models of [black hole seeding](bhseeding.qmd) and growth, suggesting more efficient accretion mechanisms in the early universe.
+
+
+## History
+
+The term "Little red dot" was coined by @matthee2024 alongside their identification of numerous [broad-line AGN](blagn.qmd) in NIRCam grism data from the [FRESCO](surveys/fresco.qmd) and [EIGER](surveys/eiger.qmd) surveys. 
+Arguably, however, the LRDs were known previously, reported by @labbe2023 as "double break" galaxies from early imaging from the [CEERS](surveys/ceers.qmd) survey. 
+Similar to [Lyman break galaxies](lbgs.qmd), these were identified with a color-color selection to capture objects with strong Lyman breaks and [Balmer breaks](balmerbreaks.qmd). 
+
+Key observational characteristics include:
+- Extremely compact morphology, often indistinguishable from a point source
+- Red colors in the rest-frame optical (typically $F277W - F444W > 1$)
+- Broad H$\alpha$ and/or H$\beta$ emission lines with typical FWHM of 1000-2500 km/s
+- Evidence for significant dust obscuration
+
+
+## Examples
+
+@kokorev2023c report the spectroscopic identification of an LRD at $z=8.50$ from the [UNCOVER](surveys/uncover.qmd) survey. 
+
+
+## Selection
+
+Selection of LRDs is. 
+
+Not all BLAGN are LRDs, and not all LRDs are BLAGN, but it is not yet established how well the two populations overlap. 
+
+
+## Spectral energy distribution
+
+The LRD SED has been the subject of a lot of work. 
+It is characterized by a composite SED shape that is blue in the rest-frame UV (e.g., with [UV slope](uvslopes.qmd) $\beta \lesssim -1$) but red in the rest-frame optical ($\beta_{\rm opt} \gtrsim 0$). @setton2024b stacked [RUBIES](surveys/rubies.qmd) spectra and found that this turnover typically occurs at the Balmer limit.
+
+![Example SED fits to LRDs, from @kocevski2024. These objects were selected based on their blue UV+red optical SEDs as indicated by the blue/red lines.](../images/lrd_sed.png)
+
+
+## Demographics
+
+Recent studies have measured the number density of LRDs to be approximately:
+$n \sim 10^{-5}$ Mpc$^{-3}$ at $z \sim 4$-$6$ 
+Higher than expected based on extrapolations from luminous quasar populations
+Significant field-to-field variations suggesting possible environmental dependencies
+
+Possible increase in number density from $z \sim 8$ to $z \sim 5$, followed by a decline
+
+
+## Theoretical Implications
+
+### Black Hole Seeding and Growth
+
+The discovery of numerous low-mass AGN at high redshifts has significant implications for black hole formation theories:
+- Challenges models requiring long growth timescales for seed black holes
+- Supports scenarios involving more efficient accretion mechanisms in the early universe
+- May favor heavy seed formation channels (direct collapse black holes) in some cases
+
+### Connection to Reionization
+The role of LRDs in reionization remains an active area of investigation:
+- Potential contribution to the ionizing photon budget, though likely subdominant to star-forming galaxies
+- Possible feedback effects on surrounding intergalactic medium
+- Questions about escape fraction of ionizing radiation from these dusty systems
+
+@labbe2023
+
+@kocevski2023b
+
+@labbe2025a
+
+@kokorev2023c
+
+@kokorev2024a
+
+@akins2024

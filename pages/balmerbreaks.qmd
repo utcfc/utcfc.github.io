@@ -1,0 +1,9 @@
+---
+title: "Balmer break"
+metadata-files: 
+   - ../authors/example.yml
+date: 04/02/2025
+date-modified: last-modified
+categories: ["Galaxy SEDs"]
+# image: 
+---

@@ -3,6 +3,7 @@ title: "NIRSpec"
 metadata-files: 
    - ../../authors/hollisakins.yml
    - ../../authors/example.yml
+date: 03/14/2025
 date-modified: last-modified
 ---
 
@@ -12,7 +13,7 @@ The Near Infrared Spectrograph (NIRSpec) is one of the four main scientific inst
 It is designed to obtain high-sensitivity, low- to medium-resolution spectroscopy over a wide range of wavelengths in the near-infrared spectrum, from 0.6 to 5.3 microns. 
 NIRSpec is capable of observing over 100 objects simultaneously, making it a powerful tool for studying the formation and evolution of galaxies.
 
-![The detector layout of NIRSpec](https://jwst-docs.stsci.edu/files/97979364/197297786/1/1682459457500/msa_ds_new.png)
+![The detector layout of NIRSpec](https://www.cosmos.esa.int/documents/10643/10701/MSA_Layout_CL_trans.png/bd32dae5-0024-4153-a73e-6ea2bf5d92bd?t=1370251369433)
 
 
 
@@ -41,15 +42,3 @@ NIRSpec employs several gratings and a prism to disperse light into its componen
 - **PRISM**: Provides low-resolution spectroscopy over the entire wavelength range, useful for broad spectral surveys and redshift measurements.
 - **Gratings**: Three medium-resolution gratings (G140M, G235M, G395M) and three high-resolution gratings (G140H, G235H, G395H) cover different portions of the near-infrared spectrum, allowing for detailed studies of spectral lines and chemical compositions.
 
-
-
-```python
-   import numpy as np
-   print('hello world')
-```
-
-
-```{python}
-   import numpy as np
-   print('hello world')
-```

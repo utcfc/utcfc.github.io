@@ -2,14 +2,16 @@
 title: "High-redshift galaxy compilation"
 metadata-files: 
    - ../../authors/hollisakins.yml
+date: 03/14/2025
 date-modified: last-modified
 categories: ["Data"]
-# image: https://pbs.twimg.com/media/FpCk47IWYAAhwmm.jpg
+image: https://news.utexas.edu/wp-content/uploads/2023/08/flight-to-maisies-2400x1600-1-1200x800-c-default.png
+csl: ../../assets/nature_no_superscript.csl
 ---
 
-This page maintains an up-to-date (as of {{<meta date-modified>}}) compilation of high-redshift galaxies spectroscopically-confirmed with [JWST](jwst.qmd). 
+This page maintains an up-to-date (as of {{<meta date-modified>}}) compilation of very high-redshift ($z>10$) galaxies spectroscopically-confirmed with [JWST](jwst.qmd). 
 The table below includes key properties of these galaxies, as reported in their respective discovery papers, including their redshifts, UV magnitudes, stellar masses, [UV slopes](../uvslopes.qmd), and more.
-References are given numerically. 
+References are provided numerically. 
 The table is dynamically generated in the code block below, and automatically exported to various formats for further use in analysis or publications.
 
 
@@ -20,24 +22,102 @@ The table is dynamically generated in the code block below, and automatically ex
 from IPython.display import Markdown
 from tabulate import tabulate
 from astropy.table import Table
-table = Table(names=('ID',  'redshift', 'Muv',   'reference'),
-              dtype=('str', 'float',    'float', 'str'      ),
-              units=(None,  None,       'mag',   None       ))
-table.add_row(dict(ID="Maise's", redshift=11.44, Muv=-20.2, reference='1,2'))
-table.add_row(dict(ID='GHZ2', redshift=12.34, Muv=-20.5, reference='3,4'))
+
+table = Table(names=('ID', 'redshift', 'Muv', 'beta', 'logMstar', 'reference'),
+              dtype=(str, float, float, float, float, str),
+              units=(None,  None, 'mag', None, 'Msun', None))
+
+table.add_row(dict(
+   ID="Maise's", 
+   redshift=11.44, 
+   Muv=-20.2, 
+   beta=-2.47,
+   logMstar=8.4,
+   reference='@finkelstein2022c, @arrabalharo2023b'
+))
+table.add_row(dict(
+   ID='GHZ2', 
+   redshift=12.34, 
+   Muv=-20.5, 
+   beta=-2.39,
+   logMstar=9.05,
+   reference='@castellano2024, @zavala2025'
+))
+table.add_row(dict(
+   ID='GN-z11', 
+   redshift=10.60, 
+   Muv=-12.5, 
+   beta=-2.41,
+   logMstar=9.1,
+   reference='@oesch2016, @bunker2023, @tacchella2023b'
+))
+table.add_row(dict(
+   ID='GS-z14-0', 
+   redshift=14.32, 
+   Muv=-20.8, 
+   beta=-2.2,
+   logMstar=8.7,
+   reference='@carniani2024'
+))
+table.add_row(dict(
+   ID='GS-z14-1', 
+   redshift=13.90, 
+   Muv=-19.0, 
+   beta=-2.71,
+   logMstar=8.0,
+   reference='@carniani2024'
+))
+table.add_row(dict(
+   ID='GS-z10-0', 
+   redshift=10.37, 
+   Muv=-18.6, 
+   beta=-2.49,
+   logMstar=7.58,
+   reference='@curtislake2023'
+))
+table.add_row(dict(
+   ID='GS-z11-0', 
+   redshift=11.48, 
+   Muv=-19.3, 
+   beta=-2.18,
+   logMstar=8.67,
+   reference='@curtislake2023'
+))
+table.add_row(dict(
+   ID='GS-z12-0', 
+   redshift=12.48, 
+   Muv=-18.2, 
+   beta=-1.84,
+   logMstar=7.64,
+   reference='@curtislake2023, @deugenio2024b'
+))
+table.add_row(dict(
+   ID='GS-z13-0', 
+   redshift=13.17, 
+   Muv=-18.7, 
+   beta=-2.37,
+   logMstar=7.95,
+   reference='@curtislake2023'
+))
 
 
-Markdown(tabulate(table, headers='keys'))
+Markdown(tabulate(table, 
+   headers=('Name', 'Redshift', r'$M_{\rm UV}$', r'$\beta$', r'$\log_{10} M_*$', 'Reference'), 
+   colalign=("left", "decimal", "decimal", "decimal", "decimal", "center"),
+   floatfmt=".2f"
+))
 
 ```
 
 You can copy the above python code directly into your scripts/notebooks for easy analysis.
-You can also find table in the following formats: [TeX](../../data/highz.tex), FITS, CSV. 
+You can also find table in the following formats: [TeX](../../data/highz.tex), [FITS](../../data/highz.fits), [ASCII](../../data/highz.txt). 
 To update the compilation, please see the [instructions for contribution](/contributing.qmd).
 
 ```{python}
 #| echo: false
 table.write('../../data/highz.tex', format='latex', overwrite=True)
+table.write('../../data/highz.fits', format='fits', overwrite=True)
+table.write('../../data/highz.txt', format='ascii', overwrite=True)
 ```
 
 

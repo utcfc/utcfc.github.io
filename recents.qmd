@@ -2,10 +2,23 @@
 title: "Recent Pages"
 listing:  
     contents: pages
-    sort: "date"
+    sort: "date-modified desc"
+    # sort-ui: ["date-modified", "title"]
+    sort-ui: 
+    - date
+    - date-modified
+    - title
+    fields: [date-modified, title, image]
+    field-types:
+        date: date
+        date-modified: date
+    field-display-names:
+        title: "Title"
+        date: "Created"
+        date-modified: "Modified"
     type: grid
     max-items: 25
-    date-format: medium
+    # date-format: medium
 ---
 
 <!-- {{< term Test >}} -->

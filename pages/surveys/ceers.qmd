@@ -2,6 +2,7 @@
 title: "CEERS"
 metadata-files: 
    - ../../authors/hollisakins.yml
+date: 03/14/2025
 date-modified: last-modified
 categories: ["JWST surveys"]
 image: https://raw.githubusercontent.com/ceers/ceers.github.io/refs/heads/master/images/CEERS_white.png

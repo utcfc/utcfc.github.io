@@ -2,7 +2,23 @@
 title: "All Pages"
 listing:  
     contents: pages
-    sort: "date"
+    sort: "date-modified desc"
+    # sort-ui: ["date-modified", "title"]
+    sort-ui: 
+    - date
+    - date-modified
+    - title
+    categories: true
+    fields: [title, date, date-modified]
+    field-types:
+        date: date
+        date-modified: date
+    field-display-names:
+        title: "Title"
+        date: "Created"
+        date-modified: "Modified"
     type: table
+    max-items: 500
     date-format: medium
+    table-hover: true
 ---

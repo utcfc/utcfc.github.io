@@ -90,14 +90,14 @@ See Quaro's [markdown basics](https://quarto.org/docs/authoring/markdown-basics.
 
 It can be helpful to see a live preview of the page as you're writing. 
 We recommend installing the [quarto CLI](https://quarto.org/docs/get-started/) (command-line interface) for this purpose. 
-From within the `utcfc.github.io` directory, the command 
+Once installed, from within the `utcfc.github.io` directory, the command 
 ```sh
 quarto preview
 ```
 will render a live preview on your local machine. 
 Note that you don't need to run a full render locally, as this is done automatically when new updates are pushed to the remote repository. 
 
-If you're editing in VS Code, the quarto [extension](https://marketplace.visualstudio.com/items?itemName=quarto.quarto) can do the same thing, but integrated into your editor. It also provides markdown syntax highlighting/linting, shortcuts for running code inline, and more.
+If you're editing in VS Code, the quarto [extension](https://marketplace.visualstudio.com/items?itemName=quarto.quarto) can do the same thing, but integrated into your editor. It also provides markdown syntax highlighting/linting, shortcuts for running code inline, autocomplete of citation keys, and more.
 
 
 
