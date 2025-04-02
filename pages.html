@@ -80,9 +80,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-title','listing-author',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
+      valueNames: ['listing-title','listing-date','listing-date-modified',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-date-modified-sort'] },{ data: ['listing-title-sort'] }],
       
-      searchColumns: ["listing-title","listing-author"],
+      searchColumns: ["listing-date","listing-title","listing-author"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -171,7 +171,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./pages.html">Pages</a></li><li class="breadcrumb-item"><a href="./pages.html">All Pages</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./pages.html">All Pages</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -191,83 +191,37 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./contributing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Contributing</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./recents.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Recent Pages</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./contributing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Contributing</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
- <span class="menu-text"> </span>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Pages</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./pages.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">All Pages</span></a>
   </div>
 </li>
-          <li class="sidebar-item sidebar-item-section">
+        <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
- <span class="menu-text">Telescopes &amp; Instruments</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./pages/telescopes/NIRSpec.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">NIRSpec</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
- <span class="menu-text">Surveys</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./pages/surveys/ceers.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">CEERS</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./pages/surveys/ngdeep.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">NGDEEP</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
  <span class="menu-text">Data Compilations</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./pages/data/blagn.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Broad-line AGN compilation</span></a>
+  </div>
+</li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./pages/data/highz.html" class="sidebar-item-text sidebar-link">
@@ -276,20 +230,18 @@ window.Quarto = {
 </li>
       </ul>
   </li>
-      </ul>
-  </li>
     </ul>
     </div>
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    </div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(8)</span></div><div class="category" data-category="QUdO">AGN <span class="quarto-category-count">(1)</span></div><div class="category" data-category="RGF0YQ==">Data <span class="quarto-category-count">(2)</span></div><div class="category" data-category="R2FsYXhpZXM=">Galaxies <span class="quarto-category-count">(1)</span></div><div class="category" data-category="R2FsYXh5JTIwU0VEcw==">Galaxy SEDs <span class="quarto-category-count">(2)</span></div><div class="category" data-category="SldTVCUyMHN1cnZleXM=">JWST surveys <span class="quarto-category-count">(2)</span></div></div></div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./pages.html">Pages</a></li><li class="breadcrumb-item"><a href="./pages.html">All Pages</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">All Pages</h1>
 </div>
@@ -319,11 +271,20 @@ window.Quarto = {
      <select id="listing-listing-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-listing'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
        <option value="" disabled="" selected="" hidden="">Order By</option>
        <option value="index" data-direction="asc">Default</option>
+         <option value="listing-date-sort" data-direction="asc">
+          Created - Oldest
+        </option>
+         <option value="listing-date-sort" data-direction="desc">
+          Created - Newest
+        </option>
+         <option value="listing-date-modified-sort" data-direction="asc">
+          Modified - Oldest
+        </option>
+         <option value="listing-date-modified-sort" data-direction="desc">
+          Modified - Newest
+        </option>
          <option value="listing-title-sort" data-direction="asc">
           Title
-        </option>
-         <option value="listing-author" data-direction="asc">
-          Author
         </option>
      </select>
   </div>
@@ -332,56 +293,115 @@ window.Quarto = {
       <input type="text" class="search form-control" placeholder="Filter">
     </div>
 </div>
-<table class="quarto-listing-table table">
+<table class="quarto-listing-table table table-hover">
 <thead>
 <tr>
 <th>
 <a class="sort" data-sort="listing-title-sort" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Title</a>
 </th>
 <th>
-<a class="sort" data-sort="listing-author" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Author</a>
+<a class="sort" data-sort="listing-date-sort" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Created</a>
+</th>
+<th>
+<a class="sort" data-sort="listing-date-modified-sort" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Modified</a>
 </th>
 </tr>
 </thead>
 <tbody class="list">
-<tr data-index="0" data-categories="R2FsYXh5JTIwU0VEcw==" data-listing-file-modified-sort="1742136467663" data-listing-reading-time-sort="1" data-listing-word-count-sort="47" data-listing-title-sort="UV slopes" data-listing-filename-sort="uvslopes.qmd">
+<tr data-index="0" data-categories="R2FsYXh5JTIwU0VEcw==" data-listing-date-sort="1741910400000" data-listing-file-modified-sort="1743630305971" data-listing-date-modified-sort="1743630305000" data-listing-reading-time-sort="4" data-listing-word-count-sort="760" data-listing-title-sort="UV slope" data-listing-filename-sort="uvslopes.qmd" onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
 <td>
-<a href="./pages/uvslopes.html" class="title listing-title">UV slopes</a>
+<a href="./pages/uvslopes.html" class="title listing-title">UV slope</a>
 </td>
 <td>
-<span class="listing-author">&nbsp;</span>
+<span class="listing-date">Mar 14, 2025</span>
+</td>
+<td>
+<span class="listing-date-modified">Apr 2, 2025</span>
 </td>
 </tr>
-<tr data-index="1" data-categories="SldTVCUyMHN1cnZleXM=" data-listing-file-modified-sort="1742136467662" data-listing-reading-time-sort="1" data-listing-word-count-sort="1" data-listing-title-sort="NGDEEP" data-listing-filename-sort="ngdeep.qmd">
+<tr data-index="1" data-categories="SldTVCUyMHN1cnZleXM=" data-listing-date-sort="1741910400000" data-listing-file-modified-sort="1743630305971" data-listing-date-modified-sort="1743630305000" data-listing-reading-time-sort="1" data-listing-word-count-sort="1" data-listing-title-sort="NGDEEP" data-listing-filename-sort="ngdeep.qmd" onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
 <td>
 <a href="./pages/surveys/ngdeep.html" class="title listing-title">NGDEEP</a>
 </td>
 <td>
-<span class="listing-author">&nbsp;</span>
+<span class="listing-date">Mar 14, 2025</span>
+</td>
+<td>
+<span class="listing-date-modified">Apr 2, 2025</span>
 </td>
 </tr>
-<tr data-index="2" data-categories="SldTVCUyMHN1cnZleXM=" data-listing-file-modified-sort="1742136467662" data-listing-reading-time-sort="1" data-listing-word-count-sort="1" data-listing-title-sort="CEERS" data-listing-filename-sort="ceers.qmd">
+<tr data-index="2" data-categories="SldTVCUyMHN1cnZleXM=" data-listing-date-sort="1741910400000" data-listing-file-modified-sort="1743630305971" data-listing-date-modified-sort="1743630305000" data-listing-reading-time-sort="1" data-listing-word-count-sort="1" data-listing-title-sort="CEERS" data-listing-filename-sort="ceers.qmd" onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
 <td>
 <a href="./pages/surveys/ceers.html" class="title listing-title">CEERS</a>
 </td>
 <td>
-<span class="listing-author">&nbsp;</span>
+<span class="listing-date">Mar 14, 2025</span>
+</td>
+<td>
+<span class="listing-date-modified">Apr 2, 2025</span>
 </td>
 </tr>
-<tr data-index="3" data-listing-file-modified-sort="1742136467663" data-listing-reading-time-sort="2" data-listing-word-count-sort="287" data-listing-title-sort="NIRSpec" data-listing-filename-sort="NIRSpec.qmd">
+<tr data-index="3" data-categories="R2FsYXh5JTIwU0VEcw==" data-listing-date-sort="1743552000000" data-listing-file-modified-sort="1743630305971" data-listing-date-modified-sort="1743630305000" data-listing-reading-time-sort="1" data-listing-word-count-sort="1" data-listing-title-sort="Balmer break" data-listing-filename-sort="balmerbreaks.qmd" onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
+<td>
+<a href="./pages/balmerbreaks.html" class="title listing-title">Balmer break</a>
+</td>
+<td>
+<span class="listing-date">Apr 2, 2025</span>
+</td>
+<td>
+<span class="listing-date-modified">Apr 2, 2025</span>
+</td>
+</tr>
+<tr data-index="4" data-categories="R2FsYXhpZXMlMkNBR04=" data-listing-date-sort="1743552000000" data-listing-file-modified-sort="1743630305971" data-listing-date-modified-sort="1743630305000" data-listing-reading-time-sort="3" data-listing-word-count-sort="471" data-listing-title-sort="Little red dots" data-listing-filename-sort="lrds.qmd" onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
+<td>
+<a href="./pages/lrds.html" class="title listing-title">Little red dots</a>
+</td>
+<td>
+<span class="listing-date">Apr 2, 2025</span>
+</td>
+<td>
+<span class="listing-date-modified">Apr 2, 2025</span>
+</td>
+</tr>
+<tr data-index="5" data-listing-date-sort="1741910400000" data-listing-file-modified-sort="1743630305971" data-listing-date-modified-sort="1743630305000" data-listing-reading-time-sort="2" data-listing-word-count-sort="267" data-listing-title-sort="NIRSpec" data-listing-filename-sort="NIRSpec.qmd" onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
 <td>
 <a href="./pages/telescopes/NIRSpec.html" class="title listing-title">NIRSpec</a>
 </td>
 <td>
-<span class="listing-author">&nbsp;</span>
+<span class="listing-date">Mar 14, 2025</span>
+</td>
+<td>
+<span class="listing-date-modified">Apr 2, 2025</span>
 </td>
 </tr>
-<tr data-index="4" data-categories="RGF0YQ==" data-listing-file-modified-sort="1742136467662" data-listing-reading-time-sort="1" data-listing-word-count-sort="196" data-listing-title-sort="High-redshift galaxy compilation" data-listing-filename-sort="highz.qmd">
+<tr data-index="6" data-categories="RGF0YQ==" data-listing-date-sort="1743552000000" data-listing-file-modified-sort="1743630305971" data-listing-date-modified-sort="1743630305000" data-listing-reading-time-sort="2" data-listing-word-count-sort="249" data-listing-title-sort="Broad-line AGN compilation" data-listing-filename-sort="blagn.qmd" onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
+<td>
+<a href="./pages/data/blagn.html" class="title listing-title">Broad-line AGN compilation</a>
+</td>
+<td>
+<span class="listing-date">Apr 2, 2025</span>
+</td>
+<td>
+<span class="listing-date-modified">Apr 2, 2025</span>
+</td>
+</tr>
+<tr data-index="7" data-categories="RGF0YQ==" data-listing-date-sort="1741910400000" data-listing-file-modified-sort="1743630305971" data-listing-date-modified-sort="1743630305000" data-listing-reading-time-sort="2" data-listing-word-count-sort="391" data-listing-title-sort="High-redshift galaxy compilation" data-listing-filename-sort="highz.qmd" onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
 <td>
 <a href="./pages/data/highz.html" class="title listing-title">High-redshift galaxy compilation</a>
 </td>
 <td>
-<span class="listing-author">&nbsp;</span>
+<span class="listing-date">Mar 14, 2025</span>
+</td>
+<td>
+<span class="listing-date-modified">Apr 2, 2025</span>
 </td>
 </tr>
 </tbody>

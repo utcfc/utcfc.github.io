@@ -80,9 +80,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-title','listing-author','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-date-modified','listing-title','listing-image',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-date-modified-sort'] }],
       
-      searchColumns: ["listing-title","listing-author","listing-image","listing-description"],
+      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -191,23 +191,26 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./contributing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Contributing</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./recents.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Recent Pages</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./contributing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Contributing</span></a>
+  <a href="./pages.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">All Pages</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
- <span class="menu-text"> </span>
-  </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
- <span class="menu-text">Pages</span></a>
+ <span class="menu-text">Data Compilations</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -215,67 +218,16 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./pages.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">All Pages</span></a>
+  <a href="./pages/data/blagn.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Broad-line AGN compilation</span></a>
   </div>
 </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
- <span class="menu-text">Telescopes &amp; Instruments</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./pages/telescopes/NIRSpec.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">NIRSpec</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
- <span class="menu-text">Surveys</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./pages/surveys/ceers.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">CEERS</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./pages/surveys/ngdeep.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">NGDEEP</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
- <span class="menu-text">Data Compilations</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./pages/data/highz.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">High-redshift galaxy compilation</span></a>
   </div>
 </li>
-      </ul>
-  </li>
       </ul>
   </li>
     </ul>
@@ -314,8 +266,26 @@ window.Quarto = {
 
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
+<div class="listing-actions-group">
+   <div class="input-group input-group-sm quarto-listing-sort">
+     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
+     <select id="listing-listing-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-listing'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
+       <option value="" disabled="" selected="" hidden="">Order By</option>
+       <option value="index" data-direction="asc">Default</option>
+         <option value="listing-date-modified-sort" data-direction="asc">
+          Modified - Oldest
+        </option>
+         <option value="listing-date-modified-sort" data-direction="desc">
+          Modified - Newest
+        </option>
+         <option value="listing-title" data-direction="asc">
+          Title
+        </option>
+     </select>
+  </div>
+</div>
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="R2FsYXh5JTIwU0VEcw==" data-listing-file-modified-sort="1742136467663" data-listing-reading-time-sort="1" data-listing-word-count-sort="47">
+<div class="g-col-1" data-index="0" data-categories="R2FsYXh5JTIwU0VEcw==" data-listing-date-sort="1741910400000" data-listing-file-modified-sort="1743630305971" data-listing-date-modified-sort="1743630305000" data-listing-reading-time-sort="4" data-listing-word-count-sort="760">
 <a href="./pages/uvslopes.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -323,21 +293,23 @@ window.Quarto = {
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
-UV slopes
+UV slope
 </h5>
-<div class="card-text listing-description">
-Summary of UV slopes in high-z galaxies. The slope of the UV continuum is sensitive to dust attenuation and stellar population properties.
-</div>
-<div class="card-attribution card-text-small start">
-<div class="listing-author">
-
-</div>
-</div>
+<table class="card-other-values">
+<tbody><tr>
+<td>
+Modified
+</td>
+<td class="date-modified">
+Apr 2, 2025
+</td>
+</tr>
+</tbody></table>
 </div>
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="SldTVCUyMHN1cnZleXM=" data-listing-file-modified-sort="1742136467662" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
+<div class="g-col-1" data-index="1" data-categories="SldTVCUyMHN1cnZleXM=" data-listing-date-sort="1741910400000" data-listing-file-modified-sort="1743630305971" data-listing-date-modified-sort="1743630305000" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
 <a href="./pages/surveys/ngdeep.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -347,19 +319,21 @@ Summary of UV slopes in high-z galaxies. The slope of the UV continuum is sensit
 <h5 class="no-anchor card-title listing-title">
 NGDEEP
 </h5>
-<div class="card-text listing-description">
-Test
-</div>
-<div class="card-attribution card-text-small start">
-<div class="listing-author">
-
-</div>
-</div>
+<table class="card-other-values">
+<tbody><tr>
+<td>
+Modified
+</td>
+<td class="date-modified">
+Apr 2, 2025
+</td>
+</tr>
+</tbody></table>
 </div>
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="2" data-categories="SldTVCUyMHN1cnZleXM=" data-listing-file-modified-sort="1742136467662" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
+<div class="g-col-1" data-index="2" data-categories="SldTVCUyMHN1cnZleXM=" data-listing-date-sort="1741910400000" data-listing-file-modified-sort="1743630305971" data-listing-date-modified-sort="1743630305000" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
 <a href="./pages/surveys/ceers.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -369,19 +343,65 @@ Test
 <h5 class="no-anchor card-title listing-title">
 CEERS
 </h5>
-<div class="card-text listing-description">
-Test
-</div>
-<div class="card-attribution card-text-small start">
-<div class="listing-author">
-
-</div>
-</div>
+<table class="card-other-values">
+<tbody><tr>
+<td>
+Modified
+</td>
+<td class="date-modified">
+Apr 2, 2025
+</td>
+</tr>
+</tbody></table>
 </div>
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="3" data-listing-file-modified-sort="1742136467663" data-listing-reading-time-sort="2" data-listing-word-count-sort="287">
+<div class="g-col-1" data-index="3" data-categories="R2FsYXh5JTIwU0VEcw==" data-listing-date-sort="1743552000000" data-listing-file-modified-sort="1743630305971" data-listing-date-modified-sort="1743630305000" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
+<a href="./pages/balmerbreaks.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Balmer break
+</h5>
+<table class="card-other-values">
+<tbody><tr>
+<td>
+Modified
+</td>
+<td class="date-modified">
+Apr 2, 2025
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="4" data-categories="R2FsYXhpZXMlMkNBR04=" data-listing-date-sort="1743552000000" data-listing-file-modified-sort="1743630305971" data-listing-date-modified-sort="1743630305000" data-listing-reading-time-sort="3" data-listing-word-count-sort="471">
+<a href="./pages/lrds.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top"><img src="images/lrd_sed.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Little red dots
+</h5>
+<table class="card-other-values">
+<tbody><tr>
+<td>
+Modified
+</td>
+<td class="date-modified">
+Apr 2, 2025
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="5" data-listing-date-sort="1741910400000" data-listing-file-modified-sort="1743630305971" data-listing-date-modified-sort="1743630305000" data-listing-reading-time-sort="2" data-listing-word-count-sort="267">
 <a href="./pages/telescopes/NIRSpec.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
@@ -389,34 +409,64 @@ Test
 <h5 class="no-anchor card-title listing-title">
 NIRSpec
 </h5>
-<div class="card-text listing-description">
-The Near Infrared Spectrograph (NIRSpec) is one of the four main scientific instruments onboard the James Webb Space Telescope (JWST). It is designed to obtain…
-</div>
-<div class="card-attribution card-text-small start">
-<div class="listing-author">
-
-</div>
-</div>
+<table class="card-other-values">
+<tbody><tr>
+<td>
+Modified
+</td>
+<td class="date-modified">
+Apr 2, 2025
+</td>
+</tr>
+</tbody></table>
 </div>
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="4" data-categories="RGF0YQ==" data-listing-file-modified-sort="1742136467662" data-listing-reading-time-sort="1" data-listing-word-count-sort="196">
+<div class="g-col-1" data-index="6" data-categories="RGF0YQ==" data-listing-date-sort="1743552000000" data-listing-file-modified-sort="1743630305971" data-listing-date-modified-sort="1743630305000" data-listing-reading-time-sort="2" data-listing-word-count-sort="249">
+<a href="./pages/data/blagn.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="https://astrobites.org/wp-content/uploads/2024/04/lrds.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Broad-line AGN compilation
+</h5>
+<table class="card-other-values">
+<tbody><tr>
+<td>
+Modified
+</td>
+<td class="date-modified">
+Apr 2, 2025
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="7" data-categories="RGF0YQ==" data-listing-date-sort="1741910400000" data-listing-file-modified-sort="1743630305971" data-listing-date-modified-sort="1743630305000" data-listing-reading-time-sort="2" data-listing-word-count-sort="391">
 <a href="./pages/data/highz.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
-<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
+<p class="card-img-top">
+<img loading="lazy" src="https://news.utexas.edu/wp-content/uploads/2023/08/flight-to-maisies-2400x1600-1-1200x800-c-default.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 High-redshift galaxy compilation
 </h5>
-<div class="card-text listing-description">
-This page maintains an up-to-date (as of March 16, 2025) compilation of high-redshift galaxies spectroscopically-confirmed with JWST. The table below includes key properties…
-</div>
-<div class="card-attribution card-text-small start">
-<div class="listing-author">
-
-</div>
-</div>
+<table class="card-other-values">
+<tbody><tr>
+<td>
+Modified
+</td>
+<td class="date-modified">
+Apr 2, 2025
+</td>
+</tr>
+</tbody></table>
 </div>
 </div>
 </a>

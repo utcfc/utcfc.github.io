@@ -5,7 +5,10 @@
       "/pages/uvslopes.html",
       "/pages/surveys/ngdeep.html",
       "/pages/surveys/ceers.html",
+      "/pages/balmerbreaks.html",
+      "/pages/lrds.html",
       "/pages/telescopes/NIRSpec.html",
+      "/pages/data/blagn.html",
       "/pages/data/highz.html"
     ]
   },
@@ -15,7 +18,10 @@
       "/pages/uvslopes.html",
       "/pages/surveys/ngdeep.html",
       "/pages/surveys/ceers.html",
+      "/pages/balmerbreaks.html",
+      "/pages/lrds.html",
       "/pages/telescopes/NIRSpec.html",
+      "/pages/data/blagn.html",
       "/pages/data/highz.html"
     ]
   }
