@@ -24,7 +24,8 @@ website:
   sidebar: 
     - collapse-level: 1
       contents:
-        - index.qmd
+        - text: "Home"
+          href: index.qmd
         - text: "Contributing"
           href: contributing.qmd
         - text: "Recent Pages"

@@ -1,10 +1,19 @@
 ---
-title: "Home"
+title: "CFC Wiki"
+subtitle: "A centralized repository for our collective knowledge of cosmic dawn"
 callout-icon: false
 callout-appearance: "simple"
 ---
 
 <!-- ::: {.with-background .column-screen-right} -->
 
+Welcome to the CFC Wiki! 
 
-This the wiki's homepage. What goes here? Not sure yet. Maybe some links.
+Maintained by the [Cosmic Frontier Center](https://astronomy.utexas.edu/cosmic-frontier-center/about-cosmic-frontier-center) at the [University of Texas at Austin](https://astronomy.utexas.edu/), this site serves as a repository of information and ideas centered around the central scientific themes of the CFC: the origins of the first stars, galaxies and black holes. 
+By astronomers and (primarily) for astronomers, the Wiki aims to foster collaboration and knowledge sharing within the community. 
+It is designed to be a living document, evolving as new ideas emerge, and helping members of our community to keep up with the rapid pace of new discoveries and bridge the gaps between subfields, e.g. theory and observations. 
+
+
+
+For more information on the CFC, see the homepage [here](https://astronomy.utexas.edu/cosmic-frontier-center/about-cosmic-frontier-center). If you're interested in contributing to the Wiki, see our [guidelines for contribution](contributing.qmd). If you utilize the Wiki in your research, please consider acknowledging it in your work somehow; details TBD.
+

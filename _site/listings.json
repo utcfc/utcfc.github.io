@@ -2,27 +2,31 @@
   {
     "listing": "/recents.html",
     "items": [
-      "/pages/data/blagn.html",
+      "/pages/uvslopes.html",
       "/pages/data/highz.html",
       "/pages/lrds.html",
-      "/pages/balmerbreaks.html",
-      "/pages/uvslopes.html",
-      "/pages/telescopes/NIRSpec.html",
+      "/pages/surveys/ngdeep.html",
       "/pages/surveys/ceers.html",
-      "/pages/surveys/ngdeep.html"
+      "/pages/telescopes/NIRSpec.html",
+      "/pages/data/blagn.html",
+      "/pages/balmerbreaks.html"
     ]
   },
   {
     "listing": "/pages.html",
     "items": [
-      "/pages/data/blagn.html",
+      "/pages/uvslopes.html",
       "/pages/data/highz.html",
       "/pages/lrds.html",
-      "/pages/balmerbreaks.html",
-      "/pages/uvslopes.html",
-      "/pages/telescopes/NIRSpec.html",
+      "/pages/surveys/ngdeep.html",
       "/pages/surveys/ceers.html",
-      "/pages/surveys/ngdeep.html"
+      "/pages/telescopes/NIRSpec.html",
+      "/pages/data/blagn.html",
+      "/pages/balmerbreaks.html"
     ]
+  },
+  {
+    "listing": "/authors.html",
+    "items": []
   }
 ]

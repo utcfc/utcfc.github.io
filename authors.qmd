@@ -1,0 +1,9 @@
+---
+title: "Authors"
+listing:  
+    template: assets/author_listing.ejs
+    contents: authors/*
+    field-required: [author]
+--- 
+
+Test

@@ -28,7 +28,7 @@ table = Table(names=('ID', 'redshift', 'Muv', 'beta', 'logMstar', 'reference'),
               units=(None,  None, 'mag', None, 'Msun', None))
 
 table.add_row(dict(
-   ID="Maise's", 
+   ID="Maisie's", 
    redshift=11.44, 
    Muv=-20.2, 
    beta=-2.47,
