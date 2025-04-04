@@ -10,6 +10,12 @@ website:
   # title: "CFC Wiki"
   repo-url: https://github.com/utcfc/utcfc.github.io
   repo-actions: [edit]
+  announcement: 
+    icon: info-circle
+    dismissable: true
+    content: "**Note**: This site is under construction and incomplete in coverage; please use with caution, and feel free to [contribute](contributing.qmd)!"
+    type: primary
+    position: below-navbar
   navbar:
     logo: images/CFC-LOGO-2color-bigtext.png
     search: true
