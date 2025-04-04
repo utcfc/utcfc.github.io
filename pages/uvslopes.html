@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.42">
+<meta name="generator" content="quarto-1.6.43">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -57,7 +57,7 @@ div.csl-indent {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-00013e618392c3665f46339e4650d09c.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-54b543cbc7d3707fae38287b42b64aa7.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap-5f5b1fefded81b18d59bd82911bedbe6.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
@@ -180,15 +180,9 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#uv-slope-measurements-at-z-10" id="toc-uv-slope-measurements-at-z-10" class="nav-link" data-scroll-target="#uv-slope-measurements-at-z-10">UV Slope Measurements at <span class="math inline">\(z &gt; 10\)</span></a></li>
   <li><a href="#evolution-of-beta-with-redshift" id="toc-evolution-of-beta-with-redshift" class="nav-link" data-scroll-target="#evolution-of-beta-with-redshift">Evolution of <span class="math inline">\(\beta\)</span> with Redshift</a></li>
-  <li><a href="#luminosity-dependence" id="toc-luminosity-dependence" class="nav-link" data-scroll-target="#luminosity-dependence">Luminosity Dependence</a></li>
   </ul></li>
-  <li><a href="#physical-implications" id="toc-physical-implications" class="nav-link" data-scroll-target="#physical-implications">Physical Implications</a>
-  <ul class="collapse">
-  <li><a href="#dust-content-and-evolution" id="toc-dust-content-and-evolution" class="nav-link" data-scroll-target="#dust-content-and-evolution">Dust Content and Evolution</a></li>
-  <li><a href="#stellar-populations" id="toc-stellar-populations" class="nav-link" data-scroll-target="#stellar-populations">Stellar Populations</a></li>
-  <li><a href="#implications-for-reionization" id="toc-implications-for-reionization" class="nav-link" data-scroll-target="#implications-for-reionization">Implications for Reionization</a></li>
-  </ul></li>
-  <li><a href="#open-questions-and-future-work" id="toc-open-questions-and-future-work" class="nav-link" data-scroll-target="#open-questions-and-future-work">Open Questions and Future Work</a></li>
+  <li><a href="#implications-for-stellar-populations-and-dust" id="toc-implications-for-stellar-populations-and-dust" class="nav-link" data-scroll-target="#implications-for-stellar-populations-and-dust">Implications for Stellar Populations and Dust</a></li>
+  <li><a href="#connection-to-ionizing-photon-escape" id="toc-connection-to-ionizing-photon-escape" class="nav-link" data-scroll-target="#connection-to-ionizing-photon-escape">Connection to Ionizing Photon Escape</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/utcfc/utcfc.github.io/edit/main/pages/uvslopes.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
     </div>
@@ -241,12 +235,16 @@ window.Quarto = {
 </section>
 <section id="history" class="level2">
 <h2 class="anchored" data-anchor-id="history">History</h2>
-<p><span class="citation" data-cites="dunlop2012">Dunlop et al. (<a href="#ref-dunlop2012" role="doc-biblioref">2012</a>)</span></p>
-<p><span class="citation" data-cites="topping2024">Topping et al. (<a href="#ref-topping2024" role="doc-biblioref">2024</a>)</span></p>
+<p>Pre-JWST history, e.g. <span class="citation" data-cites="calzetti1994">Calzetti, Kinney, and Storchi-Bergmann (<a href="#ref-calzetti1994" role="doc-biblioref">1994</a>)</span>, <span class="citation" data-cites="finkelstein2012">Finkelstein et al. (<a href="#ref-finkelstein2012" role="doc-biblioref">2012</a>)</span>, <span class="citation" data-cites="dunlop2012">Dunlop et al. (<a href="#ref-dunlop2012" role="doc-biblioref">2012</a>)</span>, <span class="citation" data-cites="wilkins2013">Wilkins et al. (<a href="#ref-wilkins2013" role="doc-biblioref">2013</a>)</span></p>
 </section>
 <section id="measurement" class="level2">
 <h2 class="anchored" data-anchor-id="measurement">Measurement</h2>
-<p>Broadly, the UV slope can be measured two ways: 1. Direct power-law fits to the data (fitting <span class="math inline">\(f_\lambda \propto \lambda^\beta\)</span>) 2. SED model fitting, in a full Bayesian context, where <span class="math inline">\(\beta\)</span> is derived from the posterior SED Each technique has their pros and cons, and can show systematic differences in <span class="math inline">\(\beta\)</span> between the two.</p>
+<p>Broadly, the UV slope can be measured two ways:</p>
+<ol type="1">
+<li>Direct power-law fits to the data (fitting <span class="math inline">\(f_\lambda \propto \lambda^\beta\)</span>)</li>
+<li>SED model fitting, in a full Bayesian context, where <span class="math inline">\(\beta\)</span> is derived from the posterior SED</li>
+</ol>
+<p>Each technique has their pros and cons, and can show systematic differences in <span class="math inline">\(\beta\)</span> between the two.</p>
 <p>It is possible to measure <span class="math inline">\(\beta\)</span> with photometry alone, but this can create some issues. The choice of broadband filters can impact the derived <span class="math inline">\(\beta\)</span>. Contamination from emission lines can also impact broadband-derived slopes at specific redshifts.</p>
 <p>Spectroscopy makes it easier, if SNR is sufficient. Calzetti windows to avoid emission line contribution.</p>
 <p><a href="neb_cont.qmd">Nebular continuum</a> emission can significantly impact <span class="math inline">\(\beta\)</span> measurements in very young galaxies. This is primarily due to free-bound emission, which is quite red at UV wavelengths. If the UV light is dominated by the nebular component, the slope can appear redder than the intrinsic stellar continuum slope.</p>
@@ -255,79 +253,47 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="key-jwst-observations">Key JWST Observations</h2>
 <section id="uv-slope-measurements-at-z-10" class="level3">
 <h3 class="anchored" data-anchor-id="uv-slope-measurements-at-z-10">UV Slope Measurements at <span class="math inline">\(z &gt; 10\)</span></h3>
-<p>JWST has enabled robust measurements of <span class="math inline">\(\beta\)</span> in galaxies at <span class="math inline">\(z &gt; 10\)</span>, with some detections pushing to <span class="math inline">\(z \sim 13\)</span>-<span class="math inline">\(16\)</span>. Early results show:</p>
-<ul>
-<li>Mean <span class="math inline">\(\beta\)</span> values of approximately <span class="math inline">\(-2.2\)</span> to <span class="math inline">\(-2.5\)</span> for typical <span class="math inline">\(z \sim 10\)</span>-<span class="math inline">\(12\)</span> galaxies, suggesting very low dust content and young stellar populations</li>
-<li>Significant scatter in <span class="math inline">\(\beta\)</span> at fixed UV luminosity, potentially indicating diverse star formation histories even in the early universe</li>
-<li>First constraints on the <span class="math inline">\(\beta\)</span>-<span class="math inline">\(M_{\rm UV}\)</span> relation at <span class="math inline">\(z &gt; 10\)</span>, showing a tentative flattening compared to lower redshifts</li>
-</ul>
+<p>JWST has enabled robust measurements of <span class="math inline">\(\beta\)</span> in galaxies at <span class="math inline">\(z &gt; 10\)</span></p>
 </section>
 <section id="evolution-of-beta-with-redshift" class="level3">
 <h3 class="anchored" data-anchor-id="evolution-of-beta-with-redshift">Evolution of <span class="math inline">\(\beta\)</span> with Redshift</h3>
-<p>JWST has refined our understanding of the redshift evolution of UV slopes:</p>
 <ul>
 <li>Overall trend of bluer (more negative) <span class="math inline">\(\beta\)</span> values with increasing redshift from <span class="math inline">\(z \sim 4\)</span> to <span class="math inline">\(z \sim 12\)</span></li>
-<li>A possible plateau in the redshift evolution at <span class="math inline">\(z &gt; 9\)</span>, where mean <span class="math inline">\(\beta\)</span> values stabilize around <span class="math inline">\(-2.4 \pm 0.2\)</span></li>
-<li>Evidence for rapid evolution in <span class="math inline">\(\beta\)</span> between <span class="math inline">\(z \sim 7\)</span>-<span class="math inline">\(9\)</span>, potentially tracing the build-up of dust and metals in early galaxies</li>
-</ul>
-</section>
-<section id="luminosity-dependence" class="level3">
-<h3 class="anchored" data-anchor-id="luminosity-dependence">Luminosity Dependence</h3>
-<p>The <span class="math inline">\(\beta\)</span>-<span class="math inline">\(M_{\rm UV}\)</span> relation has been extended to fainter magnitudes and higher redshifts:</p>
-<ul>
-<li>Confirmation of the <span class="math inline">\(\beta\)</span>-<span class="math inline">\(M_{\rm UV}\)</span> relation persisting to <span class="math inline">\(z &gt; 10\)</span>, where brighter galaxies exhibit redder slopes</li>
-<li>Detection of ultra-faint galaxies (<span class="math inline">\(M_{\rm UV} &gt; -18\)</span>) at <span class="math inline">\(z &gt; 8\)</span> with extremely blue slopes (<span class="math inline">\(\beta \sim -2.8\)</span> to <span class="math inline">\(-3.0\)</span>)</li>
-<li>Evidence for steepening of the <span class="math inline">\(\beta\)</span>-<span class="math inline">\(M_{\rm UV}\)</span> relation at the highest redshifts, though sample incompleteness remains a concern</li>
 </ul>
 </section>
 </section>
-<section id="physical-implications" class="level2">
-<h2 class="anchored" data-anchor-id="physical-implications">Physical Implications</h2>
-<section id="dust-content-and-evolution" class="level3">
-<h3 class="anchored" data-anchor-id="dust-content-and-evolution">Dust Content and Evolution</h3>
+<section id="implications-for-stellar-populations-and-dust" class="level2">
+<h2 class="anchored" data-anchor-id="implications-for-stellar-populations-and-dust">Implications for Stellar Populations and Dust</h2>
 <ul>
 <li>JWST observations indicate extremely low dust content in the earliest galaxies (<span class="math inline">\(z &gt; 10\)</span>), with <span class="math inline">\(A_V\)</span> typically <span class="math inline">\(&lt; 0.1\)</span></li>
 <li>First evidence for non-zero dust attenuation in some bright <span class="math inline">\(z &gt; 10\)</span> systems, challenging assumptions about dust formation timescales</li>
-<li>Significant galaxy-to-galaxy variation in inferred dust properties at fixed redshift and luminosity</li>
-</ul>
-</section>
-<section id="stellar-populations" class="level3">
-<h3 class="anchored" data-anchor-id="stellar-populations">Stellar Populations</h3>
-<ul>
 <li>Extremely blue slopes (<span class="math inline">\(\beta &lt; -2.7\)</span>) in some high-<span class="math inline">\(z\)</span> sources suggest very young stellar populations with ages <span class="math inline">\(&lt; 10\)</span> Myr</li>
-<li>Evidence for diverse star formation histories even at <span class="math inline">\(z &gt; 10\)</span>, with some galaxies showing signs of more mature stellar populations (<span class="math inline">\(\beta \sim -2.0\)</span> to <span class="math inline">\(-2.2\)</span>)</li>
-<li>Potential metallicity effects on <span class="math inline">\(\beta\)</span>, though difficult to disentangle from dust and age effects with current data</li>
 </ul>
 </section>
-<section id="implications-for-reionization" class="level3">
-<h3 class="anchored" data-anchor-id="implications-for-reionization">Implications for Reionization</h3>
+<section id="connection-to-ionizing-photon-escape" class="level2">
+<h2 class="anchored" data-anchor-id="connection-to-ionizing-photon-escape">Connection to Ionizing Photon Escape</h2>
 <ul>
 <li>Blue UV slopes support scenarios where low-mass galaxies dominate the ionizing photon budget during reionization</li>
 <li>Correlations between <span class="math inline">\(\beta\)</span> and inferred Lyman continuum escape fraction (<span class="math inline">\(f_{\rm esc}\)</span>) in some samples</li>
 <li>Constraints on the production rate of ionizing photons (<span class="math inline">\(\dot{n}_{\rm ion}\)</span>) based on JWST-measured UV slopes and luminosity functions</li>
 </ul>
-</section>
-</section>
-<section id="open-questions-and-future-work" class="level2">
-<h2 class="anchored" data-anchor-id="open-questions-and-future-work">Open Questions and Future Work</h2>
-<ol type="1">
-<li>Does the <span class="math inline">\(\beta\)</span>-<span class="math inline">\(M_{\rm UV}\)</span> relation evolve in slope or normalization (or both) at the highest redshifts?</li>
-<li>What drives the observed scatter in <span class="math inline">\(\beta\)</span> at fixed redshift and luminosity?</li>
-<li>How well do <span class="math inline">\(\beta\)</span>-derived dust estimates agree with direct far-IR measurements for the brightest high-<span class="math inline">\(z\)</span> sources?</li>
-<li>What is the connection between UV slope and ionizing photon production/escape in early galaxies?</li>
-<li>Are there galaxies at <span class="math inline">\(z &gt; 10\)</span> with anomalously red slopes, potentially indicating very early dust formation or AGN activity?</li>
-</ol>
 
 
 
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-calzetti1994" class="csl-entry" role="listitem">
+Calzetti, Daniela, Anne L. Kinney, and Thaisa Storchi-Bergmann. 1994. <span>“<span class="nocase">Dust Extinction of the Stellar Continua in Starburst Galaxies: The Ultraviolet and Optical Extinction Law</span>”</span> 429 (July): 582. <a href="https://doi.org/10.1086/174346">https://doi.org/10.1086/174346</a>.
+</div>
 <div id="ref-dunlop2012" class="csl-entry" role="listitem">
 Dunlop, J. S., R. J. McLure, B. E. Robertson, R. S. Ellis, D. P. Stark, M. Cirasuolo, and L. de Ravel. 2012. <span>“<span class="nocase">A critical analysis of the ultraviolet continuum slopes (<span><span class="math inline">\(\beta\)</span></span>) of high-redshift galaxies: no evidence (yet) for extreme stellar populations at z &gt; 6</span>”</span> 420 (1): 901–12. <a href="https://doi.org/10.1111/j.1365-2966.2011.20102.x">https://doi.org/10.1111/j.1365-2966.2011.20102.x</a>.
 </div>
-<div id="ref-topping2024" class="csl-entry" role="listitem">
-Topping, Michael W., Daniel P. Stark, Ryan Endsley, Lily Whitler, Kevin Hainline, Benjamin D. Johnson, Brant Robertson, et al. 2024. <span>“<span class="nocase">The UV continuum slopes of early star-forming galaxies in JADES</span>”</span> 529 (4): 4087–4103. <a href="https://doi.org/10.1093/mnras/stae800">https://doi.org/10.1093/mnras/stae800</a>.
+<div id="ref-finkelstein2012" class="csl-entry" role="listitem">
+Finkelstein, Steven L., Casey Papovich, Brett Salmon, Kristian Finlator, Mark Dickinson, Henry C. Ferguson, Mauro Giavalisco, et al. 2012. <span>“<span class="nocase">Candels: The Evolution of Galaxy Rest-frame Ultraviolet Colors from z = 8 to 4</span>”</span> 756 (2): 164. <a href="https://doi.org/10.1088/0004-637X/756/2/164">https://doi.org/10.1088/0004-637X/756/2/164</a>.
+</div>
+<div id="ref-wilkins2013" class="csl-entry" role="listitem">
+Wilkins, Stephen M., Andrew Bunker, William Coulton, Rupert Croft, Tiziana di Matteo, Nishikanta Khandai, and Yu Feng. 2013. <span>“<span class="nocase">Interpreting the observed UV continuum slopes of high-redshift galaxies</span>”</span> 430 (4): 2885–90. <a href="https://doi.org/10.1093/mnras/stt096">https://doi.org/10.1093/mnras/stt096</a>.
 </div>
 </div></section></div></main> <!-- /main -->
 

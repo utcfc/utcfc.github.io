@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.42">
+<meta name="generator" content="quarto-1.6.43">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -69,7 +69,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-00013e618392c3665f46339e4650d09c.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-54b543cbc7d3707fae38287b42b64aa7.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-5f5b1fefded81b18d59bd82911bedbe6.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
@@ -191,7 +191,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#guidelines-for-contribution" id="toc-guidelines-for-contribution" class="nav-link active" data-scroll-target="#guidelines-for-contribution"><span class="header-section-number">1</span> Guidelines for Contribution</a></li>
+  <li><a href="#guidelines" id="toc-guidelines" class="nav-link active" data-scroll-target="#guidelines"><span class="header-section-number">1</span> Guidelines</a></li>
   <li><a href="#how-to-contribute" id="toc-how-to-contribute" class="nav-link" data-scroll-target="#how-to-contribute"><span class="header-section-number">2</span> How to Contribute</a>
   <ul class="collapse">
   <li><a href="#fork-the-github-repo" id="toc-fork-the-github-repo" class="nav-link" data-scroll-target="#fork-the-github-repo"><span class="header-section-number">2.1</span> Fork the GitHub Repo</a></li>
@@ -228,12 +228,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>So you want to add things to the wiki? Great! It’s relatively straightforward to contribute.</p>
 <p>Here’s the TL;DR:</p>
 <ul>
-<li><p>The site is rendered using <a href="https://quarto.org/">quarto</a>, an open-source package for rendering scientific/technical writing. Everything is written in <a href="https://en.wikipedia.org/wiki/Markdown">markdown</a>, which you may be familiar with already through Jupyter notebooks.</p></li>
-<li><p>Contributions are all managed through GitHub, a platform for version control and collaboration. If you’re new to git, you might want to check out this helpful <a href="https://www.youtube.com/watch?v=mJ-qvsxPHpY">video</a> to get started.</p></li>
+<li>The site is rendered using <a href="https://quarto.org/">quarto</a>, an open-source package for rendering scientific/technical writing.</li>
+<li>Everything is written in <a href="https://en.wikipedia.org/wiki/Markdown">markdown</a>, which you may be familiar with already through Jupyter notebooks.</li>
+<li>Contributions are all managed through <code>git</code>/GitHub, a platform for version control and collaboration.</li>
 </ul>
-<p>To make edits, you will need fork the <a href="https://github.com/utcfc/utcfc.github.io">utcfc.github.io</a> repository and clone it to your machine. Afterwards, you can commit and push your changes back to the main repository; more details <a href="#how-to-contribute">below</a>.</p>
-<section id="guidelines-for-contribution" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Guidelines for Contribution</h1>
+<p>More details <a href="#how-to-contribute">below</a>.</p>
+<section id="guidelines" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Guidelines</h1>
 <p>[draft]</p>
 <ol type="1">
 <li><p><strong>Be Respectful</strong>: Treat all contributors with respect.</p></li>
@@ -245,7 +246,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="how-to-contribute" class="level1" data-number="2">
 <h1 data-number="2"><span class="header-section-number">2</span> How to Contribute</h1>
-<p>The wiki is managed through GitHub. The below sections outline the process for contributing, which is similar to the process for contributing to any open-source software package hosted on GitHub.</p>
+<p>The wiki is managed through <code>git</code>/GitHub. If you’re new to <code>git</code>, you might want to check out this helpful <a href="https://www.youtube.com/watch?v=mJ-qvsxPHpY">video</a> to get started; <code>git</code> can be intimidating, but its not too difficult to get the basics down.</p>
+<p>To make edits, you’ll either need to be added as a member of the <code>utcfc</code> GitHub organization (reach out to TBD to get added), or you can fork the <a href="https://github.com/utcfc/utcfc.github.io">utcfc.github.io</a> repository to make your edits. In either case, you will make edits on your local machine and push your changes back to the main repository. The below sections outline in more detail process for contributing, which is similar to the process for contributing to any open-source software package hosted on GitHub.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>As currently written this page assumes you are not a member of the github organization. If you are, the process is a bit simpler.</p>
+</div>
+</div>
 <section id="fork-the-github-repo" class="level2" data-number="2.1">
 <h2 data-number="2.1" class="anchored" data-anchor-id="fork-the-github-repo"><span class="header-section-number">2.1</span> Fork the GitHub Repo</h2>
 <p>“Forking” a repository refers to copying the repository to your personal Github account, so that you can make direct edits. You can then request that these edits be merged into the main repository. To fork the repo, navigate to the <code>utcfc.github.io</code> <a href="https://github.com/utcfc/utcfc.github.io">Github repository</a>. Click the “Fork” button at the top right to create a copy of the repository under your GitHub account. You should now have a repo <code>yourname/utcfc.github.io</code>.</p>
