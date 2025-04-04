@@ -12,14 +12,14 @@ It's relatively straightforward to contribute.
 
 Here's the TL;DR:  
 
-* The site is rendered using [quarto](https://quarto.org/), an open-source package for rendering scientific/technical writing. Everything is written in [markdown](https://en.wikipedia.org/wiki/Markdown), which you may be familiar with already through Jupyter notebooks.
+* The site is rendered using [quarto](https://quarto.org/), an open-source package for rendering scientific/technical writing. 
+* Everything is written in [markdown](https://en.wikipedia.org/wiki/Markdown), which you may be familiar with already through Jupyter notebooks.
+* Contributions are all managed through `git`/GitHub, a platform for version control and collaboration. 
 
-* Contributions are all managed through GitHub, a platform for version control and collaboration. If you're new to git, you might want to check out this helpful [video](https://www.youtube.com/watch?v=mJ-qvsxPHpY) to get started.
+More details [below](#how-to-contribute).
 
-To make edits, you will need fork the [utcfc.github.io](https://github.com/utcfc/utcfc.github.io) repository and clone it to your machine. 
-Afterwards, you can commit and push your changes back to the main repository; more details [below](#how-to-contribute).
 
-# Guidelines for Contribution
+# Guidelines 
 
 [draft]
 
@@ -37,7 +37,18 @@ Afterwards, you can commit and push your changes back to the main repository; mo
 
 # How to Contribute
 
-The wiki is managed through GitHub. The below sections outline the process for contributing, which is similar to the process for contributing to any open-source software package hosted on GitHub. 
+The wiki is managed through `git`/GitHub. 
+If you're new to `git`, you might want to check out this helpful [video](https://www.youtube.com/watch?v=mJ-qvsxPHpY) to get started; `git` can be intimidating, but its not too difficult to get the basics down. 
+
+To make edits, you'll either need to be added as a member of the `utcfc` GitHub organization (reach out to TBD to get added), or you can fork the [utcfc.github.io](https://github.com/utcfc/utcfc.github.io) repository to make your edits. 
+In either case, you will make edits on your local machine and push your changes back to the main repository. 
+The below sections outline in more detail process for contributing, which is similar to the process for contributing to any open-source software package hosted on GitHub. 
+
+:::{.callout-important}
+
+As currently written this page assumes you are not a member of the github organization. If you are, the process is a bit simpler.
+
+:::
 
 ## Fork the GitHub Repo
 

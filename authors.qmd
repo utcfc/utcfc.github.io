@@ -2,6 +2,8 @@
 title: "Team"
 ---
 
+Below we provide an up-to-date list of all contriubtors to the Wiki: 
+
 ```{python}
 #| echo: false
 
