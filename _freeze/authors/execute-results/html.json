@@ -1,0 +1,12 @@
+{
+  "hash": "8fa1b01877df8f5d0570332f4c35eab9",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "---\ntitle: \"Team\"\n---\n\n::: {#9cc8ccc6 .cell execution_count=1}\n\n::: {.cell-output .cell-output-display .cell-output-markdown}\n- <a href=mailto:hollis.akins@gmail.com>Hollis Akins</a> <a href=https://orcid.org/0000-0003-3596-8794>[{{< fa brands orcid size=sm >}}]{style=\"color: #a6ce39;\"}</a> (UT Austin)\n- <a href=mailto:example.author@website.com>Example Author</a>\n\n:::\n:::\n\n\n",
+    "supporting": [
+      "authors_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}

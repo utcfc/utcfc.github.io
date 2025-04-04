@@ -1,0 +1,10 @@
+---
+title: "About"
+format: 
+  html:
+    # include-in-header: hero-image.html
+    anchor-sections: false
+    css: [index.css] 
+---
+
+More information on what the CFC Wiki is all about

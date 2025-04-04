@@ -1,9 +1,45 @@
 ---
-title: "Authors"
-listing:  
-    template: assets/author_listing.ejs
-    contents: authors/*
-    field-required: [author]
---- 
+title: "Team"
+---
 
-Test
+```{python}
+#| echo: false
+
+from IPython.display import Markdown, display
+import yaml, glob
+author_files = glob.glob('authors/*.yml')
+lines, order = [], []
+for author_file in author_files:
+    with open(author_file, 'r') as file:
+        author = yaml.safe_load(file)['author'][0]
+    name = author['name']
+    last = name.split()[-1].lower()
+    email = author['email']
+
+    if 'url' in author:
+        href = author['url']
+    else:
+        href = f'mailto:{email}'
+
+    s = f'- <a href={href}>{name}</a>'
+    
+    if 'orcid' in author:
+        # s += f'<i class="fa-brands fa-orcid"></i>'
+        orcid_url = f"https://orcid.org/{author['orcid']}"
+        s += f' <a href={orcid_url}>' + '[{{< fa brands orcid size=sm >}}]{style="color: #a6ce39;"}' + '</a>'
+
+    if 'affiliation' in author:
+        affil = author['affiliation']
+        s += f' ({affil})'
+
+    lines.append(s)
+    order.append(last)
+
+output = ''
+lines = [l for _, l in sorted(zip(order, lines))]
+for line in lines:
+    output += line + '\n'
+display(Markdown(output))
+```
+
+

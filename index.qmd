@@ -1,19 +1,142 @@
 ---
-title: "CFC Wiki"
-subtitle: "A centralized repository for our collective knowledge of cosmic dawn"
-callout-icon: false
-callout-appearance: "simple"
+# title: "Welcome to the CFC Wiki!"
+# subtitle: "A centralized repository for our collective knowledge of cosmic dawn"
+# title-block-banner: images/ceers.png
+# title-block-banner-color: white
+sidebar: false
+toc: false
+format: 
+  html:
+    include-in-header: hero-image.html
+    # include-after-body: _footer.html 
+    anchor-sections: false
+    css: [index.css] 
 ---
+  
+::: {style="text-align: center"}
 
-<!-- ::: {.with-background .column-screen-right} -->
-
-Welcome to the CFC Wiki! 
-
+## Welcome to the CFC Wiki! 
+  
+:::
+ 
 Maintained by the [Cosmic Frontier Center](https://astronomy.utexas.edu/cosmic-frontier-center/about-cosmic-frontier-center) at the [University of Texas at Austin](https://astronomy.utexas.edu/), this site serves as a repository of information and ideas centered around the central scientific themes of the CFC: the origins of the first stars, galaxies and black holes. 
 By astronomers and (primarily) for astronomers, the Wiki aims to foster collaboration and knowledge sharing within the community. 
 It is designed to be a living document, evolving as new ideas emerge, and helping members of our community to keep up with the rapid pace of new discoveries and bridge the gaps between subfields, e.g. theory and observations. 
 
 
+<!-- --- -->
+
 
 For more information on the CFC, see the homepage [here](https://astronomy.utexas.edu/cosmic-frontier-center/about-cosmic-frontier-center). If you're interested in contributing to the Wiki, see our [guidelines for contribution](contributing.qmd). If you utilize the Wiki in your research, please consider acknowledging it in your work somehow; details TBD.
 
+<br>
+
+<!-- High level overviews -->
+:::{.column-screen .callout-card-1}
+<br>
+
+:::{.column-body style="color:white"}
+::: {.grid}
+
+::: {.g-col-4}
+
+:::{style="text-align:center"}
+{{< fa newspaper size=10x >}}
+:::
+
+:::
+
+::: {.g-col-8}
+
+### Articles
+
+_High-level overviews of key topics relevant to cosmic dawn._
+
+Topics range from broad overviews on entire subfields, such as [reionization]() or [AGN](), to technical deep-dives into particular methods or properties. 
+
+:::
+
+:::
+:::
+<br>
+
+:::
+
+<!-- Something else -->
+:::{.column-screen .callout-card-2}
+<br>
+
+:::{.column-body}
+::: {.grid}
+
+::: {.g-col-8}
+### Data
+
+_Up-to-date compilations of published data._
+
+The Wiki maintains several compiled datasets, including samples of [high-redshift galaxies](pages/data/highz.qmd) and [broad-line AGN](pages/data/blagn.qmd), to facilitate use in publications and analysis.
+
+:::
+
+::: {.g-col-4}
+
+:::{style="text-align:center"}
+{{< fa magnifying-glass-chart size=10x >}}
+:::
+
+:::
+
+:::
+:::
+<br>
+
+:::
+
+<!-- Data compilations highlight -->
+:::{.column-screen .callout-card-3}
+<br>
+
+:::{.column-body}
+::: {.grid}
+
+::: {.g-col-4}
+
+:::{style="text-align:center"}
+{{< fa book-open size=10x >}}
+:::
+
+:::
+
+::: {.g-col-8}
+### References
+
+_Direct references to the recent literature included throughout._
+
+The Wiki can serve as a starting point for a literature review. 
+
+:::
+:::
+:::
+<br>
+
+:::
+<!-- 
+::: {.g-col-8}
+### Code Tutorials
+
+Blah blah we maintain several compiled datasets whoo haha. 
+
+:::
+
+
+::: {.g-col-4}
+![](images/data.svg)
+:::
+
+::: -->
+<br>
+
+
+:::{.column-body}
+![Members of the CEERS collaboration looking at the NIRCam color mosaic in the UT Austin TACC visualization lab. Credit: R. Larson, CEERS team](images/ceers_tacc.jpeg)
+:::

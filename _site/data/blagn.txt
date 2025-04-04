@@ -1,2 +1,0 @@
-ID redshift FWHM logMBH logLbol LRD reference
-Test 8.502 3440 8.17 45.82 Y @kokorev2023c

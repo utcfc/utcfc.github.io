@@ -12,26 +12,37 @@ website:
   repo-actions: [edit]
   navbar:
     logo: images/CFC-LOGO-2color-bigtext.png
-    background: primary
     search: true
     right:
-      - text: "Contributing"
-        href: contributing.qmd
+      - icon: house-door-fill
+        text: " "
+        href: index.qmd
+      - text: "About"
+        href: about.qmd
+      - text: "Pages"
+        href: pages.qmd
       - icon: github
         href: https://github.com/utcfc/utcfc.github.io/
         target: _blank
 
   sidebar: 
-    - collapse-level: 1
+    - title: "About"
+      collapse-level: 1
       contents:
-        - text: "Home"
-          href: index.qmd
+        - text: "About"
+          href: about.qmd
+        - text: "Team"
+          href: authors.qmd
         - text: "Contributing"
           href: contributing.qmd
-        - text: "Recent Pages"
-          href: recents.qmd
+        
+    - title: "Pages"
+      collapse-level: 1
+      contents:
         - text: "All Pages"
           href: pages.qmd
+        - text: "Recently Updated"
+          href: recents.qmd
         - section: Data Compilations
           contents: pages/data/*
     
@@ -45,14 +56,10 @@ website:
 
 format:
   html:
-    theme: 
-      light: assets/theme-light.scss
-      dark: assets/theme-dark.scss
+    theme: assets/theme-light.scss
     css: assets/styles.css
     code-block-border-left: true
-    highlight-style: 
-      light: assets/light.theme
-      dark: assets/dark.theme
+    highlight-style: assets/light.theme
     sidebar: true
     toc: true
     toc-location: right
