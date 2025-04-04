@@ -2,62 +2,66 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://utcfc.github.io/references.html</loc>
-    <lastmod>2025-04-03T20:13:48.653Z</lastmod>
+    <lastmod>2025-04-04T03:41:29.280Z</lastmod>
   </url>
   <url>
     <loc>https://utcfc.github.io/pages.html</loc>
-    <lastmod>2025-04-03T20:13:48.653Z</lastmod>
-  </url>
-  <url>
-    <loc>https://utcfc.github.io/pages/data/highz.html</loc>
-    <lastmod>2025-04-03T20:13:48.653Z</lastmod>
-  </url>
-  <url>
-    <loc>https://utcfc.github.io/pages/telescopes/NIRSpec.html</loc>
-    <lastmod>2025-04-03T20:13:48.653Z</lastmod>
-  </url>
-  <url>
-    <loc>https://utcfc.github.io/pages/balmerbreaks.html</loc>
-    <lastmod>2025-04-03T20:13:48.653Z</lastmod>
-  </url>
-  <url>
-    <loc>https://utcfc.github.io/pages/surveys/ngdeep.html</loc>
-    <lastmod>2025-04-03T20:13:48.653Z</lastmod>
-  </url>
-  <url>
-    <loc>https://utcfc.github.io/misc/glossary.html</loc>
-    <lastmod>2025-04-03T20:13:48.652Z</lastmod>
-  </url>
-  <url>
-    <loc>https://utcfc.github.io/index.html</loc>
-    <lastmod>2025-04-03T20:13:48.652Z</lastmod>
-  </url>
-  <url>
-    <loc>https://utcfc.github.io/authors.html</loc>
-    <lastmod>2025-04-03T20:13:48.647Z</lastmod>
-  </url>
-  <url>
-    <loc>https://utcfc.github.io/pages/uvslopes.html</loc>
-    <lastmod>2025-04-03T20:13:48.653Z</lastmod>
-  </url>
-  <url>
-    <loc>https://utcfc.github.io/pages/surveys/ceers.html</loc>
-    <lastmod>2025-04-03T20:13:48.653Z</lastmod>
-  </url>
-  <url>
-    <loc>https://utcfc.github.io/pages/lrds.html</loc>
-    <lastmod>2025-04-03T20:13:48.653Z</lastmod>
-  </url>
-  <url>
-    <loc>https://utcfc.github.io/pages/data/blagn.html</loc>
-    <lastmod>2025-04-03T20:13:48.653Z</lastmod>
+    <lastmod>2025-04-04T03:41:29.279Z</lastmod>
   </url>
   <url>
     <loc>https://utcfc.github.io/recents.html</loc>
-    <lastmod>2025-04-03T20:13:48.653Z</lastmod>
+    <lastmod>2025-04-04T03:41:29.280Z</lastmod>
+  </url>
+  <url>
+    <loc>https://utcfc.github.io/pages/data/blagn.html</loc>
+    <lastmod>2025-04-04T03:41:29.279Z</lastmod>
+  </url>
+  <url>
+    <loc>https://utcfc.github.io/pages/lrds.html</loc>
+    <lastmod>2025-04-04T03:41:29.280Z</lastmod>
+  </url>
+  <url>
+    <loc>https://utcfc.github.io/pages/surveys/ceers.html</loc>
+    <lastmod>2025-04-04T03:41:29.280Z</lastmod>
+  </url>
+  <url>
+    <loc>https://utcfc.github.io/pages/uvslopes.html</loc>
+    <lastmod>2025-04-04T03:41:29.280Z</lastmod>
+  </url>
+  <url>
+    <loc>https://utcfc.github.io/about.html</loc>
+    <lastmod>2025-04-04T03:41:29.268Z</lastmod>
+  </url>
+  <url>
+    <loc>https://utcfc.github.io/index.html</loc>
+    <lastmod>2025-04-04T03:41:29.279Z</lastmod>
+  </url>
+  <url>
+    <loc>https://utcfc.github.io/authors.html</loc>
+    <lastmod>2025-04-04T03:41:29.268Z</lastmod>
+  </url>
+  <url>
+    <loc>https://utcfc.github.io/misc/glossary.html</loc>
+    <lastmod>2025-04-04T03:41:29.279Z</lastmod>
+  </url>
+  <url>
+    <loc>https://utcfc.github.io/pages/surveys/ngdeep.html</loc>
+    <lastmod>2025-04-04T03:41:29.280Z</lastmod>
+  </url>
+  <url>
+    <loc>https://utcfc.github.io/pages/balmerbreaks.html</loc>
+    <lastmod>2025-04-04T03:41:29.279Z</lastmod>
+  </url>
+  <url>
+    <loc>https://utcfc.github.io/pages/telescopes/NIRSpec.html</loc>
+    <lastmod>2025-04-04T03:41:29.280Z</lastmod>
+  </url>
+  <url>
+    <loc>https://utcfc.github.io/pages/data/highz.html</loc>
+    <lastmod>2025-04-04T03:41:29.279Z</lastmod>
   </url>
   <url>
     <loc>https://utcfc.github.io/contributing.html</loc>
-    <lastmod>2025-04-03T20:13:48.648Z</lastmod>
+    <lastmod>2025-04-04T03:41:29.268Z</lastmod>
   </url>
 </urlset>

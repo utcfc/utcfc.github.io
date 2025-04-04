@@ -11,146 +11,34 @@
     "href": "pages.html",
     "title": "All Pages",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Created - Oldest\n        \n         \n          Created - Newest\n        \n         \n          Modified - Oldest\n        \n         \n          Modified - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nTitle\n\n\nCreated\n\n\nModified\n\n\n\n\n\n\nUV slope\n\n\nMar 14, 2025\n\n\nApr 3, 2025\n\n\n\n\nNGDEEP\n\n\nMar 14, 2025\n\n\nApr 3, 2025\n\n\n\n\nCEERS\n\n\nMar 14, 2025\n\n\nApr 3, 2025\n\n\n\n\nBalmer break\n\n\nApr 2, 2025\n\n\nApr 3, 2025\n\n\n\n\nLittle red dots\n\n\nApr 2, 2025\n\n\nApr 3, 2025\n\n\n\n\nNIRSpec\n\n\nMar 14, 2025\n\n\nApr 3, 2025\n\n\n\n\nBroad-line AGN compilation\n\n\nApr 2, 2025\n\n\nApr 3, 2025\n\n\n\n\nHigh-redshift galaxy compilation\n\n\nMar 14, 2025\n\n\nApr 3, 2025\n\n\n\n\n\nNo matching items\n\n Back to top",
+    "text": "Order By\n       Default\n         \n          Created - Oldest\n        \n         \n          Created - Newest\n        \n         \n          Modified - Oldest\n        \n         \n          Modified - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nTitle\n\n\nCreated\n\n\nModified\n\n\n\n\n\n\nUV slope\n\n\nMar 14, 2025\n\n\nApr 4, 2025\n\n\n\n\nNGDEEP\n\n\nMar 14, 2025\n\n\nApr 4, 2025\n\n\n\n\nCEERS\n\n\nMar 14, 2025\n\n\nApr 4, 2025\n\n\n\n\nBalmer break\n\n\nApr 2, 2025\n\n\nApr 4, 2025\n\n\n\n\nLittle red dots\n\n\nApr 2, 2025\n\n\nApr 4, 2025\n\n\n\n\nNIRSpec\n\n\nMar 14, 2025\n\n\nApr 4, 2025\n\n\n\n\nBroad-line AGN compilation\n\n\nApr 2, 2025\n\n\nApr 4, 2025\n\n\n\n\nHigh-redshift galaxy compilation\n\n\nMar 14, 2025\n\n\nApr 4, 2025\n\n\n\n\n\nNo matching items\n\n Back to top",
     "crumbs": [
-      "Contributing",
+      "Pages",
       "All Pages"
     ]
   },
   {
-    "objectID": "pages/data/highz.html",
-    "href": "pages/data/highz.html",
-    "title": "High-redshift galaxy compilation",
+    "objectID": "recents.html",
+    "href": "recents.html",
+    "title": "Recent Pages",
     "section": "",
-    "text": "This page maintains an up-to-date (as of April 3, 2025) compilation of very high-redshift (\\(z&gt;10\\)) galaxies spectroscopically-confirmed with JWST. The table below includes key properties of these galaxies, as reported in their respective discovery papers, including their redshifts, UV magnitudes, stellar masses, UV slopes, and more. References are provided numerically. The table is dynamically generated in the code block below, and automatically exported to various formats for further use in analysis or publications.\n\n\nShow the code\nfrom IPython.display import Markdown\nfrom tabulate import tabulate\nfrom astropy.table import Table\n\ntable = Table(names=('ID', 'redshift', 'Muv', 'beta', 'logMstar', 'reference'),\n              dtype=(str, float, float, float, float, str),\n              units=(None,  None, 'mag', None, 'Msun', None))\n\ntable.add_row(dict(\n   ID=\"Maise's\", \n   redshift=11.44, \n   Muv=-20.2, \n   beta=-2.47,\n   logMstar=8.4,\n   reference='@finkelstein2022c, @arrabalharo2023b'\n))\ntable.add_row(dict(\n   ID='GHZ2', \n   redshift=12.34, \n   Muv=-20.5, \n   beta=-2.39,\n   logMstar=9.05,\n   reference='@castellano2024, @zavala2025'\n))\ntable.add_row(dict(\n   ID='GN-z11', \n   redshift=10.60, \n   Muv=-12.5, \n   beta=-2.41,\n   logMstar=9.1,\n   reference='@oesch2016, @bunker2023, @tacchella2023b'\n))\ntable.add_row(dict(\n   ID='GS-z14-0', \n   redshift=14.32, \n   Muv=-20.8, \n   beta=-2.2,\n   logMstar=8.7,\n   reference='@carniani2024'\n))\ntable.add_row(dict(\n   ID='GS-z14-1', \n   redshift=13.90, \n   Muv=-19.0, \n   beta=-2.71,\n   logMstar=8.0,\n   reference='@carniani2024'\n))\ntable.add_row(dict(\n   ID='GS-z10-0', \n   redshift=10.37, \n   Muv=-18.6, \n   beta=-2.49,\n   logMstar=7.58,\n   reference='@curtislake2023'\n))\ntable.add_row(dict(\n   ID='GS-z11-0', \n   redshift=11.48, \n   Muv=-19.3, \n   beta=-2.18,\n   logMstar=8.67,\n   reference='@curtislake2023'\n))\ntable.add_row(dict(\n   ID='GS-z12-0', \n   redshift=12.48, \n   Muv=-18.2, \n   beta=-1.84,\n   logMstar=7.64,\n   reference='@curtislake2023, @deugenio2024b'\n))\ntable.add_row(dict(\n   ID='GS-z13-0', \n   redshift=13.17, \n   Muv=-18.7, \n   beta=-2.37,\n   logMstar=7.95,\n   reference='@curtislake2023'\n))\n\n\nMarkdown(tabulate(table, \n   headers=('Name', 'Redshift', r'$M_{\\rm UV}$', r'$\\beta$', r'$\\log_{10} M_*$', 'Reference'), \n   colalign=(\"left\", \"decimal\", \"decimal\", \"decimal\", \"decimal\", \"center\"),\n   floatfmt=\".2f\"\n))\n\n\n\n\n\nName\nRedshift\n\\(M_{\\rm UV}\\)\n\\(\\beta\\)\n\\(\\log_{10} M_*\\)\nReference\n\n\n\n\nMaise’s\n11.44\n-20.20\n-2.47\n8.40\n(1), (2)\n\n\nGHZ2\n12.34\n-20.50\n-2.39\n9.05\n(3), (4)\n\n\nGN-z11\n10.60\n-12.50\n-2.41\n9.10\n(5), (6), (7)\n\n\nGS-z14-0\n14.32\n-20.80\n-2.20\n8.70\n(8)\n\n\nGS-z14-1\n13.90\n-19.00\n-2.71\n8.00\n(8)\n\n\nGS-z10-0\n10.37\n-18.60\n-2.49\n7.58\n(9)\n\n\nGS-z11-0\n11.48\n-19.30\n-2.18\n8.67\n(9)\n\n\nGS-z12-0\n12.48\n-18.20\n-1.84\n7.64\n(9), (10)\n\n\nGS-z13-0\n13.17\n-18.70\n-2.37\n7.95\n(9)\n\n\n\n\n\nYou can copy the above python code directly into your scripts/notebooks for easy analysis. You can also find table in the following formats: TeX, FITS, ASCII. To update the compilation, please see the instructions for contribution.\n\n\n\n\n Back to topReferences\n\n1. Finkelstein, S. L. et al. A Long Time Ago in a Galaxy Far, Far Away: A Candidate z \\(\\sim\\) 12 Galaxy in Early JWST CEERS Imaging. 940, L55 (2022).\n\n\n2. Arrabal Haro, P. et al. Confirmation and refutation of very luminous galaxies in the early Universe. 622, 707–711 (2023).\n\n\n3. Castellano, M. et al. JWST NIRSpec Spectroscopy of the Remarkable Bright Galaxy GHZ2/GLASS-z12 at Redshift 12.34. 972, 143 (2024).\n\n\n4. Zavala, J. A. et al. A luminous and young galaxy at z = 12.33 revealed by a JWST/MIRI detection of H\\(\\alpha\\) and [O III]. Nature Astronomy 9, 155–164 (2025).\n\n\n5. Oesch, P. A. et al. A Remarkably Luminous Galaxy at z=11.1 Measured with Hubble Space Telescope Grism Spectroscopy. 819, 129 (2016).\n\n\n6. Bunker, A. J. et al. JADES NIRSpec Spectroscopy of GN-z11: Lyman-\\(\\alpha\\) emission and possible enhanced nitrogen abundance in a z = 10.60 luminous galaxy. 677, A88 (2023).\n\n\n7. Tacchella, S. et al. JADES Imaging of GN-z11: Revealing the Morphology and Environment of a Luminous Galaxy 430 Myr after the Big Bang. 952, 74 (2023).\n\n\n8. Carniani, S. et al. Spectroscopic confirmation of two luminous galaxies at a redshift of 14. 633, 318–322 (2024).\n\n\n9. Curtis-Lake, E. et al. Spectroscopic confirmation of four metal-poor galaxies at z = 10.3-13.2. Nature Astronomy 7, 622–632 (2023).\n\n\n10. D’Eugenio, F. et al. JADES: Carbon enrichment 350 Myr after the Big Bang. 689, A152 (2024).",
+    "text": "Order By\n       Default\n         \n          Modified - Oldest\n        \n         \n          Modified - Newest\n        \n         \n          Title\n        \n     \n  \n\n\n\n\n\n\n\n\n\n\nUV slope\n\n\n\n\nModified\n\n\nApr 4, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNGDEEP\n\n\n\n\nModified\n\n\nApr 4, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCEERS\n\n\n\n\nModified\n\n\nApr 4, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\nBalmer break\n\n\n\n\nModified\n\n\nApr 4, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\nLittle red dots\n\n\n\n\nModified\n\n\nApr 4, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\nNIRSpec\n\n\n\n\nModified\n\n\nApr 4, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBroad-line AGN compilation\n\n\n\n\nModified\n\n\nApr 4, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHigh-redshift galaxy compilation\n\n\n\n\nModified\n\n\nApr 4, 2025\n\n\n\n\n\n\n\n\n\nNo matching items\n\n Back to top",
     "crumbs": [
-      "Contributing",
+      "Pages",
+      "Recently Updated"
+    ]
+  },
+  {
+    "objectID": "pages/data/blagn.html",
+    "href": "pages/data/blagn.html",
+    "title": "Broad-line AGN compilation",
+    "section": "",
+    "text": "This page maintains an up-to-date (as of April 4, 2025) compilation of high-redshift (\\(z&gt;3\\)) broad-line AGN discovered and spectroscopically-confirmed with JWST. The table below includes key properties of these objects, as reported in their respective discovery papers, including their redshifts, UV magnitudes, black hole mass, and bolometric luminosity, if available. We also report whether the source would be considered a “little red dot,” following standard color/slope criteria. References are provided numerically. The table is dynamically generated in the code block below, and automatically exported to various formats for further use in analysis or publications.\n\n\nShow the code\nfrom IPython.display import Markdown\nfrom tabulate import tabulate\nfrom astropy.table import Table\n\ntable = Table(names=('ID', 'redshift', 'FWHM', 'logMBH', 'logLbol', 'LRD', 'reference'),\n              dtype=(str, float, int, float, float, str, str),\n              units=(None,  None, 'km/s', None, 'Msun', 'erg/s', None))\n\ntable.add_row(dict(\n   ID=\"Test\", \n   redshift=8.502, \n   FWHM=3440,\n   logMBH=8.17, \n   logLbol=45.82,\n   LRD='Y',\n   reference='@kokorev2023c'\n))\n\n\nMarkdown(tabulate(table, \n   headers=('Name', 'Redshift', 'FWHM (broad)', r'$\\log_{10} M_{\\rm BH}$', r'$\\log_{10} L_{\\rm bol}$', 'LRD?', 'Reference'), \n   colalign=(\"left\", \"decimal\", \"decimal\", \"decimal\", \"decimal\", \"center\", \"center\"),\n   floatfmt=\".2f\"\n))\n\n\n\n\n\nName\nRedshift\nFWHM (broad)\n\\(\\log_{10} M_{\\rm BH}\\)\n\\(\\log_{10} L_{\\rm bol}\\)\nLRD?\nReference\n\n\n\n\nTest\n8.50\n3440.00\n8.17\n45.82\nY\n(1)\n\n\n\n\n\nYou can copy the above python code directly into your scripts/notebooks for easy analysis. You can also find table in the following formats: TeX, FITS, ASCII. To update the compilation, please see the instructions for contribution.\n\n\n\n\n Back to topReferences\n\n1. Kokorev, V. et al. UNCOVER: A NIRSpec Identification of a Broad-line AGN at z = 8.50. 957, L7 (2023).",
+    "crumbs": [
+      "Pages",
       "Data Compilations",
-      "High-redshift galaxy compilation"
+      "Broad-line AGN compilation"
     ]
-  },
-  {
-    "objectID": "pages/telescopes/NIRSpec.html",
-    "href": "pages/telescopes/NIRSpec.html",
-    "title": "NIRSpec",
-    "section": "",
-    "text": "The Near Infrared Spectrograph (NIRSpec) is one of the four main scientific instruments onboard the James Webb Space Telescope (JWST). It is designed to obtain high-sensitivity, low- to medium-resolution spectroscopy over a wide range of wavelengths in the near-infrared spectrum, from 0.6 to 5.3 microns. NIRSpec is capable of observing over 100 objects simultaneously, making it a powerful tool for studying the formation and evolution of galaxies.\n\n\n\nThe detector layout of NIRSpec"
-  },
-  {
-    "objectID": "pages/telescopes/NIRSpec.html#overview",
-    "href": "pages/telescopes/NIRSpec.html#overview",
-    "title": "NIRSpec",
-    "section": "",
-    "text": "The Near Infrared Spectrograph (NIRSpec) is one of the four main scientific instruments onboard the James Webb Space Telescope (JWST). It is designed to obtain high-sensitivity, low- to medium-resolution spectroscopy over a wide range of wavelengths in the near-infrared spectrum, from 0.6 to 5.3 microns. NIRSpec is capable of observing over 100 objects simultaneously, making it a powerful tool for studying the formation and evolution of galaxies.\n\n\n\nThe detector layout of NIRSpec"
-  },
-  {
-    "objectID": "pages/telescopes/NIRSpec.html#observing-modes",
-    "href": "pages/telescopes/NIRSpec.html#observing-modes",
-    "title": "NIRSpec",
-    "section": "Observing Modes",
-    "text": "Observing Modes\nNIRSpec offers several observing modes:\n\nFixed Slit (FS) Spectroscopy\nThis mode uses a set of fixed slits to isolate light from individual astronomical objects. It is ideal for high-resolution spectroscopy of point sources or small extended objects.\n\n\nIntegral Field Unit (IFU) Spectroscopy\nThe IFU mode provides spatially resolved spectroscopy, allowing astronomers to obtain a spectrum at each point within a 3D field of view. This is particularly useful for studying the detailed structure and kinematics of extended objects like galaxies and nebulae.\n\n\nMicro-Shutter Array (MSA) Spectroscopy\nThe MSA consists of an array of tiny shutters that can be individually opened or closed to select multiple targets within the field of view. This mode is highly efficient for observing large numbers of objects simultaneously, such as stars in a cluster or galaxies in a deep field survey."
-  },
-  {
-    "objectID": "pages/telescopes/NIRSpec.html#gratingsdispersers",
-    "href": "pages/telescopes/NIRSpec.html#gratingsdispersers",
-    "title": "NIRSpec",
-    "section": "Gratings/dispersers",
-    "text": "Gratings/dispersers\nNIRSpec employs several gratings and a prism to disperse light into its component wavelengths:\n\nPRISM: Provides low-resolution spectroscopy over the entire wavelength range, useful for broad spectral surveys and redshift measurements.\nGratings: Three medium-resolution gratings (G140M, G235M, G395M) and three high-resolution gratings (G140H, G235H, G395H) cover different portions of the near-infrared spectrum, allowing for detailed studies of spectral lines and chemical compositions."
-  },
-  {
-    "objectID": "pages/balmerbreaks.html",
-    "href": "pages/balmerbreaks.html",
-    "title": "Balmer break",
-    "section": "",
-    "text": "Back to top"
-  },
-  {
-    "objectID": "pages/surveys/ngdeep.html",
-    "href": "pages/surveys/ngdeep.html",
-    "title": "NGDEEP",
-    "section": "",
-    "text": "Test\n\n\n\n Back to top"
-  },
-  {
-    "objectID": "misc/glossary.html",
-    "href": "misc/glossary.html",
-    "title": "Glossary",
-    "section": "",
-    "text": "Glossary\n\nLRD\n\nLittle Red Dot\n\nBLR\n\nBroad Line Region\n\nUVLF\n\nUltraviolet Luminosity Function\n\n\n\n\n\n\n Back to top"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "CFC Wiki",
-    "section": "",
-    "text": "Welcome to the CFC Wiki!\nMaintained by the Cosmic Frontier Center at the University of Texas at Austin, this site serves as a repository of information and ideas centered around the central scientific themes of the CFC: the origins of the first stars, galaxies and black holes. By astronomers and (primarily) for astronomers, the Wiki aims to foster collaboration and knowledge sharing within the community. It is designed to be a living document, evolving as new ideas emerge, and helping members of our community to keep up with the rapid pace of new discoveries and bridge the gaps between subfields, e.g. theory and observations.\nFor more information on the CFC, see the homepage here. If you’re interested in contributing to the Wiki, see our guidelines for contribution. If you utilize the Wiki in your research, please consider acknowledging it in your work somehow; details TBD.\n\n\n\n Back to top",
-    "crumbs": [
-      "Contributing",
-      "Home"
-    ]
-  },
-  {
-    "objectID": "authors.html",
-    "href": "authors.html",
-    "title": "Authors",
-    "section": "",
-    "text": "Test\n\n\n\n\n\n\n&lt;li&gt;\n&lt;br/&gt;\n&lt;/li&gt;\n\n&lt;li&gt;\n&lt;br/&gt;\n&lt;/li&gt;\n\n\nNo matching items\n\n Back to top"
-  },
-  {
-    "objectID": "pages/uvslopes.html",
-    "href": "pages/uvslopes.html",
-    "title": "UV slope",
-    "section": "",
-    "text": "The ultraviolet (UV) continuum slope (\\(\\beta\\), where \\(f_{\\lambda} \\propto \\lambda^{\\beta}\\)) serves as a key diagnostic for understanding the physical properties of high-redshift galaxies. An observable sensitive to dust attenuation, stellar populations, metallicity, and star formation history, \\(\\beta\\) can provide valuable insight into galaxy evolution across cosmic time. The UV slope is also one of the few quantities readily observable in high-redshift Lyman break galaxies, since the rest-frame UV continuum is shifted into the optical/near-IR and the continuum slope can be measured via photometry alone. JWST has provided new insight into UV slopes at high redshifts (\\(z &gt; 7\\)), probing deeper into the early universe than previously possible with Hubble Space Telescope (HST)."
-  },
-  {
-    "objectID": "pages/uvslopes.html#introduction",
-    "href": "pages/uvslopes.html#introduction",
-    "title": "UV slope",
-    "section": "",
-    "text": "The ultraviolet (UV) continuum slope (\\(\\beta\\), where \\(f_{\\lambda} \\propto \\lambda^{\\beta}\\)) serves as a key diagnostic for understanding the physical properties of high-redshift galaxies. An observable sensitive to dust attenuation, stellar populations, metallicity, and star formation history, \\(\\beta\\) can provide valuable insight into galaxy evolution across cosmic time. The UV slope is also one of the few quantities readily observable in high-redshift Lyman break galaxies, since the rest-frame UV continuum is shifted into the optical/near-IR and the continuum slope can be measured via photometry alone. JWST has provided new insight into UV slopes at high redshifts (\\(z &gt; 7\\)), probing deeper into the early universe than previously possible with Hubble Space Telescope (HST)."
-  },
-  {
-    "objectID": "pages/uvslopes.html#history",
-    "href": "pages/uvslopes.html#history",
-    "title": "UV slope",
-    "section": "History",
-    "text": "History\nDunlop et al. (2012)\nTopping et al. (2024)"
-  },
-  {
-    "objectID": "pages/uvslopes.html#measurement",
-    "href": "pages/uvslopes.html#measurement",
-    "title": "UV slope",
-    "section": "Measurement",
-    "text": "Measurement\nBroadly, the UV slope can be measured two ways: 1. Direct power-law fits to the data (fitting \\(f_\\lambda \\propto \\lambda^\\beta\\)) 2. SED model fitting, in a full Bayesian context, where \\(\\beta\\) is derived from the posterior SED Each technique has their pros and cons, and can show systematic differences in \\(\\beta\\) between the two.\nIt is possible to measure \\(\\beta\\) with photometry alone, but this can create some issues. The choice of broadband filters can impact the derived \\(\\beta\\). Contamination from emission lines can also impact broadband-derived slopes at specific redshifts.\nSpectroscopy makes it easier, if SNR is sufficient. Calzetti windows to avoid emission line contribution.\nNebular continuum emission can significantly impact \\(\\beta\\) measurements in very young galaxies. This is primarily due to free-bound emission, which is quite red at UV wavelengths. If the UV light is dominated by the nebular component, the slope can appear redder than the intrinsic stellar continuum slope."
-  },
-  {
-    "objectID": "pages/uvslopes.html#key-jwst-observations",
-    "href": "pages/uvslopes.html#key-jwst-observations",
-    "title": "UV slope",
-    "section": "Key JWST Observations",
-    "text": "Key JWST Observations\n\nUV Slope Measurements at \\(z &gt; 10\\)\nJWST has enabled robust measurements of \\(\\beta\\) in galaxies at \\(z &gt; 10\\), with some detections pushing to \\(z \\sim 13\\)-\\(16\\). Early results show:\n\nMean \\(\\beta\\) values of approximately \\(-2.2\\) to \\(-2.5\\) for typical \\(z \\sim 10\\)-\\(12\\) galaxies, suggesting very low dust content and young stellar populations\nSignificant scatter in \\(\\beta\\) at fixed UV luminosity, potentially indicating diverse star formation histories even in the early universe\nFirst constraints on the \\(\\beta\\)-\\(M_{\\rm UV}\\) relation at \\(z &gt; 10\\), showing a tentative flattening compared to lower redshifts\n\n\n\nEvolution of \\(\\beta\\) with Redshift\nJWST has refined our understanding of the redshift evolution of UV slopes:\n\nOverall trend of bluer (more negative) \\(\\beta\\) values with increasing redshift from \\(z \\sim 4\\) to \\(z \\sim 12\\)\nA possible plateau in the redshift evolution at \\(z &gt; 9\\), where mean \\(\\beta\\) values stabilize around \\(-2.4 \\pm 0.2\\)\nEvidence for rapid evolution in \\(\\beta\\) between \\(z \\sim 7\\)-\\(9\\), potentially tracing the build-up of dust and metals in early galaxies\n\n\n\nLuminosity Dependence\nThe \\(\\beta\\)-\\(M_{\\rm UV}\\) relation has been extended to fainter magnitudes and higher redshifts:\n\nConfirmation of the \\(\\beta\\)-\\(M_{\\rm UV}\\) relation persisting to \\(z &gt; 10\\), where brighter galaxies exhibit redder slopes\nDetection of ultra-faint galaxies (\\(M_{\\rm UV} &gt; -18\\)) at \\(z &gt; 8\\) with extremely blue slopes (\\(\\beta \\sim -2.8\\) to \\(-3.0\\))\nEvidence for steepening of the \\(\\beta\\)-\\(M_{\\rm UV}\\) relation at the highest redshifts, though sample incompleteness remains a concern"
-  },
-  {
-    "objectID": "pages/uvslopes.html#physical-implications",
-    "href": "pages/uvslopes.html#physical-implications",
-    "title": "UV slope",
-    "section": "Physical Implications",
-    "text": "Physical Implications\n\nDust Content and Evolution\n\nJWST observations indicate extremely low dust content in the earliest galaxies (\\(z &gt; 10\\)), with \\(A_V\\) typically \\(&lt; 0.1\\)\nFirst evidence for non-zero dust attenuation in some bright \\(z &gt; 10\\) systems, challenging assumptions about dust formation timescales\nSignificant galaxy-to-galaxy variation in inferred dust properties at fixed redshift and luminosity\n\n\n\nStellar Populations\n\nExtremely blue slopes (\\(\\beta &lt; -2.7\\)) in some high-\\(z\\) sources suggest very young stellar populations with ages \\(&lt; 10\\) Myr\nEvidence for diverse star formation histories even at \\(z &gt; 10\\), with some galaxies showing signs of more mature stellar populations (\\(\\beta \\sim -2.0\\) to \\(-2.2\\))\nPotential metallicity effects on \\(\\beta\\), though difficult to disentangle from dust and age effects with current data\n\n\n\nImplications for Reionization\n\nBlue UV slopes support scenarios where low-mass galaxies dominate the ionizing photon budget during reionization\nCorrelations between \\(\\beta\\) and inferred Lyman continuum escape fraction (\\(f_{\\rm esc}\\)) in some samples\nConstraints on the production rate of ionizing photons (\\(\\dot{n}_{\\rm ion}\\)) based on JWST-measured UV slopes and luminosity functions"
-  },
-  {
-    "objectID": "pages/uvslopes.html#open-questions-and-future-work",
-    "href": "pages/uvslopes.html#open-questions-and-future-work",
-    "title": "UV slope",
-    "section": "Open Questions and Future Work",
-    "text": "Open Questions and Future Work\n\nDoes the \\(\\beta\\)-\\(M_{\\rm UV}\\) relation evolve in slope or normalization (or both) at the highest redshifts?\nWhat drives the observed scatter in \\(\\beta\\) at fixed redshift and luminosity?\nHow well do \\(\\beta\\)-derived dust estimates agree with direct far-IR measurements for the brightest high-\\(z\\) sources?\nWhat is the connection between UV slope and ionizing photon production/escape in early galaxies?\nAre there galaxies at \\(z &gt; 10\\) with anomalously red slopes, potentially indicating very early dust formation or AGN activity?"
-  },
-  {
-    "objectID": "pages/surveys/ceers.html",
-    "href": "pages/surveys/ceers.html",
-    "title": "CEERS",
-    "section": "",
-    "text": "Test\n\n\n\n Back to top"
   },
   {
     "objectID": "pages/lrds.html",
@@ -202,26 +90,148 @@
     "text": "Theoretical Implications\n\nBlack Hole Seeding and Growth\nThe discovery of numerous low-mass AGN at high redshifts has significant implications for black hole formation theories: - Challenges models requiring long growth timescales for seed black holes - Supports scenarios involving more efficient accretion mechanisms in the early universe - May favor heavy seed formation channels (direct collapse black holes) in some cases\n\n\nConnection to Reionization\nThe role of LRDs in reionization remains an active area of investigation: - Potential contribution to the ionizing photon budget, though likely subdominant to star-forming galaxies - Possible feedback effects on surrounding intergalactic medium - Questions about escape fraction of ionizing radiation from these dusty systems\nLabbé et al. (2023)\nKocevski et al. (2023)\nLabbe et al. (2025)\nKokorev et al. (2023)\nKokorev et al. (2024)\nAkins et al. (2024)"
   },
   {
-    "objectID": "pages/data/blagn.html",
-    "href": "pages/data/blagn.html",
-    "title": "Broad-line AGN compilation",
+    "objectID": "pages/surveys/ceers.html",
+    "href": "pages/surveys/ceers.html",
+    "title": "CEERS",
     "section": "",
-    "text": "This page maintains an up-to-date (as of April 3, 2025) compilation of high-redshift (\\(z&gt;3\\)) broad-line AGN discovered and spectroscopically-confirmed with JWST. The table below includes key properties of these objects, as reported in their respective discovery papers, including their redshifts, UV magnitudes, black hole mass, and bolometric luminosity, if available. We also report whether the source would be considered a “little red dot,” following standard color/slope criteria. References are provided numerically. The table is dynamically generated in the code block below, and automatically exported to various formats for further use in analysis or publications.\n\n\nShow the code\nfrom IPython.display import Markdown\nfrom tabulate import tabulate\nfrom astropy.table import Table\n\ntable = Table(names=('ID', 'redshift', 'FWHM', 'logMBH', 'logLbol', 'LRD', 'reference'),\n              dtype=(str, float, int, float, float, str, str),\n              units=(None,  None, 'km/s', None, 'Msun', 'erg/s', None))\n\ntable.add_row(dict(\n   ID=\"Test\", \n   redshift=8.502, \n   FWHM=3440,\n   logMBH=8.17, \n   logLbol=45.82,\n   LRD='Y',\n   reference='@kokorev2023c'\n))\n\n\nMarkdown(tabulate(table, \n   headers=('Name', 'Redshift', 'FWHM (broad)', r'$\\log_{10} M_{\\rm BH}$', r'$\\log_{10} L_{\\rm bol}$', 'LRD?', 'Reference'), \n   colalign=(\"left\", \"decimal\", \"decimal\", \"decimal\", \"decimal\", \"center\", \"center\"),\n   floatfmt=\".2f\"\n))\n\n\n\n\n\nName\nRedshift\nFWHM (broad)\n\\(\\log_{10} M_{\\rm BH}\\)\n\\(\\log_{10} L_{\\rm bol}\\)\nLRD?\nReference\n\n\n\n\nTest\n8.50\n3440.00\n8.17\n45.82\nY\n(1)\n\n\n\n\n\nYou can copy the above python code directly into your scripts/notebooks for easy analysis. You can also find table in the following formats: TeX, FITS, ASCII. To update the compilation, please see the instructions for contribution.\n\n\n\n\n Back to topReferences\n\n1. Kokorev, V. et al. UNCOVER: A NIRSpec Identification of a Broad-line AGN at z = 8.50. 957, L7 (2023).",
+    "text": "Test\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "pages/uvslopes.html",
+    "href": "pages/uvslopes.html",
+    "title": "UV slope",
+    "section": "",
+    "text": "The ultraviolet (UV) continuum slope (\\(\\beta\\), where \\(f_{\\lambda} \\propto \\lambda^{\\beta}\\)) serves as a key diagnostic for understanding the physical properties of high-redshift galaxies. An observable sensitive to dust attenuation, stellar populations, metallicity, and star formation history, \\(\\beta\\) can provide valuable insight into galaxy evolution across cosmic time. The UV slope is also one of the few quantities readily observable in high-redshift Lyman break galaxies, since the rest-frame UV continuum is shifted into the optical/near-IR and the continuum slope can be measured via photometry alone. JWST has provided new insight into UV slopes at high redshifts (\\(z &gt; 7\\)), probing deeper into the early universe than previously possible with Hubble Space Telescope (HST)."
+  },
+  {
+    "objectID": "pages/uvslopes.html#introduction",
+    "href": "pages/uvslopes.html#introduction",
+    "title": "UV slope",
+    "section": "",
+    "text": "The ultraviolet (UV) continuum slope (\\(\\beta\\), where \\(f_{\\lambda} \\propto \\lambda^{\\beta}\\)) serves as a key diagnostic for understanding the physical properties of high-redshift galaxies. An observable sensitive to dust attenuation, stellar populations, metallicity, and star formation history, \\(\\beta\\) can provide valuable insight into galaxy evolution across cosmic time. The UV slope is also one of the few quantities readily observable in high-redshift Lyman break galaxies, since the rest-frame UV continuum is shifted into the optical/near-IR and the continuum slope can be measured via photometry alone. JWST has provided new insight into UV slopes at high redshifts (\\(z &gt; 7\\)), probing deeper into the early universe than previously possible with Hubble Space Telescope (HST)."
+  },
+  {
+    "objectID": "pages/uvslopes.html#history",
+    "href": "pages/uvslopes.html#history",
+    "title": "UV slope",
+    "section": "History",
+    "text": "History\nDunlop et al. (2012)\nTopping et al. (2024)"
+  },
+  {
+    "objectID": "pages/uvslopes.html#measurement",
+    "href": "pages/uvslopes.html#measurement",
+    "title": "UV slope",
+    "section": "Measurement",
+    "text": "Measurement\nBroadly, the UV slope can be measured two ways: 1. Direct power-law fits to the data (fitting \\(f_\\lambda \\propto \\lambda^\\beta\\)) 2. SED model fitting, in a full Bayesian context, where \\(\\beta\\) is derived from the posterior SED Each technique has their pros and cons, and can show systematic differences in \\(\\beta\\) between the two.\nIt is possible to measure \\(\\beta\\) with photometry alone, but this can create some issues. The choice of broadband filters can impact the derived \\(\\beta\\). Contamination from emission lines can also impact broadband-derived slopes at specific redshifts.\nSpectroscopy makes it easier, if SNR is sufficient. Calzetti windows to avoid emission line contribution.\nNebular continuum emission can significantly impact \\(\\beta\\) measurements in very young galaxies. This is primarily due to free-bound emission, which is quite red at UV wavelengths. If the UV light is dominated by the nebular component, the slope can appear redder than the intrinsic stellar continuum slope."
+  },
+  {
+    "objectID": "pages/uvslopes.html#key-jwst-observations",
+    "href": "pages/uvslopes.html#key-jwst-observations",
+    "title": "UV slope",
+    "section": "Key JWST Observations",
+    "text": "Key JWST Observations\n\nUV Slope Measurements at \\(z &gt; 10\\)\nJWST has enabled robust measurements of \\(\\beta\\) in galaxies at \\(z &gt; 10\\), with some detections pushing to \\(z \\sim 13\\)-\\(16\\). Early results show:\n\nMean \\(\\beta\\) values of approximately \\(-2.2\\) to \\(-2.5\\) for typical \\(z \\sim 10\\)-\\(12\\) galaxies, suggesting very low dust content and young stellar populations\nSignificant scatter in \\(\\beta\\) at fixed UV luminosity, potentially indicating diverse star formation histories even in the early universe\nFirst constraints on the \\(\\beta\\)-\\(M_{\\rm UV}\\) relation at \\(z &gt; 10\\), showing a tentative flattening compared to lower redshifts\n\n\n\nEvolution of \\(\\beta\\) with Redshift\nJWST has refined our understanding of the redshift evolution of UV slopes:\n\nOverall trend of bluer (more negative) \\(\\beta\\) values with increasing redshift from \\(z \\sim 4\\) to \\(z \\sim 12\\)\nA possible plateau in the redshift evolution at \\(z &gt; 9\\), where mean \\(\\beta\\) values stabilize around \\(-2.4 \\pm 0.2\\)\nEvidence for rapid evolution in \\(\\beta\\) between \\(z \\sim 7\\)-\\(9\\), potentially tracing the build-up of dust and metals in early galaxies\n\n\n\nLuminosity Dependence\nThe \\(\\beta\\)-\\(M_{\\rm UV}\\) relation has been extended to fainter magnitudes and higher redshifts:\n\nConfirmation of the \\(\\beta\\)-\\(M_{\\rm UV}\\) relation persisting to \\(z &gt; 10\\), where brighter galaxies exhibit redder slopes\nDetection of ultra-faint galaxies (\\(M_{\\rm UV} &gt; -18\\)) at \\(z &gt; 8\\) with extremely blue slopes (\\(\\beta \\sim -2.8\\) to \\(-3.0\\))\nEvidence for steepening of the \\(\\beta\\)-\\(M_{\\rm UV}\\) relation at the highest redshifts, though sample incompleteness remains a concern"
+  },
+  {
+    "objectID": "pages/uvslopes.html#physical-implications",
+    "href": "pages/uvslopes.html#physical-implications",
+    "title": "UV slope",
+    "section": "Physical Implications",
+    "text": "Physical Implications\n\nDust Content and Evolution\n\nJWST observations indicate extremely low dust content in the earliest galaxies (\\(z &gt; 10\\)), with \\(A_V\\) typically \\(&lt; 0.1\\)\nFirst evidence for non-zero dust attenuation in some bright \\(z &gt; 10\\) systems, challenging assumptions about dust formation timescales\nSignificant galaxy-to-galaxy variation in inferred dust properties at fixed redshift and luminosity\n\n\n\nStellar Populations\n\nExtremely blue slopes (\\(\\beta &lt; -2.7\\)) in some high-\\(z\\) sources suggest very young stellar populations with ages \\(&lt; 10\\) Myr\nEvidence for diverse star formation histories even at \\(z &gt; 10\\), with some galaxies showing signs of more mature stellar populations (\\(\\beta \\sim -2.0\\) to \\(-2.2\\))\nPotential metallicity effects on \\(\\beta\\), though difficult to disentangle from dust and age effects with current data\n\n\n\nImplications for Reionization\n\nBlue UV slopes support scenarios where low-mass galaxies dominate the ionizing photon budget during reionization\nCorrelations between \\(\\beta\\) and inferred Lyman continuum escape fraction (\\(f_{\\rm esc}\\)) in some samples\nConstraints on the production rate of ionizing photons (\\(\\dot{n}_{\\rm ion}\\)) based on JWST-measured UV slopes and luminosity functions"
+  },
+  {
+    "objectID": "pages/uvslopes.html#open-questions-and-future-work",
+    "href": "pages/uvslopes.html#open-questions-and-future-work",
+    "title": "UV slope",
+    "section": "Open Questions and Future Work",
+    "text": "Open Questions and Future Work\n\nDoes the \\(\\beta\\)-\\(M_{\\rm UV}\\) relation evolve in slope or normalization (or both) at the highest redshifts?\nWhat drives the observed scatter in \\(\\beta\\) at fixed redshift and luminosity?\nHow well do \\(\\beta\\)-derived dust estimates agree with direct far-IR measurements for the brightest high-\\(z\\) sources?\nWhat is the connection between UV slope and ionizing photon production/escape in early galaxies?\nAre there galaxies at \\(z &gt; 10\\) with anomalously red slopes, potentially indicating very early dust formation or AGN activity?"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "More information on what the CFC Wiki is all about\n\n\n\n Back to top",
     "crumbs": [
-      "Contributing",
-      "Data Compilations",
-      "Broad-line AGN compilation"
+      "About"
     ]
   },
   {
-    "objectID": "recents.html",
-    "href": "recents.html",
-    "title": "Recent Pages",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Modified - Oldest\n        \n         \n          Modified - Newest\n        \n         \n          Title\n        \n     \n  \n\n\n\n\n\n\n\n\n\n\nUV slope\n\n\n\n\nModified\n\n\nApr 3, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNGDEEP\n\n\n\n\nModified\n\n\nApr 3, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCEERS\n\n\n\n\nModified\n\n\nApr 3, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\nBalmer break\n\n\n\n\nModified\n\n\nApr 3, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\nLittle red dots\n\n\n\n\nModified\n\n\nApr 3, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\nNIRSpec\n\n\n\n\nModified\n\n\nApr 3, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBroad-line AGN compilation\n\n\n\n\nModified\n\n\nApr 3, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHigh-redshift galaxy compilation\n\n\n\n\nModified\n\n\nApr 3, 2025\n\n\n\n\n\n\n\n\n\nNo matching items\n\n Back to top",
+    "text": "Maintained by the Cosmic Frontier Center at the University of Texas at Austin, this site serves as a repository of information and ideas centered around the central scientific themes of the CFC: the origins of the first stars, galaxies and black holes. By astronomers and (primarily) for astronomers, the Wiki aims to foster collaboration and knowledge sharing within the community. It is designed to be a living document, evolving as new ideas emerge, and helping members of our community to keep up with the rapid pace of new discoveries and bridge the gaps between subfields, e.g. theory and observations.\nFor more information on the CFC, see the homepage here. If you’re interested in contributing to the Wiki, see our guidelines for contribution. If you utilize the Wiki in your research, please consider acknowledging it in your work somehow; details TBD."
+  },
+  {
+    "objectID": "authors.html",
+    "href": "authors.html",
+    "title": "Team",
+    "section": "",
+    "text": "Hollis Akins  (UT Austin)\nExample Author\n\n\n\n\n\n\n Back to top",
     "crumbs": [
-      "Contributing",
-      "Recent Pages"
+      "About",
+      "Team"
+    ]
+  },
+  {
+    "objectID": "misc/glossary.html",
+    "href": "misc/glossary.html",
+    "title": "Glossary",
+    "section": "",
+    "text": "Glossary\n\nLRD\n\nLittle Red Dot\n\nBLR\n\nBroad Line Region\n\nUVLF\n\nUltraviolet Luminosity Function\n\n\n\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "pages/surveys/ngdeep.html",
+    "href": "pages/surveys/ngdeep.html",
+    "title": "NGDEEP",
+    "section": "",
+    "text": "Test\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "pages/balmerbreaks.html",
+    "href": "pages/balmerbreaks.html",
+    "title": "Balmer break",
+    "section": "",
+    "text": "Back to top"
+  },
+  {
+    "objectID": "pages/telescopes/NIRSpec.html",
+    "href": "pages/telescopes/NIRSpec.html",
+    "title": "NIRSpec",
+    "section": "",
+    "text": "The Near Infrared Spectrograph (NIRSpec) is one of the four main scientific instruments onboard the James Webb Space Telescope (JWST). It is designed to obtain high-sensitivity, low- to medium-resolution spectroscopy over a wide range of wavelengths in the near-infrared spectrum, from 0.6 to 5.3 microns. NIRSpec is capable of observing over 100 objects simultaneously, making it a powerful tool for studying the formation and evolution of galaxies.\n\n\n\nThe detector layout of NIRSpec"
+  },
+  {
+    "objectID": "pages/telescopes/NIRSpec.html#overview",
+    "href": "pages/telescopes/NIRSpec.html#overview",
+    "title": "NIRSpec",
+    "section": "",
+    "text": "The Near Infrared Spectrograph (NIRSpec) is one of the four main scientific instruments onboard the James Webb Space Telescope (JWST). It is designed to obtain high-sensitivity, low- to medium-resolution spectroscopy over a wide range of wavelengths in the near-infrared spectrum, from 0.6 to 5.3 microns. NIRSpec is capable of observing over 100 objects simultaneously, making it a powerful tool for studying the formation and evolution of galaxies.\n\n\n\nThe detector layout of NIRSpec"
+  },
+  {
+    "objectID": "pages/telescopes/NIRSpec.html#observing-modes",
+    "href": "pages/telescopes/NIRSpec.html#observing-modes",
+    "title": "NIRSpec",
+    "section": "Observing Modes",
+    "text": "Observing Modes\nNIRSpec offers several observing modes:\n\nFixed Slit (FS) Spectroscopy\nThis mode uses a set of fixed slits to isolate light from individual astronomical objects. It is ideal for high-resolution spectroscopy of point sources or small extended objects.\n\n\nIntegral Field Unit (IFU) Spectroscopy\nThe IFU mode provides spatially resolved spectroscopy, allowing astronomers to obtain a spectrum at each point within a 3D field of view. This is particularly useful for studying the detailed structure and kinematics of extended objects like galaxies and nebulae.\n\n\nMicro-Shutter Array (MSA) Spectroscopy\nThe MSA consists of an array of tiny shutters that can be individually opened or closed to select multiple targets within the field of view. This mode is highly efficient for observing large numbers of objects simultaneously, such as stars in a cluster or galaxies in a deep field survey."
+  },
+  {
+    "objectID": "pages/telescopes/NIRSpec.html#gratingsdispersers",
+    "href": "pages/telescopes/NIRSpec.html#gratingsdispersers",
+    "title": "NIRSpec",
+    "section": "Gratings/dispersers",
+    "text": "Gratings/dispersers\nNIRSpec employs several gratings and a prism to disperse light into its component wavelengths:\n\nPRISM: Provides low-resolution spectroscopy over the entire wavelength range, useful for broad spectral surveys and redshift measurements.\nGratings: Three medium-resolution gratings (G140M, G235M, G395M) and three high-resolution gratings (G140H, G235H, G395H) cover different portions of the near-infrared spectrum, allowing for detailed studies of spectral lines and chemical compositions."
+  },
+  {
+    "objectID": "pages/data/highz.html",
+    "href": "pages/data/highz.html",
+    "title": "High-redshift galaxy compilation",
+    "section": "",
+    "text": "This page maintains an up-to-date (as of April 4, 2025) compilation of very high-redshift (\\(z&gt;10\\)) galaxies spectroscopically-confirmed with JWST. The table below includes key properties of these galaxies, as reported in their respective discovery papers, including their redshifts, UV magnitudes, stellar masses, UV slopes, and more. References are provided numerically. The table is dynamically generated in the code block below, and automatically exported to various formats for further use in analysis or publications.\n\n\nShow the code\nfrom IPython.display import Markdown\nfrom tabulate import tabulate\nfrom astropy.table import Table\n\ntable = Table(names=('ID', 'redshift', 'Muv', 'beta', 'logMstar', 'reference'),\n              dtype=(str, float, float, float, float, str),\n              units=(None,  None, 'mag', None, 'Msun', None))\n\ntable.add_row(dict(\n   ID=\"Maise's\", \n   redshift=11.44, \n   Muv=-20.2, \n   beta=-2.47,\n   logMstar=8.4,\n   reference='@finkelstein2022c, @arrabalharo2023b'\n))\ntable.add_row(dict(\n   ID='GHZ2', \n   redshift=12.34, \n   Muv=-20.5, \n   beta=-2.39,\n   logMstar=9.05,\n   reference='@castellano2024, @zavala2025'\n))\ntable.add_row(dict(\n   ID='GN-z11', \n   redshift=10.60, \n   Muv=-12.5, \n   beta=-2.41,\n   logMstar=9.1,\n   reference='@oesch2016, @bunker2023, @tacchella2023b'\n))\ntable.add_row(dict(\n   ID='GS-z14-0', \n   redshift=14.32, \n   Muv=-20.8, \n   beta=-2.2,\n   logMstar=8.7,\n   reference='@carniani2024'\n))\ntable.add_row(dict(\n   ID='GS-z14-1', \n   redshift=13.90, \n   Muv=-19.0, \n   beta=-2.71,\n   logMstar=8.0,\n   reference='@carniani2024'\n))\ntable.add_row(dict(\n   ID='GS-z10-0', \n   redshift=10.37, \n   Muv=-18.6, \n   beta=-2.49,\n   logMstar=7.58,\n   reference='@curtislake2023'\n))\ntable.add_row(dict(\n   ID='GS-z11-0', \n   redshift=11.48, \n   Muv=-19.3, \n   beta=-2.18,\n   logMstar=8.67,\n   reference='@curtislake2023'\n))\ntable.add_row(dict(\n   ID='GS-z12-0', \n   redshift=12.48, \n   Muv=-18.2, \n   beta=-1.84,\n   logMstar=7.64,\n   reference='@curtislake2023, @deugenio2024b'\n))\ntable.add_row(dict(\n   ID='GS-z13-0', \n   redshift=13.17, \n   Muv=-18.7, \n   beta=-2.37,\n   logMstar=7.95,\n   reference='@curtislake2023'\n))\n\n\nMarkdown(tabulate(table, \n   headers=('Name', 'Redshift', r'$M_{\\rm UV}$', r'$\\beta$', r'$\\log_{10} M_*$', 'Reference'), \n   colalign=(\"left\", \"decimal\", \"decimal\", \"decimal\", \"decimal\", \"center\"),\n   floatfmt=\".2f\"\n))\n\n\n\n\n\nName\nRedshift\n\\(M_{\\rm UV}\\)\n\\(\\beta\\)\n\\(\\log_{10} M_*\\)\nReference\n\n\n\n\nMaise’s\n11.44\n-20.20\n-2.47\n8.40\n(1), (2)\n\n\nGHZ2\n12.34\n-20.50\n-2.39\n9.05\n(3), (4)\n\n\nGN-z11\n10.60\n-12.50\n-2.41\n9.10\n(5), (6), (7)\n\n\nGS-z14-0\n14.32\n-20.80\n-2.20\n8.70\n(8)\n\n\nGS-z14-1\n13.90\n-19.00\n-2.71\n8.00\n(8)\n\n\nGS-z10-0\n10.37\n-18.60\n-2.49\n7.58\n(9)\n\n\nGS-z11-0\n11.48\n-19.30\n-2.18\n8.67\n(9)\n\n\nGS-z12-0\n12.48\n-18.20\n-1.84\n7.64\n(9), (10)\n\n\nGS-z13-0\n13.17\n-18.70\n-2.37\n7.95\n(9)\n\n\n\n\n\nYou can copy the above python code directly into your scripts/notebooks for easy analysis. You can also find table in the following formats: TeX, FITS, ASCII. To update the compilation, please see the instructions for contribution.\n\n\n\n\n Back to topReferences\n\n1. Finkelstein, S. L. et al. A Long Time Ago in a Galaxy Far, Far Away: A Candidate z \\(\\sim\\) 12 Galaxy in Early JWST CEERS Imaging. 940, L55 (2022).\n\n\n2. Arrabal Haro, P. et al. Confirmation and refutation of very luminous galaxies in the early Universe. 622, 707–711 (2023).\n\n\n3. Castellano, M. et al. JWST NIRSpec Spectroscopy of the Remarkable Bright Galaxy GHZ2/GLASS-z12 at Redshift 12.34. 972, 143 (2024).\n\n\n4. Zavala, J. A. et al. A luminous and young galaxy at z = 12.33 revealed by a JWST/MIRI detection of H\\(\\alpha\\) and [O III]. Nature Astronomy 9, 155–164 (2025).\n\n\n5. Oesch, P. A. et al. A Remarkably Luminous Galaxy at z=11.1 Measured with Hubble Space Telescope Grism Spectroscopy. 819, 129 (2016).\n\n\n6. Bunker, A. J. et al. JADES NIRSpec Spectroscopy of GN-z11: Lyman-\\(\\alpha\\) emission and possible enhanced nitrogen abundance in a z = 10.60 luminous galaxy. 677, A88 (2023).\n\n\n7. Tacchella, S. et al. JADES Imaging of GN-z11: Revealing the Morphology and Environment of a Luminous Galaxy 430 Myr after the Big Bang. 952, 74 (2023).\n\n\n8. Carniani, S. et al. Spectroscopic confirmation of two luminous galaxies at a redshift of 14. 633, 318–322 (2024).\n\n\n9. Curtis-Lake, E. et al. Spectroscopic confirmation of four metal-poor galaxies at z = 10.3-13.2. Nature Astronomy 7, 622–632 (2023).\n\n\n10. D’Eugenio, F. et al. JADES: Carbon enrichment 350 Myr after the Big Bang. 689, A152 (2024).",
+    "crumbs": [
+      "Pages",
+      "Data Compilations",
+      "High-redshift galaxy compilation"
     ]
   },
   {
@@ -229,8 +239,9 @@
     "href": "contributing.html",
     "title": "Contributing",
     "section": "",
-    "text": "So you want to add things to the wiki? Great! It’s relatively straightforward to contribute. The site is rendered using quarto, an open-source package for rendering scientific/technical writing. Everything is written in markdown, which you may be familiar with already through Jupyter notebooks. Contributions are all managed through GitHub, a platform for version control and collaboration. If you’re new to git, you might want to check out this helpful video to get started. To make edits, you will need fork the utcfc.github.io repository and clone it to your machine. Afterwards, you can commit and push your changes back to the main repository; more details below.",
+    "text": "So you want to add things to the wiki? Great! It’s relatively straightforward to contribute.\nHere’s the TL;DR:\nTo make edits, you will need fork the utcfc.github.io repository and clone it to your machine. Afterwards, you can commit and push your changes back to the main repository; more details below.",
     "crumbs": [
+      "About",
       "Contributing"
     ]
   },
@@ -241,6 +252,7 @@
     "section": "2.1 Fork the GitHub Repo",
     "text": "2.1 Fork the GitHub Repo\n“Forking” a repository refers to copying the repository to your personal Github account, so that you can make direct edits. You can then request that these edits be merged into the main repository. To fork the repo, navigate to the utcfc.github.io Github repository. Click the “Fork” button at the top right to create a copy of the repository under your GitHub account. You should now have a repo yourname/utcfc.github.io.\nYou’ll then want to clone your forked repository to your local machine using the command:\ngit clone https://github.com/yourname/utcfc.github.io.git\nreplacing yourname with your GitHub username.\nThen, navigate to the cloned repository directory:\ncd utcfc.github.io\nand create a new branch for your changes:\ngit checkout -b your-branch-name\nwhere your-branch-name is just something descriptive to keep track of what this fork is for, i.e., yourname-edits.",
     "crumbs": [
+      "About",
       "Contributing"
     ]
   },
@@ -251,6 +263,7 @@
     "section": "2.2 Add yourself as an author",
     "text": "2.2 Add yourself as an author\nYour first edit should be to add yourself as an author of the wiki. Create a file authors/&lt;yourname&gt;.yml, containing the following\nauthor:\n- id: yourname\n  name: Your Full Name\n  email: your.name@gmail.com\n  orcid: 0000-0000-0000-0000\nThere are many more fields you can enter, but its not necessary. Having each author listed in a separate file makes it easy to keep track of all contributors to the wiki, and list multiple authors for a given page.",
     "crumbs": [
+      "About",
       "Contributing"
     ]
   },
@@ -261,6 +274,7 @@
     "section": "2.3 Make your edits!",
     "text": "2.3 Make your edits!\nNow you can make edits to existing pages, or create new pages. All wiki entries are stored in the pages/ directory, and can be organized into subdirectories as needed. Be sure to follow the guidelines for contribution listed above.\n\n\n\n\n\n\nTip\n\n\n\nQuarto provides a number of features to facilitate scientific/technical writing, including full LaTeX support, inclusion of tables/figures, and inline code blocks. Code blocks include automatic syntax highlighting for various languages, and can even be run inline to display the output directly in the document.\nSee Quaro’s markdown basics page for more info.\n\n\nIt can be helpful to see a live preview of the page as you’re writing. We recommend installing the quarto CLI (command-line interface) for this purpose. Once installed, from within the utcfc.github.io directory, the command\nquarto preview\nwill render a live preview on your local machine. Note that you don’t need to run a full render locally, as this is done automatically when new updates are pushed to the remote repository.\nIf you’re editing in VS Code, the quarto extension can do the same thing, but integrated into your editor. It also provides markdown syntax highlighting/linting, shortcuts for running code inline, autocomplete of citation keys, and more.",
     "crumbs": [
+      "About",
       "Contributing"
     ]
   },
@@ -271,6 +285,7 @@
     "section": "2.4 Push your edits",
     "text": "2.4 Push your edits\nOnce you’ve made your edits, you’ll want to push them to the utcfc.github.io repository. To do so, you first need to commit and push your changes to your forked version of the repository:\ngit add .\ngit commit -m \"Brief description of the changes made\"\ngit push origin your-branch-name\nThen, we need to merge your version of the utcfc.github.io repo into the main (live) version. This is done through a “pull request”.\n\nNavigate to the main utcfc.github.io repository.\nClick the “Compare & pull request” button that appears after pushing your changes.\nFill out the pull request form with a title and brief description of your changes.\nClick “Create pull request” to submit your pull request.",
     "crumbs": [
+      "About",
       "Contributing"
     ]
   }
