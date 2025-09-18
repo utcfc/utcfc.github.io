@@ -1,0 +1,120 @@
+---
+title: "Population III candidates"
+metadata-files: 
+   - ../authors/alessandravenditti.yml
+date: 09/18/2025
+date-modified: last-modified
+categories: ["Galaxies","Data"]
+---
+
+This page maintains an up-to-date (as of {{<meta date-modified>}}) compilation of high-redshift ($z>3$) [Pop III](popiii.qmd)-hosting galaxy candidates. 
+The table below includes key properties of these objects, as reported in their respective discovery papers, including their redshifts, UV magnitudes, HeII line luminosities and metallicity, if available.
+References are provided numerically. 
+The table is dynamically generated in the code block below, and automatically exported to various formats for further use in analysis or publications.
+
+
+```{python}
+#| code-fold: true
+#| code-summary: "Show the code"
+
+from IPython.display import Markdown
+from tabulate import tabulate
+from astropy.table import Table
+import numpy as np
+from numbers import Number
+
+def format_cell(x, digits=2):
+    """
+    Render a single table cell according to:
+      - scalar number -> value
+      - 2-tuple (value, err) -> value ± err
+      - 3-tuple (value, err_minus, err_plus) -> value_{-err_minus}^{+err_plus}
+    Non-numerical values are returned as string unchanged.
+    """
+    # Missing value
+    if x is None:
+        return "—"
+    if isinstance(x, float) and np.isnan(x):
+        return "—"
+
+    # Plain scalar number
+    if isinstance(x, (Number, np.floating, np.integer)):
+        return fr"${x:.{digits}f}$"
+
+    # 2-tuple symmetric uncertainty
+    if isinstance(x, (list, tuple, np.ndarray)) and len(x) == 2 and all(isinstance(v, (Number, np.floating, np.integer)) for v in x):
+        value, err = x
+        return fr"${value:.{digits}f} \pm {err:.{digits}f}$"
+
+    # 3-tuple asymmetric uncertainty
+    if isinstance(x, (list, tuple, np.ndarray)) and len(x) == 3 and all(isinstance(v, (Number, np.floating, np.integer)) for v in x):
+        value, err_minus, err_plus = x
+        return fr"${value:.{digits}f}_{{-{err_minus:.{digits}f}}}^{{+{err_plus:.{digits}f}}}$"
+
+    # Fallback for strings/others
+    return str(x)
+
+
+def table_to_markdown(tbl, headers=None, digits=2, tablefmt="github"):
+    """
+    Convert an Astropy Table into a Markdown table,
+    formatting every cell with `format_cell`.
+    """
+    rows = []
+    for r in tbl:
+        rows.append([format_cell(r[c], digits=digits) for c in tbl.colnames])
+
+    if headers is None:
+        headers = tbl.colnames
+
+    md = tabulate(
+        rows,
+        headers=headers,
+        tablefmt=tablefmt,
+        colalign=["center"] * len(headers)
+    )
+    return md
+
+
+# ---------------- Example usage ----------------
+
+# Columns that may carry uncertainties are set to dtype=object
+table = Table(
+    names=('ID', 'redshift', 'magnification', 'Mstar', 'MUV',    'HeII1640', 'HeII4686', 'Metallicity', 'reference'),
+    dtype=(str,  object,     object,           object, object,   object,     object,     object,        str)
+)
+
+# Fill table --> for numerical entries: scalar, (value, err), (value, err_minus, err_plus)
+table.add_row(dict(
+    ID="GLIMPSE-16043",
+    redshift=(6.50, 0.03, 0.24),     # 3-tuple -> asymmetric
+    magnification=(2.10, 0.30),      # 2-tuple -> symmetric
+    Mstar=np.nan,                    # scalar NaN -> "—"
+    MUV=-19.42,                      # scalar -> value
+    HeII1640=None,                   # None -> "—"
+    HeII4686=(1.2e40, 0.2e40, 0.3e40),
+    Metallicity="Z < 1/50 Z$_\\odot$",
+    reference='@kokorev2023c'
+))
+
+headers = (
+    'Name', 'Redshift', 'Magnification', r'$M_\star$', r'$M_{\rm UV}$', r'$L_{\rm HeII1640}$', r'$L_{\rm HeII4686}$', 'Metallicity', 'Reference'
+)
+
+md = table_to_markdown(table, headers=headers, digits=2, tablefmt="github")
+Markdown(md)
+
+```
+
+You can copy the above python code directly into your scripts/notebooks for easy analysis.
+You can also find table in the following formats: [TeX](../../data/blagn.tex), [FITS](../../data/blagn.fits), [ASCII](../../data/blagn.txt). 
+To update the compilation, please see the [instructions for contribution](/contributing.qmd).
+
+```{python}
+#| echo: false
+table.write('../../data/blagn.tex', format='latex', overwrite=True)
+table.write('../../data/blagn.fits', format='fits', overwrite=True)
+table.write('../../data/blagn.txt', format='ascii', overwrite=True)
+```
+
+
