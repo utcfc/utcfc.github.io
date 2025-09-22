@@ -7,10 +7,17 @@ date-modified: last-modified
 categories: ["Galaxies","Data"]
 ---
 
-This page maintains an up-to-date (as of {{<meta date-modified>}}) compilation of high-redshift ($z>3$) [Pop III](popiii.qmd)-hosting galaxy candidates. 
-The table below includes key properties of these objects, as reported in their respective discovery papers, including their redshifts, UV magnitudes, HeII line luminosities and metallicity, if available.
-References are provided numerically. 
-The table is dynamically generated in the code block below, and automatically exported to various formats for further use in analysis or publications.
+This page maintains an up-to-date (as of {{<meta date-modified>}}) compilation of all reported high-redshift ($z \gtrsim 3$) [Pop III](popiii.qmd)-hosting galaxy candidates, i.e. galaxies for which the presence of an active Pop III component has been suggested to account for the observed emission -- regardless of the average metallicity of the galaxy. 
+
+The table below includes key properties of these objects, as reported in their respective discovery papers, including their redshift, magnification, UV magnitude ($M_\mathrm{UV}$), UV $\beta$-slope, stellar mass (the total stellar mass, $M_\star$, and mass of the proposed Pop III component, $M_\mathrm{III}$), star formation rate (SFR), line flux, equivalent width (EW) and full width half maximum (FWHM) for a selection of emission lines of interest (Ly$\alpha$, H$\alpha$, H$\beta$, HeII1640, HeII4686 and [OIII]5007), [OIII]/H$\beta$ ratio and metallicity, both in terms of O/H ratio and solar metallicity (Z$_\odot$).
+
+The table is dynamically generated in the code block below, and it can be automatically exported to various formats for further use in analysis or publications.
+
+<style>
+table th, table td {
+  white-space: nowrap;
+}
+</style>
 
 
 ```{python}
@@ -20,101 +27,404 @@ The table is dynamically generated in the code block below, and automatically ex
 from IPython.display import Markdown
 from tabulate import tabulate
 from astropy.table import Table
+from types import MethodType
+from format_multiple_errors import format_multiple_errors
+from numbers import Real
 import numpy as np
-from numbers import Number
+import math
 
-def format_cell(x, digits=2):
+
+def format_cell(x, 
+                exponential=False, 
+                digits=2):
     """
-    Render a single table cell according to:
-      - scalar number -> value
-      - 2-tuple (value, err) -> value ± err
-      - 3-tuple (value, err_minus, err_plus) -> value_{-err_minus}^{+err_plus}
-    Non-numerical values are returned as string unchanged.
+    Render a single table cell in latex depending on the type of x:
+      - scalar -> single value
+      - 1-tuple/list/np.array (value,) -> treat like scalar
+      - 2-tuple/list/np.array (value, err) -> value ± err
+      - 3-tuple/list/np.array (value, err_minus, err_plus) -> value_{-err_minus}^{+err_plus}
+    Formatted as exponential if exponential = True, with the indicated number of digits.
+    Format overrides may also be specified in a dictionary at the end of the tuple.
+    Non-numerical values are returned as string unchanged, if allowed.
     """
+    # TODO: improve automatic choice of exponential and digits value when unspecified
     # Missing value
     if x is None:
         return "—"
-    if isinstance(x, float) and np.isnan(x):
-        return "—"
 
-    # Plain scalar number
-    if isinstance(x, (Number, np.floating, np.integer)):
-        return fr"${x:.{digits}f}$"
+    list_formats = (list, tuple, np.ndarray)
+    numeric_formats = (Real, np.floating, np.integer)
+
+    # Scalar number
+    fmt = f".{digits}{'e' if exponential else 'f'}"  # Format
+    if isinstance(x, np.ndarray) and x.ndim == 0:  # Regularize potential ndarray 0D (e.g. np.array(value)) to python scalars
+        x = x.item()
+    if isinstance(x, numeric_formats):  # Plain scalar value
+        return fr"${x:{fmt}}$"
+    if isinstance(x, list_formats) and len(x) == 1:  # Or 1-tuple -> treat like scalar
+        value = x[0]
+        if isinstance(value, numeric_formats):
+            return fr"${value:{fmt}}$"
+
+    # Significant figures given digits
+    def sigfig(digits, value):
+        e = 0 if value == 0 else int(math.floor(math.log10(abs(value))))
+        return max(1, digits + e + 1) if not exponential else digits + 1
 
     # 2-tuple symmetric uncertainty
-    if isinstance(x, (list, tuple, np.ndarray)) and len(x) == 2 and all(isinstance(v, (Number, np.floating, np.integer)) for v in x):
+    if isinstance(x, list_formats) and len(x) == 2 and all(isinstance(v, numeric_formats) for v in x):
         value, err = x
-        return fr"${value:.{digits}f} \pm {err:.{digits}f}$"
+        return rf"${format_multiple_errors(value, err, exponential=exponential, significant_figures=sigfig(digits, value), length_control='central', latex=True)}$"
 
     # 3-tuple asymmetric uncertainty
-    if isinstance(x, (list, tuple, np.ndarray)) and len(x) == 3 and all(isinstance(v, (Number, np.floating, np.integer)) for v in x):
-        value, err_minus, err_plus = x
-        return fr"${value:.{digits}f}_{{-{err_minus:.{digits}f}}}^{{+{err_plus:.{digits}f}}}$"
+    if isinstance(x, list_formats) and len(x) == 3 and all(isinstance(v, numeric_formats) for v in x):
+        value, err_lower, err_upper, = x
+        return rf"${format_multiple_errors(value, (err_lower, err_upper), exponential=exponential, significant_figures=sigfig(digits, value), length_control='central', latex=True)}$"
 
-    # Fallback for strings/others
-    return str(x)
+    # Special case: entry includes explicit format overrides as a dictionary in the last element of the tuple
+    if isinstance(x, list_formats) and isinstance(x[-1], dict):
+        *values, fmt_overrides = x
+        note = fmt_overrides.pop("note", "")  # Return value associated to the key and remove entry from dictionary (otherwise format_cell() produces an error)
+        fmt_merged = {
+            "exponential": exponential, 
+            "digits": digits, 
+            **fmt_overrides
+            }  # Shallow merge: if duplicate key in dictionary, take the last one, effectively overriding the specified format parameters
+        values_unpacked = values[0] if len(values) == 1 else tuple(values)
+        return format_cell(values_unpacked, **fmt_merged) + note
+
+    # Fallback: try to convert to string, or raise exception
+    try:
+        return str(x)
+    except:
+        raise ValueError(f"Unrecognized cell format for entry {x}")
 
 
-def table_to_markdown(tbl, headers=None, digits=2, tablefmt="github"):
+def table_to_markdown(tbl, 
+                      exponential=False,
+                      digits=2,
+                      col_fmt_overrides=None,
+                      headers=None,
+                      **kwargs):
     """
-    Convert an Astropy Table into a Markdown table,
-    formatting every cell with `format_cell`.
+    Convert an Astropy Table into a Markdown table, formatting every cell through the format_cell() function.
+    Formatting instructions passed to format_cell() can be overridden for specific columns through the col_fmt_overrides field
     """
+
+    default_fmt = {
+        "exponential": exponential, 
+        "digits": digits
+        }  
+
     rows = []
     for r in tbl:
-        rows.append([format_cell(r[c], digits=digits) for c in tbl.colnames])
+        row = []
+        for c in tbl.colnames:
+            if col_fmt_overrides is None:
+                fmt = default_fmt  # Default format
+            else:
+                fmt = {**default_fmt, **col_fmt_overrides.get(c, {})}  # Shallow merge: if duplicate key, take the last one, overriding the specified format parameters for current column
+            row.append(format_cell(r[c], **fmt))
+        rows.append(row)
 
     if headers is None:
         headers = tbl.colnames
 
     md = tabulate(
         rows,
-        headers=headers,
-        tablefmt=tablefmt,
-        colalign=["center"] * len(headers)
+        headers,
+        **kwargs
     )
     return md
 
-
 # ---------------- Example usage ----------------
 
-# Columns that may carry uncertainties are set to dtype=object
-table = Table(
-    names=('ID', 'redshift', 'magnification', 'Mstar', 'MUV',    'HeII1640', 'HeII4686', 'Metallicity', 'reference'),
-    dtype=(str,  object,     object,           object, object,   object,     object,     object,        str)
+# Map column name --> (header, units); TODO: units using astropy.units and converting when formatting header
+colmap = {
+    "ID":            ("Name",               None),
+    "redshift":      ("Redshift",           None),
+    "magnification": ("Lensed",             None),
+    "MUV":           (r"$M_{\rm UV}$",      None),
+    "beta":          (r"$\beta$-slope",     None),
+    "Mstar":         (r"$M_\star$",         r"M$_\odot$"),
+    "MIII":          (r"$M_\mathrm{III}$",  r"M$_\odot$"),
+    "SFR":           ("SFR",                r"M$_\odot$yr$^{-1}$"),
+    "Lya_flux":      (r"Ly$\alpha$ flux",   r"erg s$^{-1}$ cm$^{-2}$"),
+    "Lya_EW":        (r"Ly$\alpha$ EW",     "Å"),
+    "Lya_FWHM":      (r"Ly$\alpha$ FWHM",   r"km s$^{-1}$"),
+    "Ha_flux":       (r"H$\alpha$ flux",    r"erg s$^{-1}$ cm$^{-2}$"),
+    "Ha_EW":         (r"H$\alpha$ EW",      "Å"),
+    "Ha_FWHM":       (r"H$\alpha$ FWHM",    r"km s$^{-1}$"),
+    "Hb_flux":       (r"H$\beta$ flux",     r"erg s$^{-1}$ cm$^{-2}$"),
+    "Hb_EW":         (r"H$\beta$ EW",       "Å"),
+    "Hb_FWHM":       (r"H$\beta$ FWHM",     r"km s$^{-1}$"),
+    "HeII1640_flux": ("HeII1640 flux",      r"erg s$^{-1}$ cm$^{-2}$"),
+    "HeII1640_EW":   ("HeII1640 EW",        "Å"),
+    "HeII1640_FWHM": ("HeII1640 FWHM",      r"km s$^{-1}$"),
+    "HeII4686_flux": ("HeII4686 flux",      r"erg s$^{-1}$ cm$^{-2}$"),
+    "HeII4686_EW":   ("HeII4686 EW",        "Å"),
+    "HeII4686_FWMH": ("HeII4686 FWHM",      r"km s$^{-1}$"),
+    "OIII5007_flux": ("[OIII]5007 flux",    r"erg s$^{-1}$ cm$^{-2}$"),
+    "OIII5007_EW":   ("[OIII]5007 EW",      "Å"),
+    "OIII5007_FWHM": ("[OIII]5007 FWHM",    r"km s$^{-1}$"),
+    "OIIItoHb":      (r"[OIII]/H$\beta$",   None),
+    "OtoH":          ("12 + log(O/H)",      None),
+    "metallicity":   ("Metallicity",        r"Z$_\odot$"),
+    "reference":     ("Reference",          None),
+}
+names = tuple(colmap.keys())
+headers = tuple(
+    (fr"{label}<br>[{unit}]" if unit else f"{label}<br>&nbsp;")
+    for (label, unit) in colmap.values()
 )
 
-# Fill table --> for numerical entries: scalar, (value, err), (value, err_minus, err_plus)
+# Setup table
+table = Table( 
+    names=names,
+    dtype=("object",)*len(names),
+    masked=True
+)
+
+# Minor patch of astropy table add_row method, so that missing values are set to None by default instead of 0
+defaults = {c: None for c in table.colnames}
+def add_row_with_defaults(self, row=None, *args, **kwargs):
+    if isinstance(row, dict):
+        row = {**defaults, **row}
+    return Table.add_row(self, row, *args, **kwargs)
+table.add_row = MethodType(add_row_with_defaults, table)
+
+# Column format overrides
+col_fmt_overrides = {
+    "Mstar": {"exponential": True},
+    "MIII": {"exponential": True},
+    "Lya_flux": {"exponential": True}, 
+    "Ha_flux": {"exponential": True}, 
+    "Hb_flux": {"exponential": True}, 
+    "HeII1640_flux": {"exponential": True},
+    "HeII4686_flux": {"exponential": True},
+    "OIII5007_flux": {"exponential": True},
+}
+
+# Notes style
+def note(text, color="red"):
+    return rf"$^{{\textcolor{{{color}}}{{({text})}}}}$"
+
+# Fill table
 table.add_row(dict(
-    ID="GLIMPSE-16043",
-    redshift=(6.50, 0.03, 0.24),     # 3-tuple -> asymmetric
-    magnification=(2.10, 0.30),      # 2-tuple -> symmetric
-    Mstar=np.nan,                    # scalar NaN -> "—"
-    MUV=-19.42,                      # scalar -> value
-    HeII1640=None,                   # None -> "—"
-    HeII4686=(1.2e40, 0.2e40, 0.3e40),
-    Metallicity="Z < 1/50 Z$_\\odot$",
-    reference='@kokorev2023c'
+    ID="GNHeII J1236+6215",
+    redshift=(2.9803, 0.0010, {"digits": 4}),
+    magnification="No",
+    MUV=(-22.09, 0.02, {"digits": 2}),
+    beta=(-2.18, 0.06, {"digits": 2}),
+    Lya_flux=(23.0e-18, 5.4e-18, {"digits": 2}),
+    Lya_EW=(19.2),
+    Lya_FWHM=(758, 90, {"digits": 0}),  # Note that values for the FWHMs are also given in A in Tab. 4
+    Ha_flux=(16.46e-18, 0.32e-18, {"digits": 3}),
+    Ha_EW=166.5,
+    Ha_FWHM=(268, 41, {"digits": 0}),
+    Hb_flux=(5.44e-18, 0.37e-18, {"digits": 2}),
+    Hb_EW=(26.6),
+    Hb_FWHM=(320, 137, {"digits": 0}),
+    HeII1640_flux=(8.8e-18, 1.8e-18),
+    HeII1640_EW=8.3,
+    HeII1640_FWHM=(573, 191, {"digits": 0}),
+    Mstar=(7.8e8, 3.1e8),
+    SFR=(12.2, 2.0, {"note": note("a")}),  # From SED, i.e. the value reported in the abstract
+    OIII5007_flux=(59.6e-18, 2.2e-18, {"digits": 2}),
+    OIII5007_EW=248.8,
+    OIIItoHb=(5.45, 0.32, {"digits": 2}),  # They also give HeII/Hbeta = 1.96 \pm 0.30, and HeII/Halpha = 0.69, 0.10, reported to closely match with the candidate from Wang+24
+    OtoH=(7.85, 0.22, {"digits": 2}),
+    metallicity=(0.003, 0.002, {"digits": 3}),
+    reference="@mondal2025"
+))
+table.add_row(dict(
+    ID="MPG-CR3",
+    redshift=(3.193, 0.016, {"digits": 3}),
+    magnification="No",
+    Lya_flux=(5.8e-17, 0.7e-17),
+    Lya_EW=(822, 101, {"digits": 0}),
+    Ha_flux=(4.2e-18, 0.6e-18, {"note": note("b")}),
+    Ha_EW=(2814, 327, {"digits": 0}),
+    Hb_flux=(6.3e-19, 0.7e-19),
+    HeII1640_flux=(None, {"note": note("c")}),
+    MIII=6.1e5,
+    OIII5007_flux=r"$< 5.6 \times 10^{-19}$",  # At 2sigma
+    OtoH=r"$< 6.52$",
+    metallicity=r"$< 8 \times 10^{-3}$",
+    reference="@cai2025"
+))
+table.add_row(dict(
+    ID="AMORE6",
+    redshift=(5.7253, 0.00005, {"digits": 4}),
+    magnification=("Yes", {"note": note("d")}),  # $\mu = 39.32_{-3.48}^{+3.73}$ for AMORE6-A, vs $\mu = 77.69_{-5.92}^{+8.37}$ for AMORE6-B
+    MUV=(-14.52, 0.08, 0.07, {"digits": 2, "note": note("e")}),
+    beta=(-2.77, 0.09, 0.07, {"digits": 2}),
+    Lya_flux= (4.95e-19, 0.92e-19, {"digits": 2}),  # From Lyalpha-to-Hbeta ratio = 10.01 \pm 1.4, propagating uncertainties
+    Hb_flux=(0.49e-19, 0.06e-19),
+    Hb_EW=(1594.7, 206.9),
+    Mstar=(4.37e5, 0.73e5, 2.24e5, {"digits": 2}),
+    SFR=(0.35, 0.06, {"digits": 2, "note": note("f")}),  # From Hbeta, converting from log to linear
+    OIII5007_flux=r"$< 1.1 \times 10^{-20}$",   # Upper limits at 2sigma
+    OtoH=r"$< 5.78$",
+    metallicity=r"$< 0.0012$", 
+    reference="@morishita2025"
+))
+table.add_row(dict(
+    ID="JOF-21739",
+    redshift=(6.17, 0.19, 0.06, {"digits": 2}),
+    magnification="Yes",  # Value of magnification not indicated
+    MUV=(-17.62, 0.15, 0.17, {"digits": 2}),
+    beta=(-2.79, 0.05, {"digits": 2}),
+    Ha_EW=(3600, 430, {"digits": 0}),
+    MIII=r"$\sim 10^5 - 10^6$",
+    OIIItoHb=r"$< 0.32$",
+    OtoH=r"$< 6.2$",
+    metallicity=r"$< 0.003$",
+    reference="@fujimoto2025"
+))
+'''
+# Rejected: detected [OIII] in the spectrum
+table.add_row(dict(
+    ID="GLIMPSE-1604",
+    redshift=(6.50, 0.24, 0.03, {"digits": 2}),
+    magnification="Yes",  # mu = (2.9, 0.2, 0.1),  
+    MUV=(-15.89, 0.14, 0.12, {"digits": 2}),
+    beta=(-2.34, 0.36, {"digits": 2}),
+    Ha_EW=(2810, 550, {"digits": 0}),
+    MIII=r"$\sim 10^5$",
+    OIIItoHb=r"$< 0.44$",
+    OtoH=r"$< 6.4$",
+    metallicity=r"$< 0.005$",
+    reference="@fujimoto2025"
+))
+'''
+table.add_row(dict(
+    ID="LAP1",
+    redshift=(6.639, 0.004, {"digits": 3}),
+    magnification="Yes",  # mu_tot(median) = (120, 9), mu_tang(median) = (55, 6, 2), mu_tot > 500 for images A1,A2, mu_tot=98,99 for B1,B2
+    MUV=r"$> -11.2$",
+    Mstar=r"$\lesssim 10^4$",
+    Lya_flux=(369.2e-20, 29.3e-20, {"digits": 3}),
+    Lya_EW=r"$> 370$",
+    Ha_flux=(69.4e-20, 5.5e-20, {"digits": 2}),
+    Ha_EW=r"$> 2020$",
+    Hb_flux=(26.3e-20, 2.7e-20, {"digits": 2}),
+    Hb_EW=r"$> 420$",
+    HeII1640_flux=(79.6e-20, 20.7e-20, {"digits": 2, "note": note("g")}),
+    OIII5007_flux=(14.5e-20, 3.4e-20, {"digits": 2}),
+    OIII5007_EW=r"$> 246$",
+    OIIItoHb=(0.55, 0.14, 0.15, {"digits": 2}),
+    OtoH=r"$< 6.3$",
+    metallicity=r"$< 0.004$",
+    reference="@vanzella2023"
+))
+table.add_row(dict(
+    ID="RX J2129-z8HeII",
+    redshift=(8.1623, 0.0007, {"digits": 4}),
+    magnification="Yes", # mu = (2.26, 0.14),
+    MUV=(-19.58, 0.02, 0.03, {"digits": 2}),
+    beta=(-2.53, 0.07, 0.06, {"digits": 2}),
+    Mstar=(5.6e7, 0.7e7, 0.8e7),  # Tot. stellar mass of the system LogM*/Msun = 7.75 \pm 0.06 from Tab. 1
+    MIII=(7.8e5, 1.4e5),  # Mass of the putative Pop III component estimated from the HeII luminosity
+    SFR=(9.56, 1.70, 4.51, {"digits": 2}),
+    Hb_flux=(71e-20, 10e-20, {"note": note("h")}),
+    Hb_EW=(202, 34, {"digits": 0}),
+    HeII1640_flux=(120e-20, 22e-20, {"digits": 2}),
+    HeII1640_EW=(21, 4, {"digits": 0}),
+    HeII4686_flux=r"$< 1.6 \times 10^{-19}$",  # 2sigma upper limits
+    HeII4686_EW=r"$< 49$",
+    OIII5007_flux=(390e-20, 10e-20, {"digits": 2}),
+    OIII5007_EW=(1015, 83, {"digits": 0}),
+    OIIItoHb=(5.5, 0.8),
+    OtoH=(7.63, 0.09, 0.14, {"digits": 2}),
+    metallicity=r"$\sim 0.1$",  # Log(Zstar/Zsun) ~ -0.9
+    reference="@wang2024"
+))
+table.add_row(dict(
+    ID="EXCELS-63107",
+    redshift=(8.271, {"digits": 3}),
+    magnification="No",
+    MUV=(-19.9, 0.1),
+    beta=(-3.3, 0.3),
+    Mstar=(3.72e8, 3.37e8, 4.05e8, {"digits": 2, "note": note("i")}),  # Assuming extended SF + recent burst model and converting from log to linear --> LogMstar/Msun = 8.57 -1.03 +0.32 to linear, with mass of the burst LogMburst/Msun = 7.35 -1.30 +0.22 (see Sec. 3.3 and Tab. 3)
+    SFR=(7.8, 0.6),  # From Hbeta
+    Hb_flux=(10.69e-19, 0.84e-19, {"digits": 3}),
+    OIII5007_flux=(38.54e-19, 1.20e-19, {"digits": 3}),
+    OIIItoHb=(3.61, 0.30, {"digits": 2}),
+    OtoH=(6.89, 0.21, 0.26, {"digits": 2, "note": note("j")}),
+    metallicity=(0.016, {"digits": 3}),
+    reference="@cullen2025"
+))
+table.add_row(dict(
+    ID="GN-z11 HeII clump",
+    redshift=(10.6034, 0.0013, {"digits": 4, "note": note("k")}),
+    magnification="No",
+    MIII=r"$\sim (2 - 2.5) \times 10^5$",
+    HeII1640_flux=(1.8e-19, 0.34e-19, {"note": note("l")}),  # Fluxes and EWs from Tab. 2 (HeII clump small aperture), converting log to linear
+    HeII1640_EW=(62, 27, 25, {"digits": 0, "note": note("m")}),
+    reference="@maiolino2024"
 ))
 
-headers = (
-    'Name', 'Redshift', 'Magnification', r'$M_\star$', r'$M_{\rm UV}$', r'$L_{\rm HeII1640}$', r'$L_{\rm HeII4686}$', 'Metallicity', 'Reference'
-)
-
-md = table_to_markdown(table, headers=headers, digits=2, tablefmt="github")
+# Markdown table
+md = table_to_markdown(table, tablefmt="github", headers=headers, exponential=False, digits=1, col_fmt_overrides=col_fmt_overrides)
 Markdown(md)
 
 ```
 
-You can copy the above python code directly into your scripts/notebooks for easy analysis.
-You can also find table in the following formats: [TeX](../../data/blagn.tex), [FITS](../../data/blagn.fits), [ASCII](../../data/blagn.txt). 
-To update the compilation, please see the [instructions for contribution](/contributing.qmd).
+<span style="font-size:75%">
+$^{(a)}$ From photometric analysis, averaged over the last 10 Myr; from spectroscopic analysis: SFR$_\mathrm{UV} = (9.8 \pm 0.1) ~\mathrm{M_\odot yr^{-1}}$, SFR$_\mathrm{H\beta} = (7.6 \pm 0.4) ~\mathrm{M_\odot yr^{-1}}$, SFR$_\mathrm{H\alpha} = (7.5 \pm 0.1) ~\mathrm{M_\odot yr^{-1}}$, SFR$_\mathrm{Pa\beta} = (6.40 \pm 0.03) ~\mathrm{M_\odot yr^{-1}}$.
+</span>
 
-```{python}
-#| echo: false
-table.write('../../data/blagn.tex', format='latex', overwrite=True)
-table.write('../../data/blagn.fits', format='fits', overwrite=True)
-table.write('../../data/blagn.txt', format='ascii', overwrite=True)
-```
+<span style="font-size:75%">
+$^{(b)}$ Includes a rescaling to account for potential flux losses, as the source lies near the edge of the MSA shutter.
+</span>
+
+<span style="font-size:75%">
+$^{(c)}$ HeII1640 line coinciding with strong OH skyline for this object.
+</span>
+
+<span style="font-size:75%">
+$^{(d)}$ Properties for the stacked spectrum of the two images in the doubly lensed system, normalizing by the magnification factor of each image.
+</span>
+
+<span style="font-size:75%">
+$^{(e)}$ The absolute UV magnitued and the physical properties of AMORE6 from SED fitting are reported for only one of the two images (AMORE6-B), as the other one (AMORE6-A) suffers from large uncertainties, likely due to its location near bright galaxies as well as its smaller magnification factor ($\mu = 39.32_{-3.48}^{+3.73}$, vs $\mu = 77.69_{-5.92}^{+8.37}$ for AMORE6-B).
+</span>
+
+<span style="font-size:75%">
+$^{(f)}$ SFR inferred from H$\beta$, larger than the value inferred from rest-frame UV luminosity -- $(0.0186_{-0.0035}^{+0.0033}) ~\mathrm{M_\odot yr^{-1}}$ -- or from averaging over the last 100 Myr of the best-fit star formation history -- $(0.0038_{-0.0007}^{+0.0017}) ~\mathrm{M_\odot yr^{-1}}$ --, suporting the presence of a very young burst.
+</span>
+
+<span style="font-size:75%">
+$^{(g)}$ The reliability of the HeII line detection is hampered by the presence of a small blueshift relative to the Balmer lines, and by the extreme required EW ($\gtrsim 200$ Å), therefore the authors safely consider the line undetected, placing a $1\sigma$ upper limit of $2.7 \times 10^{-10} ~\mathrm{erg \, s^{-1} \, cm^{-2}}$. Also note that the stellar continuum is undetected for this source.
+</span>
+
+<span style="font-size:75%">
+$^{(h)}$ Intrinsic line fluxes and upper limits are reported after applying corrections for lensing magnification and dust extinction, adopting $A_\mathrm{V} = 0.12 \pm 0.04$ from their spectro-photometric analysis.
+</span>
+
+<span style="font-size:75%">
+$^{(i)}$ Assuming an extended star-formation history in which the stellar mass is built up steadily, but with a recent ~3 Myr burst of star formation, forming a mass of $(2.24_{-2.13}^{+1.48}) \times 10^7 ~\mathrm{M_\odot}$.
+</span>
+
+<span style="font-size:75%">
+$^{(j)}$ Though this system is not metal-free, the authors suggest that an effective temperature $\gtrsim 80000$ K for the ionizing source is necessary (with no obvious sign of AGN heating), hardly explained with a standard IMF, and that exotic scenarios such as Pop III star formation within a mildly enriched halo would be consistent with the observation.  <!-- The authors report that this is one of the lowest directly constrained oxygen abundances measured in any galaxy to date, and $\sim 10 \times$ lower than is typical for $z \simeq 8$ galaxies with the same stellar mass -->
+</span>
+
+<span style="font-size:75%">
+$^{(k)}$ Spectroscopic redshift from @bunker2023.
+</span>
+
+<span style="font-size:75%">
+$^{(l)}$ From NIRSpec/IFU small aperture around HeII-emitting clump at $\sim 0.5''$ from GN-z11; independent MSA measures yield a flux of $(3.4 \pm 0.9) \times 10^{-19} ~\mathrm{erg \, s^{-1} \, cm^{-2}}$ or an EW of $98_{-52}^{+50}$ Å. However, uncertainties on the location of the MSA shutter, on the fraction of the putative HeII clump that entered the shutters and on absolute flux calibration prevent proper comparison.
+</span>
+
+<span style="font-size:75%">
+$^{(l)}$ From NIRSpec/IFU small $0.24'' \times 0.24''$ square aperture around the HeII-emitting clump at $\sim 0.5''$ from GN-z11; spectroscopy extracted from a larger aperture (aimed at capturing an additional and more extended HeII emission, possibly associated with a fainter and less significant clump about $0.3''$ south of the HeII primary clump and $0.4''$ east of GN-z11) yields $(5.0 \pm 0.8) \times 10^{-19} ~\mathrm{erg \, s^{-1} \, cm^{-2}}$, while independent MSA measures report a flux of $(3.4 \pm 0.9) \times 10^{-19} ~\mathrm{erg \, s^{-1} \, cm^{-2}}$. Uncertainties on the location of the MSA shutter, on the fraction of the putative HeII clump that entered the shutters, and on absolute flux calibration, together with the larger sensitivity of the MSA prism with respect than the IFU observation, prevent proper comparison.
+</span>
+
+<span style="font-size:75%">
+$^{(m)}$ As the continuum is totally undetected in the IFS medium-resolution spectra and only marginally detected in the low-resolution prism MSA spectrum (only yielding a 3$\sigma$ lower limit on the EW of 15 Å from the small aperture), the EW here is estimated from photometry. The corresponding EWs from the larger aperture and from the MSA are respectively $28.2_{-14.7}^{+14.5}$ Å (or $> 12$ Å from spectroscopy), and $98_{-52}^{+50}$ Å ($145_{-55}^{+50}$ Å); also see Footnote $(l)$.
+</span>
 
 
