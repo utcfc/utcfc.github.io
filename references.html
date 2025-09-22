@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.31">
+<meta name="generator" content="quarto-1.8.24">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -52,14 +52,15 @@ div.csl-indent {
 <meta name="quarto:offset" content="./">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-2917cba7b3d4d163173d31667e269604.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-b16d3cd8440660179ecb1474268f245d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-314f2c3717bab66417debfffc6584569.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-5688ad59ef459698439ebe852579ea9f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -102,7 +103,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -129,7 +130,8 @@ window.Quarto = {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./images/CFC-LOGO-2color-bigtext.png" alt="" class="navbar-logo">
+    <img src="./images/CFC-LOGO-2color-bigtext.png" alt="" class="navbar-logo light-content">
+    <img src="./images/CFC-LOGO-2color-bigtext.png" alt="" class="navbar-logo dark-content">
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -205,6 +207,9 @@ Arrabal Haro, Pablo, Mark Dickinson, Steven L. Finkelstein, Jeyhan S. Kartaltepe
 <div id="ref-bunker2023" class="csl-entry" role="listitem">
 Bunker, Andrew J., Aayush Saxena, Alex J. Cameron, Chris J. Willott, Emma Curtis-Lake, Peter Jakobsen, Stefano Carniani, et al. 2023. <span>“<span class="nocase">JADES NIRSpec Spectroscopy of GN-z11: Lyman-<span><span class="math inline">\(\alpha\)</span></span> emission and possible enhanced nitrogen abundance in a z = 10.60 luminous galaxy</span>”</span> 677 (September): A88. <a href="https://doi.org/10.1051/0004-6361/202346159">https://doi.org/10.1051/0004-6361/202346159</a>.
 </div>
+<div id="ref-cai2025" class="csl-entry" role="listitem">
+Cai, Sijia, Mingyu Li, Zheng Cai, Yunjing Wu, Fujiang Yu, Mark Dickinson, Fengwu Sun, et al. 2025. <span>“<span class="nocase">A Metal-Free Galaxy at <span class="math inline">\(z = 3.19\)</span>? Evidence of Late Population III Star Formation at Cosmic Noon</span>.”</span> <em>arXiv e-Prints</em>, July, arXiv:2507.17820. <a href="https://doi.org/10.48550/arXiv.2507.17820">https://doi.org/10.48550/arXiv.2507.17820</a>.
+</div>
 <div id="ref-calzetti1994" class="csl-entry" role="listitem">
 Calzetti, Daniela, Anne L. Kinney, and Thaisa Storchi-Bergmann. 1994. <span>“<span class="nocase">Dust Extinction of the Stellar Continua in Starburst Galaxies: The Ultraviolet and Optical Extinction Law</span>”</span> 429 (July): 582. <a href="https://doi.org/10.1086/174346">https://doi.org/10.1086/174346</a>.
 </div>
@@ -213,6 +218,9 @@ Carniani, Stefano, Kevin Hainline, Francesco D’Eugenio, Daniel J. Eisenstein, 
 </div>
 <div id="ref-castellano2024" class="csl-entry" role="listitem">
 Castellano, Marco, Lorenzo Napolitano, Adriano Fontana, Guido Roberts-Borsani, Tommaso Treu, Eros Vanzella, Jorge A. Zavala, et al. 2024. <span>“<span class="nocase">JWST NIRSpec Spectroscopy of the Remarkable Bright Galaxy GHZ2/GLASS-z12 at Redshift 12.34</span>”</span> 972 (2): 143. <a href="https://doi.org/10.3847/1538-4357/ad5f88">https://doi.org/10.3847/1538-4357/ad5f88</a>.
+</div>
+<div id="ref-cullen2025" class="csl-entry" role="listitem">
+Cullen, F., A. C. Carnall, D. Scholte, D. J. McLeod, R. J. McLure, K. Z. Arellano-Córdova, T. M. Stanton, et al. 2025. <span>“<span class="nocase">The JWST EXCELS survey: an extremely metal-poor galaxy at z = 8.271 hosting an unusual population of massive stars</span>”</span> 540 (3): 2176–94. <a href="https://doi.org/10.1093/mnras/staf838">https://doi.org/10.1093/mnras/staf838</a>.
 </div>
 <div id="ref-curtislake2023" class="csl-entry" role="listitem">
 Curtis-Lake, Emma, Stefano Carniani, Alex Cameron, Stephane Charlot, Peter Jakobsen, Roberto Maiolino, Andrew Bunker, et al. 2023. <span>“<span class="nocase">Spectroscopic confirmation of four metal-poor galaxies at z = 10.3-13.2</span>.”</span> <em>Nature Astronomy</em> 7 (May): 622–32. <a href="https://doi.org/10.1038/s41550-023-01918-w">https://doi.org/10.1038/s41550-023-01918-w</a>.
@@ -228,6 +236,9 @@ Finkelstein, Steven L., Micaela B. Bagley, Pablo Arrabal Haro, Mark Dickinson, H
 </div>
 <div id="ref-finkelstein2012" class="csl-entry" role="listitem">
 Finkelstein, Steven L., Casey Papovich, Brett Salmon, Kristian Finlator, Mark Dickinson, Henry C. Ferguson, Mauro Giavalisco, et al. 2012. <span>“<span class="nocase">Candels: The Evolution of Galaxy Rest-frame Ultraviolet Colors from z = 8 to 4</span>”</span> 756 (2): 164. <a href="https://doi.org/10.1088/0004-637X/756/2/164">https://doi.org/10.1088/0004-637X/756/2/164</a>.
+</div>
+<div id="ref-fujimoto2025" class="csl-entry" role="listitem">
+Fujimoto, Seiji, Rohan P. Naidu, John Chisholm, Hakim Atek, Ryan Endsley, Vasily Kokorev, Lukas J. Furtak, et al. 2025. <span>“<span class="nocase">GLIMPSE: An Ultrafaint ≃10⁵ M⊙ Pop III Galaxy Candidate and First Constraints on the Pop III UV Luminosity Function at z ≃ 6.7</span>”</span> 989 (1): 46. <a href="https://doi.org/10.3847/1538-4357/ade9a1">https://doi.org/10.3847/1538-4357/ade9a1</a>.
 </div>
 <div id="ref-greene2024" class="csl-entry" role="listitem">
 Greene, Jenny E., Ivo Labbe, Andy D. Goulding, Lukas J. Furtak, Iryna Chemerynska, Vasily Kokorev, Pratika Dayal, et al. 2024. <span>“<span class="nocase">UNCOVER Spectroscopy Confirms the Surprising Ubiquity of Active Galactic Nuclei in Red Sources at z &gt; 5</span>”</span> 964 (1): 39. <a href="https://doi.org/10.3847/1538-4357/ad1e5f">https://doi.org/10.3847/1538-4357/ad1e5f</a>.
@@ -253,11 +264,20 @@ Labbé, Ivo, Pieter van Dokkum, Erica Nelson, Rachel Bezanson, Katherine A. Sues
 <div id="ref-lambrides2024" class="csl-entry" role="listitem">
 Lambrides, Erini, Kristen Garofali, Rebecca Larson, Andrew Ptak, Marco Chiaberge, Arianna S. Long, Taylor A. Hutchison, et al. 2024. <span>“<span class="nocase">The Case for Super-Eddington Accretion: Connecting Weak X-ray and UV Line Emission in JWST Broad-Line AGN During the First Gyr of Cosmic Time</span>.”</span> <em>arXiv e-Prints</em>, September, arXiv:2409.13047. <a href="https://doi.org/10.48550/arXiv.2409.13047">https://doi.org/10.48550/arXiv.2409.13047</a>.
 </div>
+<div id="ref-maiolino2024" class="csl-entry" role="listitem">
+Maiolino, Roberto, Hannah Übler, Michele Perna, Jan Scholtz, Francesco D’Eugenio, Callum Witten, Nicolas Laporte, et al. 2024. <span>“<span class="nocase">JADES. Possible Population III signatures at z = 10.6 in the halo of GN-z11</span>”</span> 687 (July): A67. <a href="https://doi.org/10.1051/0004-6361/202347087">https://doi.org/10.1051/0004-6361/202347087</a>.
+</div>
 <div id="ref-matthee2024" class="csl-entry" role="listitem">
 Matthee, Jorryt, Rohan P. Naidu, Gabriel Brammer, John Chisholm, Anna-Christina Eilers, Andy Goulding, Jenny Greene, et al. 2024. <span>“<span class="nocase">Little Red Dots: An Abundant Population of Faint Active Galactic Nuclei at z <span><span class="math inline">\(\sim\)</span></span> 5 Revealed by the EIGER and FRESCO JWST Surveys</span>”</span> 963 (2): 129. <a href="https://doi.org/10.3847/1538-4357/ad2345">https://doi.org/10.3847/1538-4357/ad2345</a>.
 </div>
+<div id="ref-mondal2025" class="csl-entry" role="listitem">
+Mondal, Chayan, Kanak Saha, Anshuman Borgohain, Brent M. Smith, Rogier A. Windhorst, Naveen Reddy, Chian-Chou Chen, Keiichi Umetsu, and Rolf A. Jansen. 2025. <span>“<span class="nocase">GNHeII J1236+6215: A He II <span><span class="math inline">\(\lambda\)</span></span>1640 Emitting and Potentially LyC Leaking Galaxy at z = 2.9803 Unveiled through JWST and Keck Observations</span>”</span> 988 (2): 171. <a href="https://doi.org/10.3847/1538-4357/ade2cd">https://doi.org/10.3847/1538-4357/ade2cd</a>.
+</div>
 <div id="ref-morales2024" class="csl-entry" role="listitem">
 Morales, Alexa M., Steven L. Finkelstein, Gene C. K. Leung, Micaela B. Bagley, Nikko J. Cleri, Romeel Dave, Mark Dickinson, et al. 2024. <span>“<span class="nocase">Rest-frame UV Colors for Faint Galaxies at z <span><span class="math inline">\(\sim\)</span></span> 9–16 with the JWST NGDEEP Survey</span>.”</span> <em>ApJL</em> 964 (2): L24. <a href="https://doi.org/10.3847/2041-8213/ad2de4">https://doi.org/10.3847/2041-8213/ad2de4</a>.
+</div>
+<div id="ref-morishita2025" class="csl-entry" role="listitem">
+Morishita, Takahiro, Zhaoran Liu, Massimo Stiavelli, Tommaso Treu, Pietro Bergamini, and Yechi Zhang. 2025. <span>“<span class="nocase">Pristine Massive Star Formation Caught at the Break of Cosmic Dawn</span>.”</span> <em>arXiv e-Prints</em>, July, arXiv:2507.10521. <a href="https://doi.org/10.48550/arXiv.2507.10521">https://doi.org/10.48550/arXiv.2507.10521</a>.
 </div>
 <div id="ref-oesch2016" class="csl-entry" role="listitem">
 Oesch, P. A., G. Brammer, P. G. van Dokkum, G. D. Illingworth, R. J. Bouwens, I. Labbé, M. Franx, et al. 2016. <span>“<span class="nocase">A Remarkably Luminous Galaxy at z=11.1 Measured with Hubble Space Telescope Grism Spectroscopy</span>”</span> 819 (2): 129. <a href="https://doi.org/10.3847/0004-637X/819/2/129">https://doi.org/10.3847/0004-637X/819/2/129</a>.
@@ -273,6 +293,12 @@ Tacchella, Sandro, Daniel J. Eisenstein, Kevin Hainline, Benjamin D. Johnson, Wi
 </div>
 <div id="ref-topping2024" class="csl-entry" role="listitem">
 Topping, Michael W., Daniel P. Stark, Ryan Endsley, Lily Whitler, Kevin Hainline, Benjamin D. Johnson, Brant Robertson, et al. 2024. <span>“<span class="nocase">The UV continuum slopes of early star-forming galaxies in JADES</span>”</span> 529 (4): 4087–4103. <a href="https://doi.org/10.1093/mnras/stae800">https://doi.org/10.1093/mnras/stae800</a>.
+</div>
+<div id="ref-vanzella2023" class="csl-entry" role="listitem">
+Vanzella, E., F. Loiacono, P. Bergamini, U. Meštrić, M. Castellano, P. Rosati, M. Meneghetti, et al. 2023. <span>“<span class="nocase">An extremely metal-poor star complex in the reionization era: Approaching Population III stars with JWST</span>”</span> 678 (October): A173. <a href="https://doi.org/10.1051/0004-6361/202346981">https://doi.org/10.1051/0004-6361/202346981</a>.
+</div>
+<div id="ref-wang2024" class="csl-entry" role="listitem">
+Wang, Xin, Cheng Cheng, Junqiang Ge, Xiao-Lei Meng, Emanuele Daddi, Haojing Yan, Zhiyuan Ji, et al. 2024. <span>“<span class="nocase">A Strong He II <span><span class="math inline">\(\lambda\)</span></span>1640 Emitter with an Extremely Blue UV Spectral Slope at z = 8.16: Presence of Population III Stars?</span>”</span> 967 (2): L42. <a href="https://doi.org/10.3847/2041-8213/ad4ced">https://doi.org/10.3847/2041-8213/ad4ced</a>.
 </div>
 <div id="ref-wilkins2013" class="csl-entry" role="listitem">
 Wilkins, Stephen M., Andrew Bunker, William Coulton, Rupert Croft, Tiziana di Matteo, Nishikanta Khandai, and Yu Feng. 2013. <span>“<span class="nocase">Interpreting the observed UV continuum slopes of high-redshift galaxies</span>”</span> 430 (4): 2885–90. <a href="https://doi.org/10.1093/mnras/stt096">https://doi.org/10.1093/mnras/stt096</a>.
@@ -336,13 +362,14 @@ Zavala, Jorge A., Marco Castellano, Hollis B. Akins, Tom J. L. C. Bakx, Denis Bu
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.31">
+<meta name="generator" content="quarto-1.8.24">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -89,14 +89,15 @@ div.csl-indent {
 <meta name="quarto:offset" content="../../">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2917cba7b3d4d163173d31667e269604.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-b16d3cd8440660179ecb1474268f245d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-314f2c3717bab66417debfffc6584569.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-5688ad59ef459698439ebe852579ea9f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -139,7 +140,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -166,7 +167,8 @@ window.Quarto = {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="../../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../../images/CFC-LOGO-2color-bigtext.png" alt="" class="navbar-logo">
+    <img src="../../images/CFC-LOGO-2color-bigtext.png" alt="" class="navbar-logo light-content">
+    <img src="../../images/CFC-LOGO-2color-bigtext.png" alt="" class="navbar-logo dark-content">
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -176,7 +178,7 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html"> <i class="bi bi-house-door-fill" role="img">
+    <a class="nav-link active" href="../../index.html" aria-current="page"> <i class="bi bi-house-door-fill" role="img">
 </i> 
 <span class="menu-text"> </span></a>
   </li>  
@@ -185,7 +187,7 @@ window.Quarto = {
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../../pages.html" aria-current="page"> 
+    <a class="nav-link" href="../../pages.html"> 
 <span class="menu-text">Pages</span></a>
   </li>  
   <li class="nav-item compact">
@@ -217,6 +219,10 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="../../index.html" class="sidebar-logo-link">
+      </a>
+      </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
@@ -301,7 +307,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">June 2, 2025</p>
+      <p class="date-modified">September 22, 2025</p>
     </div>
   </div>
     
@@ -312,11 +318,11 @@ window.Quarto = {
 </header>
 
 
-<p>This page maintains an up-to-date (as of June 2, 2025) compilation of very high-redshift (<span class="math inline">\(z&gt;10\)</span>) galaxies spectroscopically-confirmed with <a href="jwst.qmd">JWST</a>. The table below includes key properties of these galaxies, as reported in their respective discovery papers, including their redshifts, UV magnitudes, stellar masses, <a href="../../pages/uvslopes.html">UV slopes</a>, and more. References are provided numerically. The table is dynamically generated in the code block below, and automatically exported to various formats for further use in analysis or publications.</p>
+<p>This page maintains an up-to-date (as of September 22, 2025) compilation of very high-redshift (<span class="math inline">\(z&gt;10\)</span>) galaxies spectroscopically-confirmed with <a href="jwst.qmd">JWST</a>. The table below includes key properties of these galaxies, as reported in their respective discovery papers, including their redshifts, UV magnitudes, stellar masses, <a href="../../pages/uvslopes.html">UV slopes</a>, and more. References are provided numerically. The table is dynamically generated in the code block below, and automatically exported to various formats for further use in analysis or publications.</p>
 <div id="3f186432" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> IPython.display <span class="im">import</span> Markdown</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> IPython.display <span class="im">import</span> Markdown</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tabulate <span class="im">import</span> tabulate</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> astropy.table <span class="im">import</span> Table</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -402,7 +408,7 @@ window.Quarto = {
 <span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a>   headers<span class="op">=</span>(<span class="st">'Name'</span>, <span class="st">'Redshift'</span>, <span class="vs">r'</span><span class="dv">$</span><span class="vs">M_{</span><span class="ch">\r</span><span class="vs">m UV}</span><span class="dv">$</span><span class="vs">'</span>, <span class="vs">r'</span><span class="dv">$\b</span><span class="vs">eta</span><span class="dv">$</span><span class="vs">'</span>, <span class="vs">r'</span><span class="dv">$</span><span class="er">\</span><span class="vs">log_</span><span class="op">{10}</span><span class="vs"> M_</span><span class="op">*</span><span class="dv">$</span><span class="vs">'</span>, <span class="st">'Reference'</span>), </span>
 <span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a>   colalign<span class="op">=</span>(<span class="st">"left"</span>, <span class="st">"decimal"</span>, <span class="st">"decimal"</span>, <span class="st">"decimal"</span>, <span class="st">"decimal"</span>, <span class="st">"center"</span>),</span>
 <span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a>   floatfmt<span class="op">=</span><span class="st">".2f"</span></span>
-<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="1">
 <table class="caption-top table table-sm table-striped small">
@@ -582,13 +588,14 @@ window.Quarto = {
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

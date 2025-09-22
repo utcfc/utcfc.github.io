@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.31">
+<meta name="generator" content="quarto-1.8.24">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -34,14 +34,15 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-2917cba7b3d4d163173d31667e269604.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-b16d3cd8440660179ecb1474268f245d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-314f2c3717bab66417debfffc6584569.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-5688ad59ef459698439ebe852579ea9f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -113,7 +114,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -140,7 +141,8 @@ window.Quarto = {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./images/CFC-LOGO-2color-bigtext.png" alt="" class="navbar-logo">
+    <img src="./images/CFC-LOGO-2color-bigtext.png" alt="" class="navbar-logo light-content">
+    <img src="./images/CFC-LOGO-2color-bigtext.png" alt="" class="navbar-logo dark-content">
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -150,7 +152,7 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> <i class="bi bi-house-door-fill" role="img">
+    <a class="nav-link active" href="./index.html" aria-current="page"> <i class="bi bi-house-door-fill" role="img">
 </i> 
 <span class="menu-text"> </span></a>
   </li>  
@@ -159,7 +161,7 @@ window.Quarto = {
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./pages.html" aria-current="page"> 
+    <a class="nav-link" href="./pages.html"> 
 <span class="menu-text">Pages</span></a>
   </li>  
   <li class="nav-item compact">
@@ -191,6 +193,10 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="./index.html" class="sidebar-logo-link">
+      </a>
+      </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
@@ -283,7 +289,7 @@ window.Quarto = {
   </div>
 </div>
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="R2FsYXh5JTIwU0VEcw==" data-listing-date-sort="1743552000000" data-listing-file-modified-sort="1748891769165" data-listing-date-modified-sort="1748891769000" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
+<div class="g-col-1" data-index="0" data-categories="R2FsYXh5JTIwU0VEcw==" data-listing-date-sort="1743552000000" data-listing-file-modified-sort="1758572704976" data-listing-date-modified-sort="1758572704000" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
 <a href="./pages/balmerbreaks.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
@@ -298,7 +304,7 @@ Balmer break
 Modified
 </td>
 <td class="date-modified">
-Jun 2, 2025
+Sep 22, 2025
 </td>
 </tr>
 
@@ -306,13 +312,13 @@ Jun 2, 2025
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="R2FsYXhpZXMlMkNBR04=" data-listing-date-sort="1748822400000" data-listing-file-modified-sort="1748891769165" data-listing-date-modified-sort="1748891769000" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
-<a href="./pages/popiii.html" class="quarto-grid-link">
+<div class="g-col-1" data-index="1" data-categories="R2FsYXhpZXMlMkNEYXRh" data-listing-date-sort="1758153600000" data-listing-file-modified-sort="1758572704976" data-listing-date-modified-sort="1758572704000" data-listing-reading-time-sort="19" data-listing-word-count-sort="3752">
+<a href="./pages/popiiicandidates.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
-Population III Stars
+Population III candidates
 </h5>
 <table class="card-other-values">
 
@@ -321,7 +327,7 @@ Population III Stars
 Modified
 </td>
 <td class="date-modified">
-Jun 2, 2025
+Sep 22, 2025
 </td>
 </tr>
 
@@ -329,32 +335,7 @@ Jun 2, 2025
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="2" data-categories="R2FsYXh5JTIwU0VEcw==" data-listing-date-sort="1741910400000" data-listing-file-modified-sort="1748891769165" data-listing-date-modified-sort="1748891769000" data-listing-reading-time-sort="3" data-listing-word-count-sort="434">
-<a href="./pages/uvslopes.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./images/uvslopes.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-UV slope
-</h5>
-<table class="card-other-values">
-
-<tbody><tr>
-<td>
-Modified
-</td>
-<td class="date-modified">
-Jun 2, 2025
-</td>
-</tr>
-
-</tbody></table>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="3" data-categories="R2FsYXhpZXMlMkNBR04=" data-listing-date-sort="1743552000000" data-listing-file-modified-sort="1748891769165" data-listing-date-modified-sort="1748891769000" data-listing-reading-time-sort="3" data-listing-word-count-sort="460">
+<div class="g-col-1" data-index="2" data-categories="R2FsYXhpZXMlMkNBR04=" data-listing-date-sort="1743552000000" data-listing-file-modified-sort="1758572704976" data-listing-date-modified-sort="1758572704000" data-listing-reading-time-sort="3" data-listing-word-count-sort="460">
 <a href="./pages/lrds.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top"><img src="images/lrd_sed.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
@@ -369,7 +350,7 @@ Little red dots
 Modified
 </td>
 <td class="date-modified">
-Jun 2, 2025
+Sep 22, 2025
 </td>
 </tr>
 
@@ -377,30 +358,7 @@ Jun 2, 2025
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="4" data-listing-date-sort="1741910400000" data-listing-file-modified-sort="1748891769165" data-listing-date-modified-sort="1748891769000" data-listing-reading-time-sort="2" data-listing-word-count-sort="267">
-<a href="./pages/telescopes/NIRSpec.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-NIRSpec
-</h5>
-<table class="card-other-values">
-
-<tbody><tr>
-<td>
-Modified
-</td>
-<td class="date-modified">
-Jun 2, 2025
-</td>
-</tr>
-
-</tbody></table>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="5" data-categories="RGF0YQ==" data-listing-date-sort="1743552000000" data-listing-file-modified-sort="1748891769165" data-listing-date-modified-sort="1748891769000" data-listing-reading-time-sort="2" data-listing-word-count-sort="249">
+<div class="g-col-1" data-index="3" data-categories="RGF0YQ==" data-listing-date-sort="1743552000000" data-listing-file-modified-sort="1758572704976" data-listing-date-modified-sort="1758572704000" data-listing-reading-time-sort="2" data-listing-word-count-sort="249">
 <a href="./pages/data/blagn.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -417,7 +375,7 @@ Broad-line AGN compilation
 Modified
 </td>
 <td class="date-modified">
-Jun 2, 2025
+Sep 22, 2025
 </td>
 </tr>
 
@@ -425,7 +383,7 @@ Jun 2, 2025
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="6" data-categories="RGF0YQ==" data-listing-date-sort="1741910400000" data-listing-file-modified-sort="1748891769165" data-listing-date-modified-sort="1748891769000" data-listing-reading-time-sort="2" data-listing-word-count-sort="391">
+<div class="g-col-1" data-index="4" data-categories="RGF0YQ==" data-listing-date-sort="1741910400000" data-listing-file-modified-sort="1758572704976" data-listing-date-modified-sort="1758572704000" data-listing-reading-time-sort="2" data-listing-word-count-sort="391">
 <a href="./pages/data/highz.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -442,7 +400,7 @@ High-redshift galaxy compilation
 Modified
 </td>
 <td class="date-modified">
-Jun 2, 2025
+Sep 22, 2025
 </td>
 </tr>
 
@@ -450,15 +408,13 @@ Jun 2, 2025
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="7" data-categories="SldTVCUyMHN1cnZleXM=" data-listing-date-sort="1741910400000" data-listing-file-modified-sort="1748891769165" data-listing-date-modified-sort="1748891769000" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
-<a href="./pages/surveys/ngdeep.html" class="quarto-grid-link">
+<div class="g-col-1" data-index="5" data-categories="R2FsYXhpZXMlMkNBR04=" data-listing-date-sort="1748822400000" data-listing-file-modified-sort="1758572704976" data-listing-date-modified-sort="1758572704000" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
+<a href="./pages/popiii.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="https://pbs.twimg.com/media/FpCk47IWYAAhwmm.jpg" class="thumbnail-image card-img" style="height: 150px;">
-</p>
+<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
-NGDEEP
+Population III Stars
 </h5>
 <table class="card-other-values">
 
@@ -467,7 +423,7 @@ NGDEEP
 Modified
 </td>
 <td class="date-modified">
-Jun 2, 2025
+Sep 22, 2025
 </td>
 </tr>
 
@@ -475,7 +431,55 @@ Jun 2, 2025
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="8" data-categories="SldTVCUyMHN1cnZleXM=" data-listing-date-sort="1741910400000" data-listing-file-modified-sort="1748891769165" data-listing-date-modified-sort="1748891769000" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
+<div class="g-col-1" data-index="6" data-listing-date-sort="1741910400000" data-listing-file-modified-sort="1758572704977" data-listing-date-modified-sort="1758572704000" data-listing-reading-time-sort="2" data-listing-word-count-sort="267">
+<a href="./pages/telescopes/NIRSpec.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+NIRSpec
+</h5>
+<table class="card-other-values">
+
+<tbody><tr>
+<td>
+Modified
+</td>
+<td class="date-modified">
+Sep 22, 2025
+</td>
+</tr>
+
+</tbody></table>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="7" data-categories="R2FsYXh5JTIwU0VEcw==" data-listing-date-sort="1741910400000" data-listing-file-modified-sort="1758572704977" data-listing-date-modified-sort="1758572704000" data-listing-reading-time-sort="3" data-listing-word-count-sort="434">
+<a href="./pages/uvslopes.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="./images/uvslopes.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+UV slope
+</h5>
+<table class="card-other-values">
+
+<tbody><tr>
+<td>
+Modified
+</td>
+<td class="date-modified">
+Sep 22, 2025
+</td>
+</tr>
+
+</tbody></table>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="8" data-categories="SldTVCUyMHN1cnZleXM=" data-listing-date-sort="1741910400000" data-listing-file-modified-sort="1758572704976" data-listing-date-modified-sort="1758572704000" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
 <a href="./pages/surveys/ceers.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -492,7 +496,32 @@ CEERS
 Modified
 </td>
 <td class="date-modified">
-Jun 2, 2025
+Sep 22, 2025
+</td>
+</tr>
+
+</tbody></table>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="9" data-categories="SldTVCUyMHN1cnZleXM=" data-listing-date-sort="1741910400000" data-listing-file-modified-sort="1758572704976" data-listing-date-modified-sort="1758572704000" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
+<a href="./pages/surveys/ngdeep.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="https://pbs.twimg.com/media/FpCk47IWYAAhwmm.jpg" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+NGDEEP
+</h5>
+<table class="card-other-values">
+
+<tbody><tr>
+<td>
+Modified
+</td>
+<td class="date-modified">
+Sep 22, 2025
 </td>
 </tr>
 
@@ -554,13 +583,14 @@ Jun 2, 2025
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
