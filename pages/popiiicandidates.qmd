@@ -369,6 +369,13 @@ table.add_row(dict(
 md = table_to_markdown(table, tablefmt="github", headers=headers, exponential=False, digits=1, col_fmt_overrides=col_fmt_overrides)
 Markdown(md)
 
+'''
+TODO:
+- add Balmer jump to the table, when available
+- add Halpha EW for AMORE6
+- other ref.: Nakajima+25 (reanalysis of LAP1), Hsiao et al. 2025, Durovcikova et al. 2025 
+'''
+
 ```
 
 <span style="font-size:75%">
