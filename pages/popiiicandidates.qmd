@@ -373,7 +373,7 @@ Markdown(md)
 TODO:
 - add Balmer jump to the table, when available
 - add Halpha EW for AMORE6
-- other ref.: Nakajima+25 (reanalysis of LAP1), Hsiao et al. 2025, Durovcikova et al. 2025 
+- other ref.: Nakajima+25 (reanalysis of LAP1), Hsiao et al. 2025, Durovcikova et al. 2025 + also check objects from Tiger's list https://docs.google.com/spreadsheets/d/1fUcRK6AGNtIf2qHyW31bLb2BuDMquJHNq7YIJ3zk8yc/edit?gid=0#gid=0
 '''
 
 ```
