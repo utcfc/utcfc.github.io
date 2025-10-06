@@ -145,21 +145,12 @@ colmap =  {
     "redshift":      ("Redshift",           None),
     "OtoH":          ("12 + log(O/H)",      None),
     "metallicity":   ("Metallicity",        r"Z$_\odot$"),
-    "Mstar":         (r"$M_\star$",         r"M$_\odot$"),
     "MIII":          (r"$M_\mathrm{III}$",  r"M$_\odot$"),
+    "Mstar":         (r"$M_\star$",         r"M$_\odot$"),
     "SFR":           ("SFR",                r"M$_\odot$yr$^{-1}$"),
     "magnification": ("Lensed",             None),
     "MUV":           (r"$M_{\rm UV}$",      None),
     "beta":          (r"$\beta$-slope",     None),
-    "Lya_flux":      (r"Ly$\alpha$ flux",   r"erg s$^{-1}$ cm$^{-2}$"),
-    "Lya_EW":        (r"Ly$\alpha$ EW",     "Å"),
-    "Lya_FWHM":      (r"Ly$\alpha$ FWHM",   r"km s$^{-1}$"),
-    "Ha_flux":       (r"H$\alpha$ flux",    r"erg s$^{-1}$ cm$^{-2}$"),
-    "Ha_EW":         (r"H$\alpha$ EW",      "Å"),
-    "Ha_FWHM":       (r"H$\alpha$ FWHM",    r"km s$^{-1}$"),
-    "Hb_flux":       (r"H$\beta$ flux",     r"erg s$^{-1}$ cm$^{-2}$"),
-    "Hb_EW":         (r"H$\beta$ EW",       "Å"),
-    "Hb_FWHM":       (r"H$\beta$ FWHM",     r"km s$^{-1}$"),
     "HeII1640_flux": ("HeII1640 flux",      r"erg s$^{-1}$ cm$^{-2}$"),
     "HeII1640_EW":   ("HeII1640 EW",        "Å"),
     "HeII1640_FWHM": ("HeII1640 FWHM",      r"km s$^{-1}$"),
@@ -170,6 +161,15 @@ colmap =  {
     "OIII5007_EW":   ("[OIII]5007 EW",      "Å"),
     "OIII5007_FWHM": ("[OIII]5007 FWHM",    r"km s$^{-1}$"),
     "OIIItoHb":      (r"[OIII]/H$\beta$",   None),
+    "Lya_flux":      (r"Ly$\alpha$ flux",   r"erg s$^{-1}$ cm$^{-2}$"),
+    "Lya_EW":        (r"Ly$\alpha$ EW",     "Å"),
+    "Lya_FWHM":      (r"Ly$\alpha$ FWHM",   r"km s$^{-1}$"),
+    "Ha_flux":       (r"H$\alpha$ flux",    r"erg s$^{-1}$ cm$^{-2}$"),
+    "Ha_EW":         (r"H$\alpha$ EW",      "Å"),
+    "Ha_FWHM":       (r"H$\alpha$ FWHM",    r"km s$^{-1}$"),
+    "Hb_flux":       (r"H$\beta$ flux",     r"erg s$^{-1}$ cm$^{-2}$"),
+    "Hb_EW":         (r"H$\beta$ EW",       "Å"),
+    "Hb_FWHM":       (r"H$\beta$ FWHM",     r"km s$^{-1}$"),
     "reference":     ("Reference",          None),
 }
 names = tuple(colmap.keys())
@@ -365,10 +365,6 @@ table.add_row(dict(
     reference="@maiolino2024"
 ))
 
-# Markdown table
-md = table_to_markdown(table, tablefmt="github", headers=headers, exponential=False, digits=1, col_fmt_overrides=col_fmt_overrides)
-Markdown(md)
-
 '''
 TODO:
 - add Balmer jump to the table, when available
@@ -376,6 +372,9 @@ TODO:
 - other ref.: Nakajima+25 (reanalysis of LAP1), Hsiao et al. 2025, Durovcikova et al. 2025 + also check objects from Tiger's list https://docs.google.com/spreadsheets/d/1fUcRK6AGNtIf2qHyW31bLb2BuDMquJHNq7YIJ3zk8yc/edit?gid=0#gid=0
 '''
 
+# Markdown table
+md = table_to_markdown(table, tablefmt="github", headers=headers, exponential=False, digits=1, col_fmt_overrides=col_fmt_overrides)
+Markdown(md)
 ```
 
 <span style="font-size:75%">
