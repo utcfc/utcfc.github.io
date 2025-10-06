@@ -5,10 +5,6 @@ metadata-files:
 date: 09/18/2025
 date-modified: last-modified
 categories: ["Galaxies","Data"]
-execute:
-  freeze: false
-  cache: false
-execute-dir: project
 ---
 
 This page maintains an up-to-date (as of {{<meta date-modified>}}) compilation of all reported high-redshift ($z \gtrsim 3$) [Pop III](popiii.qmd)-hosting galaxy candidates, i.e. galaxies for which the presence of an active Pop III component has been suggested to account for the observed emission -- regardless of the average metallicity of the galaxy. 
