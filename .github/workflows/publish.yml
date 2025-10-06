@@ -29,6 +29,7 @@ jobs:
           pip install jupyter nbformat ipykernel
           # Common libs used in your .qmd (adjust as needed)
           pip install numpy pandas matplotlib astropy tabulate
+          pip install format_multiple_errors==0.0.3
 
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
