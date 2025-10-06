@@ -264,7 +264,7 @@ table th, table td {
   white-space: nowrap;
 }
 </style>
-<div id="fe11f7f1" class="cell" data-execution_count="1">
+<div id="d1e637f3" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> IPython.display <span class="im">import</span> Markdown</span>
@@ -383,36 +383,36 @@ table th, table td {
 <span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a><span class="co"># ---------------- Example usage ----------------</span></span>
 <span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a><span class="co"># Map column name --&gt; (header, units); </span><span class="al">TODO</span><span class="co">: units using astropy.units and converting when formatting header</span></span>
-<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a>colmap <span class="op">=</span> {</span>
+<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a>colmap <span class="op">=</span>  {</span>
 <span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a>    <span class="st">"ID"</span>:            (<span class="st">"Name"</span>,               <span class="va">None</span>),</span>
 <span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a>    <span class="st">"redshift"</span>:      (<span class="st">"Redshift"</span>,           <span class="va">None</span>),</span>
-<span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a>    <span class="st">"magnification"</span>: (<span class="st">"Lensed"</span>,             <span class="va">None</span>),</span>
-<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a>    <span class="st">"MUV"</span>:           (<span class="vs">r"</span><span class="dv">$</span><span class="vs">M_{</span><span class="ch">\r</span><span class="vs">m UV}</span><span class="dv">$</span><span class="vs">"</span>,      <span class="va">None</span>),</span>
-<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a>    <span class="st">"beta"</span>:          (<span class="vs">r"</span><span class="dv">$\b</span><span class="vs">eta</span><span class="dv">$</span><span class="vs">-slope"</span>,     <span class="va">None</span>),</span>
+<span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a>    <span class="st">"OtoH"</span>:          (<span class="st">"12 + log(O/H)"</span>,      <span class="va">None</span>),</span>
+<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a>    <span class="st">"metallicity"</span>:   (<span class="st">"Metallicity"</span>,        <span class="vs">r"Z</span><span class="dv">$</span><span class="vs">_</span><span class="er">\</span><span class="vs">odot</span><span class="dv">$</span><span class="vs">"</span>),</span>
+<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a>    <span class="st">"MIII"</span>:          (<span class="vs">r"</span><span class="dv">$</span><span class="vs">M_</span><span class="dv">\m</span><span class="vs">athrm{III}</span><span class="dv">$</span><span class="vs">"</span>,  <span class="vs">r"M</span><span class="dv">$</span><span class="vs">_</span><span class="er">\</span><span class="vs">odot</span><span class="dv">$</span><span class="vs">"</span>),</span>
 <span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Mstar"</span>:         (<span class="vs">r"</span><span class="dv">$</span><span class="vs">M_</span><span class="dv">\s</span><span class="vs">tar</span><span class="dv">$</span><span class="vs">"</span>,         <span class="vs">r"M</span><span class="dv">$</span><span class="vs">_</span><span class="er">\</span><span class="vs">odot</span><span class="dv">$</span><span class="vs">"</span>),</span>
-<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a>    <span class="st">"MIII"</span>:          (<span class="vs">r"</span><span class="dv">$</span><span class="vs">M_</span><span class="dv">\m</span><span class="vs">athrm{III}</span><span class="dv">$</span><span class="vs">"</span>,  <span class="vs">r"M</span><span class="dv">$</span><span class="vs">_</span><span class="er">\</span><span class="vs">odot</span><span class="dv">$</span><span class="vs">"</span>),</span>
-<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a>    <span class="st">"SFR"</span>:           (<span class="st">"SFR"</span>,                <span class="vs">r"M</span><span class="dv">$</span><span class="vs">_</span><span class="er">\</span><span class="vs">odot</span><span class="dv">$</span><span class="vs">yr</span><span class="dv">$^</span><span class="vs">{-1}</span><span class="dv">$</span><span class="vs">"</span>),</span>
-<span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Lya_flux"</span>:      (<span class="vs">r"Ly</span><span class="dv">$</span><span class="ch">\a</span><span class="vs">lpha</span><span class="dv">$</span><span class="vs"> flux"</span>,   <span class="vs">r"erg s</span><span class="dv">$^</span><span class="vs">{-1}</span><span class="dv">$</span><span class="vs"> cm</span><span class="dv">$^</span><span class="vs">{-2}</span><span class="dv">$</span><span class="vs">"</span>),</span>
-<span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Lya_EW"</span>:        (<span class="vs">r"Ly</span><span class="dv">$</span><span class="ch">\a</span><span class="vs">lpha</span><span class="dv">$</span><span class="vs"> EW"</span>,     <span class="st">"Å"</span>),</span>
-<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Lya_FWHM"</span>:      (<span class="vs">r"Ly</span><span class="dv">$</span><span class="ch">\a</span><span class="vs">lpha</span><span class="dv">$</span><span class="vs"> FWHM"</span>,   <span class="vs">r"km s</span><span class="dv">$^</span><span class="vs">{-1}</span><span class="dv">$</span><span class="vs">"</span>),</span>
-<span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Ha_flux"</span>:       (<span class="vs">r"H</span><span class="dv">$</span><span class="ch">\a</span><span class="vs">lpha</span><span class="dv">$</span><span class="vs"> flux"</span>,    <span class="vs">r"erg s</span><span class="dv">$^</span><span class="vs">{-1}</span><span class="dv">$</span><span class="vs"> cm</span><span class="dv">$^</span><span class="vs">{-2}</span><span class="dv">$</span><span class="vs">"</span>),</span>
-<span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Ha_EW"</span>:         (<span class="vs">r"H</span><span class="dv">$</span><span class="ch">\a</span><span class="vs">lpha</span><span class="dv">$</span><span class="vs"> EW"</span>,      <span class="st">"Å"</span>),</span>
-<span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Ha_FWHM"</span>:       (<span class="vs">r"H</span><span class="dv">$</span><span class="ch">\a</span><span class="vs">lpha</span><span class="dv">$</span><span class="vs"> FWHM"</span>,    <span class="vs">r"km s</span><span class="dv">$^</span><span class="vs">{-1}</span><span class="dv">$</span><span class="vs">"</span>),</span>
-<span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Hb_flux"</span>:       (<span class="vs">r"H</span><span class="dv">$\b</span><span class="vs">eta</span><span class="dv">$</span><span class="vs"> flux"</span>,     <span class="vs">r"erg s</span><span class="dv">$^</span><span class="vs">{-1}</span><span class="dv">$</span><span class="vs"> cm</span><span class="dv">$^</span><span class="vs">{-2}</span><span class="dv">$</span><span class="vs">"</span>),</span>
-<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Hb_EW"</span>:         (<span class="vs">r"H</span><span class="dv">$\b</span><span class="vs">eta</span><span class="dv">$</span><span class="vs"> EW"</span>,       <span class="st">"Å"</span>),</span>
-<span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Hb_FWHM"</span>:       (<span class="vs">r"H</span><span class="dv">$\b</span><span class="vs">eta</span><span class="dv">$</span><span class="vs"> FWHM"</span>,     <span class="vs">r"km s</span><span class="dv">$^</span><span class="vs">{-1}</span><span class="dv">$</span><span class="vs">"</span>),</span>
-<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a>    <span class="st">"HeII1640_flux"</span>: (<span class="st">"HeII1640 flux"</span>,      <span class="vs">r"erg s</span><span class="dv">$^</span><span class="vs">{-1}</span><span class="dv">$</span><span class="vs"> cm</span><span class="dv">$^</span><span class="vs">{-2}</span><span class="dv">$</span><span class="vs">"</span>),</span>
-<span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a>    <span class="st">"HeII1640_EW"</span>:   (<span class="st">"HeII1640 EW"</span>,        <span class="st">"Å"</span>),</span>
-<span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a>    <span class="st">"HeII1640_FWHM"</span>: (<span class="st">"HeII1640 FWHM"</span>,      <span class="vs">r"km s</span><span class="dv">$^</span><span class="vs">{-1}</span><span class="dv">$</span><span class="vs">"</span>),</span>
-<span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a>    <span class="st">"HeII4686_flux"</span>: (<span class="st">"HeII4686 flux"</span>,      <span class="vs">r"erg s</span><span class="dv">$^</span><span class="vs">{-1}</span><span class="dv">$</span><span class="vs"> cm</span><span class="dv">$^</span><span class="vs">{-2}</span><span class="dv">$</span><span class="vs">"</span>),</span>
-<span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a>    <span class="st">"HeII4686_EW"</span>:   (<span class="st">"HeII4686 EW"</span>,        <span class="st">"Å"</span>),</span>
-<span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a>    <span class="st">"HeII4686_FWMH"</span>: (<span class="st">"HeII4686 FWHM"</span>,      <span class="vs">r"km s</span><span class="dv">$^</span><span class="vs">{-1}</span><span class="dv">$</span><span class="vs">"</span>),</span>
-<span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a>    <span class="st">"OIII5007_flux"</span>: (<span class="st">"[OIII]5007 flux"</span>,    <span class="vs">r"erg s</span><span class="dv">$^</span><span class="vs">{-1}</span><span class="dv">$</span><span class="vs"> cm</span><span class="dv">$^</span><span class="vs">{-2}</span><span class="dv">$</span><span class="vs">"</span>),</span>
-<span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a>    <span class="st">"OIII5007_EW"</span>:   (<span class="st">"[OIII]5007 EW"</span>,      <span class="st">"Å"</span>),</span>
-<span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a>    <span class="st">"OIII5007_FWHM"</span>: (<span class="st">"[OIII]5007 FWHM"</span>,    <span class="vs">r"km s</span><span class="dv">$^</span><span class="vs">{-1}</span><span class="dv">$</span><span class="vs">"</span>),</span>
-<span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a>    <span class="st">"OIIItoHb"</span>:      (<span class="vs">r"</span><span class="pp">[OIII]</span><span class="vs">/H</span><span class="dv">$\b</span><span class="vs">eta</span><span class="dv">$</span><span class="vs">"</span>,   <span class="va">None</span>),</span>
-<span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a>    <span class="st">"OtoH"</span>:          (<span class="st">"12 + log(O/H)"</span>,      <span class="va">None</span>),</span>
-<span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a>    <span class="st">"metallicity"</span>:   (<span class="st">"Metallicity"</span>,        <span class="vs">r"Z</span><span class="dv">$</span><span class="vs">_</span><span class="er">\</span><span class="vs">odot</span><span class="dv">$</span><span class="vs">"</span>),</span>
+<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a>    <span class="st">"SFR"</span>:           (<span class="st">"SFR"</span>,                <span class="vs">r"M</span><span class="dv">$</span><span class="vs">_</span><span class="er">\</span><span class="vs">odot</span><span class="dv">$</span><span class="vs">yr</span><span class="dv">$^</span><span class="vs">{-1}</span><span class="dv">$</span><span class="vs">"</span>),</span>
+<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a>    <span class="st">"magnification"</span>: (<span class="st">"Lensed"</span>,             <span class="va">None</span>),</span>
+<span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a>    <span class="st">"MUV"</span>:           (<span class="vs">r"</span><span class="dv">$</span><span class="vs">M_{</span><span class="ch">\r</span><span class="vs">m UV}</span><span class="dv">$</span><span class="vs">"</span>,      <span class="va">None</span>),</span>
+<span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a>    <span class="st">"beta"</span>:          (<span class="vs">r"</span><span class="dv">$\b</span><span class="vs">eta</span><span class="dv">$</span><span class="vs">-slope"</span>,     <span class="va">None</span>),</span>
+<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a>    <span class="st">"HeII1640_flux"</span>: (<span class="st">"HeII1640 flux"</span>,      <span class="vs">r"erg s</span><span class="dv">$^</span><span class="vs">{-1}</span><span class="dv">$</span><span class="vs"> cm</span><span class="dv">$^</span><span class="vs">{-2}</span><span class="dv">$</span><span class="vs">"</span>),</span>
+<span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a>    <span class="st">"HeII1640_EW"</span>:   (<span class="st">"HeII1640 EW"</span>,        <span class="st">"Å"</span>),</span>
+<span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a>    <span class="st">"HeII1640_FWHM"</span>: (<span class="st">"HeII1640 FWHM"</span>,      <span class="vs">r"km s</span><span class="dv">$^</span><span class="vs">{-1}</span><span class="dv">$</span><span class="vs">"</span>),</span>
+<span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a>    <span class="st">"HeII4686_flux"</span>: (<span class="st">"HeII4686 flux"</span>,      <span class="vs">r"erg s</span><span class="dv">$^</span><span class="vs">{-1}</span><span class="dv">$</span><span class="vs"> cm</span><span class="dv">$^</span><span class="vs">{-2}</span><span class="dv">$</span><span class="vs">"</span>),</span>
+<span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a>    <span class="st">"HeII4686_EW"</span>:   (<span class="st">"HeII4686 EW"</span>,        <span class="st">"Å"</span>),</span>
+<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a>    <span class="st">"HeII4686_FWMH"</span>: (<span class="st">"HeII4686 FWHM"</span>,      <span class="vs">r"km s</span><span class="dv">$^</span><span class="vs">{-1}</span><span class="dv">$</span><span class="vs">"</span>),</span>
+<span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a>    <span class="st">"OIII5007_flux"</span>: (<span class="st">"[OIII]5007 flux"</span>,    <span class="vs">r"erg s</span><span class="dv">$^</span><span class="vs">{-1}</span><span class="dv">$</span><span class="vs"> cm</span><span class="dv">$^</span><span class="vs">{-2}</span><span class="dv">$</span><span class="vs">"</span>),</span>
+<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a>    <span class="st">"OIII5007_EW"</span>:   (<span class="st">"[OIII]5007 EW"</span>,      <span class="st">"Å"</span>),</span>
+<span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a>    <span class="st">"OIII5007_FWHM"</span>: (<span class="st">"[OIII]5007 FWHM"</span>,    <span class="vs">r"km s</span><span class="dv">$^</span><span class="vs">{-1}</span><span class="dv">$</span><span class="vs">"</span>),</span>
+<span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a>    <span class="st">"OIIItoHb"</span>:      (<span class="vs">r"</span><span class="pp">[OIII]</span><span class="vs">/H</span><span class="dv">$\b</span><span class="vs">eta</span><span class="dv">$</span><span class="vs">"</span>,   <span class="va">None</span>),</span>
+<span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Lya_flux"</span>:      (<span class="vs">r"Ly</span><span class="dv">$</span><span class="ch">\a</span><span class="vs">lpha</span><span class="dv">$</span><span class="vs"> flux"</span>,   <span class="vs">r"erg s</span><span class="dv">$^</span><span class="vs">{-1}</span><span class="dv">$</span><span class="vs"> cm</span><span class="dv">$^</span><span class="vs">{-2}</span><span class="dv">$</span><span class="vs">"</span>),</span>
+<span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Lya_EW"</span>:        (<span class="vs">r"Ly</span><span class="dv">$</span><span class="ch">\a</span><span class="vs">lpha</span><span class="dv">$</span><span class="vs"> EW"</span>,     <span class="st">"Å"</span>),</span>
+<span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Lya_FWHM"</span>:      (<span class="vs">r"Ly</span><span class="dv">$</span><span class="ch">\a</span><span class="vs">lpha</span><span class="dv">$</span><span class="vs"> FWHM"</span>,   <span class="vs">r"km s</span><span class="dv">$^</span><span class="vs">{-1}</span><span class="dv">$</span><span class="vs">"</span>),</span>
+<span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Ha_flux"</span>:       (<span class="vs">r"H</span><span class="dv">$</span><span class="ch">\a</span><span class="vs">lpha</span><span class="dv">$</span><span class="vs"> flux"</span>,    <span class="vs">r"erg s</span><span class="dv">$^</span><span class="vs">{-1}</span><span class="dv">$</span><span class="vs"> cm</span><span class="dv">$^</span><span class="vs">{-2}</span><span class="dv">$</span><span class="vs">"</span>),</span>
+<span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Ha_EW"</span>:         (<span class="vs">r"H</span><span class="dv">$</span><span class="ch">\a</span><span class="vs">lpha</span><span class="dv">$</span><span class="vs"> EW"</span>,      <span class="st">"Å"</span>),</span>
+<span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Ha_FWHM"</span>:       (<span class="vs">r"H</span><span class="dv">$</span><span class="ch">\a</span><span class="vs">lpha</span><span class="dv">$</span><span class="vs"> FWHM"</span>,    <span class="vs">r"km s</span><span class="dv">$^</span><span class="vs">{-1}</span><span class="dv">$</span><span class="vs">"</span>),</span>
+<span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Hb_flux"</span>:       (<span class="vs">r"H</span><span class="dv">$\b</span><span class="vs">eta</span><span class="dv">$</span><span class="vs"> flux"</span>,     <span class="vs">r"erg s</span><span class="dv">$^</span><span class="vs">{-1}</span><span class="dv">$</span><span class="vs"> cm</span><span class="dv">$^</span><span class="vs">{-2}</span><span class="dv">$</span><span class="vs">"</span>),</span>
+<span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Hb_EW"</span>:         (<span class="vs">r"H</span><span class="dv">$\b</span><span class="vs">eta</span><span class="dv">$</span><span class="vs"> EW"</span>,       <span class="st">"Å"</span>),</span>
+<span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Hb_FWHM"</span>:       (<span class="vs">r"H</span><span class="dv">$\b</span><span class="vs">eta</span><span class="dv">$</span><span class="vs"> FWHM"</span>,     <span class="vs">r"km s</span><span class="dv">$^</span><span class="vs">{-1}</span><span class="dv">$</span><span class="vs">"</span>),</span>
 <span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a>    <span class="st">"reference"</span>:     (<span class="st">"Reference"</span>,          <span class="va">None</span>),</span>
 <span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a>names <span class="op">=</span> <span class="bu">tuple</span>(colmap.keys())</span>
@@ -608,29 +608,29 @@ table th, table td {
 <span id="cb1-339"><a href="#cb1-339" aria-hidden="true" tabindex="-1"></a>    reference<span class="op">=</span><span class="st">"@maiolino2024"</span></span>
 <span id="cb1-340"><a href="#cb1-340" aria-hidden="true" tabindex="-1"></a>))</span>
 <span id="cb1-341"><a href="#cb1-341" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-342"><a href="#cb1-342" aria-hidden="true" tabindex="-1"></a><span class="co"># Markdown table</span></span>
-<span id="cb1-343"><a href="#cb1-343" aria-hidden="true" tabindex="-1"></a>md <span class="op">=</span> table_to_markdown(table, tablefmt<span class="op">=</span><span class="st">"github"</span>, headers<span class="op">=</span>headers, exponential<span class="op">=</span><span class="va">False</span>, digits<span class="op">=</span><span class="dv">1</span>, col_fmt_overrides<span class="op">=</span>col_fmt_overrides)</span>
-<span id="cb1-344"><a href="#cb1-344" aria-hidden="true" tabindex="-1"></a>Markdown(md)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-342"><a href="#cb1-342" aria-hidden="true" tabindex="-1"></a><span class="co">'''</span></span>
+<span id="cb1-343"><a href="#cb1-343" aria-hidden="true" tabindex="-1"></a><span class="al">TODO</span><span class="co">:</span></span>
+<span id="cb1-344"><a href="#cb1-344" aria-hidden="true" tabindex="-1"></a><span class="co">- add Balmer jump to the table, when available</span></span>
+<span id="cb1-345"><a href="#cb1-345" aria-hidden="true" tabindex="-1"></a><span class="co">- add Halpha EW for AMORE6</span></span>
+<span id="cb1-346"><a href="#cb1-346" aria-hidden="true" tabindex="-1"></a><span class="co">- other ref.: Nakajima+25 (reanalysis of LAP1), Hsiao et al. 2025, Durovcikova et al. 2025 + also check objects from Tiger's list https://docs.google.com/spreadsheets/d/1fUcRK6AGNtIf2qHyW31bLb2BuDMquJHNq7YIJ3zk8yc/edit?gid=0#gid=0</span></span>
+<span id="cb1-347"><a href="#cb1-347" aria-hidden="true" tabindex="-1"></a><span class="co">'''</span></span>
+<span id="cb1-348"><a href="#cb1-348" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-349"><a href="#cb1-349" aria-hidden="true" tabindex="-1"></a><span class="co"># Markdown table</span></span>
+<span id="cb1-350"><a href="#cb1-350" aria-hidden="true" tabindex="-1"></a>md <span class="op">=</span> table_to_markdown(table, tablefmt<span class="op">=</span><span class="st">"github"</span>, headers<span class="op">=</span>headers, exponential<span class="op">=</span><span class="va">False</span>, digits<span class="op">=</span><span class="dv">1</span>, col_fmt_overrides<span class="op">=</span>col_fmt_overrides)</span>
+<span id="cb1-351"><a href="#cb1-351" aria-hidden="true" tabindex="-1"></a>Markdown(md)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
-<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="2">
+<div class="cell-output cell-output-display cell-output-markdown" data-execution_count="1">
 <table class="caption-top table table-sm table-striped small">
 <colgroup>
 <col style="width: 1%">
 <col style="width: 4%">
-<col style="width: 2%">
-<col style="width: 4%">
-<col style="width: 2%">
-<col style="width: 5%">
-<col style="width: 3%">
-<col style="width: 3%">
 <col style="width: 4%">
 <col style="width: 2%">
 <col style="width: 3%">
 <col style="width: 5%">
-<col style="width: 2%">
 <col style="width: 3%">
-<col style="width: 5%">
-<col style="width: 1%">
+<col style="width: 2%">
+<col style="width: 4%">
 <col style="width: 2%">
 <col style="width: 5%">
 <col style="width: 4%">
@@ -643,6 +643,13 @@ table th, table td {
 <col style="width: 3%">
 <col style="width: 2%">
 <col style="width: 4%">
+<col style="width: 2%">
+<col style="width: 3%">
+<col style="width: 5%">
+<col style="width: 2%">
+<col style="width: 3%">
+<col style="width: 5%">
+<col style="width: 1%">
 <col style="width: 2%">
 <col style="width: 2%">
 </colgroup>
@@ -650,21 +657,14 @@ table th, table td {
 <tr class="header">
 <th>Name<br>&nbsp;</th>
 <th>Redshift<br>&nbsp;</th>
+<th>12 + log(O/H)<br>&nbsp;</th>
+<th>Metallicity<br>[Z<span class="math inline">\(_\odot\)</span>]</th>
+<th><span class="math inline">\(M_\mathrm{III}\)</span><br>[M<span class="math inline">\(_\odot\)</span>]</th>
+<th><span class="math inline">\(M_\star\)</span><br>[M<span class="math inline">\(_\odot\)</span>]</th>
+<th>SFR<br>[M<span class="math inline">\(_\odot\)</span>yr<span class="math inline">\(^{-1}\)</span>]</th>
 <th>Lensed<br>&nbsp;</th>
 <th><span class="math inline">\(M_{\rm UV}\)</span><br>&nbsp;</th>
 <th><span class="math inline">\(\beta\)</span>-slope<br>&nbsp;</th>
-<th><span class="math inline">\(M_\star\)</span><br>[M<span class="math inline">\(_\odot\)</span>]</th>
-<th><span class="math inline">\(M_\mathrm{III}\)</span><br>[M<span class="math inline">\(_\odot\)</span>]</th>
-<th>SFR<br>[M<span class="math inline">\(_\odot\)</span>yr<span class="math inline">\(^{-1}\)</span>]</th>
-<th>Ly<span class="math inline">\(\alpha\)</span> flux<br>[erg s<span class="math inline">\(^{-1}\)</span> cm<span class="math inline">\(^{-2}\)</span>]</th>
-<th>Ly<span class="math inline">\(\alpha\)</span> EW<br>[Å]</th>
-<th>Ly<span class="math inline">\(\alpha\)</span> FWHM<br>[km s<span class="math inline">\(^{-1}\)</span>]</th>
-<th>H<span class="math inline">\(\alpha\)</span> flux<br>[erg s<span class="math inline">\(^{-1}\)</span> cm<span class="math inline">\(^{-2}\)</span>]</th>
-<th>H<span class="math inline">\(\alpha\)</span> EW<br>[Å]</th>
-<th>H<span class="math inline">\(\alpha\)</span> FWHM<br>[km s<span class="math inline">\(^{-1}\)</span>]</th>
-<th>H<span class="math inline">\(\beta\)</span> flux<br>[erg s<span class="math inline">\(^{-1}\)</span> cm<span class="math inline">\(^{-2}\)</span>]</th>
-<th>H<span class="math inline">\(\beta\)</span> EW<br>[Å]</th>
-<th>H<span class="math inline">\(\beta\)</span> FWHM<br>[km s<span class="math inline">\(^{-1}\)</span>]</th>
 <th>HeII1640 flux<br>[erg s<span class="math inline">\(^{-1}\)</span> cm<span class="math inline">\(^{-2}\)</span>]</th>
 <th>HeII1640 EW<br>[Å]</th>
 <th>HeII1640 FWHM<br>[km s<span class="math inline">\(^{-1}\)</span>]</th>
@@ -675,8 +675,15 @@ table th, table td {
 <th>[OIII]5007 EW<br>[Å]</th>
 <th>[OIII]5007 FWHM<br>[km s<span class="math inline">\(^{-1}\)</span>]</th>
 <th>[OIII]/H<span class="math inline">\(\beta\)</span><br>&nbsp;</th>
-<th>12 + log(O/H)<br>&nbsp;</th>
-<th>Metallicity<br>[Z<span class="math inline">\(_\odot\)</span>]</th>
+<th>Ly<span class="math inline">\(\alpha\)</span> flux<br>[erg s<span class="math inline">\(^{-1}\)</span> cm<span class="math inline">\(^{-2}\)</span>]</th>
+<th>Ly<span class="math inline">\(\alpha\)</span> EW<br>[Å]</th>
+<th>Ly<span class="math inline">\(\alpha\)</span> FWHM<br>[km s<span class="math inline">\(^{-1}\)</span>]</th>
+<th>H<span class="math inline">\(\alpha\)</span> flux<br>[erg s<span class="math inline">\(^{-1}\)</span> cm<span class="math inline">\(^{-2}\)</span>]</th>
+<th>H<span class="math inline">\(\alpha\)</span> EW<br>[Å]</th>
+<th>H<span class="math inline">\(\alpha\)</span> FWHM<br>[km s<span class="math inline">\(^{-1}\)</span>]</th>
+<th>H<span class="math inline">\(\beta\)</span> flux<br>[erg s<span class="math inline">\(^{-1}\)</span> cm<span class="math inline">\(^{-2}\)</span>]</th>
+<th>H<span class="math inline">\(\beta\)</span> EW<br>[Å]</th>
+<th>H<span class="math inline">\(\beta\)</span> FWHM<br>[km s<span class="math inline">\(^{-1}\)</span>]</th>
 <th>Reference<br>&nbsp;</th>
 </tr>
 </thead>
@@ -684,21 +691,14 @@ table th, table td {
 <tr class="odd">
 <td>GNHeII J1236+6215</td>
 <td><span class="math inline">\(2.9803 \pm 0.0010\)</span></td>
+<td><span class="math inline">\(7.85 \pm 0.22\)</span></td>
+<td><span class="math inline">\(0.003 \pm 0.002\)</span></td>
+<td>—</td>
+<td><span class="math inline">\((7.8 \pm 3.1) \times 10^{8}\)</span></td>
+<td><span class="math inline">\(12.2 \pm 2.0\)</span><span class="math inline">\(^{\textcolor{red}{(a)}}\)</span></td>
 <td>No</td>
 <td><span class="math inline">\(-22.09 \pm 0.02\)</span></td>
 <td><span class="math inline">\(-2.18 \pm 0.06\)</span></td>
-<td><span class="math inline">\((7.8 \pm 3.1) \times 10^{8}\)</span></td>
-<td>—</td>
-<td><span class="math inline">\(12.2 \pm 2.0\)</span><span class="math inline">\(^{\textcolor{red}{(a)}}\)</span></td>
-<td><span class="math inline">\((2.30 \pm 0.54) \times 10^{-17}\)</span></td>
-<td><span class="math inline">\(19.2\)</span></td>
-<td><span class="math inline">\(758 \pm 90\)</span></td>
-<td><span class="math inline">\((1.646 \pm 0.032) \times 10^{-17}\)</span></td>
-<td><span class="math inline">\(166.5\)</span></td>
-<td><span class="math inline">\(268 \pm 41\)</span></td>
-<td><span class="math inline">\((5.44 \pm 0.37) \times 10^{-18}\)</span></td>
-<td><span class="math inline">\(26.6\)</span></td>
-<td><span class="math inline">\(320 \pm 137\)</span></td>
 <td><span class="math inline">\((8.8 \pm 1.8) \times 10^{-18}\)</span></td>
 <td><span class="math inline">\(8.3\)</span></td>
 <td><span class="math inline">\(573 \pm 191\)</span></td>
@@ -709,26 +709,26 @@ table th, table td {
 <td><span class="math inline">\(248.8\)</span></td>
 <td>—</td>
 <td><span class="math inline">\(5.45 \pm 0.32\)</span></td>
-<td><span class="math inline">\(7.85 \pm 0.22\)</span></td>
-<td><span class="math inline">\(0.003 \pm 0.002\)</span></td>
+<td><span class="math inline">\((2.30 \pm 0.54) \times 10^{-17}\)</span></td>
+<td><span class="math inline">\(19.2\)</span></td>
+<td><span class="math inline">\(758 \pm 90\)</span></td>
+<td><span class="math inline">\((1.646 \pm 0.032) \times 10^{-17}\)</span></td>
+<td><span class="math inline">\(166.5\)</span></td>
+<td><span class="math inline">\(268 \pm 41\)</span></td>
+<td><span class="math inline">\((5.44 \pm 0.37) \times 10^{-18}\)</span></td>
+<td><span class="math inline">\(26.6\)</span></td>
+<td><span class="math inline">\(320 \pm 137\)</span></td>
 <td><span class="citation" data-cites="mondal2025">Mondal et al. (<a href="#ref-mondal2025" role="doc-biblioref">2025</a>)</span></td>
 </tr>
 <tr class="even">
 <td>MPG-CR3</td>
 <td><span class="math inline">\(3.193 \pm 0.016\)</span></td>
-<td>No</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
+<td><span class="math inline">\(&lt; 6.52\)</span></td>
+<td><span class="math inline">\(&lt; 8 \times 10^{-3}\)</span></td>
 <td><span class="math inline">\(6.1e+05\)</span></td>
 <td>—</td>
-<td><span class="math inline">\((5.8 \pm 0.7) \times 10^{-17}\)</span></td>
-<td><span class="math inline">\(822 \pm 101\)</span></td>
 <td>—</td>
-<td><span class="math inline">\((4.2 \pm 0.6) \times 10^{-18}\)</span><span class="math inline">\(^{\textcolor{red}{(b)}}\)</span></td>
-<td><span class="math inline">\(2814 \pm 327\)</span></td>
-<td>—</td>
-<td><span class="math inline">\((6.3 \pm 0.7) \times 10^{-19}\)</span></td>
+<td>No</td>
 <td>—</td>
 <td>—</td>
 <td>—<span class="math inline">\(^{\textcolor{red}{(c)}}\)</span></td>
@@ -741,28 +741,28 @@ table th, table td {
 <td>—</td>
 <td>—</td>
 <td>—</td>
-<td><span class="math inline">\(&lt; 6.52\)</span></td>
-<td><span class="math inline">\(&lt; 8 \times 10^{-3}\)</span></td>
+<td><span class="math inline">\((5.8 \pm 0.7) \times 10^{-17}\)</span></td>
+<td><span class="math inline">\(822 \pm 101\)</span></td>
+<td>—</td>
+<td><span class="math inline">\((4.2 \pm 0.6) \times 10^{-18}\)</span><span class="math inline">\(^{\textcolor{red}{(b)}}\)</span></td>
+<td><span class="math inline">\(2814 \pm 327\)</span></td>
+<td>—</td>
+<td><span class="math inline">\((6.3 \pm 0.7) \times 10^{-19}\)</span></td>
+<td>—</td>
+<td>—</td>
 <td><span class="citation" data-cites="cai2025">Cai et al. (<a href="#ref-cai2025" role="doc-biblioref">2025</a>)</span></td>
 </tr>
 <tr class="odd">
 <td>AMORE6</td>
 <td><span class="math inline">\(5.7253 \pm 0.0001\)</span></td>
+<td><span class="math inline">\(&lt; 5.78\)</span></td>
+<td><span class="math inline">\(&lt; 0.0012\)</span></td>
+<td>—</td>
+<td><span class="math inline">\((4.37 {}^{+0.73}_{-2.24}) \times 10^{5}\)</span></td>
+<td><span class="math inline">\(0.35 \pm 0.06\)</span><span class="math inline">\(^{\textcolor{red}{(f)}}\)</span></td>
 <td>Yes<span class="math inline">\(^{\textcolor{red}{(d)}}\)</span></td>
 <td><span class="math inline">\(-14.52 {}^{+0.08}_{-0.07}\)</span><span class="math inline">\(^{\textcolor{red}{(e)}}\)</span></td>
 <td><span class="math inline">\(-2.77 {}^{+0.09}_{-0.07}\)</span></td>
-<td><span class="math inline">\((4.37 {}^{+0.73}_{-2.24}) \times 10^{5}\)</span></td>
-<td>—</td>
-<td><span class="math inline">\(0.35 \pm 0.06\)</span><span class="math inline">\(^{\textcolor{red}{(f)}}\)</span></td>
-<td><span class="math inline">\((4.95 \pm 0.92) \times 10^{-19}\)</span></td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td><span class="math inline">\((4.9 \pm 0.6) \times 10^{-20}\)</span></td>
-<td><span class="math inline">\(1594.7 \pm 206.9\)</span></td>
-<td>—</td>
 <td>—</td>
 <td>—</td>
 <td>—</td>
@@ -773,28 +773,28 @@ table th, table td {
 <td>—</td>
 <td>—</td>
 <td>—</td>
-<td><span class="math inline">\(&lt; 5.78\)</span></td>
-<td><span class="math inline">\(&lt; 0.0012\)</span></td>
+<td><span class="math inline">\((4.95 \pm 0.92) \times 10^{-19}\)</span></td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td><span class="math inline">\((4.9 \pm 0.6) \times 10^{-20}\)</span></td>
+<td><span class="math inline">\(1594.7 \pm 206.9\)</span></td>
+<td>—</td>
 <td><span class="citation" data-cites="morishita2025">Morishita et al. (<a href="#ref-morishita2025" role="doc-biblioref">2025</a>)</span></td>
 </tr>
 <tr class="even">
 <td>JOF-21739</td>
 <td><span class="math inline">\(6.17 {}^{+0.19}_{-0.06}\)</span></td>
-<td>Yes</td>
-<td><span class="math inline">\(-17.62 {}^{+0.15}_{-0.17}\)</span></td>
-<td><span class="math inline">\(-2.79 \pm 0.05\)</span></td>
-<td>—</td>
+<td><span class="math inline">\(&lt; 6.2\)</span></td>
+<td><span class="math inline">\(&lt; 0.003\)</span></td>
 <td><span class="math inline">\(\sim 10^5 - 10^6\)</span></td>
 <td>—</td>
 <td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td><span class="math inline">\(3600 \pm 430\)</span></td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
+<td>Yes</td>
+<td><span class="math inline">\(-17.62 {}^{+0.15}_{-0.17}\)</span></td>
+<td><span class="math inline">\(-2.79 \pm 0.05\)</span></td>
 <td>—</td>
 <td>—</td>
 <td>—</td>
@@ -805,27 +805,27 @@ table th, table td {
 <td>—</td>
 <td>—</td>
 <td><span class="math inline">\(&lt; 0.32\)</span></td>
-<td><span class="math inline">\(&lt; 6.2\)</span></td>
-<td><span class="math inline">\(&lt; 0.003\)</span></td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td><span class="math inline">\(3600 \pm 430\)</span></td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
 <td><span class="citation" data-cites="fujimoto2025">Fujimoto et al. (<a href="#ref-fujimoto2025" role="doc-biblioref">2025</a>)</span></td>
 </tr>
 <tr class="odd">
 <td>LAP1</td>
 <td><span class="math inline">\(6.639 \pm 0.004\)</span></td>
-<td>Yes</td>
-<td><span class="math inline">\(&gt; -11.2\)</span></td>
+<td><span class="math inline">\(&lt; 6.3\)</span></td>
+<td><span class="math inline">\(&lt; 0.004\)</span></td>
 <td>—</td>
 <td><span class="math inline">\(\lesssim 10^4\)</span></td>
 <td>—</td>
-<td>—</td>
-<td><span class="math inline">\((3.692 \pm 0.293) \times 10^{-18}\)</span></td>
-<td><span class="math inline">\(&gt; 370\)</span></td>
-<td>—</td>
-<td><span class="math inline">\((6.94 \pm 0.55) \times 10^{-19}\)</span></td>
-<td><span class="math inline">\(&gt; 2020\)</span></td>
-<td>—</td>
-<td><span class="math inline">\((2.63 \pm 0.27) \times 10^{-19}\)</span></td>
-<td><span class="math inline">\(&gt; 420\)</span></td>
+<td>Yes</td>
+<td><span class="math inline">\(&gt; -11.2\)</span></td>
 <td>—</td>
 <td><span class="math inline">\((7.96 \pm 2.07) \times 10^{-19}\)</span><span class="math inline">\(^{\textcolor{red}{(g)}}\)</span></td>
 <td>—</td>
@@ -837,28 +837,28 @@ table th, table td {
 <td><span class="math inline">\(&gt; 246\)</span></td>
 <td>—</td>
 <td><span class="math inline">\(0.55 {}^{+0.14}_{-0.15}\)</span></td>
-<td><span class="math inline">\(&lt; 6.3\)</span></td>
-<td><span class="math inline">\(&lt; 0.004\)</span></td>
+<td><span class="math inline">\((3.692 \pm 0.293) \times 10^{-18}\)</span></td>
+<td><span class="math inline">\(&gt; 370\)</span></td>
+<td>—</td>
+<td><span class="math inline">\((6.94 \pm 0.55) \times 10^{-19}\)</span></td>
+<td><span class="math inline">\(&gt; 2020\)</span></td>
+<td>—</td>
+<td><span class="math inline">\((2.63 \pm 0.27) \times 10^{-19}\)</span></td>
+<td><span class="math inline">\(&gt; 420\)</span></td>
+<td>—</td>
 <td><span class="citation" data-cites="vanzella2023">Vanzella et al. (<a href="#ref-vanzella2023" role="doc-biblioref">2023</a>)</span></td>
 </tr>
 <tr class="even">
 <td>RX J2129-z8HeII</td>
 <td><span class="math inline">\(8.1623 \pm 0.0007\)</span></td>
+<td><span class="math inline">\(7.63 {}^{+0.09}_{-0.14}\)</span></td>
+<td><span class="math inline">\(\sim 0.1\)</span></td>
+<td><span class="math inline">\((7.8 \pm 1.4) \times 10^{5}\)</span></td>
+<td><span class="math inline">\((5.6 {}^{+0.7}_{-0.8}) \times 10^{7}\)</span></td>
+<td><span class="math inline">\(9.56 {}^{+1.70}_{-4.51}\)</span></td>
 <td>Yes</td>
 <td><span class="math inline">\(-19.58 {}^{+0.02}_{-0.03}\)</span></td>
 <td><span class="math inline">\(-2.53 {}^{+0.07}_{-0.06}\)</span></td>
-<td><span class="math inline">\((5.6 {}^{+0.7}_{-0.8}) \times 10^{7}\)</span></td>
-<td><span class="math inline">\((7.8 \pm 1.4) \times 10^{5}\)</span></td>
-<td><span class="math inline">\(9.56 {}^{+1.70}_{-4.51}\)</span></td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td><span class="math inline">\((7.1 \pm 1.0) \times 10^{-19}\)</span><span class="math inline">\(^{\textcolor{red}{(h)}}\)</span></td>
-<td><span class="math inline">\(202 \pm 34\)</span></td>
-<td>—</td>
 <td><span class="math inline">\((1.20 \pm 0.22) \times 10^{-18}\)</span></td>
 <td><span class="math inline">\(21 \pm 4\)</span></td>
 <td>—</td>
@@ -869,28 +869,28 @@ table th, table td {
 <td><span class="math inline">\(1015 \pm 83\)</span></td>
 <td>—</td>
 <td><span class="math inline">\(5.5 \pm 0.8\)</span></td>
-<td><span class="math inline">\(7.63 {}^{+0.09}_{-0.14}\)</span></td>
-<td><span class="math inline">\(\sim 0.1\)</span></td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td><span class="math inline">\((7.1 \pm 1.0) \times 10^{-19}\)</span><span class="math inline">\(^{\textcolor{red}{(h)}}\)</span></td>
+<td><span class="math inline">\(202 \pm 34\)</span></td>
+<td>—</td>
 <td><span class="citation" data-cites="wang2024">Wang et al. (<a href="#ref-wang2024" role="doc-biblioref">2024</a>)</span></td>
 </tr>
 <tr class="odd">
 <td>EXCELS-63107</td>
 <td><span class="math inline">\(8.271\)</span></td>
+<td><span class="math inline">\(6.89 {}^{+0.21}_{-0.26}\)</span><span class="math inline">\(^{\textcolor{red}{(j)}}\)</span></td>
+<td><span class="math inline">\(0.016\)</span></td>
+<td>—</td>
+<td><span class="math inline">\((3.72 {}^{+3.37}_{-4.05}) \times 10^{8}\)</span><span class="math inline">\(^{\textcolor{red}{(i)}}\)</span></td>
+<td><span class="math inline">\(7.8 \pm 0.6\)</span></td>
 <td>No</td>
 <td><span class="math inline">\(-19.9 \pm 0.1\)</span></td>
 <td><span class="math inline">\(-3.3 \pm 0.3\)</span></td>
-<td><span class="math inline">\((3.72 {}^{+3.37}_{-4.05}) \times 10^{8}\)</span><span class="math inline">\(^{\textcolor{red}{(i)}}\)</span></td>
-<td>—</td>
-<td><span class="math inline">\(7.8 \pm 0.6\)</span></td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td><span class="math inline">\((1.069 \pm 0.084) \times 10^{-18}\)</span></td>
-<td>—</td>
-<td>—</td>
 <td>—</td>
 <td>—</td>
 <td>—</td>
@@ -901,30 +901,37 @@ table th, table td {
 <td>—</td>
 <td>—</td>
 <td><span class="math inline">\(3.61 \pm 0.30\)</span></td>
-<td><span class="math inline">\(6.89 {}^{+0.21}_{-0.26}\)</span><span class="math inline">\(^{\textcolor{red}{(j)}}\)</span></td>
-<td><span class="math inline">\(0.016\)</span></td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td><span class="math inline">\((1.069 \pm 0.084) \times 10^{-18}\)</span></td>
+<td>—</td>
+<td>—</td>
 <td><span class="citation" data-cites="cullen2025">Cullen et al. (<a href="#ref-cullen2025" role="doc-biblioref">2025</a>)</span></td>
 </tr>
 <tr class="even">
 <td>GN-z11 HeII clump</td>
 <td><span class="math inline">\(10.6034 \pm 0.0013\)</span><span class="math inline">\(^{\textcolor{red}{(k)}}\)</span></td>
-<td>No</td>
-<td>—</td>
 <td>—</td>
 <td>—</td>
 <td><span class="math inline">\(\sim (2 - 2.5) \times 10^5\)</span></td>
 <td>—</td>
 <td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
+<td>No</td>
 <td>—</td>
 <td>—</td>
 <td><span class="math inline">\((1.8 \pm 0.3) \times 10^{-19}\)</span><span class="math inline">\(^{\textcolor{red}{(l)}}\)</span></td>
 <td><span class="math inline">\(62 {}^{+27}_{-25}\)</span><span class="math inline">\(^{\textcolor{red}{(m)}}\)</span></td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
 <td>—</td>
 <td>—</td>
 <td>—</td>
