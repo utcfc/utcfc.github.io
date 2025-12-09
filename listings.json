@@ -2,7 +2,6 @@
   {
     "listing": "/recents.html",
     "items": [
-      "/pages/popiii.html",
       "/pages/balmerbreaks.html",
       "/pages/lrds.html",
       "/pages/telescopes/NIRSpec.html",
@@ -17,7 +16,6 @@
   {
     "listing": "/pages.html",
     "items": [
-      "/pages/popiii.html",
       "/pages/balmerbreaks.html",
       "/pages/lrds.html",
       "/pages/telescopes/NIRSpec.html",
