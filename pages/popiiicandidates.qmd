@@ -11,11 +11,11 @@ execute:
 execute-dir: project
 ---
 
-This page maintains an up-to-date (as of {{<meta date-modified>}}) compilation of all reported high-redshift ($z \gtrsim 3$) [Pop III](popiii.qmd)-hosting galaxy candidates, i.e. galaxies for which the presence of an active Pop III component has been suggested to account for the observed emission -- regardless of the average metallicity of the galaxy. 
+This page maintains an up-to-date (as of {{<meta date-modified>}}) compilation of all reported high-redshift ($z \gtrsim 3$) Pop III-hosting galaxy candidates, i.e. galaxies for which the presence of an active Pop III component has been suggested to account for at least part of the observed emission -- regardless of the average metallicity of the system. 
 
 The table below includes key properties of these objects, as reported in their respective discovery papers, including their redshift, magnification, UV magnitude ($M_\mathrm{UV}$), UV $\beta$-slope, stellar mass (the total stellar mass, $M_\star$, and mass of the proposed Pop III component, $M_\mathrm{III}$), star formation rate (SFR), line flux, equivalent width (EW) and full width half maximum (FWHM) for a selection of emission lines of interest (Ly$\alpha$, H$\alpha$, H$\beta$, HeII1640, HeII4686 and [OIII]5007), [OIII]/H$\beta$ ratio and metallicity, both in terms of O/H ratio and solar metallicity (Z$_\odot$).
 
-The table is dynamically generated in the code block below, and it can be automatically exported to various formats for further use in analysis or publications.
+The table is dynamically generated in the code block below.
 
 <style>
 table th, table td {
@@ -49,9 +49,10 @@ def format_cell(x,
       - 3-tuple/list/np.array (value, err_minus, err_plus) -> value_{-err_minus}^{+err_plus}
     Formatted as exponential if exponential = True, with the indicated number of digits.
     Format overrides may also be specified in a dictionary at the end of the tuple.
-    Non-numerical values are returned as string unchanged, if allowed.
+    Non-numerical values are returned as string unchanged.
     """
     # TODO: improve automatic choice of exponential and digits value when unspecified
+
     # Missing value
     if x is None:
         return "—"
@@ -83,7 +84,7 @@ def format_cell(x,
     # 3-tuple asymmetric uncertainty
     if isinstance(x, list_formats) and len(x) == 3 and all(isinstance(v, numeric_formats) for v in x):
         value, err_lower, err_upper, = x
-        return rf"${format_multiple_errors(value, (err_lower, err_upper), exponential=exponential, significant_figures=sigfig(digits, value), length_control='central', latex=True)}$"
+        return rf"${format_multiple_errors(value, (err_upper, err_lower), exponential=exponential, significant_figures=sigfig(digits, value), length_control='central', latex=True)}$"
 
     # Special case: entry includes explicit format overrides as a dictionary in the last element of the tuple
     if isinstance(x, list_formats) and isinstance(x[-1], dict):
@@ -273,6 +274,8 @@ table.add_row(dict(
     metallicity=r"$< 0.0012$", 
     reference="@morishita2025"
 ))
+'''
+# Originally proposed by https://ui.adsabs.harvard.edu/abs/2025ApJ...989...46F/abstract, but fails two of the three updated color–color criteria of https://ui.adsabs.harvard.edu/abs/2025arXiv251211790F/abstract
 table.add_row(dict(
     ID="JOF-21739",
     redshift=(6.17, 0.19, 0.06, {"digits": 2}),
@@ -287,7 +290,8 @@ table.add_row(dict(
     reference="@fujimoto2025"
 ))
 '''
-# Rejected: detected [OIII] in the spectrum
+'''
+# Originally proposed by https://ui.adsabs.harvard.edu/abs/2025ApJ...989...46F/abstract, but rejected due to [OIII] detection in the spectrum (https://ui.adsabs.harvard.edu/abs/2025arXiv251211790F/abstract)
 table.add_row(dict(
     ID="GLIMPSE-1604",
     redshift=(6.50, 0.24, 0.03, {"digits": 2}),
@@ -302,6 +306,27 @@ table.add_row(dict(
     reference="@fujimoto2025"
 ))
 '''
+table.add_row(dict(
+    ID="LAP1-B",
+    redshift=(6.625, 0.001, {"digits": 3}),
+    magnification="Yes",  # mu = 98
+    MUV=r"$> -10.4$",
+    Mstar=r"$\lesssim 2700$",
+    Lya_flux=(6.08e-19, 1.70e-19, {"digits": 2}),  # All fluxes from tab. 1
+    Lya_EW=r"$> 250$",
+    Ha_flux=(2.07e-19, 0.25e-19, {"digits": 2}),
+    Ha_EW=r"$> 1800$",  # at 3sigma, 880 at 5sigma
+    Hb_flux=(0.73e-19, 0.20e-19, {"digits": 1}),
+    Hb_EW=r"$> 340$",  # at 3sigma, 170 at 5sigma
+    HeII1640_flux=(r"$\lesssim 1.85 \times 10^{-19}$", {"note": note("g")}),
+    OIII5007_flux=(0.50e-19, 0.15e-19, {"digits": 1}),  # I could not find a constraint on the EW for the [OIII]5007 line
+    OIIItoHb=(0.69, 0.28, {"digits": 2}),
+    OtoH=(6.31, 0.23, 0.15, {"digits": 2}),
+    metallicity=(4.2e-3, 1.8e-3, {"exponential": True, "digits": 1}),
+    reference="@nakajima2025"
+))
+'''
+# LAP1 properties from previous measure of Vanzella+23 (https://ui.adsabs.harvard.edu/abs/2023A%26A...678A.173V/abstract)
 table.add_row(dict(
     ID="LAP1",
     redshift=(6.639, 0.004, {"digits": 3}),
@@ -322,6 +347,7 @@ table.add_row(dict(
     metallicity=r"$< 0.004$",
     reference="@vanzella2023"
 ))
+'''
 table.add_row(dict(
     ID="RX J2129-z8HeII",
     redshift=(8.1623, 0.0007, {"digits": 4}),
@@ -350,7 +376,7 @@ table.add_row(dict(
     magnification="No",
     MUV=(-19.9, 0.1),
     beta=(-3.3, 0.3),
-    Mstar=(3.72e8, 3.37e8, 4.05e8, {"digits": 2, "note": note("i")}),  # Assuming extended SF + recent burst model and converting from log to linear --> LogMstar/Msun = 8.57 -1.03 +0.32 to linear, with mass of the burst LogMburst/Msun = 7.35 -1.30 +0.22 (see Sec. 3.3 and Tab. 3)
+    Mstar=(3.72e8, 3.36e8, 4.05e8, {"digits": 2, "note": note("i")}),  # Assuming extended SF + recent burst model and converting from log to linear --> LogMstar/Msun = 8.57 -1.03 +0.32 to linear, with mass of the burst LogMburst/Msun = 7.35 -1.30 +0.22 (see Sec. 3.3 and Tab. 3)
     SFR=(7.8, 0.6),  # From Hbeta
     Hb_flux=(10.69e-19, 0.84e-19, {"digits": 3}),
     OIII5007_flux=(38.54e-19, 1.20e-19, {"digits": 3}),
@@ -371,9 +397,8 @@ table.add_row(dict(
 
 '''
 TODO:
-- add Balmer jump to the table, when available
-- add Halpha EW for AMORE6
-- other ref.: Nakajima+25 (reanalysis of LAP1), Hsiao et al. 2025, Durovcikova et al. 2025 + also check objects from Tiger's list https://docs.google.com/spreadsheets/d/1fUcRK6AGNtIf2qHyW31bLb2BuDMquJHNq7YIJ3zk8yc/edit?gid=0#gid=0
+- add Balmer jump to the table, where available
+- check objects from Tiger's table https://docs.google.com/spreadsheets/d/1fUcRK6AGNtIf2qHyW31bLb2BuDMquJHNq7YIJ3zk8yc/edit?gid=0#gid=0 --> other page with possible Pop III descendants?
 '''
 
 # Markdown table
@@ -406,7 +431,7 @@ $^{(f)}$ SFR inferred from H$\beta$, larger than the value inferred from rest-fr
 </span>
 
 <span style="font-size:75%">
-$^{(g)}$ The reliability of the HeII line detection is hampered by the presence of a small blueshift relative to the Balmer lines, and by the extreme required EW ($\gtrsim 200$ Å), therefore the authors safely consider the line undetected, placing a $1\sigma$ upper limit of $2.7 \times 10^{-10} ~\mathrm{erg \, s^{-1} \, cm^{-2}}$. Also note that the stellar continuum is undetected for this source.
+$^{(g)}$ @vanzella2023 previously estimated a line flux for HeII1640 of $(7.96 \pm 2.07) \times 10^{-19} ~\mathrm{erg \, s^{-1} \, cm^{-2}}$; however, the reliability of the HeII line detection was hampered by the presence of a small blueshift relative to the Balmer lines, and by the extreme required EW ($\gtrsim 200$ Å), therefore the authors safely considered the line undetected, placing a $1\sigma$ upper limit of $2.7 \times 10^{-19} ~\mathrm{erg \, s^{-1} \, cm^{-2}}$. While @nakajima2025 also report no clear detection of the line, they report an upper limit that remains within the range expected for zero-metallicity stellar populations. Also note that the stellar continuum is undetected for this source.
 </span>
 
 <span style="font-size:75%">
