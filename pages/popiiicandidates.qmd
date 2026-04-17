@@ -327,8 +327,8 @@ table.add_row(dict(
     ID=("CAPERS-UDS-32520", {"note": note(r"The authors also examined a companion that serendipitously lies across the slit mask (therefore dubbing the whole system \"banana and blueberry\" due to its morphology, possibly hinting to a disturbed, merger-like origin), finding clear signatures of H$\alpha$ emission, as well as potential HeI and HeII emission lines; however, they caution that photometric data for the \"blueberry\" system from the Minerva survey (@muzzin2025) strongly favor a lower-redshift solution at $z \sim 0.7$ (Willot, priv. comm.).")}),
     redshift=(5.1240, 0.0002, {"digits": 4}),
     magnification="No",
-    MUV=(-20.95, 0.05, {"digits", 2}),
-    beta=(-1.68, 0.05, {"digits", 2}),
+    MUV=(-20.95, 0.05, {"digits": 2}),
+    beta=(-1.68, 0.05, {"digits": 2}),
     Hg_flux=(2.8e-18, 0.3e-18, {"digits": 1}),
     Hg_EW=(35, 4, {"digits": 0}),
     Hb_flux=(4.3e-18, 0.3e-18, {"digits": 1}),
@@ -339,7 +339,7 @@ table.add_row(dict(
     Ha_EW=(734, 33, {"digits": 0}),
     OtoH=(7.88, 0.07, {"digits": 2}),
     metallicity=r"$< 0.15$",
-    Mstar=r"$\sim \times 10^9$",
+    Mstar=r"$\sim 10^9$",
     reference="@reumert2026"
 ))
 table.add_row(dict(
