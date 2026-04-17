@@ -13,7 +13,7 @@ execute-dir: project
 
 This page maintains an up-to-date (as of {{<meta date-modified>}}) compilation of all reported high-redshift ($z \gtrsim 3$) Pop III-hosting galaxy candidates, i.e. galaxies for which the presence of an active Pop III component has been suggested to account for at least part of the observed emission -- regardless of the average metallicity of the system. 
 
-The table below includes key properties of these objects, as reported in their respective discovery papers, including their redshift, magnification, UV magnitude ($M_\mathrm{UV}$), UV $\beta$-slope, stellar mass (the total stellar mass, $M_\star$, and mass of the proposed Pop III component, $M_\mathrm{III}$), star formation rate (SFR), line flux, equivalent width (EW) and full width half maximum (FWHM) for a selection of emission lines of interest (Ly$\alpha$, H$\alpha$, H$\beta$, HeII1640, HeII4686 and [OIII]5007), [OIII]/H$\beta$ ratio and metallicity, both in terms of O/H ratio and solar metallicity (Z$_\odot$).
+The table below includes key properties of these objects, as reported in their respective discovery papers, including their redshift, magnification, UV magnitude ($M_\mathrm{UV}$), UV $\beta$-slope, stellar mass (the total stellar mass, $M_\star$, and mass of the proposed Pop III component, $M_\mathrm{III}$), star formation rate (SFR), line flux, equivalent width (EW) and full width half maximum (FWHM) for a selection of emission lines of interest (Ly$\alpha$, H$\alpha$, H$\beta$, H$\gamma$, HeII1640, HeII4686 and [OIII]5007), [OIII]/H$\beta$ ratio and metallicity, both in terms of O/H ratio and solar metallicity (Z$_\odot$).
 
 The table is dynamically generated in the code block below.
 
@@ -175,7 +175,9 @@ colmap =  {
     "Hb_flux":       (r"H$\beta$ flux",     r"erg s$^{-1}$ cm$^{-2}$"),
     "Hb_EW":         (r"H$\beta$ EW",       "Å"),
     "Hb_FWHM":       (r"H$\beta$ FWHM",     r"km s$^{-1}$"),
-    "reference":     ("Reference",          None),
+    "Hg_flux":       (r"H$\gamma$ flux",    r"erg s$^{-1}$ cm$^{-2}$"),
+    "Hg_EW":         (r"H$\gamma$ EW",      "Å"),
+    "reference":     ("References",          None),
 }
 names = tuple(colmap.keys())
 headers = tuple(
@@ -204,15 +206,62 @@ col_fmt_overrides = {
     "MIII": {"exponential": True},
     "Lya_flux": {"exponential": True}, 
     "Ha_flux": {"exponential": True}, 
-    "Hb_flux": {"exponential": True}, 
+    "Hb_flux": {"exponential": True},
+    "Hg_flux": {"exponential": True}, 
     "HeII1640_flux": {"exponential": True},
     "HeII4686_flux": {"exponential": True},
     "OIII5007_flux": {"exponential": True},
 }
 
+
 # Notes style
-def note(text, color="red"):
-    return rf"$^{{\textcolor{{{color}}}{{({text})}}}}$"
+class NoteManager:
+    def __init__(self):
+        self.map = {}
+        self.notes = []
+
+    def _label(self, i):
+        label = ""
+        while True:
+            label = chr(ord('a') + i % 26) + label
+            i = i // 26 - 1
+            if i < 0:
+                break
+        return label
+
+    def get_index(self, text):
+        if text not in self.map:
+            idx = len(self.notes)
+            self.map[text] = idx
+            self.notes.append(text)
+        return self.map[text]
+
+    def mark(self, text, color="red"):
+        idx = self.get_index(text)
+        label = self._label(idx)
+
+        return (
+            f'<a href="#note-{idx}" id="ref-{idx}">'
+            f'$^{{\\textcolor{{{color}}}{{({label})}}}}$'
+            f'</a>'
+        )
+
+    def render_notes_markdown(self):
+        blocks = []
+        for i, text in enumerate(self.notes):
+            label = self._label(i)
+
+            blocks.append(
+                f'<span id="note-{i}" style="font-size:75%">\n'
+                f'<a href="#ref-{i}">$^{{({label})}}$</a> {text}\n'
+                f'</span>\n'
+            )
+
+        return "\n".join(blocks)
+nm = NoteManager()
+def note(text):
+    return nm.mark(text)
+
 
 # Fill table
 table.add_row(dict(
@@ -234,7 +283,7 @@ table.add_row(dict(
     HeII1640_EW=8.3,
     HeII1640_FWHM=(573, 191, {"digits": 0}),
     Mstar=(7.8e8, 3.1e8),
-    SFR=(12.2, 2.0, {"note": note("a")}),  # From SED, i.e. the value reported in the abstract
+    SFR=(12.2, 2.0, {"note": note(r"From photometric analysis, averaged over the last 10 Myr; from spectroscopic analysis: $\mathrm{SFR}_\mathrm{UV} = (9.8 \pm 0.1) ~\mathrm{M_\odot yr^{-1}}$, $\mathrm{SFR}_\mathrm{H\beta} = (7.6 \pm 0.4) ~\mathrm{M_\odot yr^{-1}}$, $\mathrm{SFR}_\mathrm{H\alpha} = (7.5 \pm 0.1) ~\mathrm{M_\odot yr^{-1}}$, $\mathrm{SFR}_\mathrm{Pa\beta} = (6.40 \pm 0.03) ~\mathrm{M_\odot yr^{-1}}$.")}),  # From SED, i.e. the value reported in the abstract
     OIII5007_flux=(59.6e-18, 2.2e-18, {"digits": 2}),
     OIII5007_EW=248.8,
     OIIItoHb=(5.45, 0.32, {"digits": 2}),  # They also give HeII/Hbeta = 1.96 \pm 0.30, and HeII/Halpha = 0.69, 0.10, reported to closely match with the candidate from Wang+24
@@ -248,10 +297,10 @@ table.add_row(dict(
     magnification="No",
     Lya_flux=(5.8e-17, 0.7e-17),
     Lya_EW=(822, 101, {"digits": 0}),
-    Ha_flux=(4.2e-18, 0.6e-18, {"note": note("b")}),
+    Ha_flux=(4.2e-18, 0.6e-18, {"note": note("Includes a rescaling to account for potential flux losses, as the source lies near the edge of the MSA shutter.")}),
     Ha_EW=(2814, 327, {"digits": 0}),
     Hb_flux=(6.3e-19, 0.7e-19),
-    HeII1640_flux=(None, {"note": note("c")}),
+    HeII1640_flux=(None, {"note": note("HeII1640 line coinciding with strong OH skyline for this object.")}),
     MIII=6.1e5,
     OIII5007_flux=r"$< 5.6 \times 10^{-19}$",  # At 2sigma
     OtoH=r"$< 6.52$",
@@ -259,16 +308,51 @@ table.add_row(dict(
     reference="@cai2025"
 ))
 table.add_row(dict(
+    ID="LAP2",
+    redshift=(4.189, 0.003, {"digits": 3}),
+    magnification=("Yes", {"note": note(r"The UV magnitude at 1700 Å for this source is de-lensed, while fluxes are not corrected for lensing. De-lensed fluxes were obtained by dividing by $\mu_\mathrm{tot}$, assuming a total magnification factor of $\mu_\mathrm{tot} = 50 \pm 5$.")}),  # mu_tot = 50 \pm 5, mu_tang = 20 \pm 3
+    MUV=(r"$\approx -12.2$"),  # M_1700
+    Mstar=r"$\approx (1.2 - 5.0) \times 10^4$",
+    Ha_flux=(1.68e-19, 0.30e-19, {"digits": 2}),
+    OIII5007_flux=r"$< 5 \times 10^{-20}$",  # 2sigma upper limit
+    Hb_flux=(0.72e-19, 0.26e-19, {"digits": 1}),
+    Lya_flux=(26.4e-19, 3.8e-19, 3.7e-19, {"digits": 2, "note": note(r"From independent VLT/MUSE measure, $f_\mathrm{Ly\alpha} = (5.50 \pm 0.58) \times 10^{-18} ~\mathrm{erg \, s^{-1} \, cm^{-1}}$.")}),
+    Ha_EW=(647, 220, 302, {"digits": 0}),
+    metallicity=r"$< 0.006$",
+    OtoH=r"$< 6.5$",
+    HeII1640_EW=r"$< 80$",  # 2sigma upper limit
+    reference="@vanzella2026"
+))
+table.add_row(dict(
+    ID=("CAPERS-UDS-32520", {"note": note(r"The authors also examined a companion that serendipitously lies across the slit mask (therefore dubbing the whole system \"banana and blueberry\" due to its morphology, possibly hinting to a disturbed, merger-like origin), finding clear signatures of H$\alpha$ emission, as well as potential HeI and HeII emission lines; however, they caution that photometric data for the \"blueberry\" system from the Minerva survey (@muzzin2025) strongly favor a lower-redshift solution at $z \sim 0.7$ (Willot, priv. comm.).")}),
+    redshift=(5.1240, 0.0002, {"digits": 4}),
+    magnification="No",
+    MUV=(-20.95, 0.05, {"digits", 2}),
+    beta=(-1.68, 0.05, {"digits", 2}),
+    Hg_flux=(2.8e-18, 0.3e-18, {"digits": 1}),
+    Hg_EW=(35, 4, {"digits": 0}),
+    Hb_flux=(4.3e-18, 0.3e-18, {"digits": 1}),
+    Hb_EW=(137, 13, {"digits": 0}),
+    OIII5007_flux=(29.6e-18, 0.4e-18, {"digits": 2}),
+    OIII5007_EW=(946, 46, {"digits": 0}),
+    Ha_flux=(13.8e-18, 0.2e-18, {"digits": 2}),
+    Ha_EW=(734, 33, {"digits": 0}),
+    OtoH=(7.88, 0.07, {"digits": 2}),
+    metallicity=r"$< 0.15$",
+    Mstar=r"$\sim \times 10^9$",
+    reference="@reumert2026"
+))
+table.add_row(dict(
     ID="AMORE6",
     redshift=(5.7253, 0.00005, {"digits": 4}),
-    magnification=("Yes", {"note": note("d")}),  # $\mu = 39.32_{-3.48}^{+3.73}$ for AMORE6-A, vs $\mu = 77.69_{-5.92}^{+8.37}$ for AMORE6-B
-    MUV=(-14.52, 0.08, 0.07, {"digits": 2, "note": note("e")}),
+    magnification=("Yes", {"note": note("Properties for the stacked spectrum of the two images in the doubly lensed system, normalizing by the magnification factor of each image.")}),  # $\mu = 39.32_{-3.48}^{+3.73}$ for AMORE6-A, vs $\mu = 77.69_{-5.92}^{+8.37}$ for AMORE6-B
+    MUV=(-14.52, 0.08, 0.07, {"digits": 2, "note": note(r"The absolute UV magnitude and the physical properties of AMORE6 from SED fitting are reported for only one of the two images (AMORE6-B), as the other one (AMORE6-A) suffers from large uncertainties, likely due to its location near bright galaxies as well as its smaller magnification factor ($\mu = 39.32_{-3.48}^{+3.73}$, vs $\mu = 77.69_{-5.92}^{+8.37}$ for AMORE6-B).")}),
     beta=(-2.77, 0.09, 0.07, {"digits": 2}),
     Lya_flux= (4.95e-19, 0.92e-19, {"digits": 2}),  # From Lyalpha-to-Hbeta ratio = 10.01 \pm 1.4, propagating uncertainties
     Hb_flux=(0.49e-19, 0.06e-19),
     Hb_EW=(1594.7, 206.9),
     Mstar=(4.37e5, 0.73e5, 2.24e5, {"digits": 2}),
-    SFR=(0.35, 0.06, {"digits": 2, "note": note("f")}),  # From Hbeta, converting from log to linear
+    SFR=(0.35, 0.06, {"digits": 2, "note": note(r"SFR inferred from H$\beta$, larger than the value inferred from rest-frame UV luminosity -- $(0.0186_{-0.0035}^{+0.0033}) ~\mathrm{M_\odot yr^{-1}}$ -- or from averaging over the last 100 Myr of the best-fit star-formation history -- $(0.0038_{-0.0007}^{+0.0017}) ~\mathrm{M_\odot yr^{-1}}$ --, suporting the presence of a very young burst.")}),  # From Hbeta, converting from log to linear
     OIII5007_flux=r"$< 1.1 \times 10^{-20}$",   # Upper limits at 2sigma
     OtoH=r"$< 5.78$",
     metallicity=r"$< 0.0012$", 
@@ -307,7 +391,7 @@ table.add_row(dict(
 ))
 '''
 table.add_row(dict(
-    ID="LAP1-B",
+    ID="LAP1",
     redshift=(6.625, 0.001, {"digits": 3}),
     magnification="Yes",  # mu = 98
     MUV=r"$> -10.4$",
@@ -318,7 +402,7 @@ table.add_row(dict(
     Ha_EW=r"$> 1800$",  # at 3sigma, 880 at 5sigma
     Hb_flux=(0.73e-19, 0.20e-19, {"digits": 1}),
     Hb_EW=r"$> 340$",  # at 3sigma, 170 at 5sigma
-    HeII1640_flux=(r"$\lesssim 1.85 \times 10^{-19}$", {"note": note("g")}),
+    HeII1640_flux=(r"$\lesssim 1.85 \times 10^{-19}$", {"note": note(r"@vanzella2023 previously estimated a line flux for HeII1640 of $(7.96 \pm 2.07) \times 10^{-19} ~\mathrm{erg \, s^{-1} \, cm^{-2}}$; however, the reliability of the HeII line detection was hampered by the presence of a small blueshift relative to the Balmer lines, and by the extreme required EW ($\gtrsim 200$ Å), therefore the authors safely considered the line undetected, placing a $1\sigma$ upper limit of $2.7 \times 10^{-19} ~\mathrm{erg \, s^{-1} \, cm^{-2}}$. While @nakajima2025 also report no clear detection of the line, they provide an upper limit that remains within the range expected for zero-metallicity stellar populations. Also note that the stellar continuum is undetected for this source.")}),
     OIII5007_flux=(0.50e-19, 0.15e-19, {"digits": 1}),  # I could not find a constraint on the EW for the [OIII]5007 line
     OIIItoHb=(0.69, 0.28, {"digits": 2}),
     OtoH=(6.31, 0.23, 0.15, {"digits": 2}),
@@ -357,7 +441,7 @@ table.add_row(dict(
     Mstar=(5.6e7, 0.7e7, 0.8e7),  # Tot. stellar mass of the system LogM*/Msun = 7.75 \pm 0.06 from Tab. 1
     MIII=(7.8e5, 1.4e5),  # Mass of the putative Pop III component estimated from the HeII luminosity
     SFR=(9.56, 1.70, 4.51, {"digits": 2}),
-    Hb_flux=(71e-20, 10e-20, {"note": note("h")}),
+    Hb_flux=(71e-20, 10e-20, {"note": note("Intrinsic line fluxes and upper limits are reported after applying corrections for lensing magnification and dust extinction, adopting $A_\mathrm{V} = 0.12 \pm 0.04$ from their spectro-photometric analysis.")}),
     Hb_EW=(202, 34, {"digits": 0}),
     HeII1640_flux=(120e-20, 22e-20, {"digits": 2}),
     HeII1640_EW=(21, 4, {"digits": 0}),
@@ -376,23 +460,28 @@ table.add_row(dict(
     magnification="No",
     MUV=(-19.9, 0.1),
     beta=(-3.3, 0.3),
-    Mstar=(3.72e8, 3.36e8, 4.05e8, {"digits": 2, "note": note("i")}),  # Assuming extended SF + recent burst model and converting from log to linear --> LogMstar/Msun = 8.57 -1.03 +0.32 to linear, with mass of the burst LogMburst/Msun = 7.35 -1.30 +0.22 (see Sec. 3.3 and Tab. 3)
+    Mstar=(3.72e8, 3.36e8, 4.05e8, {"digits": 2, "note": note(r"Assuming an extended star-formation history in which the stellar mass is built up steadily, but with a recent ~3 Myr burst of star formation, forming a mass of $(2.24_{-2.13}^{+1.48}) \times 10^7 ~\mathrm{M_\odot}$.")}),  # Assuming extended SF + recent burst model and converting from log to linear --> LogMstar/Msun = 8.57 -1.03 +0.32 to linear, with mass of the burst LogMburst/Msun = 7.35 -1.30 +0.22 (see Sec. 3.3 and Tab. 3)
     SFR=(7.8, 0.6),  # From Hbeta
     Hb_flux=(10.69e-19, 0.84e-19, {"digits": 3}),
     OIII5007_flux=(38.54e-19, 1.20e-19, {"digits": 3}),
     OIIItoHb=(3.61, 0.30, {"digits": 2}),
-    OtoH=(6.89, 0.21, 0.26, {"digits": 2, "note": note("j")}),
+    OtoH=(6.89, 0.21, 0.26, {"digits": 2, "note": note("Though this system is not metal-free, the authors suggest that an effective temperature $\gtrsim 80000$ K for the ionizing source is necessary (with no obvious sign of AGN heating), hardly explained with a standard IMF, and that exotic scenarios such as Pop III star formation within a mildly enriched halo would be consistent with the observation.")}),  # The authors report that this is one of the lowest directly constrained oxygen abundances measured in any galaxy to date, and $\sim 10 \times$ lower than is typical for $z \simeq 8$ galaxies with the same stellar mass
     metallicity=(0.016, {"digits": 3}),
     reference="@cullen2025"
 ))
 table.add_row(dict(
-    ID="GN-z11 HeII clump",
-    redshift=(10.6034, 0.0013, {"digits": 4, "note": note("k")}),
-    magnification="No",
-    MIII=r"$\sim (2 - 2.5) \times 10^5$",
-    HeII1640_flux=(1.8e-19, 0.34e-19, {"note": note("l")}),  # Fluxes and EWs from Tab. 2 (HeII clump small aperture), converting log to linear
-    HeII1640_EW=(62, 27, 25, {"digits": 0, "note": note("m")}),
-    reference="@maiolino2024"
+    ID="Hebe (GN-z11)",
+    redshift=(10.5862, 0.003, {"digits": 4}),  # From Ubler+26
+    magnification=("No", {"note": note("Although measured fluxes need to be corrected for a small magnification factor of 1.42, which is not accounted for in the reported line fluxes; see table 1 of @maiolino2026 for the corresponding de-lensed line luminosities.")}),
+    MIII=r"$\sim 2 \times 10^4 - 6 \times 10^5$",  # From Rusta+26
+    OtoH=r"$< 6.96$",  # 3sigma upper limits on 12+log(O/H) and Zgas from Ubler+26
+    metallicity=(r"$< 0.0019$", {"digits": 4}), 
+    HeII1640_flux=(1.11e-19, 0.17e-19, {"digits": 2}),  # Total fluxes and EWs from Tab. 1 of Maiolino+26
+    HeII1640_EW=r"$> 47$",
+    Lya_flux=r"$< 1.5 \times 10^{-18}$",  # 3sigma upper limit from Sec. 8 of Maiolino+26
+    Hg_flux=(4.1e-20, 0.7e-20, {"digits": 1}),  # Hg flux and EW from Ubler+26
+    Hg_EW=r"$> 350$",
+    reference="@maiolino2026, @ubler2026, @rusta2026"
 ))
 
 '''
@@ -403,63 +492,14 @@ TODO:
 
 # Markdown table
 md = table_to_markdown(table, tablefmt="github", headers=headers, exponential=False, digits=1, col_fmt_overrides=col_fmt_overrides)
-Markdown(md)
+
+# Rendering including footnotes (we create two separate div for table and notes, so that the scrollable bar is immediately after the table instead of after the note list)
+html = f"""
+<div style="overflow-x: auto; width: 100%;">
+{md}
+</div>
+{nm.render_notes_markdown()}
+"""
+Markdown(html)
 ```
-
-<span style="font-size:75%">
-$^{(a)}$ From photometric analysis, averaged over the last 10 Myr; from spectroscopic analysis: SFR$_\mathrm{UV} = (9.8 \pm 0.1) ~\mathrm{M_\odot yr^{-1}}$, SFR$_\mathrm{H\beta} = (7.6 \pm 0.4) ~\mathrm{M_\odot yr^{-1}}$, SFR$_\mathrm{H\alpha} = (7.5 \pm 0.1) ~\mathrm{M_\odot yr^{-1}}$, SFR$_\mathrm{Pa\beta} = (6.40 \pm 0.03) ~\mathrm{M_\odot yr^{-1}}$.
-</span>
-
-<span style="font-size:75%">
-$^{(b)}$ Includes a rescaling to account for potential flux losses, as the source lies near the edge of the MSA shutter.
-</span>
-
-<span style="font-size:75%">
-$^{(c)}$ HeII1640 line coinciding with strong OH skyline for this object.
-</span>
-
-<span style="font-size:75%">
-$^{(d)}$ Properties for the stacked spectrum of the two images in the doubly lensed system, normalizing by the magnification factor of each image.
-</span>
-
-<span style="font-size:75%">
-$^{(e)}$ The absolute UV magnitued and the physical properties of AMORE6 from SED fitting are reported for only one of the two images (AMORE6-B), as the other one (AMORE6-A) suffers from large uncertainties, likely due to its location near bright galaxies as well as its smaller magnification factor ($\mu = 39.32_{-3.48}^{+3.73}$, vs $\mu = 77.69_{-5.92}^{+8.37}$ for AMORE6-B).
-</span>
-
-<span style="font-size:75%">
-$^{(f)}$ SFR inferred from H$\beta$, larger than the value inferred from rest-frame UV luminosity -- $(0.0186_{-0.0035}^{+0.0033}) ~\mathrm{M_\odot yr^{-1}}$ -- or from averaging over the last 100 Myr of the best-fit star formation history -- $(0.0038_{-0.0007}^{+0.0017}) ~\mathrm{M_\odot yr^{-1}}$ --, suporting the presence of a very young burst.
-</span>
-
-<span style="font-size:75%">
-$^{(g)}$ @vanzella2023 previously estimated a line flux for HeII1640 of $(7.96 \pm 2.07) \times 10^{-19} ~\mathrm{erg \, s^{-1} \, cm^{-2}}$; however, the reliability of the HeII line detection was hampered by the presence of a small blueshift relative to the Balmer lines, and by the extreme required EW ($\gtrsim 200$ Å), therefore the authors safely considered the line undetected, placing a $1\sigma$ upper limit of $2.7 \times 10^{-19} ~\mathrm{erg \, s^{-1} \, cm^{-2}}$. While @nakajima2025 also report no clear detection of the line, they report an upper limit that remains within the range expected for zero-metallicity stellar populations. Also note that the stellar continuum is undetected for this source.
-</span>
-
-<span style="font-size:75%">
-$^{(h)}$ Intrinsic line fluxes and upper limits are reported after applying corrections for lensing magnification and dust extinction, adopting $A_\mathrm{V} = 0.12 \pm 0.04$ from their spectro-photometric analysis.
-</span>
-
-<span style="font-size:75%">
-$^{(i)}$ Assuming an extended star-formation history in which the stellar mass is built up steadily, but with a recent ~3 Myr burst of star formation, forming a mass of $(2.24_{-2.13}^{+1.48}) \times 10^7 ~\mathrm{M_\odot}$.
-</span>
-
-<span style="font-size:75%">
-$^{(j)}$ Though this system is not metal-free, the authors suggest that an effective temperature $\gtrsim 80000$ K for the ionizing source is necessary (with no obvious sign of AGN heating), hardly explained with a standard IMF, and that exotic scenarios such as Pop III star formation within a mildly enriched halo would be consistent with the observation.  <!-- The authors report that this is one of the lowest directly constrained oxygen abundances measured in any galaxy to date, and $\sim 10 \times$ lower than is typical for $z \simeq 8$ galaxies with the same stellar mass -->
-</span>
-
-<span style="font-size:75%">
-$^{(k)}$ Spectroscopic redshift from @bunker2023.
-</span>
-
-<span style="font-size:75%">
-$^{(l)}$ From NIRSpec/IFU small aperture around HeII-emitting clump at $\sim 0.5''$ from GN-z11; independent MSA measures yield a flux of $(3.4 \pm 0.9) \times 10^{-19} ~\mathrm{erg \, s^{-1} \, cm^{-2}}$ or an EW of $98_{-52}^{+50}$ Å. However, uncertainties on the location of the MSA shutter, on the fraction of the putative HeII clump that entered the shutters and on absolute flux calibration prevent proper comparison.
-</span>
-
-<span style="font-size:75%">
-$^{(l)}$ From NIRSpec/IFU small $0.24'' \times 0.24''$ square aperture around the HeII-emitting clump at $\sim 0.5''$ from GN-z11; spectroscopy extracted from a larger aperture (aimed at capturing an additional and more extended HeII emission, possibly associated with a fainter and less significant clump about $0.3''$ south of the HeII primary clump and $0.4''$ east of GN-z11) yields $(5.0 \pm 0.8) \times 10^{-19} ~\mathrm{erg \, s^{-1} \, cm^{-2}}$, while independent MSA measures report a flux of $(3.4 \pm 0.9) \times 10^{-19} ~\mathrm{erg \, s^{-1} \, cm^{-2}}$. Uncertainties on the location of the MSA shutter, on the fraction of the putative HeII clump that entered the shutters, and on absolute flux calibration, together with the larger sensitivity of the MSA prism with respect than the IFU observation, prevent proper comparison.
-</span>
-
-<span style="font-size:75%">
-$^{(m)}$ As the continuum is totally undetected in the IFS medium-resolution spectra and only marginally detected in the low-resolution prism MSA spectrum (only yielding a 3$\sigma$ lower limit on the EW of 15 Å from the small aperture), the EW here is estimated from photometry. The corresponding EWs from the larger aperture and from the MSA are respectively $28.2_{-14.7}^{+14.5}$ Å (or $> 12$ Å from spectroscopy), and $98_{-52}^{+50}$ Å ($145_{-55}^{+50}$ Å); also see Footnote $(l)$.
-</span>
-
 
