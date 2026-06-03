@@ -475,7 +475,7 @@ table.add_row(dict(
     magnification=("No", {"note": note("Although measured fluxes need to be corrected for a small magnification factor of 1.42, which is not accounted for in the reported line fluxes; see table 1 of @maiolino2026 for the corresponding de-lensed line luminosities.")}),
     MIII=r"$\sim 2 \times 10^4 - 6 \times 10^5$",  # From Rusta+26
     OtoH=r"$< 6.96$",  # 3sigma upper limits on 12+log(O/H) and Zgas from Ubler+26
-    metallicity=(r"$< 0.0019$", {"digits": 4}), 
+    metallicity=(r"$< 0.019$", {"digits": 4}), 
     HeII1640_flux=(1.11e-19, 0.17e-19, {"digits": 2}),  # Total fluxes and EWs from Tab. 1 of Maiolino+26
     HeII1640_EW=r"$> 47$",
     Lya_flux=r"$< 1.5 \times 10^{-18}$",  # 3sigma upper limit from Sec. 8 of Maiolino+26
