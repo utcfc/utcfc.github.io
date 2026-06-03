@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.37">
+<meta name="generator" content="quarto-1.9.38">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -95,10 +95,10 @@ div.csl-indent {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-562eeb55551e8d4334d24acba8027318.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-91edcbc90187f75510e16588ac870bd6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-ad245b0221f0be3b5c81bf1ffc9b3337.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-9916cacfdb3ff0d9c7fb8c2203213307.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -253,7 +253,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">April 17, 2026</p>
+      <p class="date-modified">June 3, 2026</p>
     </div>
   </div>
     
@@ -264,7 +264,7 @@ window.Quarto = {
 </header>
 
 
-<p>This page maintains an up-to-date (as of April 17, 2026) compilation of all reported high-redshift (<span class="math inline">\(z \gtrsim 3\)</span>) Pop III-hosting galaxy candidates, i.e.&nbsp;galaxies for which the presence of an active Pop III component has been suggested to account for at least part of the observed emission – regardless of the average metallicity of the system.</p>
+<p>This page maintains an up-to-date (as of June 3, 2026) compilation of all reported high-redshift (<span class="math inline">\(z \gtrsim 3\)</span>) Pop III-hosting galaxy candidates, i.e.&nbsp;galaxies for which the presence of an active Pop III component has been suggested to account for at least part of the observed emission – regardless of the average metallicity of the system.</p>
 <p>The table below includes key properties of these objects, as reported in their respective discovery papers, including their redshift, magnification, UV magnitude (<span class="math inline">\(M_\mathrm{UV}\)</span>), UV <span class="math inline">\(\beta\)</span>-slope, stellar mass (the total stellar mass, <span class="math inline">\(M_\star\)</span>, and mass of the proposed Pop III component, <span class="math inline">\(M_\mathrm{III}\)</span>), star formation rate (SFR), line flux, equivalent width (EW) and full width half maximum (FWHM) for a selection of emission lines of interest (Ly<span class="math inline">\(\alpha\)</span>, H<span class="math inline">\(\alpha\)</span>, H<span class="math inline">\(\beta\)</span>, H<span class="math inline">\(\gamma\)</span>, HeII1640, HeII4686 and [OIII]5007), [OIII]/H<span class="math inline">\(\beta\)</span> ratio and metallicity, both in terms of O/H ratio and solar metallicity (Z<span class="math inline">\(_\odot\)</span>).</p>
 <p>The table is dynamically generated in the code block below.</p>
 <style>
@@ -272,7 +272,7 @@ table th, table td {
   white-space: nowrap;
 }
 </style>
-<div id="49e774cb" class="cell" data-execution_count="1">
+<div id="dfd19936" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> IPython.display <span class="im">import</span> Markdown</span>
@@ -722,7 +722,7 @@ table th, table td {
 <span id="cb1-445"><a href="#cb1-445" aria-hidden="true" tabindex="-1"></a>    magnification<span class="op">=</span>(<span class="st">"No"</span>, {<span class="st">"note"</span>: note(<span class="st">"Although measured fluxes need to be corrected for a small magnification factor of 1.42, which is not accounted for in the reported line fluxes; see table 1 of @maiolino2026 for the corresponding de-lensed line luminosities."</span>)}),</span>
 <span id="cb1-446"><a href="#cb1-446" aria-hidden="true" tabindex="-1"></a>    MIII<span class="op">=</span><span class="vs">r"</span><span class="dv">$\s</span><span class="vs">im 2 </span><span class="ch">\t</span><span class="vs">imes 10</span><span class="dv">^</span><span class="vs">4 - 6 </span><span class="ch">\t</span><span class="vs">imes 10</span><span class="dv">^</span><span class="vs">5</span><span class="dv">$</span><span class="vs">"</span>,  <span class="co"># From Rusta+26</span></span>
 <span id="cb1-447"><a href="#cb1-447" aria-hidden="true" tabindex="-1"></a>    OtoH<span class="op">=</span><span class="vs">r"</span><span class="dv">$</span><span class="vs">&lt; 6</span><span class="dv">.</span><span class="vs">96</span><span class="dv">$</span><span class="vs">"</span>,  <span class="co"># 3sigma upper limits on 12+log(O/H) and Zgas from Ubler+26</span></span>
-<span id="cb1-448"><a href="#cb1-448" aria-hidden="true" tabindex="-1"></a>    metallicity<span class="op">=</span>(<span class="vs">r"</span><span class="dv">$</span><span class="vs">&lt; 0</span><span class="dv">.</span><span class="vs">0019</span><span class="dv">$</span><span class="vs">"</span>, {<span class="st">"digits"</span>: <span class="dv">4</span>}), </span>
+<span id="cb1-448"><a href="#cb1-448" aria-hidden="true" tabindex="-1"></a>    metallicity<span class="op">=</span>(<span class="vs">r"</span><span class="dv">$</span><span class="vs">&lt; 0</span><span class="dv">.</span><span class="vs">019</span><span class="dv">$</span><span class="vs">"</span>, {<span class="st">"digits"</span>: <span class="dv">4</span>}), </span>
 <span id="cb1-449"><a href="#cb1-449" aria-hidden="true" tabindex="-1"></a>    HeII1640_flux<span class="op">=</span>(<span class="fl">1.11e-19</span>, <span class="fl">0.17e-19</span>, {<span class="st">"digits"</span>: <span class="dv">2</span>}),  <span class="co"># Total fluxes and EWs from Tab. 1 of Maiolino+26</span></span>
 <span id="cb1-450"><a href="#cb1-450" aria-hidden="true" tabindex="-1"></a>    HeII1640_EW<span class="op">=</span><span class="vs">r"</span><span class="dv">$</span><span class="vs">&gt; 47</span><span class="dv">$</span><span class="vs">"</span>,</span>
 <span id="cb1-451"><a href="#cb1-451" aria-hidden="true" tabindex="-1"></a>    Lya_flux<span class="op">=</span><span class="vs">r"</span><span class="dv">$</span><span class="vs">&lt; 1</span><span class="dv">.</span><span class="vs">5 </span><span class="ch">\t</span><span class="vs">imes 10</span><span class="dv">^</span><span class="vs">{-18}</span><span class="dv">$</span><span class="vs">"</span>,  <span class="co"># 3sigma upper limit from Sec. 8 of Maiolino+26</span></span>
@@ -1099,7 +1099,7 @@ table th, table td {
 <td>Hebe (GN-z11)</td>
 <td><span class="math inline">\(10.5862 \pm 0.0030\)</span></td>
 <td><span class="math inline">\(&lt; 6.96\)</span></td>
-<td><span class="math inline">\(&lt; 0.0019\)</span></td>
+<td><span class="math inline">\(&lt; 0.019\)</span></td>
 <td><span class="math inline">\(\sim 2 \times 10^4 - 6 \times 10^5\)</span></td>
 <td>—</td>
 <td>—</td>
