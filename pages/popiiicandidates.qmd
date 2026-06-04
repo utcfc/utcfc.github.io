@@ -389,7 +389,6 @@ table.add_row(dict(
     metallicity=r"$< 0.005$",
     reference="@fujimoto2025"
 ))
-'''
 table.add_row(dict(
     ID="LAP1",
     redshift=(6.625, 0.001, {"digits": 3}),
@@ -406,10 +405,9 @@ table.add_row(dict(
     OIII5007_flux=(0.50e-19, 0.15e-19, {"digits": 1}),  # I could not find a constraint on the EW for the [OIII]5007 line
     OIIItoHb=(0.69, 0.28, {"digits": 2}),
     OtoH=(6.31, 0.23, 0.15, {"digits": 2}),
-    metallicity=(4.2e-3, 1.8e-3, {"exponential": True, "digits": 1}),
+    metallicity=(4.2e-3, 1.8e-3, {"exponential": True, "digits": 1, "note": note(r"The authors further highlighted an elevated carbon-to-oxygen ratio of $\sim 1 - 2$ times higher than the solar value, consistent with Pop III nucleosynthetic yields. This observation, together with the exceptionally hard ionizing radiation field, inconsistent with chemically enriched stellar populations or accreting black holes, establishes LAP1 as a candidate ``self-enriched'' Pop III system or ``fossil in the making''.")),
     reference="@nakajima2025"
 ))
-'''
 # LAP1 properties from previous measure of Vanzella+23 (https://ui.adsabs.harvard.edu/abs/2023A%26A...678A.173V/abstract)
 table.add_row(dict(
     ID="LAP1",
