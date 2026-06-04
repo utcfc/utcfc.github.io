@@ -272,7 +272,7 @@ table th, table td {
   white-space: nowrap;
 }
 </style>
-<div id="262de548" class="cell" data-execution_count="1">
+<div id="5635fa58" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> IPython.display <span class="im">import</span> Markdown</span>
@@ -636,116 +636,118 @@ table th, table td {
 <span id="cb1-359"><a href="#cb1-359" aria-hidden="true" tabindex="-1"></a><span class="co">    metallicity=r"$&lt; 0.005$",</span></span>
 <span id="cb1-360"><a href="#cb1-360" aria-hidden="true" tabindex="-1"></a><span class="co">    reference="@fujimoto2025"</span></span>
 <span id="cb1-361"><a href="#cb1-361" aria-hidden="true" tabindex="-1"></a><span class="co">))</span></span>
-<span id="cb1-362"><a href="#cb1-362" aria-hidden="true" tabindex="-1"></a><span class="co">table.add_row(dict(</span></span>
-<span id="cb1-363"><a href="#cb1-363" aria-hidden="true" tabindex="-1"></a><span class="co">    ID="LAP1",</span></span>
-<span id="cb1-364"><a href="#cb1-364" aria-hidden="true" tabindex="-1"></a><span class="co">    redshift=(6.625, 0.001, {"digits": 3}),</span></span>
-<span id="cb1-365"><a href="#cb1-365" aria-hidden="true" tabindex="-1"></a><span class="co">    magnification="Yes",  # mu = 98</span></span>
-<span id="cb1-366"><a href="#cb1-366" aria-hidden="true" tabindex="-1"></a><span class="co">    MUV=r"$&gt; -10.4$",</span></span>
-<span id="cb1-367"><a href="#cb1-367" aria-hidden="true" tabindex="-1"></a><span class="co">    Mstar=r"$</span><span class="er">\</span><span class="co">lesssim 2700$",</span></span>
-<span id="cb1-368"><a href="#cb1-368" aria-hidden="true" tabindex="-1"></a><span class="co">    Lya_flux=(6.08e-19, 1.70e-19, {"digits": 2}),  # All fluxes from tab. 1</span></span>
-<span id="cb1-369"><a href="#cb1-369" aria-hidden="true" tabindex="-1"></a><span class="co">    Lya_EW=r"$&gt; 250$",</span></span>
-<span id="cb1-370"><a href="#cb1-370" aria-hidden="true" tabindex="-1"></a><span class="co">    Ha_flux=(2.07e-19, 0.25e-19, {"digits": 2}),</span></span>
-<span id="cb1-371"><a href="#cb1-371" aria-hidden="true" tabindex="-1"></a><span class="co">    Ha_EW=r"$&gt; 1800$",  # at 3sigma, 880 at 5sigma</span></span>
-<span id="cb1-372"><a href="#cb1-372" aria-hidden="true" tabindex="-1"></a><span class="co">    Hb_flux=(0.73e-19, 0.20e-19, {"digits": 1}),</span></span>
-<span id="cb1-373"><a href="#cb1-373" aria-hidden="true" tabindex="-1"></a><span class="co">    Hb_EW=r"$&gt; 340$",  # at 3sigma, 170 at 5sigma</span></span>
-<span id="cb1-374"><a href="#cb1-374" aria-hidden="true" tabindex="-1"></a><span class="co">    HeII1640_flux=(r"$</span><span class="er">\</span><span class="co">lesssim 1.85 </span><span class="ch">\t</span><span class="co">imes 10^{-19}$", {"note": note(r"@vanzella2023 previously estimated a line flux for HeII1640 of $(7.96 </span><span class="er">\</span><span class="co">pm 2.07) </span><span class="ch">\t</span><span class="co">imes 10^{-19} ~</span><span class="er">\</span><span class="co">mathrm{erg </span><span class="er">\</span><span class="co">, s^{-1} </span><span class="er">\</span><span class="co">, cm^{-2}}$; however, the reliability of the HeII line detection was hampered by the presence of a small blueshift relative to the Balmer lines, and by the extreme required EW ($</span><span class="er">\</span><span class="co">gtrsim 200$ Å), therefore the authors safely considered the line undetected, placing a $1</span><span class="er">\</span><span class="co">sigma$ upper limit of $2.7 </span><span class="ch">\t</span><span class="co">imes 10^{-19} ~</span><span class="er">\</span><span class="co">mathrm{erg </span><span class="er">\</span><span class="co">, s^{-1} </span><span class="er">\</span><span class="co">, cm^{-2}}$. While @nakajima2025 also report no clear detection of the line, they provide an upper limit that remains within the range expected for zero-metallicity stellar populations. Also note that the stellar continuum is undetected for this source.")}),</span></span>
-<span id="cb1-375"><a href="#cb1-375" aria-hidden="true" tabindex="-1"></a><span class="co">    OIII5007_flux=(0.50e-19, 0.15e-19, {"digits": 1}),  # I could not find a constraint on the EW for the [OIII]5007 line</span></span>
-<span id="cb1-376"><a href="#cb1-376" aria-hidden="true" tabindex="-1"></a><span class="co">    OIIItoHb=(0.69, 0.28, {"digits": 2}),</span></span>
-<span id="cb1-377"><a href="#cb1-377" aria-hidden="true" tabindex="-1"></a><span class="co">    OtoH=(6.31, 0.23, 0.15, {"digits": 2}),</span></span>
-<span id="cb1-378"><a href="#cb1-378" aria-hidden="true" tabindex="-1"></a><span class="co">    metallicity=(4.2e-3, 1.8e-3, {"exponential": True, "digits": 1, "note": note(r"The authors further highlighted an elevated carbon-to-oxygen ratio of $</span><span class="er">\</span><span class="co">sim 1 - 2$ times higher than the solar value, consistent with Pop III nucleosynthetic yields. This observation, together with the exceptionally hard ionizing radiation field, inconsistent with chemically enriched stellar populations or accreting black holes, establishes LAP1 as a candidate ``self-enriched'' Pop III system or ``fossil in the making''.")),</span></span>
-<span id="cb1-379"><a href="#cb1-379" aria-hidden="true" tabindex="-1"></a><span class="co">    reference="@nakajima2025"</span></span>
-<span id="cb1-380"><a href="#cb1-380" aria-hidden="true" tabindex="-1"></a><span class="co">))</span></span>
-<span id="cb1-381"><a href="#cb1-381" aria-hidden="true" tabindex="-1"></a><span class="co"># LAP1 properties from previous measure of Vanzella+23 (https://ui.adsabs.harvard.edu/abs/2023A%26A...678A.173V/abstract)</span></span>
-<span id="cb1-382"><a href="#cb1-382" aria-hidden="true" tabindex="-1"></a><span class="co">table.add_row(dict(</span></span>
-<span id="cb1-383"><a href="#cb1-383" aria-hidden="true" tabindex="-1"></a><span class="co">    ID="LAP1",</span></span>
-<span id="cb1-384"><a href="#cb1-384" aria-hidden="true" tabindex="-1"></a><span class="co">    redshift=(6.639, 0.004, {"digits": 3}),</span></span>
-<span id="cb1-385"><a href="#cb1-385" aria-hidden="true" tabindex="-1"></a><span class="co">    magnification="Yes",  # mu_tot(median) = (120, 9), mu_tang(median) = (55, 6, 2), mu_tot &gt; 500 for images A1,A2, mu_tot=98,99 for B1,B2</span></span>
-<span id="cb1-386"><a href="#cb1-386" aria-hidden="true" tabindex="-1"></a><span class="co">    MUV=r"$&gt; -11.2$",</span></span>
-<span id="cb1-387"><a href="#cb1-387" aria-hidden="true" tabindex="-1"></a><span class="co">    Mstar=r"$</span><span class="er">\</span><span class="co">lesssim 10^4$",</span></span>
-<span id="cb1-388"><a href="#cb1-388" aria-hidden="true" tabindex="-1"></a><span class="co">    Lya_flux=(369.2e-20, 29.3e-20, {"digits": 3}),</span></span>
-<span id="cb1-389"><a href="#cb1-389" aria-hidden="true" tabindex="-1"></a><span class="co">    Lya_EW=r"$&gt; 370$",</span></span>
-<span id="cb1-390"><a href="#cb1-390" aria-hidden="true" tabindex="-1"></a><span class="co">    Ha_flux=(69.4e-20, 5.5e-20, {"digits": 2}),</span></span>
-<span id="cb1-391"><a href="#cb1-391" aria-hidden="true" tabindex="-1"></a><span class="co">    Ha_EW=r"$&gt; 2020$",</span></span>
-<span id="cb1-392"><a href="#cb1-392" aria-hidden="true" tabindex="-1"></a><span class="co">    Hb_flux=(26.3e-20, 2.7e-20, {"digits": 2}),</span></span>
-<span id="cb1-393"><a href="#cb1-393" aria-hidden="true" tabindex="-1"></a><span class="co">    Hb_EW=r"$&gt; 420$",</span></span>
-<span id="cb1-394"><a href="#cb1-394" aria-hidden="true" tabindex="-1"></a><span class="co">    HeII1640_flux=(79.6e-20, 20.7e-20, {"digits": 2, "note": note("g")}),</span></span>
-<span id="cb1-395"><a href="#cb1-395" aria-hidden="true" tabindex="-1"></a><span class="co">    OIII5007_flux=(14.5e-20, 3.4e-20, {"digits": 2}),</span></span>
-<span id="cb1-396"><a href="#cb1-396" aria-hidden="true" tabindex="-1"></a><span class="co">    OIII5007_EW=r"$&gt; 246$",</span></span>
-<span id="cb1-397"><a href="#cb1-397" aria-hidden="true" tabindex="-1"></a><span class="co">    OIIItoHb=(0.55, 0.14, 0.15, {"digits": 2}),</span></span>
-<span id="cb1-398"><a href="#cb1-398" aria-hidden="true" tabindex="-1"></a><span class="co">    OtoH=r"$&lt; 6.3$",</span></span>
-<span id="cb1-399"><a href="#cb1-399" aria-hidden="true" tabindex="-1"></a><span class="co">    metallicity=r"$&lt; 0.004$",</span></span>
-<span id="cb1-400"><a href="#cb1-400" aria-hidden="true" tabindex="-1"></a><span class="co">    reference="@vanzella2023"</span></span>
-<span id="cb1-401"><a href="#cb1-401" aria-hidden="true" tabindex="-1"></a><span class="co">))</span></span>
-<span id="cb1-402"><a href="#cb1-402" aria-hidden="true" tabindex="-1"></a><span class="co">'''</span></span>
-<span id="cb1-403"><a href="#cb1-403" aria-hidden="true" tabindex="-1"></a>table.add_row(<span class="bu">dict</span>(</span>
-<span id="cb1-404"><a href="#cb1-404" aria-hidden="true" tabindex="-1"></a>    ID<span class="op">=</span><span class="st">"RX J2129-z8HeII"</span>,</span>
-<span id="cb1-405"><a href="#cb1-405" aria-hidden="true" tabindex="-1"></a>    redshift<span class="op">=</span>(<span class="fl">8.1623</span>, <span class="fl">0.0007</span>, {<span class="st">"digits"</span>: <span class="dv">4</span>}),</span>
-<span id="cb1-406"><a href="#cb1-406" aria-hidden="true" tabindex="-1"></a>    magnification<span class="op">=</span><span class="st">"Yes"</span>, <span class="co"># mu = (2.26, 0.14),</span></span>
-<span id="cb1-407"><a href="#cb1-407" aria-hidden="true" tabindex="-1"></a>    MUV<span class="op">=</span>(<span class="op">-</span><span class="fl">19.58</span>, <span class="fl">0.02</span>, <span class="fl">0.03</span>, {<span class="st">"digits"</span>: <span class="dv">2</span>}),</span>
-<span id="cb1-408"><a href="#cb1-408" aria-hidden="true" tabindex="-1"></a>    beta<span class="op">=</span>(<span class="op">-</span><span class="fl">2.53</span>, <span class="fl">0.07</span>, <span class="fl">0.06</span>, {<span class="st">"digits"</span>: <span class="dv">2</span>}),</span>
-<span id="cb1-409"><a href="#cb1-409" aria-hidden="true" tabindex="-1"></a>    Mstar<span class="op">=</span>(<span class="fl">5.6e7</span>, <span class="fl">0.7e7</span>, <span class="fl">0.8e7</span>),  <span class="co"># Tot. stellar mass of the system LogM*/Msun = 7.75 \pm 0.06 from Tab. 1</span></span>
-<span id="cb1-410"><a href="#cb1-410" aria-hidden="true" tabindex="-1"></a>    MIII<span class="op">=</span>(<span class="fl">7.8e5</span>, <span class="fl">1.4e5</span>),  <span class="co"># Mass of the putative Pop III component estimated from the HeII luminosity</span></span>
-<span id="cb1-411"><a href="#cb1-411" aria-hidden="true" tabindex="-1"></a>    SFR<span class="op">=</span>(<span class="fl">9.56</span>, <span class="fl">1.70</span>, <span class="fl">4.51</span>, {<span class="st">"digits"</span>: <span class="dv">2</span>}),</span>
-<span id="cb1-412"><a href="#cb1-412" aria-hidden="true" tabindex="-1"></a>    Hb_flux<span class="op">=</span>(<span class="fl">71e-20</span>, <span class="fl">10e-20</span>, {<span class="st">"note"</span>: note(<span class="st">"Intrinsic line fluxes and upper limits are reported after applying corrections for lensing magnification and dust extinction, adopting $A_</span><span class="er">\</span><span class="st">mathrm</span><span class="sc">{V}</span><span class="st"> = 0.12 </span><span class="er">\</span><span class="st">pm 0.04$ from their spectro-photometric analysis."</span>)}),</span>
-<span id="cb1-413"><a href="#cb1-413" aria-hidden="true" tabindex="-1"></a>    Hb_EW<span class="op">=</span>(<span class="dv">202</span>, <span class="dv">34</span>, {<span class="st">"digits"</span>: <span class="dv">0</span>}),</span>
-<span id="cb1-414"><a href="#cb1-414" aria-hidden="true" tabindex="-1"></a>    HeII1640_flux<span class="op">=</span>(<span class="fl">120e-20</span>, <span class="fl">22e-20</span>, {<span class="st">"digits"</span>: <span class="dv">2</span>}),</span>
-<span id="cb1-415"><a href="#cb1-415" aria-hidden="true" tabindex="-1"></a>    HeII1640_EW<span class="op">=</span>(<span class="dv">21</span>, <span class="dv">4</span>, {<span class="st">"digits"</span>: <span class="dv">0</span>}),</span>
-<span id="cb1-416"><a href="#cb1-416" aria-hidden="true" tabindex="-1"></a>    HeII4686_flux<span class="op">=</span><span class="vs">r"</span><span class="dv">$</span><span class="vs">&lt; 1</span><span class="dv">.</span><span class="vs">6 </span><span class="ch">\t</span><span class="vs">imes 10</span><span class="dv">^</span><span class="vs">{-19}</span><span class="dv">$</span><span class="vs">"</span>,  <span class="co"># 2sigma upper limits</span></span>
-<span id="cb1-417"><a href="#cb1-417" aria-hidden="true" tabindex="-1"></a>    HeII4686_EW<span class="op">=</span><span class="vs">r"</span><span class="dv">$</span><span class="vs">&lt; 49</span><span class="dv">$</span><span class="vs">"</span>,</span>
-<span id="cb1-418"><a href="#cb1-418" aria-hidden="true" tabindex="-1"></a>    OIII5007_flux<span class="op">=</span>(<span class="fl">390e-20</span>, <span class="fl">10e-20</span>, {<span class="st">"digits"</span>: <span class="dv">2</span>}),</span>
-<span id="cb1-419"><a href="#cb1-419" aria-hidden="true" tabindex="-1"></a>    OIII5007_EW<span class="op">=</span>(<span class="dv">1015</span>, <span class="dv">83</span>, {<span class="st">"digits"</span>: <span class="dv">0</span>}),</span>
-<span id="cb1-420"><a href="#cb1-420" aria-hidden="true" tabindex="-1"></a>    OIIItoHb<span class="op">=</span>(<span class="fl">5.5</span>, <span class="fl">0.8</span>),</span>
-<span id="cb1-421"><a href="#cb1-421" aria-hidden="true" tabindex="-1"></a>    OtoH<span class="op">=</span>(<span class="fl">7.63</span>, <span class="fl">0.09</span>, <span class="fl">0.14</span>, {<span class="st">"digits"</span>: <span class="dv">2</span>}),</span>
-<span id="cb1-422"><a href="#cb1-422" aria-hidden="true" tabindex="-1"></a>    metallicity<span class="op">=</span><span class="vs">r"</span><span class="dv">$\s</span><span class="vs">im 0</span><span class="dv">.</span><span class="vs">1</span><span class="dv">$</span><span class="vs">"</span>,  <span class="co"># Log(Zstar/Zsun) ~ -0.9</span></span>
-<span id="cb1-423"><a href="#cb1-423" aria-hidden="true" tabindex="-1"></a>    reference<span class="op">=</span><span class="st">"@wang2024"</span></span>
-<span id="cb1-424"><a href="#cb1-424" aria-hidden="true" tabindex="-1"></a>))</span>
-<span id="cb1-425"><a href="#cb1-425" aria-hidden="true" tabindex="-1"></a>table.add_row(<span class="bu">dict</span>(</span>
-<span id="cb1-426"><a href="#cb1-426" aria-hidden="true" tabindex="-1"></a>    ID<span class="op">=</span><span class="st">"EXCELS-63107"</span>,</span>
-<span id="cb1-427"><a href="#cb1-427" aria-hidden="true" tabindex="-1"></a>    redshift<span class="op">=</span>(<span class="fl">8.271</span>, {<span class="st">"digits"</span>: <span class="dv">3</span>}),</span>
-<span id="cb1-428"><a href="#cb1-428" aria-hidden="true" tabindex="-1"></a>    magnification<span class="op">=</span><span class="st">"No"</span>,</span>
-<span id="cb1-429"><a href="#cb1-429" aria-hidden="true" tabindex="-1"></a>    MUV<span class="op">=</span>(<span class="op">-</span><span class="fl">19.9</span>, <span class="fl">0.1</span>),</span>
-<span id="cb1-430"><a href="#cb1-430" aria-hidden="true" tabindex="-1"></a>    beta<span class="op">=</span>(<span class="op">-</span><span class="fl">3.3</span>, <span class="fl">0.3</span>),</span>
-<span id="cb1-431"><a href="#cb1-431" aria-hidden="true" tabindex="-1"></a>    Mstar<span class="op">=</span>(<span class="fl">3.72e8</span>, <span class="fl">3.36e8</span>, <span class="fl">4.05e8</span>, {<span class="st">"digits"</span>: <span class="dv">2</span>, <span class="st">"note"</span>: note(<span class="vs">r"Assuming an extended star-formation history in which the stellar mass is built up steadily, but with a recent ~3 Myr burst of star formation, forming a mass of </span><span class="dv">$</span><span class="kw">(</span><span class="vs">2</span><span class="dv">.</span><span class="vs">24_{-2</span><span class="dv">.</span><span class="vs">13}</span><span class="dv">^</span><span class="vs">{</span><span class="op">+</span><span class="vs">1</span><span class="dv">.</span><span class="vs">48}</span><span class="kw">)</span><span class="vs"> </span><span class="ch">\t</span><span class="vs">imes 10</span><span class="dv">^</span><span class="vs">7 ~</span><span class="dv">\m</span><span class="vs">athrm{M_</span><span class="er">\</span><span class="vs">odot}</span><span class="dv">$.</span><span class="vs">"</span>)}),  <span class="co"># Assuming extended SF + recent burst model and converting from log to linear --&gt; LogMstar/Msun = 8.57 -1.03 +0.32 to linear, with mass of the burst LogMburst/Msun = 7.35 -1.30 +0.22 (see Sec. 3.3 and Tab. 3)</span></span>
-<span id="cb1-432"><a href="#cb1-432" aria-hidden="true" tabindex="-1"></a>    SFR<span class="op">=</span>(<span class="fl">7.8</span>, <span class="fl">0.6</span>),  <span class="co"># From Hbeta</span></span>
-<span id="cb1-433"><a href="#cb1-433" aria-hidden="true" tabindex="-1"></a>    Hb_flux<span class="op">=</span>(<span class="fl">10.69e-19</span>, <span class="fl">0.84e-19</span>, {<span class="st">"digits"</span>: <span class="dv">3</span>}),</span>
-<span id="cb1-434"><a href="#cb1-434" aria-hidden="true" tabindex="-1"></a>    OIII5007_flux<span class="op">=</span>(<span class="fl">38.54e-19</span>, <span class="fl">1.20e-19</span>, {<span class="st">"digits"</span>: <span class="dv">3</span>}),</span>
-<span id="cb1-435"><a href="#cb1-435" aria-hidden="true" tabindex="-1"></a>    OIIItoHb<span class="op">=</span>(<span class="fl">3.61</span>, <span class="fl">0.30</span>, {<span class="st">"digits"</span>: <span class="dv">2</span>}),</span>
-<span id="cb1-436"><a href="#cb1-436" aria-hidden="true" tabindex="-1"></a>    OtoH<span class="op">=</span>(<span class="fl">6.89</span>, <span class="fl">0.21</span>, <span class="fl">0.26</span>, {<span class="st">"digits"</span>: <span class="dv">2</span>, <span class="st">"note"</span>: note(<span class="st">"Though this system is not metal-free, the authors suggest that an effective temperature $</span><span class="er">\</span><span class="st">gtrsim 80000$ K for the ionizing source is necessary (with no obvious sign of AGN heating), hardly explained with a standard IMF, and that exotic scenarios such as Pop III star formation within a mildly enriched halo would be consistent with the observation."</span>)}),  <span class="co"># The authors report that this is one of the lowest directly constrained oxygen abundances measured in any galaxy to date, and $\sim 10 \times$ lower than is typical for $z \simeq 8$ galaxies with the same stellar mass</span></span>
-<span id="cb1-437"><a href="#cb1-437" aria-hidden="true" tabindex="-1"></a>    metallicity<span class="op">=</span>(<span class="fl">0.016</span>, {<span class="st">"digits"</span>: <span class="dv">3</span>}),</span>
-<span id="cb1-438"><a href="#cb1-438" aria-hidden="true" tabindex="-1"></a>    reference<span class="op">=</span><span class="st">"@cullen2025"</span></span>
-<span id="cb1-439"><a href="#cb1-439" aria-hidden="true" tabindex="-1"></a>))</span>
-<span id="cb1-440"><a href="#cb1-440" aria-hidden="true" tabindex="-1"></a>table.add_row(<span class="bu">dict</span>(</span>
-<span id="cb1-441"><a href="#cb1-441" aria-hidden="true" tabindex="-1"></a>    ID<span class="op">=</span><span class="st">"Hebe (GN-z11)"</span>,</span>
-<span id="cb1-442"><a href="#cb1-442" aria-hidden="true" tabindex="-1"></a>    redshift<span class="op">=</span>(<span class="fl">10.5862</span>, <span class="fl">0.003</span>, {<span class="st">"digits"</span>: <span class="dv">4</span>}),  <span class="co"># From Ubler+26</span></span>
-<span id="cb1-443"><a href="#cb1-443" aria-hidden="true" tabindex="-1"></a>    magnification<span class="op">=</span>(<span class="st">"No"</span>, {<span class="st">"note"</span>: note(<span class="st">"Although measured fluxes need to be corrected for a small magnification factor of 1.42, which is not accounted for in the reported line fluxes; see table 1 of @maiolino2026 for the corresponding de-lensed line luminosities."</span>)}),</span>
-<span id="cb1-444"><a href="#cb1-444" aria-hidden="true" tabindex="-1"></a>    MIII<span class="op">=</span><span class="vs">r"</span><span class="dv">$\s</span><span class="vs">im 2 </span><span class="ch">\t</span><span class="vs">imes 10</span><span class="dv">^</span><span class="vs">4 - 6 </span><span class="ch">\t</span><span class="vs">imes 10</span><span class="dv">^</span><span class="vs">5</span><span class="dv">$</span><span class="vs">"</span>,  <span class="co"># From Rusta+26</span></span>
-<span id="cb1-445"><a href="#cb1-445" aria-hidden="true" tabindex="-1"></a>    OtoH<span class="op">=</span><span class="vs">r"</span><span class="dv">$</span><span class="vs">&lt; 6</span><span class="dv">.</span><span class="vs">96</span><span class="dv">$</span><span class="vs">"</span>,  <span class="co"># 3sigma upper limits on 12+log(O/H) and Zgas from Ubler+26</span></span>
-<span id="cb1-446"><a href="#cb1-446" aria-hidden="true" tabindex="-1"></a>    metallicity<span class="op">=</span>(<span class="vs">r"</span><span class="dv">$</span><span class="vs">&lt; 0</span><span class="dv">.</span><span class="vs">019</span><span class="dv">$</span><span class="vs">"</span>, {<span class="st">"digits"</span>: <span class="dv">4</span>}), </span>
-<span id="cb1-447"><a href="#cb1-447" aria-hidden="true" tabindex="-1"></a>    HeII1640_flux<span class="op">=</span>(<span class="fl">1.11e-19</span>, <span class="fl">0.17e-19</span>, {<span class="st">"digits"</span>: <span class="dv">2</span>}),  <span class="co"># Total fluxes and EWs from Tab. 1 of Maiolino+26</span></span>
-<span id="cb1-448"><a href="#cb1-448" aria-hidden="true" tabindex="-1"></a>    HeII1640_EW<span class="op">=</span><span class="vs">r"</span><span class="dv">$</span><span class="vs">&gt; 47</span><span class="dv">$</span><span class="vs">"</span>,</span>
-<span id="cb1-449"><a href="#cb1-449" aria-hidden="true" tabindex="-1"></a>    Lya_flux<span class="op">=</span><span class="vs">r"</span><span class="dv">$</span><span class="vs">&lt; 1</span><span class="dv">.</span><span class="vs">5 </span><span class="ch">\t</span><span class="vs">imes 10</span><span class="dv">^</span><span class="vs">{-18}</span><span class="dv">$</span><span class="vs">"</span>,  <span class="co"># 3sigma upper limit from Sec. 8 of Maiolino+26</span></span>
-<span id="cb1-450"><a href="#cb1-450" aria-hidden="true" tabindex="-1"></a>    Hg_flux<span class="op">=</span>(<span class="fl">4.1e-20</span>, <span class="fl">0.7e-20</span>, {<span class="st">"digits"</span>: <span class="dv">1</span>}),  <span class="co"># Hg flux and EW from Ubler+26</span></span>
-<span id="cb1-451"><a href="#cb1-451" aria-hidden="true" tabindex="-1"></a>    Hg_EW<span class="op">=</span><span class="vs">r"</span><span class="dv">$</span><span class="vs">&gt; 350</span><span class="dv">$</span><span class="vs">"</span>,</span>
-<span id="cb1-452"><a href="#cb1-452" aria-hidden="true" tabindex="-1"></a>    reference<span class="op">=</span><span class="st">"@maiolino2026, @ubler2026, @rusta2026"</span></span>
-<span id="cb1-453"><a href="#cb1-453" aria-hidden="true" tabindex="-1"></a>))</span>
-<span id="cb1-454"><a href="#cb1-454" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-455"><a href="#cb1-455" aria-hidden="true" tabindex="-1"></a><span class="co">'''</span></span>
-<span id="cb1-456"><a href="#cb1-456" aria-hidden="true" tabindex="-1"></a><span class="al">TODO</span><span class="co">:</span></span>
-<span id="cb1-457"><a href="#cb1-457" aria-hidden="true" tabindex="-1"></a><span class="co">- add Balmer jump to the table, where available</span></span>
-<span id="cb1-458"><a href="#cb1-458" aria-hidden="true" tabindex="-1"></a><span class="co">- check objects from Tiger's table https://docs.google.com/spreadsheets/d/1fUcRK6AGNtIf2qHyW31bLb2BuDMquJHNq7YIJ3zk8yc/edit?gid=0#gid=0 --&gt; other page with possible Pop III descendants?</span></span>
-<span id="cb1-459"><a href="#cb1-459" aria-hidden="true" tabindex="-1"></a><span class="co">'''</span></span>
-<span id="cb1-460"><a href="#cb1-460" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-461"><a href="#cb1-461" aria-hidden="true" tabindex="-1"></a><span class="co"># Markdown table</span></span>
-<span id="cb1-462"><a href="#cb1-462" aria-hidden="true" tabindex="-1"></a>md <span class="op">=</span> table_to_markdown(table, tablefmt<span class="op">=</span><span class="st">"github"</span>, headers<span class="op">=</span>headers, exponential<span class="op">=</span><span class="va">False</span>, digits<span class="op">=</span><span class="dv">1</span>, col_fmt_overrides<span class="op">=</span>col_fmt_overrides)</span>
-<span id="cb1-463"><a href="#cb1-463" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-464"><a href="#cb1-464" aria-hidden="true" tabindex="-1"></a><span class="co"># Rendering including footnotes (we create two separate div for table and notes, so that the scrollable bar is immediately after the table instead of after the note list)</span></span>
-<span id="cb1-465"><a href="#cb1-465" aria-hidden="true" tabindex="-1"></a>html <span class="op">=</span> <span class="ss">f"""</span></span>
-<span id="cb1-466"><a href="#cb1-466" aria-hidden="true" tabindex="-1"></a><span class="ss">&lt;div style="overflow-x: auto; width: 100%;"&gt;</span></span>
-<span id="cb1-467"><a href="#cb1-467" aria-hidden="true" tabindex="-1"></a><span class="sc">{</span>md<span class="sc">}</span></span>
-<span id="cb1-468"><a href="#cb1-468" aria-hidden="true" tabindex="-1"></a><span class="ss">&lt;/div&gt;</span></span>
-<span id="cb1-469"><a href="#cb1-469" aria-hidden="true" tabindex="-1"></a><span class="sc">{</span>nm<span class="sc">.</span>render_notes_markdown()<span class="sc">}</span></span>
-<span id="cb1-470"><a href="#cb1-470" aria-hidden="true" tabindex="-1"></a><span class="ss">"""</span></span>
-<span id="cb1-471"><a href="#cb1-471" aria-hidden="true" tabindex="-1"></a>Markdown(html)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-362"><a href="#cb1-362" aria-hidden="true" tabindex="-1"></a><span class="co">'''</span></span>
+<span id="cb1-363"><a href="#cb1-363" aria-hidden="true" tabindex="-1"></a>table.add_row(<span class="bu">dict</span>(</span>
+<span id="cb1-364"><a href="#cb1-364" aria-hidden="true" tabindex="-1"></a>    ID<span class="op">=</span><span class="st">"LAP1"</span>,</span>
+<span id="cb1-365"><a href="#cb1-365" aria-hidden="true" tabindex="-1"></a>    redshift<span class="op">=</span>(<span class="fl">6.625</span>, <span class="fl">0.001</span>, {<span class="st">"digits"</span>: <span class="dv">3</span>}),</span>
+<span id="cb1-366"><a href="#cb1-366" aria-hidden="true" tabindex="-1"></a>    magnification<span class="op">=</span><span class="st">"Yes"</span>,  <span class="co"># mu = 98</span></span>
+<span id="cb1-367"><a href="#cb1-367" aria-hidden="true" tabindex="-1"></a>    MUV<span class="op">=</span><span class="vs">r"</span><span class="dv">$</span><span class="vs">&gt; -10</span><span class="dv">.</span><span class="vs">4</span><span class="dv">$</span><span class="vs">"</span>,</span>
+<span id="cb1-368"><a href="#cb1-368" aria-hidden="true" tabindex="-1"></a>    Mstar<span class="op">=</span><span class="vs">r"</span><span class="dv">$</span><span class="er">\</span><span class="vs">lesssim 2700</span><span class="dv">$</span><span class="vs">"</span>,</span>
+<span id="cb1-369"><a href="#cb1-369" aria-hidden="true" tabindex="-1"></a>    Lya_flux<span class="op">=</span>(<span class="fl">6.08e-19</span>, <span class="fl">1.70e-19</span>, {<span class="st">"digits"</span>: <span class="dv">2</span>}),  <span class="co"># All fluxes from tab. 1</span></span>
+<span id="cb1-370"><a href="#cb1-370" aria-hidden="true" tabindex="-1"></a>    Lya_EW<span class="op">=</span><span class="vs">r"</span><span class="dv">$</span><span class="vs">&gt; 250</span><span class="dv">$</span><span class="vs">"</span>,</span>
+<span id="cb1-371"><a href="#cb1-371" aria-hidden="true" tabindex="-1"></a>    Ha_flux<span class="op">=</span>(<span class="fl">2.07e-19</span>, <span class="fl">0.25e-19</span>, {<span class="st">"digits"</span>: <span class="dv">2</span>}),</span>
+<span id="cb1-372"><a href="#cb1-372" aria-hidden="true" tabindex="-1"></a>    Ha_EW<span class="op">=</span><span class="vs">r"</span><span class="dv">$</span><span class="vs">&gt; 1800</span><span class="dv">$</span><span class="vs">"</span>,  <span class="co"># at 3sigma, 880 at 5sigma</span></span>
+<span id="cb1-373"><a href="#cb1-373" aria-hidden="true" tabindex="-1"></a>    Hb_flux<span class="op">=</span>(<span class="fl">0.73e-19</span>, <span class="fl">0.20e-19</span>, {<span class="st">"digits"</span>: <span class="dv">1</span>}),</span>
+<span id="cb1-374"><a href="#cb1-374" aria-hidden="true" tabindex="-1"></a>    Hb_EW<span class="op">=</span><span class="vs">r"</span><span class="dv">$</span><span class="vs">&gt; 340</span><span class="dv">$</span><span class="vs">"</span>,  <span class="co"># at 3sigma, 170 at 5sigma</span></span>
+<span id="cb1-375"><a href="#cb1-375" aria-hidden="true" tabindex="-1"></a>    HeII1640_flux<span class="op">=</span>(<span class="vs">r"</span><span class="dv">$</span><span class="er">\</span><span class="vs">lesssim 1</span><span class="dv">.</span><span class="vs">85 </span><span class="ch">\t</span><span class="vs">imes 10</span><span class="dv">^</span><span class="vs">{-19}</span><span class="dv">$</span><span class="vs">"</span>, {<span class="st">"note"</span>: note(<span class="vs">r"@vanzella2023 previously estimated a line flux for HeII1640 of </span><span class="dv">$</span><span class="kw">(</span><span class="vs">7</span><span class="dv">.</span><span class="vs">96 </span><span class="er">\</span><span class="vs">pm 2</span><span class="dv">.</span><span class="vs">07</span><span class="kw">)</span><span class="vs"> </span><span class="ch">\t</span><span class="vs">imes 10</span><span class="dv">^</span><span class="vs">{-19} ~</span><span class="dv">\m</span><span class="vs">athrm{erg </span><span class="ch">\,</span><span class="vs"> s</span><span class="dv">^</span><span class="vs">{-1} </span><span class="ch">\,</span><span class="vs"> cm</span><span class="dv">^</span><span class="vs">{-2}}</span><span class="dv">$</span><span class="vs">; however, the reliability of the HeII line detection was hampered by the presence of a small blueshift relative to the Balmer lines, and by the extreme required EW </span><span class="kw">(</span><span class="dv">$</span><span class="er">\</span><span class="vs">gtrsim 200</span><span class="dv">$</span><span class="vs"> Å</span><span class="kw">)</span><span class="vs">, therefore the authors safely considered the line undetected, placing a </span><span class="dv">$</span><span class="vs">1</span><span class="dv">\s</span><span class="vs">igma</span><span class="dv">$</span><span class="vs"> upper limit of </span><span class="dv">$</span><span class="vs">2</span><span class="dv">.</span><span class="vs">7 </span><span class="ch">\t</span><span class="vs">imes 10</span><span class="dv">^</span><span class="vs">{-19} ~</span><span class="dv">\m</span><span class="vs">athrm{erg </span><span class="ch">\,</span><span class="vs"> s</span><span class="dv">^</span><span class="vs">{-1} </span><span class="ch">\,</span><span class="vs"> cm</span><span class="dv">^</span><span class="vs">{-2}}</span><span class="dv">$.</span><span class="vs"> While @nakajima2025 also report no clear detection of the line, they provide an upper limit that remains within the range expected for zero-metallicity stellar populations</span><span class="dv">.</span><span class="vs"> Also note that the stellar continuum is undetected for this source</span><span class="dv">.</span><span class="vs">"</span>)}),</span>
+<span id="cb1-376"><a href="#cb1-376" aria-hidden="true" tabindex="-1"></a>    OIII5007_flux<span class="op">=</span>(<span class="fl">0.50e-19</span>, <span class="fl">0.15e-19</span>, {<span class="st">"digits"</span>: <span class="dv">1</span>}),  <span class="co"># I could not find a constraint on the EW for the [OIII]5007 line</span></span>
+<span id="cb1-377"><a href="#cb1-377" aria-hidden="true" tabindex="-1"></a>    OIIItoHb<span class="op">=</span>(<span class="fl">0.69</span>, <span class="fl">0.28</span>, {<span class="st">"digits"</span>: <span class="dv">2</span>}),</span>
+<span id="cb1-378"><a href="#cb1-378" aria-hidden="true" tabindex="-1"></a>    OtoH<span class="op">=</span>(<span class="fl">6.31</span>, <span class="fl">0.23</span>, <span class="fl">0.15</span>, {<span class="st">"digits"</span>: <span class="dv">2</span>}),</span>
+<span id="cb1-379"><a href="#cb1-379" aria-hidden="true" tabindex="-1"></a>    metallicity<span class="op">=</span>(<span class="fl">4.2e-3</span>, <span class="fl">1.8e-3</span>, {<span class="st">"exponential"</span>: <span class="va">True</span>, <span class="st">"digits"</span>: <span class="dv">1</span>}),</span>
+<span id="cb1-380"><a href="#cb1-380" aria-hidden="true" tabindex="-1"></a>    reference<span class="op">=</span><span class="st">"@nakajima2025"</span></span>
+<span id="cb1-381"><a href="#cb1-381" aria-hidden="true" tabindex="-1"></a>))</span>
+<span id="cb1-382"><a href="#cb1-382" aria-hidden="true" tabindex="-1"></a><span class="co">'''</span></span>
+<span id="cb1-383"><a href="#cb1-383" aria-hidden="true" tabindex="-1"></a><span class="co"># LAP1 properties from previous measure of Vanzella+23 (https://ui.adsabs.harvard.edu/abs/2023A%26A...678A.173V/abstract)</span></span>
+<span id="cb1-384"><a href="#cb1-384" aria-hidden="true" tabindex="-1"></a><span class="co">table.add_row(dict(</span></span>
+<span id="cb1-385"><a href="#cb1-385" aria-hidden="true" tabindex="-1"></a><span class="co">    ID="LAP1",</span></span>
+<span id="cb1-386"><a href="#cb1-386" aria-hidden="true" tabindex="-1"></a><span class="co">    redshift=(6.639, 0.004, {"digits": 3}),</span></span>
+<span id="cb1-387"><a href="#cb1-387" aria-hidden="true" tabindex="-1"></a><span class="co">    magnification="Yes",  # mu_tot(median) = (120, 9), mu_tang(median) = (55, 6, 2), mu_tot &gt; 500 for images A1,A2, mu_tot=98,99 for B1,B2</span></span>
+<span id="cb1-388"><a href="#cb1-388" aria-hidden="true" tabindex="-1"></a><span class="co">    MUV=r"$&gt; -11.2$",</span></span>
+<span id="cb1-389"><a href="#cb1-389" aria-hidden="true" tabindex="-1"></a><span class="co">    Mstar=r"$</span><span class="er">\</span><span class="co">lesssim 10^4$",</span></span>
+<span id="cb1-390"><a href="#cb1-390" aria-hidden="true" tabindex="-1"></a><span class="co">    Lya_flux=(369.2e-20, 29.3e-20, {"digits": 3}),</span></span>
+<span id="cb1-391"><a href="#cb1-391" aria-hidden="true" tabindex="-1"></a><span class="co">    Lya_EW=r"$&gt; 370$",</span></span>
+<span id="cb1-392"><a href="#cb1-392" aria-hidden="true" tabindex="-1"></a><span class="co">    Ha_flux=(69.4e-20, 5.5e-20, {"digits": 2}),</span></span>
+<span id="cb1-393"><a href="#cb1-393" aria-hidden="true" tabindex="-1"></a><span class="co">    Ha_EW=r"$&gt; 2020$",</span></span>
+<span id="cb1-394"><a href="#cb1-394" aria-hidden="true" tabindex="-1"></a><span class="co">    Hb_flux=(26.3e-20, 2.7e-20, {"digits": 2}),</span></span>
+<span id="cb1-395"><a href="#cb1-395" aria-hidden="true" tabindex="-1"></a><span class="co">    Hb_EW=r"$&gt; 420$",</span></span>
+<span id="cb1-396"><a href="#cb1-396" aria-hidden="true" tabindex="-1"></a><span class="co">    HeII1640_flux=(79.6e-20, 20.7e-20, {"digits": 2, "note": note("g")}),</span></span>
+<span id="cb1-397"><a href="#cb1-397" aria-hidden="true" tabindex="-1"></a><span class="co">    OIII5007_flux=(14.5e-20, 3.4e-20, {"digits": 2}),</span></span>
+<span id="cb1-398"><a href="#cb1-398" aria-hidden="true" tabindex="-1"></a><span class="co">    OIII5007_EW=r"$&gt; 246$",</span></span>
+<span id="cb1-399"><a href="#cb1-399" aria-hidden="true" tabindex="-1"></a><span class="co">    OIIItoHb=(0.55, 0.14, 0.15, {"digits": 2}),</span></span>
+<span id="cb1-400"><a href="#cb1-400" aria-hidden="true" tabindex="-1"></a><span class="co">    OtoH=r"$&lt; 6.3$",</span></span>
+<span id="cb1-401"><a href="#cb1-401" aria-hidden="true" tabindex="-1"></a><span class="co">    metallicity=r"$&lt; 0.004$",</span></span>
+<span id="cb1-402"><a href="#cb1-402" aria-hidden="true" tabindex="-1"></a><span class="co">    reference="@vanzella2023"</span></span>
+<span id="cb1-403"><a href="#cb1-403" aria-hidden="true" tabindex="-1"></a><span class="co">))</span></span>
+<span id="cb1-404"><a href="#cb1-404" aria-hidden="true" tabindex="-1"></a><span class="co">'''</span></span>
+<span id="cb1-405"><a href="#cb1-405" aria-hidden="true" tabindex="-1"></a>table.add_row(<span class="bu">dict</span>(</span>
+<span id="cb1-406"><a href="#cb1-406" aria-hidden="true" tabindex="-1"></a>    ID<span class="op">=</span><span class="st">"RX J2129-z8HeII"</span>,</span>
+<span id="cb1-407"><a href="#cb1-407" aria-hidden="true" tabindex="-1"></a>    redshift<span class="op">=</span>(<span class="fl">8.1623</span>, <span class="fl">0.0007</span>, {<span class="st">"digits"</span>: <span class="dv">4</span>}),</span>
+<span id="cb1-408"><a href="#cb1-408" aria-hidden="true" tabindex="-1"></a>    magnification<span class="op">=</span><span class="st">"Yes"</span>, <span class="co"># mu = (2.26, 0.14),</span></span>
+<span id="cb1-409"><a href="#cb1-409" aria-hidden="true" tabindex="-1"></a>    MUV<span class="op">=</span>(<span class="op">-</span><span class="fl">19.58</span>, <span class="fl">0.02</span>, <span class="fl">0.03</span>, {<span class="st">"digits"</span>: <span class="dv">2</span>}),</span>
+<span id="cb1-410"><a href="#cb1-410" aria-hidden="true" tabindex="-1"></a>    beta<span class="op">=</span>(<span class="op">-</span><span class="fl">2.53</span>, <span class="fl">0.07</span>, <span class="fl">0.06</span>, {<span class="st">"digits"</span>: <span class="dv">2</span>}),</span>
+<span id="cb1-411"><a href="#cb1-411" aria-hidden="true" tabindex="-1"></a>    Mstar<span class="op">=</span>(<span class="fl">5.6e7</span>, <span class="fl">0.7e7</span>, <span class="fl">0.8e7</span>),  <span class="co"># Tot. stellar mass of the system LogM*/Msun = 7.75 \pm 0.06 from Tab. 1</span></span>
+<span id="cb1-412"><a href="#cb1-412" aria-hidden="true" tabindex="-1"></a>    MIII<span class="op">=</span>(<span class="fl">7.8e5</span>, <span class="fl">1.4e5</span>),  <span class="co"># Mass of the putative Pop III component estimated from the HeII luminosity</span></span>
+<span id="cb1-413"><a href="#cb1-413" aria-hidden="true" tabindex="-1"></a>    SFR<span class="op">=</span>(<span class="fl">9.56</span>, <span class="fl">1.70</span>, <span class="fl">4.51</span>, {<span class="st">"digits"</span>: <span class="dv">2</span>}),</span>
+<span id="cb1-414"><a href="#cb1-414" aria-hidden="true" tabindex="-1"></a>    Hb_flux<span class="op">=</span>(<span class="fl">71e-20</span>, <span class="fl">10e-20</span>, {<span class="st">"note"</span>: note(<span class="st">"Intrinsic line fluxes and upper limits are reported after applying corrections for lensing magnification and dust extinction, adopting $A_</span><span class="er">\</span><span class="st">mathrm</span><span class="sc">{V}</span><span class="st"> = 0.12 </span><span class="er">\</span><span class="st">pm 0.04$ from their spectro-photometric analysis."</span>)}),</span>
+<span id="cb1-415"><a href="#cb1-415" aria-hidden="true" tabindex="-1"></a>    Hb_EW<span class="op">=</span>(<span class="dv">202</span>, <span class="dv">34</span>, {<span class="st">"digits"</span>: <span class="dv">0</span>}),</span>
+<span id="cb1-416"><a href="#cb1-416" aria-hidden="true" tabindex="-1"></a>    HeII1640_flux<span class="op">=</span>(<span class="fl">120e-20</span>, <span class="fl">22e-20</span>, {<span class="st">"digits"</span>: <span class="dv">2</span>}),</span>
+<span id="cb1-417"><a href="#cb1-417" aria-hidden="true" tabindex="-1"></a>    HeII1640_EW<span class="op">=</span>(<span class="dv">21</span>, <span class="dv">4</span>, {<span class="st">"digits"</span>: <span class="dv">0</span>}),</span>
+<span id="cb1-418"><a href="#cb1-418" aria-hidden="true" tabindex="-1"></a>    HeII4686_flux<span class="op">=</span><span class="vs">r"</span><span class="dv">$</span><span class="vs">&lt; 1</span><span class="dv">.</span><span class="vs">6 </span><span class="ch">\t</span><span class="vs">imes 10</span><span class="dv">^</span><span class="vs">{-19}</span><span class="dv">$</span><span class="vs">"</span>,  <span class="co"># 2sigma upper limits</span></span>
+<span id="cb1-419"><a href="#cb1-419" aria-hidden="true" tabindex="-1"></a>    HeII4686_EW<span class="op">=</span><span class="vs">r"</span><span class="dv">$</span><span class="vs">&lt; 49</span><span class="dv">$</span><span class="vs">"</span>,</span>
+<span id="cb1-420"><a href="#cb1-420" aria-hidden="true" tabindex="-1"></a>    OIII5007_flux<span class="op">=</span>(<span class="fl">390e-20</span>, <span class="fl">10e-20</span>, {<span class="st">"digits"</span>: <span class="dv">2</span>}),</span>
+<span id="cb1-421"><a href="#cb1-421" aria-hidden="true" tabindex="-1"></a>    OIII5007_EW<span class="op">=</span>(<span class="dv">1015</span>, <span class="dv">83</span>, {<span class="st">"digits"</span>: <span class="dv">0</span>}),</span>
+<span id="cb1-422"><a href="#cb1-422" aria-hidden="true" tabindex="-1"></a>    OIIItoHb<span class="op">=</span>(<span class="fl">5.5</span>, <span class="fl">0.8</span>),</span>
+<span id="cb1-423"><a href="#cb1-423" aria-hidden="true" tabindex="-1"></a>    OtoH<span class="op">=</span>(<span class="fl">7.63</span>, <span class="fl">0.09</span>, <span class="fl">0.14</span>, {<span class="st">"digits"</span>: <span class="dv">2</span>}),</span>
+<span id="cb1-424"><a href="#cb1-424" aria-hidden="true" tabindex="-1"></a>    metallicity<span class="op">=</span><span class="vs">r"</span><span class="dv">$\s</span><span class="vs">im 0</span><span class="dv">.</span><span class="vs">1</span><span class="dv">$</span><span class="vs">"</span>,  <span class="co"># Log(Zstar/Zsun) ~ -0.9</span></span>
+<span id="cb1-425"><a href="#cb1-425" aria-hidden="true" tabindex="-1"></a>    reference<span class="op">=</span><span class="st">"@wang2024"</span></span>
+<span id="cb1-426"><a href="#cb1-426" aria-hidden="true" tabindex="-1"></a>))</span>
+<span id="cb1-427"><a href="#cb1-427" aria-hidden="true" tabindex="-1"></a>table.add_row(<span class="bu">dict</span>(</span>
+<span id="cb1-428"><a href="#cb1-428" aria-hidden="true" tabindex="-1"></a>    ID<span class="op">=</span><span class="st">"EXCELS-63107"</span>,</span>
+<span id="cb1-429"><a href="#cb1-429" aria-hidden="true" tabindex="-1"></a>    redshift<span class="op">=</span>(<span class="fl">8.271</span>, {<span class="st">"digits"</span>: <span class="dv">3</span>}),</span>
+<span id="cb1-430"><a href="#cb1-430" aria-hidden="true" tabindex="-1"></a>    magnification<span class="op">=</span><span class="st">"No"</span>,</span>
+<span id="cb1-431"><a href="#cb1-431" aria-hidden="true" tabindex="-1"></a>    MUV<span class="op">=</span>(<span class="op">-</span><span class="fl">19.9</span>, <span class="fl">0.1</span>),</span>
+<span id="cb1-432"><a href="#cb1-432" aria-hidden="true" tabindex="-1"></a>    beta<span class="op">=</span>(<span class="op">-</span><span class="fl">3.3</span>, <span class="fl">0.3</span>),</span>
+<span id="cb1-433"><a href="#cb1-433" aria-hidden="true" tabindex="-1"></a>    Mstar<span class="op">=</span>(<span class="fl">3.72e8</span>, <span class="fl">3.36e8</span>, <span class="fl">4.05e8</span>, {<span class="st">"digits"</span>: <span class="dv">2</span>, <span class="st">"note"</span>: note(<span class="vs">r"Assuming an extended star-formation history in which the stellar mass is built up steadily, but with a recent ~3 Myr burst of star formation, forming a mass of </span><span class="dv">$</span><span class="kw">(</span><span class="vs">2</span><span class="dv">.</span><span class="vs">24_{-2</span><span class="dv">.</span><span class="vs">13}</span><span class="dv">^</span><span class="vs">{</span><span class="op">+</span><span class="vs">1</span><span class="dv">.</span><span class="vs">48}</span><span class="kw">)</span><span class="vs"> </span><span class="ch">\t</span><span class="vs">imes 10</span><span class="dv">^</span><span class="vs">7 ~</span><span class="dv">\m</span><span class="vs">athrm{M_</span><span class="er">\</span><span class="vs">odot}</span><span class="dv">$.</span><span class="vs">"</span>)}),  <span class="co"># Assuming extended SF + recent burst model and converting from log to linear --&gt; LogMstar/Msun = 8.57 -1.03 +0.32 to linear, with mass of the burst LogMburst/Msun = 7.35 -1.30 +0.22 (see Sec. 3.3 and Tab. 3)</span></span>
+<span id="cb1-434"><a href="#cb1-434" aria-hidden="true" tabindex="-1"></a>    SFR<span class="op">=</span>(<span class="fl">7.8</span>, <span class="fl">0.6</span>),  <span class="co"># From Hbeta</span></span>
+<span id="cb1-435"><a href="#cb1-435" aria-hidden="true" tabindex="-1"></a>    Hb_flux<span class="op">=</span>(<span class="fl">10.69e-19</span>, <span class="fl">0.84e-19</span>, {<span class="st">"digits"</span>: <span class="dv">3</span>}),</span>
+<span id="cb1-436"><a href="#cb1-436" aria-hidden="true" tabindex="-1"></a>    OIII5007_flux<span class="op">=</span>(<span class="fl">38.54e-19</span>, <span class="fl">1.20e-19</span>, {<span class="st">"digits"</span>: <span class="dv">3</span>}),</span>
+<span id="cb1-437"><a href="#cb1-437" aria-hidden="true" tabindex="-1"></a>    OIIItoHb<span class="op">=</span>(<span class="fl">3.61</span>, <span class="fl">0.30</span>, {<span class="st">"digits"</span>: <span class="dv">2</span>}),</span>
+<span id="cb1-438"><a href="#cb1-438" aria-hidden="true" tabindex="-1"></a>    OtoH<span class="op">=</span>(<span class="fl">6.89</span>, <span class="fl">0.21</span>, <span class="fl">0.26</span>, {<span class="st">"digits"</span>: <span class="dv">2</span>, <span class="st">"note"</span>: note(<span class="st">"Though this system is not metal-free, the authors suggest that an effective temperature $</span><span class="er">\</span><span class="st">gtrsim 80000$ K for the ionizing source is necessary (with no obvious sign of AGN heating), hardly explained with a standard IMF, and that exotic scenarios such as Pop III star formation within a mildly enriched halo would be consistent with the observation."</span>)}),  <span class="co"># The authors report that this is one of the lowest directly constrained oxygen abundances measured in any galaxy to date, and $\sim 10 \times$ lower than is typical for $z \simeq 8$ galaxies with the same stellar mass</span></span>
+<span id="cb1-439"><a href="#cb1-439" aria-hidden="true" tabindex="-1"></a>    metallicity<span class="op">=</span>(<span class="fl">0.016</span>, {<span class="st">"digits"</span>: <span class="dv">3</span>}),</span>
+<span id="cb1-440"><a href="#cb1-440" aria-hidden="true" tabindex="-1"></a>    reference<span class="op">=</span><span class="st">"@cullen2025"</span></span>
+<span id="cb1-441"><a href="#cb1-441" aria-hidden="true" tabindex="-1"></a>))</span>
+<span id="cb1-442"><a href="#cb1-442" aria-hidden="true" tabindex="-1"></a>table.add_row(<span class="bu">dict</span>(</span>
+<span id="cb1-443"><a href="#cb1-443" aria-hidden="true" tabindex="-1"></a>    ID<span class="op">=</span><span class="st">"Hebe (GN-z11)"</span>,</span>
+<span id="cb1-444"><a href="#cb1-444" aria-hidden="true" tabindex="-1"></a>    redshift<span class="op">=</span>(<span class="fl">10.5862</span>, <span class="fl">0.003</span>, {<span class="st">"digits"</span>: <span class="dv">4</span>}),  <span class="co"># From Ubler+26</span></span>
+<span id="cb1-445"><a href="#cb1-445" aria-hidden="true" tabindex="-1"></a>    magnification<span class="op">=</span>(<span class="st">"No"</span>, {<span class="st">"note"</span>: note(<span class="st">"Although measured fluxes need to be corrected for a small magnification factor of 1.42, which is not accounted for in the reported line fluxes; see table 1 of @maiolino2026 for the corresponding de-lensed line luminosities."</span>)}),</span>
+<span id="cb1-446"><a href="#cb1-446" aria-hidden="true" tabindex="-1"></a>    MIII<span class="op">=</span><span class="vs">r"</span><span class="dv">$\s</span><span class="vs">im 2 </span><span class="ch">\t</span><span class="vs">imes 10</span><span class="dv">^</span><span class="vs">4 - 6 </span><span class="ch">\t</span><span class="vs">imes 10</span><span class="dv">^</span><span class="vs">5</span><span class="dv">$</span><span class="vs">"</span>,  <span class="co"># From Rusta+26</span></span>
+<span id="cb1-447"><a href="#cb1-447" aria-hidden="true" tabindex="-1"></a>    OtoH<span class="op">=</span><span class="vs">r"</span><span class="dv">$</span><span class="vs">&lt; 6</span><span class="dv">.</span><span class="vs">96</span><span class="dv">$</span><span class="vs">"</span>,  <span class="co"># 3sigma upper limits on 12+log(O/H) and Zgas from Ubler+26</span></span>
+<span id="cb1-448"><a href="#cb1-448" aria-hidden="true" tabindex="-1"></a>    metallicity<span class="op">=</span>(<span class="vs">r"</span><span class="dv">$</span><span class="vs">&lt; 0</span><span class="dv">.</span><span class="vs">019</span><span class="dv">$</span><span class="vs">"</span>, {<span class="st">"digits"</span>: <span class="dv">4</span>}), </span>
+<span id="cb1-449"><a href="#cb1-449" aria-hidden="true" tabindex="-1"></a>    HeII1640_flux<span class="op">=</span>(<span class="fl">1.11e-19</span>, <span class="fl">0.17e-19</span>, {<span class="st">"digits"</span>: <span class="dv">2</span>}),  <span class="co"># Total fluxes and EWs from Tab. 1 of Maiolino+26</span></span>
+<span id="cb1-450"><a href="#cb1-450" aria-hidden="true" tabindex="-1"></a>    HeII1640_EW<span class="op">=</span><span class="vs">r"</span><span class="dv">$</span><span class="vs">&gt; 47</span><span class="dv">$</span><span class="vs">"</span>,</span>
+<span id="cb1-451"><a href="#cb1-451" aria-hidden="true" tabindex="-1"></a>    Lya_flux<span class="op">=</span><span class="vs">r"</span><span class="dv">$</span><span class="vs">&lt; 1</span><span class="dv">.</span><span class="vs">5 </span><span class="ch">\t</span><span class="vs">imes 10</span><span class="dv">^</span><span class="vs">{-18}</span><span class="dv">$</span><span class="vs">"</span>,  <span class="co"># 3sigma upper limit from Sec. 8 of Maiolino+26</span></span>
+<span id="cb1-452"><a href="#cb1-452" aria-hidden="true" tabindex="-1"></a>    Hg_flux<span class="op">=</span>(<span class="fl">4.1e-20</span>, <span class="fl">0.7e-20</span>, {<span class="st">"digits"</span>: <span class="dv">1</span>}),  <span class="co"># Hg flux and EW from Ubler+26</span></span>
+<span id="cb1-453"><a href="#cb1-453" aria-hidden="true" tabindex="-1"></a>    Hg_EW<span class="op">=</span><span class="vs">r"</span><span class="dv">$</span><span class="vs">&gt; 350</span><span class="dv">$</span><span class="vs">"</span>,</span>
+<span id="cb1-454"><a href="#cb1-454" aria-hidden="true" tabindex="-1"></a>    reference<span class="op">=</span><span class="st">"@maiolino2026, @ubler2026, @rusta2026"</span></span>
+<span id="cb1-455"><a href="#cb1-455" aria-hidden="true" tabindex="-1"></a>))</span>
+<span id="cb1-456"><a href="#cb1-456" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-457"><a href="#cb1-457" aria-hidden="true" tabindex="-1"></a><span class="co">'''</span></span>
+<span id="cb1-458"><a href="#cb1-458" aria-hidden="true" tabindex="-1"></a><span class="al">TODO</span><span class="co">:</span></span>
+<span id="cb1-459"><a href="#cb1-459" aria-hidden="true" tabindex="-1"></a><span class="co">- add Balmer jump to the table, where available</span></span>
+<span id="cb1-460"><a href="#cb1-460" aria-hidden="true" tabindex="-1"></a><span class="co">- check objects from Tiger's table https://docs.google.com/spreadsheets/d/1fUcRK6AGNtIf2qHyW31bLb2BuDMquJHNq7YIJ3zk8yc/edit?gid=0#gid=0 --&gt; other page with possible Pop III descendants?</span></span>
+<span id="cb1-461"><a href="#cb1-461" aria-hidden="true" tabindex="-1"></a><span class="co">'''</span></span>
+<span id="cb1-462"><a href="#cb1-462" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-463"><a href="#cb1-463" aria-hidden="true" tabindex="-1"></a><span class="co"># Markdown table</span></span>
+<span id="cb1-464"><a href="#cb1-464" aria-hidden="true" tabindex="-1"></a>md <span class="op">=</span> table_to_markdown(table, tablefmt<span class="op">=</span><span class="st">"github"</span>, headers<span class="op">=</span>headers, exponential<span class="op">=</span><span class="va">False</span>, digits<span class="op">=</span><span class="dv">1</span>, col_fmt_overrides<span class="op">=</span>col_fmt_overrides)</span>
+<span id="cb1-465"><a href="#cb1-465" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-466"><a href="#cb1-466" aria-hidden="true" tabindex="-1"></a><span class="co"># Rendering including footnotes (we create two separate div for table and notes, so that the scrollable bar is immediately after the table instead of after the note list)</span></span>
+<span id="cb1-467"><a href="#cb1-467" aria-hidden="true" tabindex="-1"></a>html <span class="op">=</span> <span class="ss">f"""</span></span>
+<span id="cb1-468"><a href="#cb1-468" aria-hidden="true" tabindex="-1"></a><span class="ss">&lt;div style="overflow-x: auto; width: 100%;"&gt;</span></span>
+<span id="cb1-469"><a href="#cb1-469" aria-hidden="true" tabindex="-1"></a><span class="sc">{</span>md<span class="sc">}</span></span>
+<span id="cb1-470"><a href="#cb1-470" aria-hidden="true" tabindex="-1"></a><span class="ss">&lt;/div&gt;</span></span>
+<span id="cb1-471"><a href="#cb1-471" aria-hidden="true" tabindex="-1"></a><span class="sc">{</span>nm<span class="sc">.</span>render_notes_markdown()<span class="sc">}</span></span>
+<span id="cb1-472"><a href="#cb1-472" aria-hidden="true" tabindex="-1"></a><span class="ss">"""</span></span>
+<span id="cb1-473"><a href="#cb1-473" aria-hidden="true" tabindex="-1"></a>Markdown(html)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="1">
 <div style="overflow-x: auto; width: 100%;">
@@ -754,14 +756,14 @@ table th, table td {
 <col style="width: 4%">
 <col style="width: 1%">
 <col style="width: 5%">
-<col style="width: 1%">
+<col style="width: 2%">
 <col style="width: 2%">
 <col style="width: 6%">
 <col style="width: 4%">
 <col style="width: 4%">
 <col style="width: 5%">
 <col style="width: 1%">
-<col style="width: 3%">
+<col style="width: 5%">
 <col style="width: 1%">
 <col style="width: 2%">
 <col style="width: 2%">
@@ -780,7 +782,7 @@ table th, table td {
 <col style="width: 5%">
 <col style="width: 1%">
 <col style="width: 2%">
-<col style="width: 3%">
+<col style="width: 2%">
 <col style="width: 1%">
 <col style="width: 2%">
 </colgroup>
@@ -992,6 +994,40 @@ table th, table td {
 <td><span class="citation" data-cites="morishita2025">Morishita et al. (<a href="#ref-morishita2025" role="doc-biblioref">2025</a>)</span></td>
 </tr>
 <tr class="even">
+<td>LAP1</td>
+<td><span class="math inline">\(6.625 \pm 0.001\)</span></td>
+<td><span class="math inline">\(6.31 {}^{+0.15}_{-0.23}\)</span></td>
+<td><span class="math inline">\((4.2 \pm 1.8) \times 10^{-3}\)</span></td>
+<td>—</td>
+<td><span class="math inline">\(\lesssim 2700\)</span></td>
+<td>—</td>
+<td>Yes</td>
+<td><span class="math inline">\(&gt; -10.4\)</span></td>
+<td>—</td>
+<td><span class="math inline">\(\lesssim 1.85 \times 10^{-19}\)</span><a href="#note-9" id="ref-9"><span class="math inline">\(^{\textcolor{red}{(j)}}\)</span></a></td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td><span class="math inline">\((5.0 \pm 1.5) \times 10^{-20}\)</span></td>
+<td>—</td>
+<td>—</td>
+<td><span class="math inline">\(0.69 \pm 0.28\)</span></td>
+<td><span class="math inline">\((6.08 \pm 1.70) \times 10^{-19}\)</span></td>
+<td><span class="math inline">\(&gt; 250\)</span></td>
+<td>—</td>
+<td><span class="math inline">\((2.07 \pm 0.25) \times 10^{-19}\)</span></td>
+<td><span class="math inline">\(&gt; 1800\)</span></td>
+<td>—</td>
+<td><span class="math inline">\((7.3 \pm 2.0) \times 10^{-20}\)</span></td>
+<td><span class="math inline">\(&gt; 340\)</span></td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td><span class="citation" data-cites="nakajima2025">Nakajima et al. (<a href="#ref-nakajima2025" role="doc-biblioref">2025</a>)</span></td>
+</tr>
+<tr class="odd">
 <td>RX J2129-z8HeII</td>
 <td><span class="math inline">\(8.1623 \pm 0.0007\)</span></td>
 <td><span class="math inline">\(7.63 {}^{+0.14}_{-0.09}\)</span></td>
@@ -1018,20 +1054,20 @@ table th, table td {
 <td>—</td>
 <td>—</td>
 <td>—</td>
-<td><span class="math inline">\((7.1 \pm 1.0) \times 10^{-19}\)</span><a href="#note-9" id="ref-9"><span class="math inline">\(^{\textcolor{red}{(j)}}\)</span></a></td>
+<td><span class="math inline">\((7.1 \pm 1.0) \times 10^{-19}\)</span><a href="#note-10" id="ref-10"><span class="math inline">\(^{\textcolor{red}{(k)}}\)</span></a></td>
 <td><span class="math inline">\(202 \pm 34\)</span></td>
 <td>—</td>
 <td>—</td>
 <td>—</td>
 <td><span class="citation" data-cites="wang2024">Wang et al. (<a href="#ref-wang2024" role="doc-biblioref">2024</a>)</span></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>EXCELS-63107</td>
 <td><span class="math inline">\(8.271\)</span></td>
-<td><span class="math inline">\(6.89 {}^{+0.26}_{-0.21}\)</span><a href="#note-11" id="ref-11"><span class="math inline">\(^{\textcolor{red}{(l)}}\)</span></a></td>
+<td><span class="math inline">\(6.89 {}^{+0.26}_{-0.21}\)</span><a href="#note-12" id="ref-12"><span class="math inline">\(^{\textcolor{red}{(m)}}\)</span></a></td>
 <td><span class="math inline">\(0.016\)</span></td>
 <td>—</td>
-<td><span class="math inline">\((3.72 {}^{+4.05}_{-3.36}) \times 10^{8}\)</span><a href="#note-10" id="ref-10"><span class="math inline">\(^{\textcolor{red}{(k)}}\)</span></a></td>
+<td><span class="math inline">\((3.72 {}^{+4.05}_{-3.36}) \times 10^{8}\)</span><a href="#note-11" id="ref-11"><span class="math inline">\(^{\textcolor{red}{(l)}}\)</span></a></td>
 <td><span class="math inline">\(7.8 \pm 0.6\)</span></td>
 <td>No</td>
 <td><span class="math inline">\(-19.9 \pm 0.1\)</span></td>
@@ -1059,7 +1095,7 @@ table th, table td {
 <td>—</td>
 <td><span class="citation" data-cites="cullen2025">Cullen et al. (<a href="#ref-cullen2025" role="doc-biblioref">2025</a>)</span></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>Hebe (GN-z11)</td>
 <td><span class="math inline">\(10.5862 \pm 0.0030\)</span></td>
 <td><span class="math inline">\(&lt; 6.96\)</span></td>
@@ -1067,7 +1103,7 @@ table th, table td {
 <td><span class="math inline">\(\sim 2 \times 10^4 - 6 \times 10^5\)</span></td>
 <td>—</td>
 <td>—</td>
-<td>No<a href="#note-12" id="ref-12"><span class="math inline">\(^{\textcolor{red}{(m)}}\)</span></a></td>
+<td>No<a href="#note-13" id="ref-13"><span class="math inline">\(^{\textcolor{red}{(n)}}\)</span></a></td>
 <td>—</td>
 <td>—</td>
 <td><span class="math inline">\((1.11 \pm 0.17) \times 10^{-19}\)</span></td>
@@ -1105,10 +1141,11 @@ table th, table td {
 <p><span id="note-6" style="font-size:75%"> <a href="#ref-6"><span class="math inline">\(^{(g)}\)</span></a> Properties for the stacked spectrum of the two images in the doubly lensed system, normalizing by the magnification factor of each image. </span></p>
 <p><span id="note-7" style="font-size:75%"> <a href="#ref-7"><span class="math inline">\(^{(h)}\)</span></a> The absolute UV magnitude and the physical properties of AMORE6 from SED fitting are reported for only one of the two images (AMORE6-B), as the other one (AMORE6-A) suffers from large uncertainties, likely due to its location near bright galaxies as well as its smaller magnification factor (<span class="math inline">\(\mu = 39.32_{-3.48}^{+3.73}\)</span>, vs <span class="math inline">\(\mu = 77.69_{-5.92}^{+8.37}\)</span> for AMORE6-B). </span></p>
 <p><span id="note-8" style="font-size:75%"> <a href="#ref-8"><span class="math inline">\(^{(i)}\)</span></a> SFR inferred from H<span class="math inline">\(\beta\)</span>, larger than the value inferred from rest-frame UV luminosity – <span class="math inline">\((0.0186_{-0.0035}^{+0.0033}) ~\mathrm{M_\odot yr^{-1}}\)</span> – or from averaging over the last 100 Myr of the best-fit star-formation history – <span class="math inline">\((0.0038_{-0.0007}^{+0.0017}) ~\mathrm{M_\odot yr^{-1}}\)</span> –, suporting the presence of a very young burst. </span></p>
-<p><span id="note-9" style="font-size:75%"> <a href="#ref-9"><span class="math inline">\(^{(j)}\)</span></a> Intrinsic line fluxes and upper limits are reported after applying corrections for lensing magnification and dust extinction, adopting <span class="math inline">\(A_\mathrm{V} = 0.12 \pm 0.04\)</span> from their spectro-photometric analysis. </span></p>
-<p><span id="note-10" style="font-size:75%"> <a href="#ref-10"><span class="math inline">\(^{(k)}\)</span></a> Assuming an extended star-formation history in which the stellar mass is built up steadily, but with a recent ~3 Myr burst of star formation, forming a mass of <span class="math inline">\((2.24_{-2.13}^{+1.48}) \times 10^7 ~\mathrm{M_\odot}\)</span>. </span></p>
-<p><span id="note-11" style="font-size:75%"> <a href="#ref-11"><span class="math inline">\(^{(l)}\)</span></a> Though this system is not metal-free, the authors suggest that an effective temperature <span class="math inline">\(\gtrsim 80000\)</span> K for the ionizing source is necessary (with no obvious sign of AGN heating), hardly explained with a standard IMF, and that exotic scenarios such as Pop III star formation within a mildly enriched halo would be consistent with the observation. </span></p>
-<p><span id="note-12" style="font-size:75%"> <a href="#ref-12"><span class="math inline">\(^{(m)}\)</span></a> Although measured fluxes need to be corrected for a small magnification factor of 1.42, which is not accounted for in the reported line fluxes; see table 1 of <span class="citation" data-cites="maiolino2026">Maiolino et al. (<a href="#ref-maiolino2026" role="doc-biblioref">2026</a>)</span> for the corresponding de-lensed line luminosities. </span></p>
+<p><span id="note-9" style="font-size:75%"> <a href="#ref-9"><span class="math inline">\(^{(j)}\)</span></a> <span class="citation" data-cites="vanzella2023">Vanzella et al. (<a href="#ref-vanzella2023" role="doc-biblioref">2023</a>)</span> previously estimated a line flux for HeII1640 of <span class="math inline">\((7.96 \pm 2.07) \times 10^{-19} ~\mathrm{erg \, s^{-1} \, cm^{-2}}\)</span>; however, the reliability of the HeII line detection was hampered by the presence of a small blueshift relative to the Balmer lines, and by the extreme required EW (<span class="math inline">\(\gtrsim 200\)</span> Å), therefore the authors safely considered the line undetected, placing a <span class="math inline">\(1\sigma\)</span> upper limit of <span class="math inline">\(2.7 \times 10^{-19} ~\mathrm{erg \, s^{-1} \, cm^{-2}}\)</span>. While <span class="citation" data-cites="nakajima2025">Nakajima et al. (<a href="#ref-nakajima2025" role="doc-biblioref">2025</a>)</span> also report no clear detection of the line, they provide an upper limit that remains within the range expected for zero-metallicity stellar populations. Also note that the stellar continuum is undetected for this source. </span></p>
+<p><span id="note-10" style="font-size:75%"> <a href="#ref-10"><span class="math inline">\(^{(k)}\)</span></a> Intrinsic line fluxes and upper limits are reported after applying corrections for lensing magnification and dust extinction, adopting <span class="math inline">\(A_\mathrm{V} = 0.12 \pm 0.04\)</span> from their spectro-photometric analysis. </span></p>
+<p><span id="note-11" style="font-size:75%"> <a href="#ref-11"><span class="math inline">\(^{(l)}\)</span></a> Assuming an extended star-formation history in which the stellar mass is built up steadily, but with a recent ~3 Myr burst of star formation, forming a mass of <span class="math inline">\((2.24_{-2.13}^{+1.48}) \times 10^7 ~\mathrm{M_\odot}\)</span>. </span></p>
+<p><span id="note-12" style="font-size:75%"> <a href="#ref-12"><span class="math inline">\(^{(m)}\)</span></a> Though this system is not metal-free, the authors suggest that an effective temperature <span class="math inline">\(\gtrsim 80000\)</span> K for the ionizing source is necessary (with no obvious sign of AGN heating), hardly explained with a standard IMF, and that exotic scenarios such as Pop III star formation within a mildly enriched halo would be consistent with the observation. </span></p>
+<p><span id="note-13" style="font-size:75%"> <a href="#ref-13"><span class="math inline">\(^{(n)}\)</span></a> Although measured fluxes need to be corrected for a small magnification factor of 1.42, which is not accounted for in the reported line fluxes; see table 1 of <span class="citation" data-cites="maiolino2026">Maiolino et al. (<a href="#ref-maiolino2026" role="doc-biblioref">2026</a>)</span> for the corresponding de-lensed line luminosities. </span></p>
 </div>
 </div>
 
@@ -1134,6 +1171,9 @@ Morishita, Takahiro, Zhaoran Liu, Massimo Stiavelli, Tommaso Treu, Pietro Bergam
 <div id="ref-muzzin2025" class="csl-entry" role="listitem">
 <span class="nocase">Muzzin, Adam, Katherine A. Suess, Danilo Marchesini, et al.</span> 2025. <span>“<span class="nocase">MINERVA: A NIRCam Medium Band and MIRI Imaging Survey to Unlock the Hidden Gems of the Distant Universe</span>.”</span> <em>arXiv e-Prints</em>, July, arXiv:2507.19706. <a href="https://doi.org/10.48550/arXiv.2507.19706">https://doi.org/10.48550/arXiv.2507.19706</a>.
 </div>
+<div id="ref-nakajima2025" class="csl-entry" role="listitem">
+Nakajima, Kimihiko, Masami Ouchi, Yuichi Harikane, et al. 2025. <span>“<span class="nocase">An Ultra-Faint, Chemically Primitive Galaxy Forming at the Epoch of Reionization</span>.”</span> <em>arXiv e-Prints</em>, June, arXiv:2506.11846. <a href="https://doi.org/10.48550/arXiv.2506.11846">https://doi.org/10.48550/arXiv.2506.11846</a>.
+</div>
 <div id="ref-reumert2026" class="csl-entry" role="listitem">
 Reumert, Henriette, Kasper E. Heintz, Clara L. Pollock, et al. 2026. <span>“<span class="nocase">A hot, nebular-dominated galaxy interacting with a pristine PopIII system uncovered by JWST</span>.”</span> <em>arXiv e-Prints</em>, March, arXiv:2603.13471. <a href="https://doi.org/10.48550/arXiv.2603.13471">https://doi.org/10.48550/arXiv.2603.13471</a>.
 </div>
@@ -1142,6 +1182,9 @@ Rusta, Elka, Stefania Salvadori, Roberto Maiolino, et al. 2026. <span>“<span c
 </div>
 <div id="ref-ubler2026" class="csl-entry" role="listitem">
 Übler, Hannah, Roberto Maiolino, Pablo G. Pérez-González, et al. 2026. <span>“<span class="nocase">GA-NIFS &amp; JADES: Confirmation of pristine gas near GN-z11</span>.”</span> <em>arXiv e-Prints</em>, March, arXiv:2603.20360. <a href="https://doi.org/10.48550/arXiv.2603.20360">https://doi.org/10.48550/arXiv.2603.20360</a>.
+</div>
+<div id="ref-vanzella2023" class="csl-entry" role="listitem">
+Vanzella, E., F. Loiacono, P. Bergamini, et al. 2023. <span>“<span class="nocase">An extremely metal-poor star complex in the reionization era: Approaching Population III stars with JWST</span>.”</span> 678 (October): A173. <a href="https://doi.org/10.1051/0004-6361/202346981">https://doi.org/10.1051/0004-6361/202346981</a>.
 </div>
 <div id="ref-vanzella2026" class="csl-entry" role="listitem">
 Vanzella, E., M. Messa, A. Zanella, et al. 2026. <span>“<span class="nocase">A pristine, star-forming complex at z = 4.19</span>.”</span> 705 (January): L12. <a href="https://doi.org/10.1051/0004-6361/202557153">https://doi.org/10.1051/0004-6361/202557153</a>.
