@@ -1,0 +1,107 @@
+---
+title: "Population III star formation rate density"
+resources:
+  - "../data/popiii-sfrd/"
+metadata-files:
+  - ../authors/alessandravenditti.yml
+bibliography: ../references.bib
+date: 11/24/2026
+date-modified: last-modified
+categories: ["Galaxies", "Models", "Data"]
+execute:
+  freeze: false
+  cache: false
+---
+
+This page contains an interactive comparison of theoretical predictions for the cosmic Population III (Pop III) star formation rate density (SFRD) evolution as a function of redshift, based on **Figure 8 of the review from @venditti2026.** The archival data provided alongside this compilation include digitizations of published curves and data shared directly by their authors, and can be downloaded below.
+
+::: {.callout-note title="Reproducibility"}
+The compilation is intended for **archival and visualization purposes only**. Reconstructed data may not exactly reproduce the authors' original underlying simulation outputs. For quantitative comparisons, consult the original model papers.
+:::
+
+::: {.callout-note title="Citation"}
+If you use data from this compilation in a publication, please **cite @venditti2026** alongside references to the original works.
+:::
+
+For corrections, or for adding further models to this page, refer to [How to contribute](../contributing.html).
+
+## Interactive SFRD comparison
+
+```{=html}
+<link rel="stylesheet" href="../assets/popiii-sfrd/plot.css">
+<div id="popiii-sfrd-app">
+  <div class="sfrd-main">
+    <div class="sfrd-plot" aria-label="Interactive Pop III SFRD by redshift">Loading the interactive figure…</div>
+  </div>
+  <div class="sfrd-panels">
+    <section class="sfrd-controls" aria-label="Theoretical models selection">
+      <div class="sfrd-panel-title">
+        <h3>Models</h3>
+        <span class="sfrd-count" aria-live="polite">Loading…</span>
+      </div>
+      <div class="sfrd-selection-actions">
+        <button type="button" data-action="models-all">Show all</button>
+        <button type="button" data-action="models-none">Hide all</button>
+      </div>
+      <input class="sfrd-search" id="sfrd-search" type="search" aria-label="Search theoretical models" placeholder="Search models…">
+      <div class="sfrd-model-grid" role="group" aria-label="Individual model toggles"></div>
+    </section>
+    <section class="sfrd-controls" aria-label="Tentative observational constraints selection">
+      <div class="sfrd-panel-title">
+        <h3>Tentative observational constraints</h3>
+        <span class="sfrd-observation-count" aria-live="polite">Loading…</span>
+      </div>
+      <div class="sfrd-selection-actions">
+        <button type="button" data-action="observations-all">Show all</button>
+        <button type="button" data-action="observations-none">Hide all</button>
+      </div>
+      <div class="sfrd-observation-grid" role="group" aria-label="Individual observational constraint toggles"></div>
+    </section>
+  </div>
+  <div class="sfrd-download-controls">
+    <button type="button" data-action="download-visible" disabled>Download selected models (ZIP)</button>
+    <span class="sfrd-download-status" role="status" aria-live="polite"></span>
+  </div>
+  <noscript>JavaScript is required for the interactive figure. Individual source CSVs are available in the table below.</noscript>
+</div>
+<script src="../assets/plotly.min.js"></script>
+<script src="../assets/popiii-sfrd/models_data.js"></script>
+<script src="../assets/popiii-sfrd/plot.js"></script>
+```
+
+## Individual datasets
+
+| Reference | Source and processing notes | Download |
+|:-----------------------|:-----------------------|:-----------------------|
+| @tornatore2007 | Digitized from Fig. 1, orange dashed line: (10 Mpc)<sup>3</sup> simulation box. | [CSV](../data/popiii-sfrd/SFRD_popIII_Tornatore+07_10Mpc.csv) |
+| @trenti2009 | H₂ minihalos plus atomic-cooling halos digitized from Fig. 1 (black solid / blue long-dashed lines) for reference model: normal J<sub>21</sub> feedback, Sheth–Tormen halo mass function, one Pop III star per halo; contributions interpolated and summed in linear SFRD. | [CSV](../data/popiii-sfrd/SFRD_popIII_Trenti&Stiavelli09_ref_tot.csv) |
+| @maio2010 | Digitized reference simulation, Fig. 5, top panel, red dotted line for reference model: 0.7 cMpc/h box, Z<sub>crit</sub> = 10<sup>-4</sup> Z<sub>☉</sub>, density threshold 70 cm⁻³, Salpeter IMF (100–500 M<sub>☉</sub>). | [CSV](../data/popiii-sfrd/SFRD_popIII_Maio+10_ref.csv) |
+| @johnson2013 | Digitized from Fig. 1, top panel, red dashed line: FiBY simulation with Lyman–Werner radiation included. | [CSV](../data/popiii-sfrd/SFRD_popIII_Johnson+13_FiBY+LW.csv) |
+| @pallottini2014 | Digitized from Fig. 1, blue solid line. | [CSV](../data/popiii-sfrd/SFRD_popIII_Pallottini+14.csv) |
+| @xu2016 | Digitized from Fig. 1, green dashed line: Renaissance “Normal” simulated region. Lookback time measured from the final z = 7.6 snapshot; converted to redshift using WMAP7 parameters (H<sub>0</sub> = 71, Ω<sub>m,0</sub> = 0.266, Ω<sub>b,0</sub> = 0.0449, T<sub>CMB,0</sub> = 2.725 K). Original lookback times retained. | [CSV](../data/popiii-sfrd/SFRD_popIII_Xu+16_Renaissance_Normal.csv) |
+| @sarmento2018 | Digitized from Fig. 2, green solid line: Pop III curve applying the stellar-metallicity criterion Z<sub>★</sub> \< Z<sub>crit</sub>. | [CSV](../data/popiii-sfrd/SFRD_popIII_Sarmento+18.csv) |
+| @jaacks2019 | Digitized from Fig. 4, top panel, blue solid line, including time-since-Big-Bang column. | [CSV](../data/popiii-sfrd/SFRD_popIII_Jaacks+19.csv) |
+| @liu2020 | Digitized from Fig. 5, solid magenta line: FDbox (Pop III) model. | [CSV](../data/popiii-sfrd/SFRD_popIII_Liu&Bromm20.csv) |
+| @skinner2020 | Digitized from Fig. 4. Cosmic ages converted to redshift using the simulation cosmology (H<sub>0</sub> = 67.11, Ω<sub>m,0</sub> = 0.3175, Ω<sub>b,0</sub> = 0.049, T<sub>CMB,0</sub> = 2.725 K); original times retained. | [CSV](../data/popiii-sfrd/SFRD_popIII_Skinner&Wise20.csv) |
+| @visbal2020 | Digitized from Fig. 2, black solid line: Pop III model including LW feedback, M(Z<sub>crit</sub> = 3 × 10<sup>-4</sup> Z<sub>☉</sub>), and reionization feedback. | [CSV](../data/popiii-sfrd/SFRD_popIII_Visbal+20.csv) |
+| @venditti2023 | Author-provided data behind Fig. 1, left panel, red solid line: dustyGadget simulation mean Pop III SFRD in 10 Myr bins, averaged over five simulated cubes. | [CSV](../data/popiii-sfrd/SFRD_popIII_Venditti+23_dustyGadget_10Myr.csv) |
+| @trinca2024 | Author-provided numerical data for CAT model. Pop III SFRD converted from M<sub>☉</sub> Myr<sup>-1</sup> cMpc<sup>-3</sup> to M<sub>☉</sub> yr<sup>-1</sup> cMpc<sup>-3</sup>. Original total/Pop III/Pop II columns retained. | [CSV](../data/popiii-sfrd/SFRD_popIII_Trinca+24_CAT.csv) |
+| @ventura2024 | Digitized from Fig. 7, cyan solid line: fiducial total Pop III star-formation curve. | [CSV](../data/popiii-sfrd/SFRD_popIII_Ventura+24_Meraxes.csv) |
+| @cruz2025 | Digitized data provided by Seiji Fujimoto for Zeus21 minihalo-only model. | [CSV](../data/popiii-sfrd/SFRD_popIII_Cruz+25_Zeus21.csv) |
+| @hegde2025 | Digitized from Fig. 6, solid red line: total pristine star formation for fiducial “abcd” model. | [CSV](../data/popiii-sfrd/SFRD_popIII_Hegde&Furlanetto25_abcd.csv) |
+| @sarmento2025 | Digitized from Fig. 1, blue dashed line: Pop III model including radiative transfer. | [CSV](../data/popiii-sfrd/SFRD_popIII_Sarmento&Scannapieco25_RT.csv) |
+| @samuel2026 | Author-provided data for CampFIRE-6k simulation. | [CSV](../data/popiii-sfrd/SFRD_popIII_Samuel+26_CampFIRE-6k.csv) |
+
+## Tentative observational constraints
+
+| Reference | Description |
+|:-----------------|:-----------------------------------------------------|
+| @nagao2008 | Subaru/Suprime-Cam photometric search for Lyα-He II λ1640 dual emitters with no metal line detections at 3.93 ≲ z ≲ 4.01 and 4.57 ≲ z ≲ 4.65. No convincing Pop III candidates with a Pop III SFR ≳ 2 M<sub>☉</sub> yr<sup>-1</sup> were found, yielding an upper limit of SFRD \< 5 × 10<sup>-6</sup> M<sub>☉</sub> yr<sup>-1</sup> cMpc<sup>-3</sup> (assuming an IMF in the range \[50, 500\] M<sub>☉</sub> from @schaerer2003 and negligible escape fraction). The constraint in the range 4.0 ≲ z ≲ 4.6 is obtained considering the combined volume of the two redshift windows 4.03 × 10<sup>5</sup> Mpc<sup>3</sup>. |
+| @cassata2013 | 11 narrow He II λ1640 emitters identified from a sample of 277 galaxies with a highly reliable spectroscopic redshift at 2 \< z \< 4.6 from the VIMOS-VLT Deep Survey (VVDS) Deep and Ultra-Deep data. Interpreting their emission as powered by Pop III with a SFR of 0.1-10 M<sub>☉</sub> yr<sup>-1</sup> implies SFRD ≈ 10⁻⁶ M☉ yr⁻¹ cMpc⁻³ (assuming a top-heavy IMF and zero metallicity from @schaerer2003). |
+| @fujimoto2025b | Revisiting JWST photometric Pop III candidate selection criterion from @fujimoto2025 following spectroscopic rejection of GLIMPSE-16043. Selecting strong Balmer jump, strong Hα and no \[OIII\] lines. Assuming AMORE6 is a genuine Pop III galaxy, the inferred UV luminosity function gives a tentative SFRD range (assuming a UV conversion factor for a moderately top-heavy IMF from @schaerer2025, with lower limit set by the detection of AMORE6 alone, and upper limit obtained by rescaling the general galaxy UVLF to match the upper boundary of the data point by AMORE6 and integrating it down to M<sub>UV</sub> = -12). |
+| @mirzakhanlari2026 | 8 He II λ1640-bright candidates with no UV metal-line detections at 1.9 \< z \< 2.3 identified in the Hobby–Eberly Telescope Dark Energy Experiment’s database. The estimated number density of \~30 Gpc<sup>-3</sup> implies SFRD ≈ 6 × 10<sup>-9</sup> M<sub>☉</sub> yr<sup>-1</sup> cMpc<sup>-3</sup> , assuming 6 × 10<sup>5</sup> M<sub>☉</sub> of Pop III stars per system per system according to @venditti2026b and a 3 Myr visibility time from @schaerer2002. |
+
+## References
+
+::: {#refs}
+:::

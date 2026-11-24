@@ -11,7 +11,7 @@ execute:
 execute-dir: project
 ---
 
-This page maintains an up-to-date (as of {{<meta date-modified>}}) compilation of all reported high-redshift ($z \gtrsim 3$) Pop III-hosting galaxy candidates, i.e. galaxies for which the presence of an active Pop III component has been suggested to account for at least part of the observed emission -- regardless of the average metallicity of the system. 
+This page maintains an up-to-date (as of June 4, 2026) compilation of all reported high-redshift ($z \gtrsim 3$) Pop III-hosting galaxy candidates, i.e. galaxies for which the presence of an active Pop III component has been suggested to account for at least part of the observed emission -- regardless of the average metallicity of the system. 
 
 The table below includes key properties of these objects, as reported in their respective discovery papers, including their redshift, magnification, UV magnitude ($M_\mathrm{UV}$), UV $\beta$-slope, stellar mass (the total stellar mass, $M_\star$, and mass of the proposed Pop III component, $M_\mathrm{III}$), star formation rate (SFR), line flux, equivalent width (EW) and full width half maximum (FWHM) for a selection of emission lines of interest (Ly$\alpha$, H$\alpha$, H$\beta$, H$\gamma$, HeII1640, HeII4686 and [OIII]5007), [OIII]/H$\beta$ ratio and metallicity, both in terms of O/H ratio and solar metallicity (Z$_\odot$).
 
