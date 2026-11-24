@@ -1,75 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://utcfc.github.io/authors.html</loc>
-    <lastmod>2026-11-24T21:57:01.674Z</lastmod>
-  </url>
-  <url>
-    <loc>https://utcfc.github.io/index.html</loc>
-    <lastmod>2026-11-24T21:57:01.689Z</lastmod>
-  </url>
-  <url>
-    <loc>https://utcfc.github.io/pages/popiiicandidates.html</loc>
-    <lastmod>2026-11-24T21:57:01.690Z</lastmod>
-  </url>
-  <url>
-    <loc>https://utcfc.github.io/pages/telescopes/NIRSpec.html</loc>
-    <lastmod>2026-11-24T21:57:01.690Z</lastmod>
-  </url>
-  <url>
-    <loc>https://utcfc.github.io/pages/surveys/ngdeep.html</loc>
-    <lastmod>2026-11-24T21:57:01.690Z</lastmod>
-  </url>
-  <url>
-    <loc>https://utcfc.github.io/pages/uvslopes.html</loc>
-    <lastmod>2026-11-24T21:57:01.690Z</lastmod>
-  </url>
-  <url>
-    <loc>https://utcfc.github.io/pages/data/blagn.html</loc>
-    <lastmod>2026-11-24T21:57:01.690Z</lastmod>
-  </url>
-  <url>
     <loc>https://utcfc.github.io/references.html</loc>
-    <lastmod>2026-11-24T21:57:01.690Z</lastmod>
-  </url>
-  <url>
-    <loc>https://utcfc.github.io/about.html</loc>
-    <lastmod>2026-11-24T21:57:01.654Z</lastmod>
-  </url>
-  <url>
-    <loc>https://utcfc.github.io/misc/glossary.html</loc>
-    <lastmod>2026-11-24T21:57:01.689Z</lastmod>
+    <lastmod>2026-11-24T22:45:11.486Z</lastmod>
   </url>
   <url>
     <loc>https://utcfc.github.io/pages.html</loc>
-    <lastmod>2026-11-24T21:57:01.689Z</lastmod>
+    <lastmod>2026-11-24T22:45:11.484Z</lastmod>
   </url>
   <url>
-    <loc>https://utcfc.github.io/pages/data/highz.html</loc>
-    <lastmod>2026-11-24T21:57:01.690Z</lastmod>
+    <loc>https://utcfc.github.io/index.html</loc>
+    <lastmod>2026-11-24T22:45:11.484Z</lastmod>
   </url>
   <url>
-    <loc>https://utcfc.github.io/pages/balmerbreaks.html</loc>
-    <lastmod>2026-11-24T21:57:01.690Z</lastmod>
+    <loc>https://utcfc.github.io/pages/uvslopes.html</loc>
+    <lastmod>2026-11-24T22:45:11.486Z</lastmod>
   </url>
   <url>
-    <loc>https://utcfc.github.io/pages/surveys/ceers.html</loc>
-    <lastmod>2026-11-24T21:57:01.690Z</lastmod>
+    <loc>https://utcfc.github.io/pages/telescopes/NIRSpec.html</loc>
+    <lastmod>2026-11-24T22:45:11.486Z</lastmod>
   </url>
   <url>
-    <loc>https://utcfc.github.io/pages/lrds.html</loc>
-    <lastmod>2026-11-24T21:57:01.690Z</lastmod>
+    <loc>https://utcfc.github.io/pages/data/blagn.html</loc>
+    <lastmod>2026-11-24T22:45:11.486Z</lastmod>
   </url>
   <url>
     <loc>https://utcfc.github.io/pages/popiiisfrd.html</loc>
-    <lastmod>2026-11-24T21:57:01.690Z</lastmod>
+    <lastmod>2026-11-24T22:45:11.486Z</lastmod>
   </url>
   <url>
-    <loc>https://utcfc.github.io/contributing.html</loc>
-    <lastmod>2026-11-24T21:57:01.675Z</lastmod>
+    <loc>https://utcfc.github.io/pages/surveys/ceers.html</loc>
+    <lastmod>2026-11-24T22:45:11.486Z</lastmod>
+  </url>
+  <url>
+    <loc>https://utcfc.github.io/misc/glossary.html</loc>
+    <lastmod>2026-11-24T22:45:11.484Z</lastmod>
+  </url>
+  <url>
+    <loc>https://utcfc.github.io/about.html</loc>
+    <lastmod>2026-11-24T22:45:11.442Z</lastmod>
+  </url>
+  <url>
+    <loc>https://utcfc.github.io/pages/surveys/ngdeep.html</loc>
+    <lastmod>2026-11-24T22:45:11.486Z</lastmod>
+  </url>
+  <url>
+    <loc>https://utcfc.github.io/pages/data/highz.html</loc>
+    <lastmod>2026-11-24T22:45:11.486Z</lastmod>
+  </url>
+  <url>
+    <loc>https://utcfc.github.io/pages/lrds.html</loc>
+    <lastmod>2026-11-24T22:45:11.486Z</lastmod>
+  </url>
+  <url>
+    <loc>https://utcfc.github.io/pages/balmerbreaks.html</loc>
+    <lastmod>2026-11-24T22:45:11.486Z</lastmod>
+  </url>
+  <url>
+    <loc>https://utcfc.github.io/pages/popiiicandidates.html</loc>
+    <lastmod>2026-11-24T22:45:11.486Z</lastmod>
   </url>
   <url>
     <loc>https://utcfc.github.io/recents.html</loc>
-    <lastmod>2026-11-24T21:57:01.690Z</lastmod>
+    <lastmod>2026-11-24T22:45:11.486Z</lastmod>
+  </url>
+  <url>
+    <loc>https://utcfc.github.io/authors.html</loc>
+    <lastmod>2026-11-24T22:45:11.466Z</lastmod>
+  </url>
+  <url>
+    <loc>https://utcfc.github.io/contributing.html</loc>
+    <lastmod>2026-11-24T22:45:11.468Z</lastmod>
   </url>
 </urlset>
