@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.38">
+<meta name="generator" content="quarto-1.11.9">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -12,10 +12,13 @@
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
 */
-code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -54,14 +57,15 @@ div.csl-indent {
 <meta name="quarto:offset" content="./">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/scrollable-regions/scrollable-regions.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-91edcbc90187f75510e16588ac870bd6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-fe7da80ab25d1beb9c636eb144281fde.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-9916cacfdb3ff0d9c7fb8c2203213307.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-f75738169cd6d29c8616a88c126bc592.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -91,7 +95,7 @@ div.csl-indent {
 }</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -123,11 +127,11 @@ window.Quarto = {
 <link rel="stylesheet" href="assets/styles.css">
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-fixed quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark" aria-label="Site">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="./index.html" class="navbar-brand navbar-brand-logo">
@@ -135,8 +139,7 @@ window.Quarto = {
     <img src="./images/CFC-LOGO-2color-bigtext.png" alt="" class="navbar-logo dark-content">
     </a>
   </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -163,6 +166,7 @@ window.Quarto = {
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
 </div>
+            <div id="quarto-search" class="" title="Search"></div>
       </div> <!-- /container-fluid -->
     </nav>
   <div id="quarto-announcement" data-announcement-id="d796c4be8e1101c9ba15edcc63d2ab91" class="alert alert-primary hidden"><i class="bi bi-info-circle quarto-announcement-icon"></i><div class="quarto-announcement-content">
@@ -177,7 +181,7 @@ window.Quarto = {
         
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content" id="quarto-document-content" tabindex="-1">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -217,8 +221,14 @@ Calzetti, Daniela, Anne L. Kinney, and Thaisa Storchi-Bergmann. 1994. <span>“<
 <div id="ref-carniani2024" class="csl-entry" role="listitem">
 Carniani, Stefano, Kevin Hainline, Francesco D’Eugenio, et al. 2024. <span>“<span class="nocase">Spectroscopic confirmation of two luminous galaxies at a redshift of 14</span>.”</span> 633 (8029): 318–22. <a href="https://doi.org/10.1038/s41586-024-07860-9">https://doi.org/10.1038/s41586-024-07860-9</a>.
 </div>
+<div id="ref-cassata2013" class="csl-entry" role="listitem">
+Cassata, P., O. Le Fèvre, S. Charlot, et al. 2013. <span>“<span class="nocase">He II emitters in the VIMOS VLT Deep Survey: Population III star formation or peculiar stellar populations in galaxies at 2 &lt; z &lt; 4.6?</span>”</span> 556 (August): A68. <a href="https://doi.org/10.1051/0004-6361/201220969">https://doi.org/10.1051/0004-6361/201220969</a>.
+</div>
 <div id="ref-castellano2024" class="csl-entry" role="listitem">
 Castellano, Marco, Lorenzo Napolitano, Adriano Fontana, et al. 2024. <span>“<span class="nocase">JWST NIRSpec Spectroscopy of the Remarkable Bright Galaxy GHZ2/GLASS-z12 at Redshift 12.34</span>.”</span> 972 (2): 143. <a href="https://doi.org/10.3847/1538-4357/ad5f88">https://doi.org/10.3847/1538-4357/ad5f88</a>.
+</div>
+<div id="ref-cruz2025" class="csl-entry" role="listitem">
+Cruz, Hector Afonso G., Julian B. Muñoz, Nashwan Sabti, and Marc Kamionkowski. 2025. <span>“<span class="nocase">Effective model for the 21-cm signal with population III stars</span>.”</span> 111 (8): 083503. <a href="https://doi.org/10.1103/PhysRevD.111.083503">https://doi.org/10.1103/PhysRevD.111.083503</a>.
 </div>
 <div id="ref-cullen2025" class="csl-entry" role="listitem">
 Cullen, F., A. C. Carnall, D. Scholte, et al. 2025. <span>“<span class="nocase">The JWST EXCELS survey: an extremely metal-poor galaxy at z = 8.271 hosting an unusual population of massive stars</span>.”</span> 540 (3): 2176–94. <a href="https://doi.org/10.1093/mnras/staf838">https://doi.org/10.1093/mnras/staf838</a>.
@@ -238,11 +248,23 @@ D’Eugenio, Francesco, Roberto Maiolino, Stefano Carniani, et al. 2024. <span>�
 <div id="ref-finkelstein2012" class="csl-entry" role="listitem">
 Finkelstein, Steven L., Casey Papovich, Brett Salmon, et al. 2012. <span>“<span class="nocase">Candels: The Evolution of Galaxy Rest-frame Ultraviolet Colors from z = 8 to 4</span>.”</span> 756 (2): 164. <a href="https://doi.org/10.1088/0004-637X/756/2/164">https://doi.org/10.1088/0004-637X/756/2/164</a>.
 </div>
+<div id="ref-fujimoto2025b" class="csl-entry" role="listitem">
+Fujimoto, Seiji, Yoshihisa Asada, Rohan P. Naidu, et al. 2025. <span>“<span class="nocase">GLIMPSE-D: An Exotic Balmer-Jump Object at z=6.20? Revisiting Photometric Selection and the Cosmic Abundance of Pop III Galaxies</span>.”</span> <em>arXiv e-Prints</em>, December, arXiv:2512.11790. <a href="https://doi.org/10.48550/arXiv.2512.11790">https://doi.org/10.48550/arXiv.2512.11790</a>.
+</div>
 <div id="ref-fujimoto2025" class="csl-entry" role="listitem">
 Fujimoto, Seiji, Rohan P. Naidu, John Chisholm, et al. 2025. <span>“<span class="nocase">GLIMPSE: An Ultrafaint ≃10⁵ M⊙ Pop III Galaxy Candidate and First Constraints on the Pop III UV Luminosity Function at z ≃ 6.7</span>.”</span> 989 (1): 46. <a href="https://doi.org/10.3847/1538-4357/ade9a1">https://doi.org/10.3847/1538-4357/ade9a1</a>.
 </div>
 <div id="ref-greene2024" class="csl-entry" role="listitem">
 <span class="nocase">Greene, Jenny E., Ivo Labbe, Andy D. Goulding, et al.</span> 2024. <span>“<span class="nocase">UNCOVER Spectroscopy Confirms the Surprising Ubiquity of Active Galactic Nuclei in Red Sources at z &gt; 5</span>.”</span> 964 (1): 39. <a href="https://doi.org/10.3847/1538-4357/ad1e5f">https://doi.org/10.3847/1538-4357/ad1e5f</a>.
+</div>
+<div id="ref-hegde2025" class="csl-entry" role="listitem">
+Hegde, Sahil, and Steven R. Furlanetto. 2025. <span>“<span class="nocase">Efficient semi-analytic modelling of Pop III star formation from Cosmic Dawn to Reionization</span>.”</span> <em>The Open Journal of Astrophysics</em> 8 (October): 147. <a href="https://doi.org/10.33232/001c.145070">https://doi.org/10.33232/001c.145070</a>.
+</div>
+<div id="ref-jaacks2019" class="csl-entry" role="listitem">
+Jaacks, Jason, Steven L. Finkelstein, and Volker Bromm. 2019. <span>“<span class="nocase">Legacy of star formation in the pre-reionization universe</span>.”</span> 488 (2): 2202–21. <a href="https://doi.org/10.1093/mnras/stz1529">https://doi.org/10.1093/mnras/stz1529</a>.
+</div>
+<div id="ref-johnson2013" class="csl-entry" role="listitem">
+Johnson, Jarrett L., Claudio Dalla Vecchia, and Sadegh Khochfar. 2013. <span>“<span class="nocase">The First Billion Years project: the impact of stellar radiation on the co-evolution of Populations II and III</span>.”</span> 428 (3): 1857–72. <a href="https://doi.org/10.1093/mnras/sts011">https://doi.org/10.1093/mnras/sts011</a>.
 </div>
 <div id="ref-kocevski2024" class="csl-entry" role="listitem">
 Kocevski, Dale D., Steven L. Finkelstein, Guillermo Barro, et al. 2024. <span>“<span class="nocase">The Rise of Faint, Red AGN at <span class="math inline">\(z&gt;4\)</span>: A Sample of Little Red Dots in the JWST Extragalactic Legacy Fields</span>.”</span> <em>arXiv e-Prints</em>, April, arXiv:2404.03576. <a href="https://doi.org/10.48550/arXiv.2404.03576">https://doi.org/10.48550/arXiv.2404.03576</a>.
@@ -265,6 +287,12 @@ Labbe, Ivo, Jenny E. Greene, Rachel Bezanson, et al. 2025. <span>“<span class=
 <div id="ref-lambrides2024" class="csl-entry" role="listitem">
 Lambrides, Erini, Kristen Garofali, Rebecca Larson, et al. 2024. <span>“<span class="nocase">The Case for Super-Eddington Accretion: Connecting Weak X-ray and UV Line Emission in JWST Broad-Line AGN During the First Gyr of Cosmic Time</span>.”</span> <em>arXiv e-Prints</em>, September, arXiv:2409.13047. <a href="https://doi.org/10.48550/arXiv.2409.13047">https://doi.org/10.48550/arXiv.2409.13047</a>.
 </div>
+<div id="ref-liu2020" class="csl-entry" role="listitem">
+Liu, Boyuan, and Volker Bromm. 2020. <span>“<span class="nocase">When did Population III star formation end?</span>”</span> 497 (3): 2839–54. <a href="https://doi.org/10.1093/mnras/staa2143">https://doi.org/10.1093/mnras/staa2143</a>.
+</div>
+<div id="ref-maio2010" class="csl-entry" role="listitem">
+Maio, Umberto, Benedetta Ciardi, Klaus Dolag, Luca Tornatore, and Sadegh Khochfar. 2010. <span>“<span class="nocase">The transition from population III to population II-I star formation</span>.”</span> 407 (2): 1003–15. <a href="https://doi.org/10.1111/j.1365-2966.2010.17003.x">https://doi.org/10.1111/j.1365-2966.2010.17003.x</a>.
+</div>
 <div id="ref-maiolino2024" class="csl-entry" role="listitem">
 <span class="nocase">Maiolino, Roberto, Hannah Übler, Michele Perna, et al.</span> 2024. <span>“<span class="nocase">JADES. Possible Population III signatures at z = 10.6 in the halo of GN-z11</span>.”</span> 687 (July): A67. <a href="https://doi.org/10.1051/0004-6361/202347087">https://doi.org/10.1051/0004-6361/202347087</a>.
 </div>
@@ -273,6 +301,9 @@ Maiolino, Roberto, Hannah Übler, Michele Perna, et al. 2026. <span>“<span cla
 </div>
 <div id="ref-matthee2024" class="csl-entry" role="listitem">
 <span class="nocase">Matthee, Jorryt, Rohan P. Naidu, Gabriel Brammer, et al.</span> 2024. <span>“<span class="nocase">Little Red Dots: An Abundant Population of Faint Active Galactic Nuclei at z <span><span class="math inline">\(\sim\)</span></span> 5 Revealed by the EIGER and FRESCO JWST Surveys</span>.”</span> 963 (2): 129. <a href="https://doi.org/10.3847/1538-4357/ad2345">https://doi.org/10.3847/1538-4357/ad2345</a>.
+</div>
+<div id="ref-mirzakhanlari2026" class="csl-entry" role="listitem">
+Mirza Khanlari, Mahan, Dustin Davis, Karl Gebhardt, et al. 2026. <span>“<span class="nocase">Population III Host Candidates at z ~2: Strong He II <span><span class="math inline">\(\lambda\)</span></span>1640 and Absent Ultraviolet Metal Lines in HETDEX Ly<span><span class="math inline">\(\alpha\)</span></span> Emitters</span>.”</span> 1010 (1): 62. <a href="https://doi.org/10.3847/1538-4357/aea6d9">https://doi.org/10.3847/1538-4357/aea6d9</a>.
 </div>
 <div id="ref-mondal2025" class="csl-entry" role="listitem">
 Mondal, Chayan, Kanak Saha, Anshuman Borgohain, et al. 2025. <span>“<span class="nocase">GNHeII J1236+6215: A He II <span><span class="math inline">\(\lambda\)</span></span>1640 Emitting and Potentially LyC Leaking Galaxy at z = 2.9803 Unveiled through JWST and Keck Observations</span>.”</span> 988 (2): 171. <a href="https://doi.org/10.3847/1538-4357/ade2cd">https://doi.org/10.3847/1538-4357/ade2cd</a>.
@@ -286,6 +317,9 @@ Morishita, Takahiro, Zhaoran Liu, Massimo Stiavelli, Tommaso Treu, Pietro Bergam
 <div id="ref-muzzin2025" class="csl-entry" role="listitem">
 <span class="nocase">Muzzin, Adam, Katherine A. Suess, Danilo Marchesini, et al.</span> 2025. <span>“<span class="nocase">MINERVA: A NIRCam Medium Band and MIRI Imaging Survey to Unlock the Hidden Gems of the Distant Universe</span>.”</span> <em>arXiv e-Prints</em>, July, arXiv:2507.19706. <a href="https://doi.org/10.48550/arXiv.2507.19706">https://doi.org/10.48550/arXiv.2507.19706</a>.
 </div>
+<div id="ref-nagao2008" class="csl-entry" role="listitem">
+Nagao, Tohru, Shunji S. Sasaki, Roberto Maiolino, et al. 2008. <span>“<span class="nocase">A Photometric Survey for Ly<span><span class="math inline">\(\alpha\)</span></span>-He II Dual Emitters: Searching for Population III Stars in High-Redshift Galaxies</span>.”</span> 680 (1): 100–109. <a href="https://doi.org/10.1086/587888">https://doi.org/10.1086/587888</a>.
+</div>
 <div id="ref-nakajima2025" class="csl-entry" role="listitem">
 Nakajima, Kimihiko, Masami Ouchi, Yuichi Harikane, et al. 2025. <span>“<span class="nocase">An Ultra-Faint, Chemically Primitive Galaxy Forming at the Epoch of Reionization</span>.”</span> <em>arXiv e-Prints</em>, June, arXiv:2506.11846. <a href="https://doi.org/10.48550/arXiv.2506.11846">https://doi.org/10.48550/arXiv.2506.11846</a>.
 </div>
@@ -295,20 +329,53 @@ Nakajima, Kimihiko, Masami Ouchi, Yuichi Harikane, et al. 2025. <span>“<span c
 <div id="ref-pacucci2024" class="csl-entry" role="listitem">
 Pacucci, Fabio, and Ramesh Narayan. 2024. <span>“<span class="nocase">Mildly Super-Eddington Accretion onto Slowly Spinning Black Holes Explains the X-Ray Weakness of the Little Red Dots</span>.”</span> 976 (1): 96. <a href="https://doi.org/10.3847/1538-4357/ad84f7">https://doi.org/10.3847/1538-4357/ad84f7</a>.
 </div>
+<div id="ref-pallottini2014" class="csl-entry" role="listitem">
+Pallottini, A., A. Ferrara, S. Gallerani, S. Salvadori, and V. D’Odorico. 2014. <span>“<span class="nocase">Simulating cosmic metal enrichment by the first galaxies</span>.”</span> 440 (3): 2498–518. <a href="https://doi.org/10.1093/mnras/stu451">https://doi.org/10.1093/mnras/stu451</a>.
+</div>
 <div id="ref-reumert2026" class="csl-entry" role="listitem">
 Reumert, Henriette, Kasper E. Heintz, Clara L. Pollock, et al. 2026. <span>“<span class="nocase">A hot, nebular-dominated galaxy interacting with a pristine PopIII system uncovered by JWST</span>.”</span> <em>arXiv e-Prints</em>, March, arXiv:2603.13471. <a href="https://doi.org/10.48550/arXiv.2603.13471">https://doi.org/10.48550/arXiv.2603.13471</a>.
 </div>
 <div id="ref-rusta2026" class="csl-entry" role="listitem">
 Rusta, Elka, Stefania Salvadori, Roberto Maiolino, et al. 2026. <span>“<span class="nocase">The Pristine HeII Emitter near GN-z11: Constraining the Mass Distribution of the First Stars</span>.”</span> <em>arXiv e-Prints</em>, March, arXiv:2603.20363. <a href="https://doi.org/10.48550/arXiv.2603.20363">https://doi.org/10.48550/arXiv.2603.20363</a>.
 </div>
+<div id="ref-samuel2026" class="csl-entry" role="listitem">
+Samuel, Jenna, Michael Boylan-Kolchin, Robert Feldmann, et al. 2026. <span>“<span class="nocase">Resolving galaxy formation in the early Universe with BonFIRE and CampFIRE</span>.”</span> <em>arXiv e-Prints</em>, May, arXiv:2605.24104. <a href="https://doi.org/10.48550/arXiv.2605.24104">https://doi.org/10.48550/arXiv.2605.24104</a>.
+</div>
+<div id="ref-sarmento2025" class="csl-entry" role="listitem">
+Sarmento, Richard, and Evan Scannapieco. 2025. <span>“<span class="nocase">The Importance of the Population III Initial Mass Function in Determining the Characteristics of the Earliest Galaxies</span>.”</span> 988 (2): 221. <a href="https://doi.org/10.3847/1538-4357/ade78d">https://doi.org/10.3847/1538-4357/ade78d</a>.
+</div>
+<div id="ref-sarmento2018" class="csl-entry" role="listitem">
+Sarmento, Richard, Evan Scannapieco, and Seth Cohen. 2018. <span>“<span class="nocase">Following the Cosmic Evolution of Pristine Gas. II. The Search for Pop III-bright Galaxies</span>.”</span> 854 (1): 75. <a href="https://doi.org/10.3847/1538-4357/aa989a">https://doi.org/10.3847/1538-4357/aa989a</a>.
+</div>
+<div id="ref-schaerer2002" class="csl-entry" role="listitem">
+Schaerer, D. 2002. <span>“<span class="nocase">On the properties of massive Population III stars and metal-free stellar populations</span>.”</span> 382 (January): 28–42. <a href="https://doi.org/10.1051/0004-6361:20011619">https://doi.org/10.1051/0004-6361:20011619</a>.
+</div>
+<div id="ref-schaerer2003" class="csl-entry" role="listitem">
+Schaerer, D. 2003. <span>“<span class="nocase">The transition from Population III to normal galaxies: Lyalpha and He II emission and the ionising properties of high redshift starburst galaxies</span>.”</span> 397 (January): 527–38. <a href="https://doi.org/10.1051/0004-6361:20021525">https://doi.org/10.1051/0004-6361:20021525</a>.
+</div>
+<div id="ref-schaerer2025" class="csl-entry" role="listitem">
+Schaerer, D., J. Guibert, R. Marques-Chaves, and F. Martins. 2025. <span>“<span class="nocase">Observable and ionizing properties of star-forming galaxies with very massive stars and different initial mass functions</span>.”</span> 693 (January): A271. <a href="https://doi.org/10.1051/0004-6361/202451454">https://doi.org/10.1051/0004-6361/202451454</a>.
+</div>
 <div id="ref-setton2024b" class="csl-entry" role="listitem">
 <span class="nocase">Setton, David J., Jenny E. Greene, Anna de Graaff, et al.</span> 2024. <span>“<span class="nocase">Little Red Dots at an Inflection Point: Ubiquitous <span>‘V-Shaped’</span> Turnover Consistently Occurs at the Balmer Limit</span>.”</span> <em>arXiv e-Prints</em>, November, arXiv:2411.03424. <a href="https://doi.org/10.48550/arXiv.2411.03424">https://doi.org/10.48550/arXiv.2411.03424</a>.
+</div>
+<div id="ref-skinner2020" class="csl-entry" role="listitem">
+Skinner, Danielle, and John H. Wise. 2020. <span>“<span class="nocase">Cradles of the first stars: self-shielding, halo masses, and multiplicity</span>.”</span> 492 (3): 4386–97. <a href="https://doi.org/10.1093/mnras/staa139">https://doi.org/10.1093/mnras/staa139</a>.
 </div>
 <div id="ref-tacchella2023b" class="csl-entry" role="listitem">
 <span class="nocase">Tacchella, Sandro, Daniel J. Eisenstein, Kevin Hainline, et al.</span> 2023. <span>“<span class="nocase">JADES Imaging of GN-z11: Revealing the Morphology and Environment of a Luminous Galaxy 430 Myr after the Big Bang</span>.”</span> 952 (1): 74. <a href="https://doi.org/10.3847/1538-4357/acdbc6">https://doi.org/10.3847/1538-4357/acdbc6</a>.
 </div>
 <div id="ref-topping2024" class="csl-entry" role="listitem">
 Topping, Michael W., Daniel P. Stark, Ryan Endsley, et al. 2024. <span>“<span class="nocase">The UV continuum slopes of early star-forming galaxies in JADES</span>.”</span> 529 (4): 4087–103. <a href="https://doi.org/10.1093/mnras/stae800">https://doi.org/10.1093/mnras/stae800</a>.
+</div>
+<div id="ref-tornatore2007" class="csl-entry" role="listitem">
+Tornatore, Luca, Andrea Ferrara, and Raffaella Schneider. 2007. <span>“<span class="nocase">Population III stars: hidden or disappeared?</span>”</span> 382 (3): 945–50. <a href="https://doi.org/10.1111/j.1365-2966.2007.12215.x">https://doi.org/10.1111/j.1365-2966.2007.12215.x</a>.
+</div>
+<div id="ref-trenti2009" class="csl-entry" role="listitem">
+Trenti, Michele, and Massimo Stiavelli. 2009. <span>“<span class="nocase">Formation Rates of Population III Stars and Chemical Enrichment of Halos during the Reionization Era</span>.”</span> 694 (2): 879–92. <a href="https://doi.org/10.1088/0004-637X/694/2/879">https://doi.org/10.1088/0004-637X/694/2/879</a>.
+</div>
+<div id="ref-trinca2024" class="csl-entry" role="listitem">
+Trinca, Alessandro, Raffaella Schneider, Rosa Valiante, et al. 2024. <span>“<span class="nocase">Exploring the nature of UV-bright z <span><span class="math inline">\(\gtrsim\)</span></span> 10 galaxies detected by JWST: star formation, black hole accretion, or a non-universal IMF?</span>”</span> 529 (4): 3563–81. <a href="https://doi.org/10.1093/mnras/stae651">https://doi.org/10.1093/mnras/stae651</a>.
 </div>
 <div id="ref-ubler2026" class="csl-entry" role="listitem">
 Übler, Hannah, Roberto Maiolino, Pablo G. Pérez-González, et al. 2026. <span>“<span class="nocase">GA-NIFS &amp; JADES: Confirmation of pristine gas near GN-z11</span>.”</span> <em>arXiv e-Prints</em>, March, arXiv:2603.20360. <a href="https://doi.org/10.48550/arXiv.2603.20360">https://doi.org/10.48550/arXiv.2603.20360</a>.
@@ -319,11 +386,29 @@ Vanzella, E., F. Loiacono, P. Bergamini, et al. 2023. <span>“<span class="noca
 <div id="ref-vanzella2026" class="csl-entry" role="listitem">
 Vanzella, E., M. Messa, A. Zanella, et al. 2026. <span>“<span class="nocase">A pristine, star-forming complex at z = 4.19</span>.”</span> 705 (January): L12. <a href="https://doi.org/10.1051/0004-6361/202557153">https://doi.org/10.1051/0004-6361/202557153</a>.
 </div>
+<div id="ref-venditti2023" class="csl-entry" role="listitem">
+Venditti, Alessandra, Luca Graziani, Raffaella Schneider, et al. 2023. <span>“<span class="nocase">A needle in a haystack? Catching Population III stars in the epoch of reionization: I. Population III star-forming environments</span>.”</span> 522 (3): 3809–30. <a href="https://doi.org/10.1093/mnras/stad1201">https://doi.org/10.1093/mnras/stad1201</a>.
+</div>
+<div id="ref-venditti2026b" class="csl-entry" role="listitem">
+<span class="nocase">Venditti, Alessandra, Luca Graziani, Raffaella Schneider, et al.</span> 2026. <span>“<span class="nocase">Catching the Nebular Needle in a Polluted Haystack: Line-emission Signatures from Population III-forming Pockets around Massive Galaxies at the End of Reionization</span>.”</span> 1005 (2): 226. <a href="https://doi.org/10.3847/1538-4357/ae7b2c">https://doi.org/10.3847/1538-4357/ae7b2c</a>.
+</div>
+<div id="ref-venditti2026" class="csl-entry" role="listitem">
+Venditti, Alessandra, Daniel Schaerer, Erik Zackrisson, et al. 2026. <span>“<span class="nocase">How can we finally see the first light? Status and perspective in the search for Population III stars</span>.”</span> <em>The Open Journal of Astrophysics</em> 9 (August): 67811. <a href="https://doi.org/10.33232/001c.167811">https://doi.org/10.33232/001c.167811</a>.
+</div>
+<div id="ref-ventura2024" class="csl-entry" role="listitem">
+Ventura, Emanuele M., Yuxiang Qin, Sreedhar Balu, and J. Stuart B. Wyithe. 2024. <span>“<span class="nocase">Semi-analytic modelling of Pop. III star formation and metallicity evolution - I. Impact on the UV luminosity functions at z = 9-16</span>.”</span> 529 (1): 628–46. <a href="https://doi.org/10.1093/mnras/stae567">https://doi.org/10.1093/mnras/stae567</a>.
+</div>
+<div id="ref-visbal2020" class="csl-entry" role="listitem">
+Visbal, Eli, Greg L. Bryan, and Zoltán Haiman. 2020. <span>“<span class="nocase">Self-consistent Semianalytic Modeling of Feedback during Primordial Star Formation and Reionization</span>.”</span> 897 (1): 95. <a href="https://doi.org/10.3847/1538-4357/ab994e">https://doi.org/10.3847/1538-4357/ab994e</a>.
+</div>
 <div id="ref-wang2024" class="csl-entry" role="listitem">
 Wang, Xin, Cheng Cheng, Junqiang Ge, et al. 2024. <span>“<span class="nocase">A Strong He II <span><span class="math inline">\(\lambda\)</span></span>1640 Emitter with an Extremely Blue UV Spectral Slope at z = 8.16: Presence of Population III Stars?</span>”</span> 967 (2): L42. <a href="https://doi.org/10.3847/2041-8213/ad4ced">https://doi.org/10.3847/2041-8213/ad4ced</a>.
 </div>
 <div id="ref-wilkins2013" class="csl-entry" role="listitem">
 <span class="nocase">Wilkins, Stephen M., Andrew Bunker, William Coulton, et al.</span> 2013. <span>“<span class="nocase">Interpreting the observed UV continuum slopes of high-redshift galaxies</span>.”</span> 430 (4): 2885–90. <a href="https://doi.org/10.1093/mnras/stt096">https://doi.org/10.1093/mnras/stt096</a>.
+</div>
+<div id="ref-xu2016" class="csl-entry" role="listitem">
+Xu, Hao, Kyungjin Ahn, Michael L. Norman, John H. Wise, and Brian W. O’Shea. 2016. <span>“<span class="nocase">X-Ray Background at High Redshifts from Pop III Remnants: Results from Pop III Star Formation Rates in the Renaissance Simulations</span>.”</span> 832 (1): L5. <a href="https://doi.org/10.3847/2041-8205/832/1/L5">https://doi.org/10.3847/2041-8205/832/1/L5</a>.
 </div>
 <div id="ref-zavala2025" class="csl-entry" role="listitem">
 Zavala, Jorge A., Marco Castellano, Hollis B. Akins, et al. 2025. <span>“<span class="nocase">A luminous and young galaxy at z = 12.33 revealed by a JWST/MIRI detection of H<span><span class="math inline">\(\alpha\)</span></span> and [O III]</span>.”</span> <em>Nature Astronomy</em> 9 (January): 155–64. <a href="https://doi.org/10.1038/s41550-024-02397-3">https://doi.org/10.1038/s41550-024-02397-3</a>.
@@ -407,11 +492,30 @@ Zavala, Jorge A., Marco Castellano, Hollis B. Akins, et al. 2025. <span>“<span
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
         var filterRegex = new RegExp("https:\/\/utcfc\.github\.io\/");
+      const newWindowLabel = "(opens in a new tab)";
+      const newWindowNoteId = "quarto-ext-newwindow-label";
+      // Links reference one hidden label through aria-describedby, so the
+      // announcement never changes their accessible name.
+      var describeNewWindow = (link) => {
+        if (!window.document.getElementById(newWindowNoteId)) {
+          var newWindowNote = window.document.createElement("span");
+          newWindowNote.id = newWindowNoteId;
+          newWindowNote.hidden = true;
+          newWindowNote.textContent = newWindowLabel;
+          window.document.body.appendChild(newWindowNote);
+        }
+        var describedBy = (link.getAttribute("aria-describedby") || "").split(/\s+/).filter(Boolean);
+        if (!describedBy.includes(newWindowNoteId)) {
+          describedBy.push(newWindowNoteId);
+          link.setAttribute("aria-describedby", describedBy.join(" "));
+        }
+      }
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
       // Inspect non-navigation links and adorn them if external
-     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      window.quartoDecorateExternalLinks = function (root) {
+     var links = (root || window.document).querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
       for (var i=0; i<links.length; i++) {
         const link = links[i];
         if (!isInternal(link.href)) {
@@ -425,8 +529,70 @@ Zavala, Jorge A., Marco Castellano, Hollis B. Akins, et al. 2025. <span>“<span
             if (link.getAttribute("rel") === null) {
               link.setAttribute("rel", "noopener");
             }
+            describeNewWindow(link);
+          if (!link.classList.contains('no-external-icon')) {
+          }
         }
       }
+      };
+      window.quartoDecorateExternalLinks(window.document);
+    // Esc closes the popup (WCAG 1.4.13) and focus leaving both trigger and
+    // popup closes it (WCAG 2.4.11); tippy handles neither for interactive popups.
+    const hideOnEscAndFocusOut = {
+      name: 'hideOnEscAndFocusOut',
+      defaultValue: true,
+      fn(instance) {
+        const dismiss = () => {
+          // A show scheduled by the trigger delay would otherwise reopen it
+          instance.clearDelayTimeouts();
+          instance.hide();
+        };
+        const onKeyDown = (event) => {
+          if (event.key !== 'Escape') {
+            return;
+          }
+          // Keep Esc from also reaching page handlers (e.g. reveal.js overview),
+          // except an open reveal.js slide menu, which Esc should close too.
+          // The menu handles keys only when its keyboard option is on.
+          const menuHandlesEsc = window.Reveal?.getPlugin?.('menu')?.isOpen() &&
+            window.Reveal.getConfig().menu?.keyboard !== false;
+          if (!menuHandlesEsc) {
+            event.stopPropagation();
+          }
+          if (instance.popper.contains(window.document.activeElement)) {
+            // Disabled while refocusing so the focus trigger does not reopen it
+            instance.disable();
+            instance.reference.focus();
+            instance.enable();
+          }
+          dismiss();
+        };
+        const onFocusOut = (event) => {
+          const target = event.relatedTarget;
+          if (target && !instance.reference.contains(target) &&
+              !instance.popper.contains(target)) {
+            dismiss();
+          }
+        };
+        // On the trigger too: a click trigger (code-annotations: select) has no
+        // blur handling. Attached for the instance's lifetime so leaving the
+        // trigger also cancels a show still pending on the trigger delay.
+        instance.reference.addEventListener('focusout', onFocusOut);
+        return {
+          onShow() {
+            window.document.addEventListener('keydown', onKeyDown, true);
+            instance.popper.addEventListener('focusout', onFocusOut);
+          },
+          onHide() {
+            window.document.removeEventListener('keydown', onKeyDown, true);
+            instance.popper.removeEventListener('focusout', onFocusOut);
+          },
+          onDestroy() {
+            instance.reference.removeEventListener('focusout', onFocusOut);
+          },
+        };
+      },
+    };
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
       const config = {
         allowHTML: true,
@@ -440,6 +606,7 @@ Zavala, Jorge A., Marco Castellano, Hollis B. Akins, et al. 2025. <span>“<span
         interactiveBorder: 10,
         theme: 'quarto',
         placement: 'bottom-start',
+        plugins: [hideOnEscAndFocusOut],
       };
       if (contentFn) {
         config.content = contentFn;
@@ -602,44 +769,54 @@ Zavala, Jorge A., Marco Castellano, Hollis B. Akins, et al. 2025. <span>“<span
           const lineIds = lines.map((line) => {
             return targetCell + "-" + line;
           })
-          let top = null;
-          let height = null;
-          let parent = null;
+          // Each band is positioned against its own containing block, which is
+          // not the offsetParent of the lines, so place it from client rects.
+          const placeBand = (band, firstEl, lastEl, codeBlock) => {
+            const container = band.offsetParent;
+            if (container === null) {
+              return;
+            }
+            const containerRect = container.getBoundingClientRect();
+            // Reveal.js scales slides with a transform, so convert client
+            // pixels back to the CSS pixels of the container.
+            const scale = containerRect.height / container.offsetHeight || 1;
+            const firstRect = firstEl.getBoundingClientRect();
+            const lastRect = lastEl.getBoundingClientRect();
+            const top = (firstRect.top - containerRect.top) / scale - container.clientTop + container.scrollTop;
+            const height = (lastRect.bottom - firstRect.top) / scale;
+            band.style.top = top - 2 + "px";
+            band.style.height = height + 4 + "px";
+            if (codeBlock) {
+              // Without the copy button wrapper, the containing block is wider
+              // than the code block, so span the code block explicitly.
+              const blockRect = codeBlock.getBoundingClientRect();
+              band.style.left = (blockRect.left - containerRect.left) / scale - container.clientLeft + container.scrollLeft + "px";
+              band.style.width = blockRect.width / scale + "px";
+            }
+          };
           if (lineIds.length > 0) {
-              //compute the position of the single el (top and bottom and make a div)
-              const el = window.document.getElementById(lineIds[0]);
-              top = el.offsetTop;
-              height = el.offsetHeight;
-              parent = el.parentElement.parentElement;
-            if (lineIds.length > 1) {
-              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-              height = bottom - top;
+            const el = window.document.getElementById(lineIds[0]);
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const parent = el.parentElement.parentElement;
+            // cook up a div (if necessary) and position it
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
             }
-            if (top !== null && height !== null && parent !== null) {
-              // cook up a div (if necessary) and position it 
-              let div = window.document.getElementById("code-annotation-line-highlight");
-              if (div === null) {
-                div = window.document.createElement("div");
-                div.setAttribute("id", "code-annotation-line-highlight");
-                div.style.position = 'absolute';
-                parent.appendChild(div);
-              }
-              div.style.top = top - 2 + "px";
-              div.style.height = height + 4 + "px";
-              div.style.left = 0;
-              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-              if (gutterDiv === null) {
-                gutterDiv = window.document.createElement("div");
-                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-                gutterDiv.style.position = 'absolute';
-                const codeCell = window.document.getElementById(targetCell);
-                const gutter = codeCell.querySelector('.code-annotation-gutter');
-                gutter.appendChild(gutterDiv);
-              }
-              gutterDiv.style.top = top - 2 + "px";
-              gutterDiv.style.height = height + 4 + "px";
+            placeBand(div, el, lastEl, parent.closest("div.sourceCode") || parent);
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
             }
+            placeBand(gutterDiv, el, lastEl);
             selectedAnnoteEl = annoteEl;
           }
         };
@@ -737,6 +914,9 @@ Zavala, Jorge A., Marco Castellano, Hollis B. Akins, et al. 2025. <span>“<span
       }
     }
   });
+  </script>
+  <script type="application/javascript">
+  window.quartoScrollableRegionsLabels = {"code":"Scrollable code","output":"Scrollable output"};
   </script>
 </div> <!-- /content -->
 

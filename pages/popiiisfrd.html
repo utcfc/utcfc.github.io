@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.11.9">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Alessandra Venditti">
+<meta name="dcterms.date" content="2026-11-24">
+
+<title>Population III star formation rate density</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/scrollable-regions/scrollable-regions.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-fe7da80ab25d1beb9c636eb144281fde.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-f75738169cd6d29c8616a88c126bc592.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../assets/styles.css">
+</head>
+
+<body class="nav-fixed quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark" aria-label="Site">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../images/CFC-LOGO-2color-bigtext.png" alt="" class="navbar-logo light-content">
+    <img src="../images/CFC-LOGO-2color-bigtext.png" alt="" class="navbar-logo dark-content">
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> <i class="bi bi-house-door-fill" role="img">
+</i> 
+<span class="menu-text"> </span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../pages.html"> 
+<span class="menu-text">Pages</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/utcfc/utcfc.github.io/" target="_blank"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+            <div id="quarto-search" class="" title="Search"></div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <div id="quarto-announcement" data-announcement-id="d796c4be8e1101c9ba15edcc63d2ab91" class="alert alert-primary hidden"><i class="bi bi-info-circle quarto-announcement-icon"></i><div class="quarto-announcement-content">
+<p><strong>Note</strong>: This site is under construction and incomplete in coverage; please use with caution, and feel free to <a href="contributing.qmd">contribute</a>!</p>
+</div><i class="bi bi-x-lg quarto-announcement-action"></i></div>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" aria-labelledby="toc-title" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#interactive-sfrd-comparison" id="toc-interactive-sfrd-comparison" class="nav-link active" data-scroll-target="#interactive-sfrd-comparison">Interactive SFRD comparison</a></li>
+  <li><a href="#individual-datasets" id="toc-individual-datasets" class="nav-link" data-scroll-target="#individual-datasets">Individual datasets</a></li>
+  <li><a href="#tentative-observational-constraints" id="toc-tentative-observational-constraints" class="nav-link" data-scroll-target="#tentative-observational-constraints">Tentative observational constraints</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/utcfc/utcfc.github.io/edit/main/pages/popiiisfrd.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content" tabindex="-1">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Population III star formation rate density</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Galaxies</div>
+    <div class="quarto-category">Models</div>
+    <div class="quarto-category">Data</div>
+  </div>
+  </div>
+
+
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Author</div>
+  <div class="quarto-title-meta-heading">Affiliation</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author">Alessandra Venditti <a href="mailto:alessandra.venditti@utexas.edu" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> <a href="https://orcid.org/0000-0003-2237-0777" class="quarto-title-author-orcid" aria-label="ORCID profile for Alessandra Venditti"> <img alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            UT Austin
+          </p>
+      </div>
+  </div>
+
+<div class="quarto-title-meta">
+
+      
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">November 24, 2026</p>
+    </div>
+  </div>
+  
+    <div>
+    <div class="quarto-title-meta-heading">Modified</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">November 24, 2026</p>
+    </div>
+  </div>
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>This page contains an interactive comparison of theoretical predictions for the cosmic Population III (Pop III) star formation rate density (SFRD) evolution as a function of redshift, based on <strong>Figure 8 of the review from <span class="citation" data-cites="venditti2026">Venditti, Schaerer, et al. (<a href="#ref-venditti2026" role="doc-biblioref">2026</a>)</span>.</strong> The archival data provided alongside this compilation include digitizations of published curves and data shared directly by their authors, and can be downloaded below.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Reproducibility
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The compilation is intended for <strong>archival and visualization purposes only</strong>. Reconstructed data may not exactly reproduce the authors’ original underlying simulation outputs. For quantitative comparisons, consult the original model papers.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Citation
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you use data from this compilation in a publication, please <strong>cite <span class="citation" data-cites="venditti2026">Venditti, Schaerer, et al. (<a href="#ref-venditti2026" role="doc-biblioref">2026</a>)</span></strong> alongside references to the original works.</p>
+</div>
+</div>
+<p>For corrections, or for adding further models to this page, refer to <a href="../contributing.html">How to contribute</a>.</p>
+<section id="interactive-sfrd-comparison" class="level2">
+<h2 class="anchored" data-anchor-id="interactive-sfrd-comparison">Interactive SFRD comparison</h2>
+<link rel="stylesheet" href="../assets/popiii-sfrd/plot.css">
+<div id="popiii-sfrd-app">
+  <div class="sfrd-main">
+    <div class="sfrd-plot" aria-label="Interactive Pop III SFRD by redshift">Loading the interactive figure…</div>
+  </div>
+  <div class="sfrd-panels">
+    <section class="sfrd-controls" aria-label="Theoretical models selection">
+      <div class="sfrd-panel-title">
+        <h3 class="anchored">Models</h3>
+        <span class="sfrd-count" aria-live="polite">Loading…</span>
+      </div>
+      <div class="sfrd-selection-actions">
+        <button type="button" data-action="models-all">Show all</button>
+        <button type="button" data-action="models-none">Hide all</button>
+      </div>
+      <input class="sfrd-search" id="sfrd-search" type="search" aria-label="Search theoretical models" placeholder="Search models…">
+      <div class="sfrd-model-grid" role="group" aria-label="Individual model toggles"></div>
+    </section>
+    <section class="sfrd-controls" aria-label="Tentative observational constraints selection">
+      <div class="sfrd-panel-title">
+        <h3 class="anchored">Tentative observational constraints</h3>
+        <span class="sfrd-observation-count" aria-live="polite">Loading…</span>
+      </div>
+      <div class="sfrd-selection-actions">
+        <button type="button" data-action="observations-all">Show all</button>
+        <button type="button" data-action="observations-none">Hide all</button>
+      </div>
+      <div class="sfrd-observation-grid" role="group" aria-label="Individual observational constraint toggles"></div>
+    </section>
+  </div>
+  <div class="sfrd-download-controls">
+    <button type="button" data-action="download-visible" disabled="">Download selected models (ZIP)</button>
+    <span class="sfrd-download-status" role="status" aria-live="polite"></span>
+  </div>
+  <noscript>JavaScript is required for the interactive figure. Individual source CSVs are available in the table below.</noscript>
+</div>
+<script src="../assets/plotly.min.js"></script>
+<script src="../assets/popiii-sfrd/models_data.js"></script>
+<script src="../assets/popiii-sfrd/plot.js"></script>
+</section>
+<section id="individual-datasets" class="level2">
+<h2 class="anchored" data-anchor-id="individual-datasets">Individual datasets</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Reference</th>
+<th style="text-align: left;">Source and processing notes</th>
+<th style="text-align: left;">Download</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="citation" data-cites="tornatore2007">Tornatore et al. (<a href="#ref-tornatore2007" role="doc-biblioref">2007</a>)</span></td>
+<td style="text-align: left;">Digitized from Fig. 1, orange dashed line: (10 Mpc)<sup>3</sup> simulation box.</td>
+<td style="text-align: left;"><a href="../data/popiii-sfrd/SFRD_popIII_Tornatore+07_10Mpc.csv">CSV</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="citation" data-cites="trenti2009">Trenti and Stiavelli (<a href="#ref-trenti2009" role="doc-biblioref">2009</a>)</span></td>
+<td style="text-align: left;">H₂ minihalos plus atomic-cooling halos digitized from Fig. 1 (black solid / blue long-dashed lines) for reference model: normal J<sub>21</sub> feedback, Sheth–Tormen halo mass function, one Pop III star per halo; contributions interpolated and summed in linear SFRD.</td>
+<td style="text-align: left;"><a href="../data/popiii-sfrd/SFRD_popIII_Trenti&amp;Stiavelli09_ref_tot.csv">CSV</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="citation" data-cites="maio2010">Maio et al. (<a href="#ref-maio2010" role="doc-biblioref">2010</a>)</span></td>
+<td style="text-align: left;">Digitized reference simulation, Fig. 5, top panel, red dotted line for reference model: 0.7 cMpc/h box, Z<sub>crit</sub> = 10<sup>-4</sup> Z<sub>☉</sub>, density threshold 70 cm⁻³, Salpeter IMF (100–500 M<sub>☉</sub>).</td>
+<td style="text-align: left;"><a href="../data/popiii-sfrd/SFRD_popIII_Maio+10_ref.csv">CSV</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="citation" data-cites="johnson2013">Johnson et al. (<a href="#ref-johnson2013" role="doc-biblioref">2013</a>)</span></td>
+<td style="text-align: left;">Digitized from Fig. 1, top panel, red dashed line: FiBY simulation with Lyman–Werner radiation included.</td>
+<td style="text-align: left;"><a href="../data/popiii-sfrd/SFRD_popIII_Johnson+13_FiBY+LW.csv">CSV</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="citation" data-cites="pallottini2014">Pallottini et al. (<a href="#ref-pallottini2014" role="doc-biblioref">2014</a>)</span></td>
+<td style="text-align: left;">Digitized from Fig. 1, blue solid line.</td>
+<td style="text-align: left;"><a href="../data/popiii-sfrd/SFRD_popIII_Pallottini+14.csv">CSV</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="citation" data-cites="xu2016">Xu et al. (<a href="#ref-xu2016" role="doc-biblioref">2016</a>)</span></td>
+<td style="text-align: left;">Digitized from Fig. 1, green dashed line: Renaissance “Normal” simulated region. Lookback time measured from the final z = 7.6 snapshot; converted to redshift using WMAP7 parameters (H<sub>0</sub> = 71, Ω<sub>m,0</sub> = 0.266, Ω<sub>b,0</sub> = 0.0449, T<sub>CMB,0</sub> = 2.725 K). Original lookback times retained.</td>
+<td style="text-align: left;"><a href="../data/popiii-sfrd/SFRD_popIII_Xu+16_Renaissance_Normal.csv">CSV</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="citation" data-cites="sarmento2018">Sarmento et al. (<a href="#ref-sarmento2018" role="doc-biblioref">2018</a>)</span></td>
+<td style="text-align: left;">Digitized from Fig. 2, green solid line: Pop III curve applying the stellar-metallicity criterion Z<sub>★</sub> &lt; Z<sub>crit</sub>.</td>
+<td style="text-align: left;"><a href="../data/popiii-sfrd/SFRD_popIII_Sarmento+18.csv">CSV</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="citation" data-cites="jaacks2019">Jaacks et al. (<a href="#ref-jaacks2019" role="doc-biblioref">2019</a>)</span></td>
+<td style="text-align: left;">Digitized from Fig. 4, top panel, blue solid line, including time-since-Big-Bang column.</td>
+<td style="text-align: left;"><a href="../data/popiii-sfrd/SFRD_popIII_Jaacks+19.csv">CSV</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="citation" data-cites="liu2020">Liu and Bromm (<a href="#ref-liu2020" role="doc-biblioref">2020</a>)</span></td>
+<td style="text-align: left;">Digitized from Fig. 5, solid magenta line: FDbox (Pop III) model.</td>
+<td style="text-align: left;"><a href="../data/popiii-sfrd/SFRD_popIII_Liu&amp;Bromm20.csv">CSV</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="citation" data-cites="skinner2020">Skinner and Wise (<a href="#ref-skinner2020" role="doc-biblioref">2020</a>)</span></td>
+<td style="text-align: left;">Digitized from Fig. 4. Cosmic ages converted to redshift using the simulation cosmology (H<sub>0</sub> = 67.11, Ω<sub>m,0</sub> = 0.3175, Ω<sub>b,0</sub> = 0.049, T<sub>CMB,0</sub> = 2.725 K); original times retained.</td>
+<td style="text-align: left;"><a href="../data/popiii-sfrd/SFRD_popIII_Skinner&amp;Wise20.csv">CSV</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="citation" data-cites="visbal2020">Visbal et al. (<a href="#ref-visbal2020" role="doc-biblioref">2020</a>)</span></td>
+<td style="text-align: left;">Digitized from Fig. 2, black solid line: Pop III model including LW feedback, M(Z<sub>crit</sub> = 3 × 10<sup>-4</sup> Z<sub>☉</sub>), and reionization feedback.</td>
+<td style="text-align: left;"><a href="../data/popiii-sfrd/SFRD_popIII_Visbal+20.csv">CSV</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="citation" data-cites="venditti2023">Venditti et al. (<a href="#ref-venditti2023" role="doc-biblioref">2023</a>)</span></td>
+<td style="text-align: left;">Author-provided data behind Fig. 1, left panel, red solid line: dustyGadget simulation mean Pop III SFRD in 10 Myr bins, averaged over five simulated cubes.</td>
+<td style="text-align: left;"><a href="../data/popiii-sfrd/SFRD_popIII_Venditti+23_dustyGadget_10Myr.csv">CSV</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="citation" data-cites="trinca2024">Trinca et al. (<a href="#ref-trinca2024" role="doc-biblioref">2024</a>)</span></td>
+<td style="text-align: left;">Author-provided numerical data for CAT model. Pop III SFRD converted from M<sub>☉</sub> Myr<sup>-1</sup> cMpc<sup>-3</sup> to M<sub>☉</sub> yr<sup>-1</sup> cMpc<sup>-3</sup>. Original total/Pop III/Pop II columns retained.</td>
+<td style="text-align: left;"><a href="../data/popiii-sfrd/SFRD_popIII_Trinca+24_CAT.csv">CSV</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="citation" data-cites="ventura2024">Ventura et al. (<a href="#ref-ventura2024" role="doc-biblioref">2024</a>)</span></td>
+<td style="text-align: left;">Digitized from Fig. 7, cyan solid line: fiducial total Pop III star-formation curve.</td>
+<td style="text-align: left;"><a href="../data/popiii-sfrd/SFRD_popIII_Ventura+24_Meraxes.csv">CSV</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="citation" data-cites="cruz2025">Cruz et al. (<a href="#ref-cruz2025" role="doc-biblioref">2025</a>)</span></td>
+<td style="text-align: left;">Digitized data provided by Seiji Fujimoto for Zeus21 minihalo-only model.</td>
+<td style="text-align: left;"><a href="../data/popiii-sfrd/SFRD_popIII_Cruz+25_Zeus21.csv">CSV</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="citation" data-cites="hegde2025">Hegde and Furlanetto (<a href="#ref-hegde2025" role="doc-biblioref">2025</a>)</span></td>
+<td style="text-align: left;">Digitized from Fig. 6, solid red line: total pristine star formation for fiducial “abcd” model.</td>
+<td style="text-align: left;"><a href="../data/popiii-sfrd/SFRD_popIII_Hegde&amp;Furlanetto25_abcd.csv">CSV</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="citation" data-cites="sarmento2025">Sarmento and Scannapieco (<a href="#ref-sarmento2025" role="doc-biblioref">2025</a>)</span></td>
+<td style="text-align: left;">Digitized from Fig. 1, blue dashed line: Pop III model including radiative transfer.</td>
+<td style="text-align: left;"><a href="../data/popiii-sfrd/SFRD_popIII_Sarmento&amp;Scannapieco25_RT.csv">CSV</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="citation" data-cites="samuel2026">Samuel et al. (<a href="#ref-samuel2026" role="doc-biblioref">2026</a>)</span></td>
+<td style="text-align: left;">Author-provided data for CampFIRE-6k simulation.</td>
+<td style="text-align: left;"><a href="../data/popiii-sfrd/SFRD_popIII_Samuel+26_CampFIRE-6k.csv">CSV</a></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tentative-observational-constraints" class="level2">
+<h2 class="anchored" data-anchor-id="tentative-observational-constraints">Tentative observational constraints</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 75%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Reference</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="citation" data-cites="nagao2008">Nagao et al. (<a href="#ref-nagao2008" role="doc-biblioref">2008</a>)</span></td>
+<td style="text-align: left;">Subaru/Suprime-Cam photometric search for Lyα-He II λ1640 dual emitters with no metal line detections at 3.93 ≲ z ≲ 4.01 and 4.57 ≲ z ≲ 4.65. No convincing Pop III candidates with a Pop III SFR ≳ 2 M<sub>☉</sub> yr<sup>-1</sup> were found, yielding an upper limit of SFRD &lt; 5 × 10<sup>-6</sup> M<sub>☉</sub> yr<sup>-1</sup> cMpc<sup>-3</sup> (assuming an IMF in the range [50, 500] M<sub>☉</sub> from <span class="citation" data-cites="schaerer2003">Schaerer (<a href="#ref-schaerer2003" role="doc-biblioref">2003</a>)</span> and negligible escape fraction). The constraint in the range 4.0 ≲ z ≲ 4.6 is obtained considering the combined volume of the two redshift windows 4.03 × 10<sup>5</sup> Mpc<sup>3</sup>.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="citation" data-cites="cassata2013">Cassata et al. (<a href="#ref-cassata2013" role="doc-biblioref">2013</a>)</span></td>
+<td style="text-align: left;">11 narrow He II λ1640 emitters identified from a sample of 277 galaxies with a highly reliable spectroscopic redshift at 2 &lt; z &lt; 4.6 from the VIMOS-VLT Deep Survey (VVDS) Deep and Ultra-Deep data. Interpreting their emission as powered by Pop III with a SFR of 0.1-10 M<sub>☉</sub> yr<sup>-1</sup> implies SFRD ≈ 10⁻⁶ M☉ yr⁻¹ cMpc⁻³ (assuming a top-heavy IMF and zero metallicity from <span class="citation" data-cites="schaerer2003">Schaerer (<a href="#ref-schaerer2003" role="doc-biblioref">2003</a>)</span>).</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="citation" data-cites="fujimoto2025b">Fujimoto, Asada, et al. (<a href="#ref-fujimoto2025b" role="doc-biblioref">2025</a>)</span></td>
+<td style="text-align: left;">Revisiting JWST photometric Pop III candidate selection criterion from <span class="citation" data-cites="fujimoto2025">Fujimoto, Naidu, et al. (<a href="#ref-fujimoto2025" role="doc-biblioref">2025</a>)</span> following spectroscopic rejection of GLIMPSE-16043. Selecting strong Balmer jump, strong Hα and no [OIII] lines. Assuming AMORE6 is a genuine Pop III galaxy, the inferred UV luminosity function gives a tentative SFRD range (assuming a UV conversion factor for a moderately top-heavy IMF from <span class="citation" data-cites="schaerer2025">Schaerer et al. (<a href="#ref-schaerer2025" role="doc-biblioref">2025</a>)</span>, with lower limit set by the detection of AMORE6 alone, and upper limit obtained by rescaling the general galaxy UVLF to match the upper boundary of the data point by AMORE6 and integrating it down to M<sub>UV</sub> = -12).</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="citation" data-cites="mirzakhanlari2026">Mirza Khanlari et al. (<a href="#ref-mirzakhanlari2026" role="doc-biblioref">2026</a>)</span></td>
+<td style="text-align: left;">8 He II λ1640-bright candidates with no UV metal-line detections at 1.9 &lt; z &lt; 2.3 identified in the Hobby–Eberly Telescope Dark Energy Experiment’s database. The estimated number density of ~30 Gpc<sup>-3</sup> implies SFRD ≈ 6 × 10<sup>-9</sup> M<sub>☉</sub> yr<sup>-1</sup> cMpc<sup>-3</sup> , assuming 6 × 10<sup>5</sup> M<sub>☉</sub> of Pop III stars per system per system according to <span class="citation" data-cites="venditti2026b"><span class="nocase">Venditti, Graziani, et al.</span> (<a href="#ref-venditti2026b" role="doc-biblioref">2026</a>)</span> and a 3 Myr visibility time from <span class="citation" data-cites="schaerer2002">Schaerer (<a href="#ref-schaerer2002" role="doc-biblioref">2002</a>)</span>.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-cassata2013" class="csl-entry" role="listitem">
+Cassata, P., O. Le Fèvre, S. Charlot, et al. 2013. <span>“<span class="nocase">He II emitters in the VIMOS VLT Deep Survey: Population III star formation or peculiar stellar populations in galaxies at 2 &lt; z &lt; 4.6?</span>”</span> 556 (August): A68. <a href="https://doi.org/10.1051/0004-6361/201220969">https://doi.org/10.1051/0004-6361/201220969</a>.
+</div>
+<div id="ref-cruz2025" class="csl-entry" role="listitem">
+Cruz, Hector Afonso G., Julian B. Muñoz, Nashwan Sabti, and Marc Kamionkowski. 2025. <span>“<span class="nocase">Effective model for the 21-cm signal with population III stars</span>.”</span> 111 (8): 083503. <a href="https://doi.org/10.1103/PhysRevD.111.083503">https://doi.org/10.1103/PhysRevD.111.083503</a>.
+</div>
+<div id="ref-fujimoto2025b" class="csl-entry" role="listitem">
+Fujimoto, Seiji, Yoshihisa Asada, Rohan P. Naidu, et al. 2025. <span>“<span class="nocase">GLIMPSE-D: An Exotic Balmer-Jump Object at z=6.20? Revisiting Photometric Selection and the Cosmic Abundance of Pop III Galaxies</span>.”</span> <em>arXiv e-Prints</em>, December, arXiv:2512.11790. <a href="https://doi.org/10.48550/arXiv.2512.11790">https://doi.org/10.48550/arXiv.2512.11790</a>.
+</div>
+<div id="ref-fujimoto2025" class="csl-entry" role="listitem">
+Fujimoto, Seiji, Rohan P. Naidu, John Chisholm, et al. 2025. <span>“<span class="nocase">GLIMPSE: An Ultrafaint ≃10⁵ M⊙ Pop III Galaxy Candidate and First Constraints on the Pop III UV Luminosity Function at z ≃ 6.7</span>.”</span> 989 (1): 46. <a href="https://doi.org/10.3847/1538-4357/ade9a1">https://doi.org/10.3847/1538-4357/ade9a1</a>.
+</div>
+<div id="ref-hegde2025" class="csl-entry" role="listitem">
+Hegde, Sahil, and Steven R. Furlanetto. 2025. <span>“<span class="nocase">Efficient semi-analytic modelling of Pop III star formation from Cosmic Dawn to Reionization</span>.”</span> <em>The Open Journal of Astrophysics</em> 8 (October): 147. <a href="https://doi.org/10.33232/001c.145070">https://doi.org/10.33232/001c.145070</a>.
+</div>
+<div id="ref-jaacks2019" class="csl-entry" role="listitem">
+Jaacks, Jason, Steven L. Finkelstein, and Volker Bromm. 2019. <span>“<span class="nocase">Legacy of star formation in the pre-reionization universe</span>.”</span> 488 (2): 2202–21. <a href="https://doi.org/10.1093/mnras/stz1529">https://doi.org/10.1093/mnras/stz1529</a>.
+</div>
+<div id="ref-johnson2013" class="csl-entry" role="listitem">
+Johnson, Jarrett L., Claudio Dalla Vecchia, and Sadegh Khochfar. 2013. <span>“<span class="nocase">The First Billion Years project: the impact of stellar radiation on the co-evolution of Populations II and III</span>.”</span> 428 (3): 1857–72. <a href="https://doi.org/10.1093/mnras/sts011">https://doi.org/10.1093/mnras/sts011</a>.
+</div>
+<div id="ref-liu2020" class="csl-entry" role="listitem">
+Liu, Boyuan, and Volker Bromm. 2020. <span>“<span class="nocase">When did Population III star formation end?</span>”</span> 497 (3): 2839–54. <a href="https://doi.org/10.1093/mnras/staa2143">https://doi.org/10.1093/mnras/staa2143</a>.
+</div>
+<div id="ref-maio2010" class="csl-entry" role="listitem">
+Maio, Umberto, Benedetta Ciardi, Klaus Dolag, Luca Tornatore, and Sadegh Khochfar. 2010. <span>“<span class="nocase">The transition from population III to population II-I star formation</span>.”</span> 407 (2): 1003–15. <a href="https://doi.org/10.1111/j.1365-2966.2010.17003.x">https://doi.org/10.1111/j.1365-2966.2010.17003.x</a>.
+</div>
+<div id="ref-mirzakhanlari2026" class="csl-entry" role="listitem">
+Mirza Khanlari, Mahan, Dustin Davis, Karl Gebhardt, et al. 2026. <span>“<span class="nocase">Population III Host Candidates at z ~2: Strong He II <span><span class="math inline">\(\lambda\)</span></span>1640 and Absent Ultraviolet Metal Lines in HETDEX Ly<span><span class="math inline">\(\alpha\)</span></span> Emitters</span>.”</span> 1010 (1): 62. <a href="https://doi.org/10.3847/1538-4357/aea6d9">https://doi.org/10.3847/1538-4357/aea6d9</a>.
+</div>
+<div id="ref-nagao2008" class="csl-entry" role="listitem">
+Nagao, Tohru, Shunji S. Sasaki, Roberto Maiolino, et al. 2008. <span>“<span class="nocase">A Photometric Survey for Ly<span><span class="math inline">\(\alpha\)</span></span>-He II Dual Emitters: Searching for Population III Stars in High-Redshift Galaxies</span>.”</span> 680 (1): 100–109. <a href="https://doi.org/10.1086/587888">https://doi.org/10.1086/587888</a>.
+</div>
+<div id="ref-pallottini2014" class="csl-entry" role="listitem">
+Pallottini, A., A. Ferrara, S. Gallerani, S. Salvadori, and V. D’Odorico. 2014. <span>“<span class="nocase">Simulating cosmic metal enrichment by the first galaxies</span>.”</span> 440 (3): 2498–518. <a href="https://doi.org/10.1093/mnras/stu451">https://doi.org/10.1093/mnras/stu451</a>.
+</div>
+<div id="ref-samuel2026" class="csl-entry" role="listitem">
+Samuel, Jenna, Michael Boylan-Kolchin, Robert Feldmann, et al. 2026. <span>“<span class="nocase">Resolving galaxy formation in the early Universe with BonFIRE and CampFIRE</span>.”</span> <em>arXiv e-Prints</em>, May, arXiv:2605.24104. <a href="https://doi.org/10.48550/arXiv.2605.24104">https://doi.org/10.48550/arXiv.2605.24104</a>.
+</div>
+<div id="ref-sarmento2025" class="csl-entry" role="listitem">
+Sarmento, Richard, and Evan Scannapieco. 2025. <span>“<span class="nocase">The Importance of the Population III Initial Mass Function in Determining the Characteristics of the Earliest Galaxies</span>.”</span> 988 (2): 221. <a href="https://doi.org/10.3847/1538-4357/ade78d">https://doi.org/10.3847/1538-4357/ade78d</a>.
+</div>
+<div id="ref-sarmento2018" class="csl-entry" role="listitem">
+Sarmento, Richard, Evan Scannapieco, and Seth Cohen. 2018. <span>“<span class="nocase">Following the Cosmic Evolution of Pristine Gas. II. The Search for Pop III-bright Galaxies</span>.”</span> 854 (1): 75. <a href="https://doi.org/10.3847/1538-4357/aa989a">https://doi.org/10.3847/1538-4357/aa989a</a>.
+</div>
+<div id="ref-schaerer2002" class="csl-entry" role="listitem">
+Schaerer, D. 2002. <span>“<span class="nocase">On the properties of massive Population III stars and metal-free stellar populations</span>.”</span> 382 (January): 28–42. <a href="https://doi.org/10.1051/0004-6361:20011619">https://doi.org/10.1051/0004-6361:20011619</a>.
+</div>
+<div id="ref-schaerer2003" class="csl-entry" role="listitem">
+Schaerer, D. 2003. <span>“<span class="nocase">The transition from Population III to normal galaxies: Lyalpha and He II emission and the ionising properties of high redshift starburst galaxies</span>.”</span> 397 (January): 527–38. <a href="https://doi.org/10.1051/0004-6361:20021525">https://doi.org/10.1051/0004-6361:20021525</a>.
+</div>
+<div id="ref-schaerer2025" class="csl-entry" role="listitem">
+Schaerer, D., J. Guibert, R. Marques-Chaves, and F. Martins. 2025. <span>“<span class="nocase">Observable and ionizing properties of star-forming galaxies with very massive stars and different initial mass functions</span>.”</span> 693 (January): A271. <a href="https://doi.org/10.1051/0004-6361/202451454">https://doi.org/10.1051/0004-6361/202451454</a>.
+</div>
+<div id="ref-skinner2020" class="csl-entry" role="listitem">
+Skinner, Danielle, and John H. Wise. 2020. <span>“<span class="nocase">Cradles of the first stars: self-shielding, halo masses, and multiplicity</span>.”</span> 492 (3): 4386–97. <a href="https://doi.org/10.1093/mnras/staa139">https://doi.org/10.1093/mnras/staa139</a>.
+</div>
+<div id="ref-tornatore2007" class="csl-entry" role="listitem">
+Tornatore, Luca, Andrea Ferrara, and Raffaella Schneider. 2007. <span>“<span class="nocase">Population III stars: hidden or disappeared?</span>”</span> 382 (3): 945–50. <a href="https://doi.org/10.1111/j.1365-2966.2007.12215.x">https://doi.org/10.1111/j.1365-2966.2007.12215.x</a>.
+</div>
+<div id="ref-trenti2009" class="csl-entry" role="listitem">
+Trenti, Michele, and Massimo Stiavelli. 2009. <span>“<span class="nocase">Formation Rates of Population III Stars and Chemical Enrichment of Halos during the Reionization Era</span>.”</span> 694 (2): 879–92. <a href="https://doi.org/10.1088/0004-637X/694/2/879">https://doi.org/10.1088/0004-637X/694/2/879</a>.
+</div>
+<div id="ref-trinca2024" class="csl-entry" role="listitem">
+Trinca, Alessandro, Raffaella Schneider, Rosa Valiante, et al. 2024. <span>“<span class="nocase">Exploring the nature of UV-bright z <span><span class="math inline">\(\gtrsim\)</span></span> 10 galaxies detected by JWST: star formation, black hole accretion, or a non-universal IMF?</span>”</span> 529 (4): 3563–81. <a href="https://doi.org/10.1093/mnras/stae651">https://doi.org/10.1093/mnras/stae651</a>.
+</div>
+<div id="ref-venditti2023" class="csl-entry" role="listitem">
+Venditti, Alessandra, Luca Graziani, Raffaella Schneider, et al. 2023. <span>“<span class="nocase">A needle in a haystack? Catching Population III stars in the epoch of reionization: I. Population III star-forming environments</span>.”</span> 522 (3): 3809–30. <a href="https://doi.org/10.1093/mnras/stad1201">https://doi.org/10.1093/mnras/stad1201</a>.
+</div>
+<div id="ref-venditti2026b" class="csl-entry" role="listitem">
+<span class="nocase">Venditti, Alessandra, Luca Graziani, Raffaella Schneider, et al.</span> 2026. <span>“<span class="nocase">Catching the Nebular Needle in a Polluted Haystack: Line-emission Signatures from Population III-forming Pockets around Massive Galaxies at the End of Reionization</span>.”</span> 1005 (2): 226. <a href="https://doi.org/10.3847/1538-4357/ae7b2c">https://doi.org/10.3847/1538-4357/ae7b2c</a>.
+</div>
+<div id="ref-venditti2026" class="csl-entry" role="listitem">
+Venditti, Alessandra, Daniel Schaerer, Erik Zackrisson, et al. 2026. <span>“<span class="nocase">How can we finally see the first light? Status and perspective in the search for Population III stars</span>.”</span> <em>The Open Journal of Astrophysics</em> 9 (August): 67811. <a href="https://doi.org/10.33232/001c.167811">https://doi.org/10.33232/001c.167811</a>.
+</div>
+<div id="ref-ventura2024" class="csl-entry" role="listitem">
+Ventura, Emanuele M., Yuxiang Qin, Sreedhar Balu, and J. Stuart B. Wyithe. 2024. <span>“<span class="nocase">Semi-analytic modelling of Pop. III star formation and metallicity evolution - I. Impact on the UV luminosity functions at z = 9-16</span>.”</span> 529 (1): 628–46. <a href="https://doi.org/10.1093/mnras/stae567">https://doi.org/10.1093/mnras/stae567</a>.
+</div>
+<div id="ref-visbal2020" class="csl-entry" role="listitem">
+Visbal, Eli, Greg L. Bryan, and Zoltán Haiman. 2020. <span>“<span class="nocase">Self-consistent Semianalytic Modeling of Feedback during Primordial Star Formation and Reionization</span>.”</span> 897 (1): 95. <a href="https://doi.org/10.3847/1538-4357/ab994e">https://doi.org/10.3847/1538-4357/ab994e</a>.
+</div>
+<div id="ref-xu2016" class="csl-entry" role="listitem">
+Xu, Hao, Kyungjin Ahn, Michael L. Norman, John H. Wise, and Brian W. O’Shea. 2016. <span>“<span class="nocase">X-Ray Background at High Redshifts from Pop III Remnants: Results from Pop III Star Formation Rates in the Renaissance Simulations</span>.”</span> 832 (1): L5. <a href="https://doi.org/10.3847/2041-8205/832/1/L5">https://doi.org/10.3847/2041-8205/832/1/L5</a>.
+</div>
+</div>
+
+
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/utcfc\.github\.io\/");
+      const newWindowLabel = "(opens in a new tab)";
+      const newWindowNoteId = "quarto-ext-newwindow-label";
+      // Links reference one hidden label through aria-describedby, so the
+      // announcement never changes their accessible name.
+      var describeNewWindow = (link) => {
+        if (!window.document.getElementById(newWindowNoteId)) {
+          var newWindowNote = window.document.createElement("span");
+          newWindowNote.id = newWindowNoteId;
+          newWindowNote.hidden = true;
+          newWindowNote.textContent = newWindowLabel;
+          window.document.body.appendChild(newWindowNote);
+        }
+        var describedBy = (link.getAttribute("aria-describedby") || "").split(/\s+/).filter(Boolean);
+        if (!describedBy.includes(newWindowNoteId)) {
+          describedBy.push(newWindowNoteId);
+          link.setAttribute("aria-describedby", describedBy.join(" "));
+        }
+      }
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+      window.quartoDecorateExternalLinks = function (root) {
+     var links = (root || window.document).querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+            describeNewWindow(link);
+          if (!link.classList.contains('no-external-icon')) {
+          }
+        }
+      }
+      };
+      window.quartoDecorateExternalLinks(window.document);
+    // Esc closes the popup (WCAG 1.4.13) and focus leaving both trigger and
+    // popup closes it (WCAG 2.4.11); tippy handles neither for interactive popups.
+    const hideOnEscAndFocusOut = {
+      name: 'hideOnEscAndFocusOut',
+      defaultValue: true,
+      fn(instance) {
+        const dismiss = () => {
+          // A show scheduled by the trigger delay would otherwise reopen it
+          instance.clearDelayTimeouts();
+          instance.hide();
+        };
+        const onKeyDown = (event) => {
+          if (event.key !== 'Escape') {
+            return;
+          }
+          // Keep Esc from also reaching page handlers (e.g. reveal.js overview),
+          // except an open reveal.js slide menu, which Esc should close too.
+          // The menu handles keys only when its keyboard option is on.
+          const menuHandlesEsc = window.Reveal?.getPlugin?.('menu')?.isOpen() &&
+            window.Reveal.getConfig().menu?.keyboard !== false;
+          if (!menuHandlesEsc) {
+            event.stopPropagation();
+          }
+          if (instance.popper.contains(window.document.activeElement)) {
+            // Disabled while refocusing so the focus trigger does not reopen it
+            instance.disable();
+            instance.reference.focus();
+            instance.enable();
+          }
+          dismiss();
+        };
+        const onFocusOut = (event) => {
+          const target = event.relatedTarget;
+          if (target && !instance.reference.contains(target) &&
+              !instance.popper.contains(target)) {
+            dismiss();
+          }
+        };
+        // On the trigger too: a click trigger (code-annotations: select) has no
+        // blur handling. Attached for the instance's lifetime so leaving the
+        // trigger also cancels a show still pending on the trigger delay.
+        instance.reference.addEventListener('focusout', onFocusOut);
+        return {
+          onShow() {
+            window.document.addEventListener('keydown', onKeyDown, true);
+            instance.popper.addEventListener('focusout', onFocusOut);
+          },
+          onHide() {
+            window.document.removeEventListener('keydown', onKeyDown, true);
+            instance.popper.removeEventListener('focusout', onFocusOut);
+          },
+          onDestroy() {
+            instance.reference.removeEventListener('focusout', onFocusOut);
+          },
+        };
+      },
+    };
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+        plugins: [hideOnEscAndFocusOut],
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          // Each band is positioned against its own containing block, which is
+          // not the offsetParent of the lines, so place it from client rects.
+          const placeBand = (band, firstEl, lastEl, codeBlock) => {
+            const container = band.offsetParent;
+            if (container === null) {
+              return;
+            }
+            const containerRect = container.getBoundingClientRect();
+            // Reveal.js scales slides with a transform, so convert client
+            // pixels back to the CSS pixels of the container.
+            const scale = containerRect.height / container.offsetHeight || 1;
+            const firstRect = firstEl.getBoundingClientRect();
+            const lastRect = lastEl.getBoundingClientRect();
+            const top = (firstRect.top - containerRect.top) / scale - container.clientTop + container.scrollTop;
+            const height = (lastRect.bottom - firstRect.top) / scale;
+            band.style.top = top - 2 + "px";
+            band.style.height = height + 4 + "px";
+            if (codeBlock) {
+              // Without the copy button wrapper, the containing block is wider
+              // than the code block, so span the code block explicitly.
+              const blockRect = codeBlock.getBoundingClientRect();
+              band.style.left = (blockRect.left - containerRect.left) / scale - container.clientLeft + container.scrollLeft + "px";
+              band.style.width = blockRect.width / scale + "px";
+            }
+          };
+          if (lineIds.length > 0) {
+            const el = window.document.getElementById(lineIds[0]);
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const parent = el.parentElement.parentElement;
+            // cook up a div (if necessary) and position it
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            placeBand(div, el, lastEl, parent.closest("div.sourceCode") || parent);
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            placeBand(gutterDiv, el, lastEl);
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+  <script type="application/javascript">
+  window.quartoScrollableRegionsLabels = {"code":"Scrollable code","output":"Scrollable output"};
+  </script>
+</div> <!-- /content -->
+
+
+
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/utcfc/utcfc.github.io/edit/main/pages/popiiisfrd.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div></div></footer></body></html>
