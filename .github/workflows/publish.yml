@@ -13,6 +13,18 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Restore page modification dates from Git
+        shell: bash
+        run: |
+          git ls-files -z '*.qmd' | while IFS= read -r -d '' file; do
+            timestamp=$(git log -1 --format=%ct -- "$file")
+            if [ -n "$timestamp" ]; then
+              touch -d "@$timestamp" "$file"
+            fi
+          done
 
       # Install a stable Python and make it available to Quarto
       - name: Set up Python
