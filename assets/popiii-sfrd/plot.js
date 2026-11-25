@@ -185,7 +185,7 @@
       points.push([z, Number.isFinite(logSfrd) ? logSfrd : null, sfrd]);
     }
     if (!points.length) throw new Error('Empty model CSV');
-    points.sort((a,b) => a[0] - b[0]); // display order only; original CSV bytes stay unchanged
+    // points.sort((a,b) => a[0] - b[0]); // display order only; original CSV bytes stay unchanged
     return points;
   }
 
@@ -236,10 +236,11 @@
     return new Blob([...local, ...central, ending], {type:'application/zip'});
   }
 
-  function modelTrace(m, visible) {
+  function modelTrace(m, visible, yMin) {
     return {
       type:'scatter', mode:'lines', uid:`model-${m.id}`, name:m.label,
-      x:m.points.map(p=>p[0]), y:m.points.map(p=>p[1]),
+      x:m.points.map(p=>p[0]), 
+      y:m.points.map(p=>p[2] === 0 ? yMin : p[1]),
       customdata:m.points.map(p=>p[2]),
       line:{color:m.color, dash:m.dash, width:m.id==='trinca24'?1.2:2.05},
       opacity:m.id==='trinca24'?.68:.94, connectgaps:false, visible,
@@ -372,6 +373,14 @@
     for (const o of observations) checkbox(o,selectedObservations,observationPanel,observationInputs);
 
     function draw() {
+      const validY = models
+        .filter(m => selectedModels.has(m.id))
+        .flatMap(m => m.points
+          .filter(p => p[2] > 0 && Number.isFinite(p[1]))
+          .map(p => p[1])
+        );
+      const yMin = validY.length ? Math.min(...validY) : -9;    
+    
       for (const m of models) modelInputs.get(m.id).input.checked=selectedModels.has(m.id);
       for (const o of observations) observationInputs.get(o.id).input.checked=selectedObservations.has(o.id);
       modelCount.textContent=`${selectedModels.size} / ${models.length} visible`;
@@ -379,9 +388,10 @@
       downloadButton.disabled = selectedModels.size === 0;
       const traces = [
         ...observations.filter(o=>o.kind==='rectangle').map(o=>observationTrace(o,selectedObservations.has(o.id))),
-        ...models.map(m=>modelTrace(m,selectedModels.has(m.id))),
+        ...models.map(m=>modelTrace(m,selectedModels.has(m.id),yMin)),
         ...observations.filter(o=>o.kind==='point').map(o=>observationTrace(o,selectedObservations.has(o.id)))
       ];
+      layout.yaxis.autorangeoptions = { clipmin: yMin };
       window.Plotly.react(plot,traces,layout,{
         responsive:true,displaylogo:false,modeBarButtonsToRemove:['lasso2d','select2d'],
         toImageButtonOptions:{format:'png',filename:'population_III_SFRD_comparison',height:850,width:1280,scale:1.5}
