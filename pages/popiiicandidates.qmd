@@ -278,6 +278,7 @@ def note(text):
 
 
 # Fill table
+note_GNHeIIJ12366215_OIIIflux = r"[OIII]$\lambda5007$ line flux from Keck/MOSFIRE, around two times higher than measured with NIRSpec, $(2.986 \pm 0.052) \times 10^{-17} ~\mathrm{erg \, s^{-1} \, cm^{-2}}$, possibly due to incomplete MSA coverage; the corresponding [OIII]/H$\beta$ ratio is computed consistently with the NIRSpec/MSA flux measures."
 table.add_row(dict(
     ID="GNHeII J1236+6215",
     redshift=(2.9803, 0.0010, {"digits": 4}),
@@ -298,11 +299,11 @@ table.add_row(dict(
     HeII1640_FWHM=(573, 191, {"digits": 0}),
     Mstar=(7.8e8, 3.1e8),
     SFR=(12.2, 2.0, {"note": note(r"From photometric analysis, averaged over the last 10 Myr; from spectroscopic analysis: $\mathrm{SFR}_\mathrm{UV} = (9.8 \pm 0.1) ~\mathrm{M_\odot yr^{-1}}$, $\mathrm{SFR}_\mathrm{H\beta} = (7.6 \pm 0.4) ~\mathrm{M_\odot yr^{-1}}$, $\mathrm{SFR}_\mathrm{H\alpha} = (7.5 \pm 0.1) ~\mathrm{M_\odot yr^{-1}}$, $\mathrm{SFR}_\mathrm{Pa\beta} = (6.40 \pm 0.03) ~\mathrm{M_\odot yr^{-1}}$.")}),  # From SED, i.e. the value reported in the abstract
-    OIII5007_flux=(59.6e-18, 2.2e-18, {"digits": 2}),
+    OIII5007_flux=(59.6e-18, 2.2e-18, {"digits": 2, "note": note(note_GNHeIIJ12366215_OIIIflux)}),
     OIII5007_EW=248.8,
-    OIIItoHb=(5.45, 0.32, {"digits": 2}),  # They also give HeII/Hbeta = 1.96 \pm 0.30, and HeII/Halpha = 0.69, 0.10, reported to closely match with the candidate from Wang+24
+    OIIItoHb=(5.45, 0.32, {"digits": 2, "note": note(note_GNHeIIJ12366215_OIIIflux)}),  # They also give HeII/Hbeta = 1.96 \pm 0.30, and HeII/Halpha = 0.69, 0.10, reported to closely match with the candidate from Wang+24
     OtoH=(7.85, 0.22, {"digits": 2}),
-    metallicity=(0.003, 0.002, {"digits": 3}),
+    metallicity=r"$\sim 0.15$",
     reference="@mondal2025"
 ))
 table.add_row(dict(
@@ -337,6 +338,7 @@ table.add_row(dict(
     HeII1640_EW=r"$< 80$",  # 2sigma upper limit
     reference="@vanzella2026"
 ))
+note_CAPERSUDS32520_OIIIflux = r"Total flux of the [OIII] $\lambda\lambda 4959,5007$ doublet."
 table.add_row(dict(
     ID=("CAPERS-UDS-32520", {"note": note(r"The authors also examined a companion that serendipitously lies across the slit mask (therefore dubbing the whole system \"banana and blueberry\" due to its morphology, possibly hinting to a disturbed, merger-like origin), finding clear signatures of H$\alpha$ emission, as well as potential HeI and HeII emission lines; however, they caution that photometric data for the \"blueberry\" system from the Minerva survey (@muzzin2025) strongly favor a lower-redshift solution at $z \sim 0.7$ (Willot, priv. comm.).")}),
     redshift=(5.1240, 0.0002, {"digits": 4}),
@@ -347,7 +349,7 @@ table.add_row(dict(
     Hg_EW=(35, 4, {"digits": 0}),
     Hb_flux=(4.3e-18, 0.3e-18, {"digits": 1}),
     Hb_EW=(137, 13, {"digits": 0}),
-    OIII5007_flux=(29.6e-18, 0.4e-18, {"digits": 2}),
+    OIII5007_flux=(29.6e-18, 0.4e-18, {"digits": 2, "note": note(note_CAPERSUDS32520_OIIIflux)}),
     OIII5007_EW=(946, 46, {"digits": 0}),
     Ha_flux=(13.8e-18, 0.2e-18, {"digits": 2}),
     Ha_EW=(734, 33, {"digits": 0}),
@@ -409,7 +411,7 @@ table.add_row(dict(
     redshift=(6.625, 0.001, {"digits": 3}),
     magnification="Yes",  # mu = 98
     MUV=r"$> -10.4$",
-    Mstar=r"$\lesssim 2700$",
+    Mstar=r"$\lesssim 3300$",
     Lya_flux=(6.08e-19, 1.70e-19, {"digits": 2}),  # All fluxes from tab. 1
     Lya_EW=r"$> 250$",
     Ha_flux=(2.07e-19, 0.25e-19, {"digits": 2}),
@@ -485,7 +487,7 @@ table.add_row(dict(
 ))
 table.add_row(dict(
     ID="Hebe (GN-z11)",
-    redshift=(10.5862, 0.003, {"digits": 4}),  # From Ubler+26
+    redshift=(10.5862, 0.0003, {"digits": 4}),  # From Ubler+26
     magnification=("No", {"note": note("Although measured fluxes need to be corrected for a small magnification factor of 1.42, which is not accounted for in the reported line fluxes; see table 1 of @maiolino2026 for the corresponding de-lensed line luminosities.")}),
     MIII=r"$\sim 2 \times 10^4 - 6 \times 10^5$",  # From Rusta+26
     OtoH=r"$< 6.96$",  # 3sigma upper limits on 12+log(O/H) and Zgas from Ubler+26
