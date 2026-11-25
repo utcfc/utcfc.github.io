@@ -395,6 +395,14 @@
       window.Plotly.react(plot,traces,layout,{
         responsive:true,displaylogo:false,modeBarButtonsToRemove:['lasso2d','select2d'],
         toImageButtonOptions:{format:'png',filename:'population_III_SFRD_comparison',height:850,width:1280,scale:1.5}
+      }).then(() => {
+        // Remove loading message after the plot has rendered
+        for (const node of [...plot.childNodes]) {
+          if (node.nodeType === Node.TEXT_NODE &&
+              node.textContent.includes('Loading the interactive figure')) {
+            node.remove();
+          }
+        }
       }).catch(error => {console.error(error);plot.textContent='The figure could not be rendered.';});
     }
     function choose(group, ids) {group.clear(); ids.forEach(id=>group.add(id)); draw();}
